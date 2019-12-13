@@ -70,7 +70,7 @@ section > .sec_t{font-size:40px; line-height:26px}
 
 .filtr_wrap{overflow-x:scroll; -webkit-overflow-style:none;}
 .filtr_wrap::-webkit-scrollbar{width:0; height:0; display:none}
-.filter-form{text-align:center; border-top:1px solid #affdfb; border-bottom:1px solid #affdfb}
+.filter-group{text-align:center; border-top:1px solid #affdfb; border-bottom:1px solid #affdfb}
 .form-item{width:auto; margin:0 5px; border:0}
 
 .form-item label{color:#fff; border:0}
@@ -104,7 +104,7 @@ section > .sec_t{font-size:40px; line-height:26px}
 /* 반응형 ---------------------------------------------------*/ 
 @media screen and (max-width:767px){
 /* 전체 */
-.wrap_cen{padding:0}
+.wrap_cen{padding:0;}
 
 /* 헤더 */
 .page_hd{padding:5px 10px}
@@ -143,10 +143,6 @@ section > .sec_t{font-size:40px; line-height:26px}
 /* 메인섹션 - 메뉴 */
 .main_menu{margin-top:30px}
 #main .gnb_menu li a{padding:50px 0 0 0; background-size:40px}
-
-/* 포트폴리오 섹션 */
-.grid-sizer, .pf_item{width:100%}
-.pf_item{margin-bottom:10px}
 
 /* 히스토리 섹션 */
 #hisroty .bg_el{display:none}

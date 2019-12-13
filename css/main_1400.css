@@ -13,7 +13,7 @@
 body{position:relative}
 #wrapper{width:100%; min-width:1400px}
 .wrap_cen{clear:both; position:relative; margin:0 auto; width:1400px; height:100%; overflow:hidden}
-*::selection {background: #ff229f; color: #ffff00}
+*::selection {background: #ff229f; color: #fff}
 .bg_el{position:absolute; top:0; left:0; width:100%; height:100%; z-index:0}
 .bg_el span{position:absolute; top:0; left:0;}
 .bg_el img{position:relative}
@@ -96,7 +96,7 @@ section.active .txtBox_st1 .main_ct span{-webkit-animation:fromR .7s cubic-bezie
 #main .gnb_menu li:nth-child(3){-webkit-animation-delay:.3s; animation-delay:.3s}
 #main .gnb_menu li:nth-child(4){-webkit-animation-delay:.2s; animation-delay:.2s}
 #main .gnb_menu li:nth-child(5){-webkit-animation-delay:.1s; animation-delay:.1s}
-#main .gnb_menu li:nth-child(5){-webkit-animation-delay:0s; animation-delay:0s}
+#main .gnb_menu li:nth-child(6){-webkit-animation-delay:0s; animation-delay:0s}
 
 #main.active .gnb_menu li:nth-child(1){-webkit-animation-delay:0s; animation-delay:0s}
 #main.active .gnb_menu li:nth-child(2){-webkit-animation-delay:.1s; animation-delay:.1s}
@@ -130,7 +130,7 @@ section.active > .sec_t:after{-webkit-animation:fromT .7s cubic-bezier(0.4, 0, 0
 section.active h2 + .set_ct{-webkit-animation:fromT .7s cubic-bezier(0.4, 0, 0.2, 1) .2s; animation:fromT .7s cubic-bezier(0.4, 0, 0.2, 1) .2s; -webkit-animation-fill-mode:backwards; animation-fill-mode:backwards; top:0; opacity:.9; z-index:9}
 
 /* 프로젝트 섹션 */
-#project{background-color:#ff229f; background-repeat:no-repeat;
+#project{display:none;background-color:#ff229f; background-repeat:no-repeat;
 background-image:url("../images/main/bgProject_left.png"), url("../images/main/bgProject_left.png"), url("../images/main/bgProject_right.png"), url("../images/main/bgProject_right.png");
 background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% + 225px) 134px, calc(50% + 747px) -95px}
 
@@ -175,7 +175,7 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 
 .pf_box{padding-bottom:30px}
 
-.filter-form{margin:20px auto 40px auto; text-align:center}
+.filter-group{margin:20px auto 40px auto; text-align:center}
 .form-item{display:inline-block; position:relative; width:134px; text-align:center; -webkit-animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); top:30px; border:1px solid #affdfb; opacity:0}
 .form-item input{position:absolute; top:-10000%; margin:0; padding:0; width:0; height:0; overflow:hidden}
 .form-item label{display:inline-block; width:100%; padding:5px 0 10px 0; color:#affdfb; border-top:3px solid transparent; box-sizing:border-box; cursor:pointer; -webkit-transition:.3s all 0s cubic-bezier(0.4, 0, 0.2, 1); transition:.3s all 0s cubic-bezier(0.4, 0, 0.2, 1)}
@@ -303,6 +303,7 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 #history.active li:nth-child(4) .ht_ico{-webkit-animation:rotationY .5s ease-in-out 4s; animation:rotationY .5s ease-in-out 4s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards}
 #history.active li:nth-child(5) .ht_ico{-webkit-animation:rotationY .5s ease-in-out 4.5s; animation:rotationY .5s ease-in-out 4.5s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards}
 #history.active li:nth-child(6) .ht_ico{-webkit-animation:rotationY .5s ease-in-out 5s; animation:rotationY .5s ease-in-out 5s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards}
+#history.active li:nth-child(7) .ht_ico{-webkit-animation:rotationY .5s ease-in-out 5.5s; animation:rotationY .5s ease-in-out 5.5s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards}
 
 @keyframes rotationY{0%{opacity:0; transform:rotateY(0deg)} 33%{opacity:1; transform:rotateY(360deg)} 66%{opacity:1; transform:rotateY(0deg)} 100%{opacity:1; transform:rotateY(360deg)}}
 

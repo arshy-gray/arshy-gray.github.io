@@ -160,6 +160,88 @@
 		</div><!-- // .slideshow -->
 		</section><!-- // #section02 -->
 
+		<section id="skill">
+			<h2 class="sec_t"><span class="t_str">SK</span>ILL</h2>
+			<p class="set_ct">웹분야 관련 기술을<span class="m_br"> </span>탄탄히 발전시켜 나가고 있습니다.</p>
+	
+			<div class="bg_el">
+				<span class="el01"><img src="./images/main/bgSkill_light.png" alt="" /></span>
+			</div>
+	
+			<div class="wrap_cen">	
+				<article class="sk_box">
+					<h2 class="hidden">기술 활용도</h2>
+					<ul class="float_L">
+						<li class="photoshop off">
+							<div class="max">
+								<div class="progress double" title="photoshop, illustrator"><div class="prog_wrap">
+									<ul class="sk_t">
+										<li>photoshop</li>
+										<li>illustrator</li>
+									</ul>
+									<span class="sk_c">90%</span>
+								</div></div>
+							</div>
+						</li>
+						<li class="HTML5">
+							<div class="max">
+								<div class="progress double" title="HTML5, CSS3">
+									<ul class="sk_t">
+										<li>HTML5</li>
+										<li>CSS3</li>
+									</ul>
+									<span class="sk_c">85%</span>
+								</div>
+							</div>
+						</li>
+						<li class="jQuery">
+							<div class="max">
+								<div class="progress only" title="jQuery">
+									<ul class="sk_t">
+										<li>jQuery</li>
+									</ul>
+									<span class="sk_c">70%</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<ul class="float_R">
+						<li class="standard">
+							<div class="max">
+								<div class="progress only" title="웹표준">
+									<ul class="sk_t">
+										<li>웹표준</li>
+									</ul>
+									<span class="sk_c">90%</span>
+								</div>
+							</div>
+						</li>
+						<li class="accessibility">
+							<div class="max">
+								<div class="progress double" title="웹접근성, 크로스브라우징">
+									<ul class="sk_t">
+										<li>웹접근성</li>
+										<li>크로스브라우징</li>
+									</ul>
+									<span class="sk_c">70%</span>
+								</div>
+							</div>
+						</li>
+						<li class="responsive">
+							<div class="max">
+								<div class="progress only" title="반응형">
+									<ul class="sk_t">
+										<li>반응형</li>
+									</ul>
+									<span class="sk_c">90%</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</article>
+			</div><!-- // #section05 .wrap_cen -->
+		</section><!-- // #section05 -->
+
 		<section id="portfolio">
 		<h2 class="sec_t"><span class="t_str">P</span>ORT<span class="t_str">F</span>OLIO</h2>
 		<p class="set_ct">실무에서 직접 구축한<span class="m_br"> </span>웹사이트 모음입니다.</p>	
@@ -174,26 +256,28 @@
 				<h3 class="hidden">분야별 포트폴리오</h3>
 				<div class="filtr_wrap">
 				 <form class="filter-form" id="gellery-filter">
-					<span class="form-item">
-						<input type="radio" name="filter" id="filter-all" value="ALL" checked title="ALL" />
-						<label for="filter-all" title="모든 종류의 포트폴리오를 보실 수 있습니다." >All</label>
-					</span>
-					<span class="form-item">
-						<input type="radio" name="filter" id="filter-responsive" value="RESPONSIVE"  title="RESPONSIVE" />
-						<label for="filter-responsive" title="PC버전 사이트 모음입니다." >RESPONSIVE</label>
-					</span>
-					<span class="form-item">
-						<input type="radio" name="filter" id="filter-pcmobile" value="PC&MOBILE"  title="PC&MOBILE" />
-						<label for="filter-pcmobile" title="PC버전 사이트 모음입니다." >PC & MOBILE</label>
-					</span>					
-					<span class="form-item">
-						<input type="radio" name="filter" id="filter-onlypc" value="ONLY PC"  title="ONLY PC" />
-						<label for="filter-onlypc" title="PC버전 사이트 모음입니다." >ONLY PC</label>
-					</span>
-					<span class="form-item">
-						<input type="radio" name="filter" id="filter-individual" value="INDIVIDUAL" title="INDIVIDUAL" />
-						<label for="filter-individual" title="개인적으로 구축한 사이트 모음입니다.">INDIVIDUAL</label>
-					</span>
+					 <ul class="filter-group">
+						<li class="form-item">
+							<input type="radio" name="filter" id="filter-all" value="ALL" checked title="ALL" />
+							<label for="filter-all" title="모든 종류의 포트폴리오를 보실 수 있습니다." >All</label>
+						</li>
+						<li class="form-item">
+							<input type="radio" name="filter" id="filter-responsive" value="RESPONSIVE"  title="RESPONSIVE" />
+							<label for="filter-responsive" title="PC버전 사이트 모음입니다." >RESPONSIVE</label>
+						</li>
+						<li class="form-item">
+							<input type="radio" name="filter" id="filter-pcmobile" value="PC&MOBILE"  title="PC&MOBILE" />
+							<label for="filter-pcmobile" title="PC버전 사이트 모음입니다." >PC & MOBILE</label>
+						</li>					
+						<li class="form-item">
+							<input type="radio" name="filter" id="filter-onlypc" value="ONLY PC"  title="ONLY PC" />
+							<label for="filter-onlypc" title="PC버전 사이트 모음입니다." >ONLY PC</label>
+						</li>
+						<li class="form-item">
+							<input type="radio" name="filter" id="filter-individual" value="INDIVIDUAL" title="INDIVIDUAL" />
+							<label for="filter-individual" title="개인적으로 구축한 사이트 모음입니다.">INDIVIDUAL</label>
+						</li>
+					</ul>
 				</form>
 				</div>
 
@@ -246,7 +330,7 @@
 						<div class="ht_point"><span></span></div>
 						<ul class="ht_c">
 							<li class="date">2007-03 ~ 2011-02</li>
-							<li class="content1">조선대학교 재학</li>
+							<li class="content1">조선대학교 졸업</li>
 							<li class="content2">컴퓨터공학과</li>
 						</ul>
 					</li>
@@ -279,11 +363,24 @@
 						<div class="ht_point"><span></span></div>
 						<ul class="ht_c">
 							<li class="date">2015-07 ~ 2017-01</li>
-							<li class="content1">웹에이전시 '(주)렛츠온' 재직</li>
+							<li class="content1">웹에이전시 '(주)렛츠온' 근무</li>
 							<li class="content2">
 								<ul>
-									<li>DESIGN</li>
-									<li>PUBLISHING</li>
+									<li>DESIGNER</li>
+									<li>PUBLISHIER</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="ht_company">
+						<div class="ht_ico">직장</div>
+						<div class="ht_point"><span></span></div>
+						<ul class="ht_c">
+							<li class="date">2017-05 ~ 재직중</li>
+							<li class="content1">웹에이전시 '(주)렛츠온' 근무</li>
+							<li class="content2">
+								<ul>
+									<li>PUBLISHIER</li>
 								</ul>
 							</li>
 						</ul>
@@ -292,88 +389,6 @@
 			</article><!-- // .ht_box -->
 		</div><!-- // #section04 .wrap_cen -->
 		</section><!-- // #section04 -->
-			
-		<section id="skill">
-		<h2 class="sec_t"><span class="t_str">SK</span>ILL</h2>
-		<p class="set_ct">웹분야 관련 기술을<span class="m_br"> </span>탄탄히 발전시켜 나가고 있습니다.</p>
-
-		<div class="bg_el">
-			<span class="el01"><img src="./images/main/bgSkill_light.png" alt="" /></span>
-		</div>
-
-		<div class="wrap_cen">	
-			<article class="sk_box">
-				<h2 class="hidden">기술 활용도</h2>
-				<ul class="float_L">
-					<li class="photoshop off">
-						<div class="max">
-							<div class="progress double" title="photoshop, illustrator"><div class="prog_wrap">
-								<ul class="sk_t">
-									<li>photoshop</li>
-									<li>illustrator</li>
-								</ul>
-								<span class="sk_c">90%</span>
-							</div></div>
-						</div>
-					</li>
-					<li class="HTML5">
-						<div class="max">
-							<div class="progress double" title="HTML5, CSS3">
-								<ul class="sk_t">
-									<li>HTML5</li>
-									<li>CSS3</li>
-								</ul>
-								<span class="sk_c">85%</span>
-							</div>
-						</div>
-					</li>
-					<li class="jQuery">
-						<div class="max">
-							<div class="progress only" title="jQuery">
-								<ul class="sk_t">
-									<li>jQuery</li>
-								</ul>
-								<span class="sk_c">70%</span>
-							</div>
-						</div>
-					</li>
-				</ul>
-				<ul class="float_R">
-					<li class="standard">
-						<div class="max">
-							<div class="progress only" title="웹표준">
-								<ul class="sk_t">
-									<li>웹표준</li>
-								</ul>
-								<span class="sk_c">90%</span>
-							</div>
-						</div>
-					</li>
-					<li class="accessibility">
-						<div class="max">
-							<div class="progress double" title="웹접근성, 크로스브라우징">
-								<ul class="sk_t">
-									<li>웹접근성</li>
-									<li>크로스브라우징</li>
-								</ul>
-								<span class="sk_c">70%</span>
-							</div>
-						</div>
-					</li>
-					<li class="responsive">
-						<div class="max">
-							<div class="progress only" title="반응형">
-								<ul class="sk_t">
-									<li>반응형</li>
-								</ul>
-								<span class="sk_c">90%</span>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</article>
-		</div><!-- // #section05 .wrap_cen -->
-		</section><!-- // #section05 -->
 
 		<section id="contact" class="fullpage">
 		<h2 class="sec_t"><span class="t_str">C</span>ON<span class="t_str">T</span>ACT</h2>
