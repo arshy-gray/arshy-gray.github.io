@@ -333,7 +333,6 @@ $(window).load(function(){
 
 	 /* Portfolio -------------- */
 	 $('#pf_gellery').each(function () {
-
         // #gallery요소가 갤러리 컨테이너
         var $container = $(this),
 			$loadMoreButton = $('#load-more'), // 추가 버튼
@@ -391,7 +390,6 @@ $(window).load(function(){
                 // 추가 데이터의 배열
                 slicedData = filteredData.slice(addedd, addedd + addItemCount);
 
-
             // slicedData의 요소마다 DOM 요소를 생성
             $.each(slicedData, function (i, item) {
                 var itemHTML =
@@ -409,7 +407,7 @@ $(window).load(function(){
 						'<div class="pf_hover">' +
 							'<div class="btn_box"><ul>' +
 								'<li class="detail_btn"><a href="#none" title="자세히보기"><i class="fa fa-search"></i></a></li>' +
-								'<li class="siteLink_btn"><a href="' + item.link + '" title="웹사이트 바로가기"><i class="fa fa-link"></i></a></li>' +
+								'<li class="siteLink_btn"><a href="' + item.link + '" title="' + item.linkTitle +'" target="' + item.winTarget + '"><i class="fa fa-link"></i></a></li>' +
 							'</ul></div>' +
 						'</div>' +
 						'<div class="pf_detail">' +
@@ -505,8 +503,7 @@ $(window).load(function(){
             }              
 
             // 항목을 추가
-            addItems(true);
-			
+            addItems(true);			
         }
 
 	 // 호버 효과
@@ -570,8 +567,7 @@ $(window).load(function(){
 			$('.pf_detail').removeClass('on').css('display','none');
 			$body.css({height:'auto', 'overflow-y':'auto'});
 			$('.page_hd').css('display','block');
-		});			
-
+		});	
     });
 
 	/* 풀페이지 : (콘텐츠 생성된 뒤에 실행해야하므로 최하단에 선언)-------------------*/
@@ -610,7 +606,6 @@ $(window).load(function(){
 			//풀페이지 콘텐츠(제목 제외) 최소 높이값
 			$section[i].find('.wrap_cen').css('minHeight', el3);
 		};
-
 	})();		
 
 	//반응형 초기화
@@ -645,8 +640,7 @@ $(window).load(function(){
 			//풀페이지 콘텐츠(제목 제외) 최소 높이값
 			$section[i].find('.wrap_cen').css('minHeight', el3);
 			
-		};
-		
+		};		
 	}));
 
 	/* 스크롤에 따른 동적효과 : (풀페이지 하단에 선언)-------------------*/
@@ -688,8 +682,5 @@ $(window).load(function(){
 					$gnbMain.eq(i).addClass('on');
 				}
 			}
-
-	})); 
-	
+	})); 	
 });
-
