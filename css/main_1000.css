@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+/* 전체 */
+#wrapper{min-width:auto}
+.wrap_cen{width:1000px}
+
+/* 메인섹션 */
+#main{background-position:calc(100% - 50px) 40px, center; background-size:100px, cover}
+#main .el01{top:107px; left:calc(100% - 145px)}
+
+/* 메인섹션 - 메뉴 */
+#main .gnb_menu li{margin:0 2.3%; width:12%;}
+#main .gnb_menu li a{padding:74px 0 20px 0; background-size:40%}
+
+/* 프로젝트 섹션 */
+#project{background-image:url("../images/main/bgProject_left.png"), url("../images/main/bgProject_top.png"), url("../images/main/bgProject_btm.png"), url("../images/main/bgProject_right.png"); background-position:-65px -87px, calc(100% + 66px) -100px, -72px calc(100% + 96px), calc(100% + 108px) calc(100% + 72px)}
+#project .slideshow{position:relative; margin-top:40px}
+.slide_box{height:auto}
+.slide_wrap{background-image:none}
+.slides{margin:0 50px; height: 100%}
+.slides li{width:49.5%}
+.slides li:nth-child(odd){margin-right:1%}
+.slides li img{width:100%; max-width:472px}
+.drection_btn{width:100%;}
+.drection_btn .prev{left:0}
+.drection_btn .next{right:0}
+
+/* 포트폴리오 섹션 */
+#portfolio .el02{left:calc(50% + 469px)}
+
+/* 스킬 섹션 */ 
+.sk_box{width:1000px}
+.sk_box .float_L{margin-left:0}
+.sk_box .float_R{margin-right:0}

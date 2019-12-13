@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/* 전체 */
+#wrapper{min-width:auto}
+.wrap_cen{width:1000px}
+
+/* 메인섹션 - 메뉴 */
+#main .gnb_menu li{margin:0 1.8%; width:13%;}
+#main .gnb_menu li a{padding:83px 0 14px 0; background-size:50%}
+
+/* 프로젝트 섹션 */
+#project .slideshow{position:relative; margin-top:40px}
+.slide_box{height:auto}
+.slide_wrap{margin:a}
+.slides{margin:0 50px; height: 100%}
+.slides li{position:relative; width:49.5%}
+.slides li:nth-child(odd){margin-right:1%}
+.slides li img{width:100%; max-width:472px}
+.drection_btn{width:100%;}
+.drection_btn .prev{left:0}
+.drection_btn .next{right:0}
+
+/* 스킬 섹션 */ 
+.sk_box{width:1000px}
+.sk_box .float_L{margin-left:0}
+.sk_box .float_R{margin-right:0}

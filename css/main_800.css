@@ -1,0 +1,221 @@
+@charset "utf-8";
+
+/* 전체 */
+body{overflow-x:hidden}
+#wrapper{position:relative;right:0;min-width:320px;transition:.3s right 0s linear;box-sizing: border-box;}
+#wrapper.on{right:130px}
+.wrap_cen{width:100%;padding:0 20px;box-sizing:border-box;}
+
+/* 헤더 */
+#gnb_pc{display:none}
+
+.gnb_m_box{display:block}
+#gnb_m .gnb_menu{width:130px;}
+
+#all_m a{display:block; line-height:0}
+
+#gnb_m{position:fixed; float:right; top:0; right:-130px; height:100%; background:#ff229f; z-index:99999; transition:.3s right 0s linear}
+.gnb_m_box.on #gnb_m{right:0;}
+#gnb_m .gnb_menu li{border-bottom:1px solid #fff}
+#gnb_m .gnb_menu li a{display:block; padding:14px 15px; color:#fff; }
+#gnb_m .gnb_menu li.on a{color:#ffff00; background:rgba(0,0,0,.12)}
+
+#bg_allmenu{display:none; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.3); z-index:9999}
+#bg_allmenu.on{display:block}
+
+/* 섹션공통 */
+section{padding:60px 0}
+section > .sec_t{font-size:40px; line-height:26px}
+
+/* 메인섹션 - 메인카피 */
+.main_txt{padding:0 30px; width:100%; top:0; box-sizing:border-box;}
+
+.txtBox_st1{text-align:center}
+.txtBox_st1 .float_L,
+.txtBox_st1 .float_R{clear:both; float:None !important}
+
+.sub_logo{margin-bottom:20px}
+#main .sub_logo img{width:100%; max-width:345px}
+.main_copy{padding:0; border-left:0}
+.main_copy:before{display:block; content:''; margin:20px auto; width:100px; border-top:3px solid #ff0090}
+#main .main_copy img{width:100%; max-width:463px}
+.main_ct{padding:0; border-left:0}
+
+/* 메인섹션 - 메뉴 */
+.main_menu{left:0; background-color:rgba(0,0,0,.3); -webkit-animation:toB2 1s ease-in-out;; animation:toB2 1s ease-in-out; opacity:0; bottom:-30px}
+#main.active .main_menu{-webkit-animation:fromB2 1s ease-in-out; animation:fromB2 1s ease-in-out; -webkit-animation-fill-mode:backwards; animation-fill-mode:backwards; opacity:1; bottom:0}
+#main .gnb_menu{width:100%; margin:0 20px; box-sizing:border-box}
+
+#main .gnb_menu li:before{margin-top:10px}
+
+#main .gnb_menu li{width:31.5%; margin:0}
+
+#main .gnb_menu li:before{border-top: 8px solid #ff229f;border-left: 7px solid transparent;border-right: 7px solid transparent;}
+#main .gnb_menu li:hover:before, #main .gnb_menu li.on:before{-webkit-animation-play-state:paused; animation-play-state:paused}
+#main .gnb_menu li:hover:before, #main .gnb_menu li.on:before{-webkit-animation:arrowStr2 1.5s linear infinite; animation:arrowStr2 1.5s linear infinite}
+
+@keyframes arrowStr2{0%{top:3px} 50%{top:-2px} 100%{top:3px}}
+
+#main .gnb_menu li a{padding:84px 0 0 0; background-color:transparent; background-size:auto; border:0; border-radius:0}
+#main .gnb_menu li:hover a, #main .gnb_menu li.on a{border:0}
+
+@keyframes fromB2{0%{opacity:0; bottom:-30px} 100%{opacity:1; bottom:0}}
+@keyframes toB2{100%{opacity:0; bottom:-30px} 0%{opacity:1; bottom:0}}
+
+/* 프로젝트 섹션 */
+.drection_box{left:0; width:97%; margin:-16px 1.5% 0 1.5%}
+
+/* 포트폴리오 섹션 */
+#portfolio .el02{top:105px; left:calc(100% - 66px)}
+
+.filtr_wrap{overflow-x:scroll; -webkit-overflow-style:none;}
+.filtr_wrap::-webkit-scrollbar{width:0; height:0; display:none}
+.filter-form{text-align:center; border-top:1px solid #affdfb; border-bottom:1px solid #affdfb}
+.form-item{width:auto; margin:0 5px; border:0}
+
+.form-item label{color:#fff; border:0}
+.form-item input:checked ~ label,
+.form-item label:hover{color:#ffff00; border:0}
+
+.grid-sizer, .pf_item{width:32.3%}
+.pf_item{margin-bottom:1%}
+.pf_detail .pf_t{width:100%; border-bottom:1px dotted #fff}
+.pf_detail .pf_c{clear:both; width:100%}
+.page_hd:after{display:block; content:''; clear:both;}
+
+.pf_detail .btn_close a{top:15px; right:40px}
+.pf_detail .wrap_cen{width:100%; padding:0}
+
+/* 히스토리 섹션 */
+#history{background-position: -280px calc(50% + 20px), calc(100% + 280px) calc(50% + 20px), -300px -500px, calc(100% + 300px) calc(100% + 500px);}
+
+/* 스킬 섹션 */ 
+#skill .wrap_cen{margin-top:170px}
+.sk_box{width:100%; height:50%; left:0}
+.sk_box > ul{width:50%}
+.sk_box > ul > li{width:23.3%}
+.sk_box .float_L > li, .sk_box .float_R > li{margin:0 5%}
+.sk_box .sk_t li{font-size:0}
+
+/* 컨택 섹션 */ 
+#contact .sub_txt{width:100%; box-sizing:border-box}
+#contact .main_copy img{width:100%; max-width:551px}
+
+/* 반응형 ---------------------------------------------------*/ 
+@media screen and (max-width:767px){
+/* 전체 */
+.wrap_cen{padding:0}
+
+/* 헤더 */
+.page_hd{padding:5px 10px}
+
+/* 프로젝트 섹션 */
+#project{background-image:url("../images/main/bgProject_left.png"), url("../images/main/bgProject_top.png"); background-position:-65px -87px, calc(100% + 66px) -100px)}
+.slides{position:relative}
+.slides li{position:absolute; width:100%; text-align:center}
+.slides li:nth-child(odd){left:auto; margin-right:0}
+.slides li:nth-child(even){float:left; right:auto}
+
+.slides li:nth-child(1), .slides li:nth-child(2){background:none}
+.slides.loading span{background:url("../images/main/loading2.png") center no-repeat}
+
+/* 포트폴리오 섹션 */
+.grid-sizer, .pf_item{width:48.5%}
+
+.pf_detail .pf_t{font-size:24px; line-height:30px}
+.pf_detail .type{font-size:16px}
+
+/* 히스토리 섹션 */
+#history{background-position:-350px calc(50% + 20px), calc(100% + 350px) calc(50% + 20px), -300px -500px, calc(100% + 300px) calc(100% + 500px)}
+
+/* 스킬 섹션 */ 
+#skill .progress.only{background-size:80%; background-position:center 6px;}
+#skill .progress.double{background-size:60%, 60%;background-position:center 46px, center 6px;}
+
+}/* e.767px */
+
+@media screen and (max-width:599px){
+
+/* 메인섹션 */
+#main{background-size:50px, cover}
+#main .el01{top:67px; left:calc(100% - 105px)}
+
+/* 메인섹션 - 메뉴 */
+.main_menu{margin-top:30px}
+#main .gnb_menu li a{padding:50px 0 0 0; background-size:40px}
+
+/* 포트폴리오 섹션 */
+.grid-sizer, .pf_item{width:100%}
+.pf_item{margin-bottom:10px}
+
+/* 히스토리 섹션 */
+#hisroty .bg_el{display:none}
+
+.ht_box >ul >li:before,
+.ht_box >ul >li:last-child:after{display:block; content:''; margin:5px auto; width:1px; height:20px; background:#fff}
+
+.ht_box > ul > li{padding:0}
+
+.ht_box >ul >li:nth-child(odd),
+.ht_box li:nth-child(odd) .ht_c{right:auto}
+.ht_box >ul >li:nth-child(even),
+.ht_box li:nth-child(even) .ht_c{left:auto}
+
+.ht_box li:nth-child(odd) .ht_ico,
+.ht_box li:nth-child(even) .ht_ico{float:none; left:auto}
+
+.ht_box li .ht_ico{position:relative; width:100%}
+
+#history.active li:nth-child(1) .ht_ico{-webkit-animation:rotationY .5s ease-in-out 1s;; animation:rotationY .5s ease-in-out 1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards}
+#history.active li:nth-child(2) .ht_ico{-webkit-animation:rotationY .5s ease-in-out 1.5s; animation:rotationY .5s ease-in-out 1.5s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards}
+#history.active li:nth-child(3) .ht_ico{-webkit-animation:rotationY .5s ease-in-out 2s; animation:rotationY .5s ease-in-out 2s; animation-fill-mode: forwards; animation-fill-mode: forwards}
+#history.active li:nth-child(4) .ht_ico{-webkit-animation:rotationY .5s ease-in-out 2.5s; animation:rotationY .5s ease-in-out 2.5s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards}
+#history.active li:nth-child(5) .ht_ico{-webkit-animation:rotationY .5s ease-in-out 3s; animation:rotationY .5s ease-in-out 3s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards}
+#history.active li:nth-child(6) .ht_ico{-webkit-animation:rotationY .5s ease-in-out 3.5s; animation:rotationY .5s ease-in-out 3.5s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards}
+
+.ht_box li .ht_c{text-align:center}
+
+.ht_box li:nth-child(odd) ul li,
+.ht_box li:nth-child(even) ul li{float:none; display:block}
+
+.ht_box li .ht_c .date{display:inline-block}
+
+.ht_box li:nth-child(odd) .ht_c .date,
+.ht_box li:nth-child(even) .ht_c .date{border-radius:20px}
+.ht_box li:nth-child(odd) .ht_point{clear:both; float:none; top:-64px; left:auto; width:9px; margin:0 auto}
+.ht_box li:nth-child(even) .ht_point{clear:both; float:none; top:-64px; right:auto; width:9px; margin:0 auto}
+
+}/* e.#599px */
+
+@media screen and (max-width:479px){
+
+/* 전체 */
+.m_br{display:block}
+
+/* 프로젝트 섹션 */
+.slides{position:static}
+.slides li:nth-child(odd),.slides li:nth-child(even){left:0}
+
+.drection_btn .prev{background:rgba(0,0,0,.3) url("../images/main/btn1_prev_off.png") center no-repeat; border-radius:50px}
+.drection_btn .next{background:rgba(0,0,0,.3) url("../images/main/btn1_next_off.png") center no-repeat; border-radius:50px}
+.drection_btn .prev:hover{background:rgba(0,0,0,.3) url("../images/main/btn1_prev_on.png") center no-repeat}
+.drection_btn .next:hover{background:rgba(0,0,0,.3) url("../images/main/btn1_next_on.png") center no-repeat}
+
+/* 컨택 섹션 */
+#contact .sub_txt{margin:40px auto}
+
+}/* e.479px */
+
+@media screen and (max-width:399px){
+
+/* 포트폴리오 섹션 */
+.pf_detail .pf_c span{display:block; line-height:15px}
+.pf_detail .pf_c1{background-position:left top}
+.pf_detail .pf_c2{background-position:left top}
+.pf_detail .pf_c3{background-position:left top}
+.pf_detail .pf_c4{background-position:left top}
+.pf_detail .pf_c5{background-position:left top}
+
+.pf_detail .pf_li_c{margin-bottom:10px}
+
+}/* e.399px */
