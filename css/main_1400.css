@@ -322,7 +322,8 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 .ht_box li:nth-child(odd) .ht_c .date{border-radius: 20px 0 20px 20px;}
 .ht_box li:nth-child(even) .ht_c .date{border-radius:0 20px 20px 20px;}
 .ht_box li .ht_c .content1{color:#333; font-size:15px; overflow:hidden; -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards}
-.ht_box li .ht_c .content2{color:#ff4800; line-height:16px; overflow:hidden; -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards}
+.ht_box li .ht_c .content1_2{color: #0066ff;font-size: 13px;font-weight: 300;overflow:hidden;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;}
+.ht_box li .ht_c .content2{color:#ff4800;font-size: 13px;line-height: 14px;overflow:hidden;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;}
 
 .ht_box >ul >li:nth-child(odd){right:calc(50% - 1px); border-right:1px solid #fff;}
 .ht_box li:nth-child(odd) .ht_point{float:right; left:7.5px}
