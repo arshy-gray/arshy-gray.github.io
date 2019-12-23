@@ -295,7 +295,7 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 .ht_box li.ht_license .ht_ico{background-image:url("../images/main/icoHistory_license.png")}
 .ht_box li.ht_company .ht_ico{background-image:url("../images/main/icoHistory_company.png")}
 .ht_box li:nth-child(odd) .ht_ico{float:left; left:calc(100% + 20px);}
-.ht_box li:nth-child(even) .ht_ico{float:right; left:-84px}
+.ht_box li:nth-child(even) .ht_ico{float:right;left: -82px;}
 
 #history.active li:nth-child(1) .ht_ico{-webkit-animation:rotationY .5s ease-in-out 2.5s; animation:rotationY .5s ease-in-out 2.5s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards}
 #history.active li:nth-child(2) .ht_ico{-webkit-animation:rotationY .5s ease-in-out 3s; animation:rotationY .5s ease-in-out 3s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards}
@@ -325,12 +325,15 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 .ht_box li .ht_c .content1_2{color: #0066ff;font-size: 13px;font-weight: 300;overflow:hidden;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;}
 .ht_box li .ht_c .content2{color:#ff4800;font-size: 13px;line-height: 14px;overflow:hidden;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;}
 
+
 .ht_box >ul >li:nth-child(odd){right:calc(50% - 1px); border-right:1px solid #fff;}
 .ht_box li:nth-child(odd) .ht_point{float:right; left:7.5px}
-.ht_box li:nth-child(odd) .ht_c{right: 10px;}
+.ht_box li:nth-child(odd) .ht_c{right: 5px;}
+.ht_box li:nth-child(odd) .ht_c .content2 li {float:right;}
 
 .ht_box >ul >li:nth-child(even){left:50%; text-align:left; border-left:1px solid #fff}
 .ht_box li:nth-child(even) .ht_point{float:left; right:8.5px}
+
 
 /* 스킬 섹션 */ 
 #skill{background:#ff229f url("../images/main/bgSkill_back.png") calc(50% - 330px) calc(50% - 100px) no-repeat; border-bottom:30px solid #ffcc00; overflow:hidden}
