@@ -25,7 +25,7 @@ a:hover{color:#F30; text-decoration:none}
 
 .hidden{position:absolute !important; visibility:hidden !important; font-size:0 !important; line-height:0 !important; height:0 !important; overflow:hidden !important}
 .float_L{float:left !important}
-.float_R{float:right !important}
+.float_R{float:right !important;}
 .clearFix{clear:both; overflow:hidden}
 
 .table_c1{margin:0 0 20px 0}

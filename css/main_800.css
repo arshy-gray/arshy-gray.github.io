@@ -2,23 +2,12 @@
 
 /* 전체 */
 body{overflow-x:hidden}
-#wrapper{position:relative;right:0;min-width:320px;transition:.3s right 0s linear;box-sizing: border-box;}
+#wrapper{position:relative;right:0;min-width: 360px;transition:.3s right 0s linear;box-sizing: border-box;overflow: hidden;}
 #wrapper.on{right:130px}
 .wrap_cen{width:100%;padding:0 20px;box-sizing:border-box;}
 
 /* 헤더 */
-#gnb_pc{display:none}
-
-.gnb_m_box{display:block}
-#gnb_m .gnb_menu{width:130px;}
-
 #all_m a{display:block; line-height:0}
-
-#gnb_m{position:fixed; float:right; top:0; right:-130px; height:100%; background:#ff229f; z-index:99999; transition:.3s right 0s linear}
-.gnb_m_box.on #gnb_m{right:0;}
-#gnb_m .gnb_menu li{border-bottom:1px solid #fff}
-#gnb_m .gnb_menu li a{display:block; padding:14px 15px; color:#fff; }
-#gnb_m .gnb_menu li.on a{color:#ffff00; background:rgba(0,0,0,.12)}
 
 #bg_allmenu{display:none; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.3); z-index:9999}
 #bg_allmenu.on{display:block}
@@ -101,7 +90,7 @@ section > .sec_t{font-size:40px; line-height:26px}
 .wrap_cen{padding:0;}
 
 /* 헤더 */
-.page_hd{padding:5px 10px}
+.page_hd{padding:5px 10px;}
 
 /* 프로젝트 섹션 */
 #project{background-image:url("../images/main/bgProject_left.png"), url("../images/main/bgProject_top.png"); background-position:-65px -87px, calc(100% + 66px) -100px)}

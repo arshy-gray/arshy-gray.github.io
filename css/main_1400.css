@@ -12,7 +12,7 @@
 /* 전체 */
 body{position:relative}
 #wrapper{width:100%; min-width:1400px}
-.wrap_cen{clear:both; position:relative; margin:0 auto; width:1400px; height:100%; overflow:hidden}
+.wrap_cen{clear:both;position:relative;margin:0 auto;width:1400px;height:100%;overflow:hidden;}
 *::selection {background: #ff229f; color: #fff}
 .bg_el{position:absolute; top:0; left:0; width:100%; height:100%; z-index:0}
 .bg_el span{position:absolute; top:0; left:0;}
@@ -23,19 +23,21 @@ body{position:relative}
 .page_hd .logo{display:none}
 
 .page_hd .float_R{margin:9px 0}
-#gnb_pc .gnb_menu li{float:left; margin-left:20px}
-#gnb_pc .gnb_menu li a {color:#eee}
+#gnb_pc .gnb_menu li{float:left}
+#gnb_pc .gnb_menu li:not(:first-child) {margin-left:15px}
+#gnb_pc .gnb_menu li a {font-size:13px;color:#eee}
 #gnb_pc .gnb_menu li a:hover,
 #gnb_pc .gnb_menu li.on a{color: #ffff00;}
 
 .page_hd.visible{background:#fff;border-bottom:1px solid #ececec;}
-.page_hd.visible .logo{display:block}
+.page_hd.visible .logo{display:block;margin:4px 0;width:60px;}
+.page_hd.visible .logo a {display:block;}
+.page_hd.visible .logo img {width:100%}
 
 .page_hd.visible #gnb_pc .gnb_menu a{color:#000}
 .page_hd.visible #gnb_pc .gnb_menu li a:hover,
 .page_hd.visible #gnb_pc .gnb_menu li.on a{color: #ff229f;}
 
-.gnb_m_box{display:none;}
 .pf_on .page_hd{display:none}
 
 /* 섹션공통 */

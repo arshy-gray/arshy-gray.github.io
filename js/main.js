@@ -96,19 +96,10 @@ $(window).load(function(){
 			$header = $(this),
 			$gnb = $header.find('.gnb_menu'), // 헤더 스타일 저장
 			$section01 = $('#main'),
-
-			//메뉴 복사
-			$gnbClone = $gnb.clone(),
-
-			//헤더 스타일 복사할 영역에 추가할 HTML 코드
-			$menuMobile = $('#gnb_m'), //모바일 메뉴 삽입 위치
 			
 			//웹 페이지상단에서 section01 아래 위치까지의 길이
 			//section01의 상단 위치 + section01의 높이
 			threshold = $section01.outerHeight();
-				
-		//메뉴 삽입
-		$menuMobile.append($gnbClone); //모바일 메뉴
 		
 		//스크롤시 헤더 스타일 변화, 초당 15회
 		$window.on('scroll', $.throttle(1000 / 15, function(){
@@ -133,34 +124,7 @@ $(window).load(function(){
 		}
 	});
 
-	/* 모바일메뉴 -------------------*/
-	(function(){
-		var $mMenuContainer = $('.gnb_m_box'),
-			$mobileBtn = $('#all_m'),
-			$gnbContainer = $('#gnb_m'),
-			$gnbWidth = $gnbContainer.find('.gnb_menu').css('width'),
-			$wrapper = $('#wrapper'),
-			$bgAll = $('#bg_allmenu');
 
-			$mobileBtn.on('click', function(){
-				if($mMenuContainer.hasClass('on')){
-					$wrapper.removeClass('on');
-					$bgAll.removeClass('on');
-					$mMenuContainer.removeClass('on');
-				}else{
-					$wrapper.addClass('on');
-					$bgAll.addClass('on');
-					$mMenuContainer.addClass('on');
-				}
-			});
-
-			$bgAll.on('click', function(){
-				$wrapper.removeClass('on');
-				$bgAll.removeClass('on');
-				$mMenuContainer.removeClass('on');
-			});
-
-	})();
 
 	  /* Project Slide -------------- */
     $('.slide_wrap').each(function () {
