@@ -154,8 +154,8 @@ section > .sec_t{font-size:40px; line-height:26px}
 
 .ht_box li .ht_c{text-align:center}
 
-.ht_box li:nth-child(odd) ul li,
-.ht_box li:nth-child(even) ul li{float:none; display:block}
+.ht_box > ul > li:nth-child(odd) ul li, .ht_box > ul > li:nth-child(even) ul li{float:none; display:block}
+.ht_box li:nth-child(odd) .ht_c .content2 li {/* float:none; */}
 
 .ht_box li .ht_c .date{display:inline-block}
 
