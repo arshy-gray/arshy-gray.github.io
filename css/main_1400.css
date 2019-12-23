@@ -19,16 +19,24 @@ body{position:relative}
 .bg_el img{position:relative}
 
 /* 헤더 */
-.page_hd{position:fixed; padding:5px 0; top:-51px; background:#fff; border-bottom:1px solid #ececec; box-sizing:border-box; -webkit-transition:.3s top 0s cubic-bezier(0, 0, 0, 0.64); transition:.3s top 0s cubic-bezier(0, 0, 0, 0.64); z-index:99999;}
-.page_hd.visible{top:0}
-.pf_on .page_hd{display:none}
+.page_hd{position:fixed; padding:5px 0; top:0;box-sizing:border-box;background:transparent; -webkit-transition:.3s all 0s cubic-bezier(0, 0, 0, 0.64); transition:.3s all 0s cubic-bezier(0, 0, 0, 0.64); z-index:99999;}
+.page_hd .logo{display:none}
 
 .page_hd .float_R{margin:9px 0}
 #gnb_pc .gnb_menu li{float:left; margin-left:20px}
+#gnb_pc .gnb_menu li a {color:#eee}
 #gnb_pc .gnb_menu li a:hover,
-#gnb_pc .gnb_menu li.on a{color:#ff0000}
+#gnb_pc .gnb_menu li.on a{color: #ffff00;}
+
+.page_hd.visible{background:#fff;border-bottom:1px solid #ececec;}
+.page_hd.visible .logo{display:block}
+
+.page_hd.visible #gnb_pc .gnb_menu a{color:#000}
+.page_hd.visible #gnb_pc .gnb_menu li a:hover,
+.page_hd.visible #gnb_pc .gnb_menu li.on a{color: #ff229f;}
 
 .gnb_m_box{display:none;}
+.pf_on .page_hd{display:none}
 
 /* 섹션공통 */
 section{clear:both; position:relative; padding:90px 0; box-sizing:border-box}
@@ -61,16 +69,14 @@ section{clear:both; position:relative; padding:90px 0; box-sizing:border-box}
 }
 
 /* 메인섹션 - 메인카피 */
-.main_txt{position:relative; width:850px; margin:0 auto; padding:30px; top:10%; overflow:hidden}
-.main_copy{padding:5px 0 20px 20px; border-left:3px solid #ffff00}
-.main_ct{padding:5px 0 5px 20px; line-height:18px; color:#fff; border-left:3px solid #ff0090; opacity:.9}
+.main_txt{position:relative;padding:30px;top:10%;text-align:center;overflow:hidden;}
+.main_txt .sub_logo {display:block}
+.main_ct{display:inline-block;margin-top:20px;padding:10px 20px; line-height:18px; color:#fff; border-top:3px solid #ff0090;opacity:.9}
 
 section .txtBox_st1 .sub_logo img{position:relative; -webkit-animation:toL 1s ease-in-out; animation:toL 1s ease-in-out; opacity:0; right:30px}
-section .txtBox_st1 .main_copy img{position:relative; -webkit-animation:toT .7s cubic-bezier(0.4, 0, 0.2, 1) .7s; animation:toT .7s cubic-bezier(0.4, 0, 0.2, 1) .7s; opacity:0; top:30px}
 section .txtBox_st1 .main_ct span{position:relative; -webkit-animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); opacity:0; bottom:30px}
 
 section.active .txtBox_st1 .sub_logo img{-webkit-animation:fromL .7s cubic-bezier(0.4, 0, 0.2, 1); animation:fromL .7s cubic-bezier(0.4, 0, 0.2, 1); opacity:1; right:0}
-section.active .txtBox_st1 .main_copy img{-webkit-animation:fromT .7s cubic-bezier(0.4, 0, 0.2, 1); animation:fromT .7s cubic-bezier(0.4, 0, 0.2, 1); opacity:1; top:0}
 section.active .txtBox_st1 .main_ct span{-webkit-animation:fromR .7s cubic-bezier(0.4, 0, 0.2, 1); animation:fromR .7s cubic-bezier(0.4, 0, 0.2, 1); opacity:1; bottom:0}
 
 @keyframes fromL{0%{opacity:0; right:15px} 100%{opacity:1; right:0}}
@@ -82,44 +88,6 @@ section.active .txtBox_st1 .main_ct span{-webkit-animation:fromR .7s cubic-bezie
 @keyframes toR{100%{opacity:0; left:15px} 0%{opacity:1; left:0}}
 @keyframes toT{100%{opacity:0; top:-15px} 0%{opacity:1; top:0}}
 @keyframes toB{100%{opacity:0; top:15px} 0%{opacity:1; top:0}}
-
-/* 메인섹션 - 메뉴 */
-.main_menu{clear:both; position:absolute; bottom:0; margin-top:60px; padding-bottom:30px}
-#main .gnb_menu li{position:relative; float:left; margin:0 2.5%; width:11.6%; -webkit-animation:toB 1s cubic-bezier(0, 1.17, 0.97, 1.3); animation:toB 1s cubic-bezier(0, 1.17, 0.97, 1.3); opacity:0; top:30px}
-#main.active .gnb_menu li{-webkit-animation:fromB 10s cubic-bezier(0, 1.17, 0.97, 1.3) infinite; animation:fromB 10s cubic-bezier(0, 1.17, 0.97, 1.3) infinite; -webkit-animation-fill-mode:backwards; animation-fill-mode:backwards; opacity:1; top:0}
-#main.active .gnb_menu li.on{-webkit-animation:fromB 10s cubic-bezier(0, 1.17, 0.97, 1.3) infinite; animation:fromB 10s cubic-bezier(0, 1.17, 0.97, 1.3) infinite; -webkit-animation-fill-mode:backwards; animation-fill-mode:backwards; opacity:1; top:0}
-#main .gnb_menu li:hover:before,
-#main .gnb_menu li.on:before{opacity:1; -webkit-animation:arrowStr 2s cubic-bezier(0.4, 0, 0.2, 1) infinite; animation:arrowStr 2s cubic-bezier(0.4, 0, 0.2, 1) infinite}
-
-#main .gnb_menu li:nth-child(1){-webkit-animation-delay:.5s; animation-delay:.5s}
-#main .gnb_menu li:nth-child(2){-webkit-animation-delay:.4s; animation-delay:.4s}
-#main .gnb_menu li:nth-child(3){-webkit-animation-delay:.3s; animation-delay:.3s}
-#main .gnb_menu li:nth-child(4){-webkit-animation-delay:.2s; animation-delay:.2s}
-#main .gnb_menu li:nth-child(5){-webkit-animation-delay:.1s; animation-delay:.1s}
-#main .gnb_menu li:nth-child(6){-webkit-animation-delay:0s; animation-delay:0s}
-
-#main.active .gnb_menu li:nth-child(1){-webkit-animation-delay:0s; animation-delay:0s}
-#main.active .gnb_menu li:nth-child(2){-webkit-animation-delay:.1s; animation-delay:.1s}
-#main.active .gnb_menu li:nth-child(3){-webkit-animation-delay:.2s; animation-delay:.2s}
-#main.active .gnb_menu li:nth-child(4){-webkit-animation-delay:.3s; animation-delay:.3s}
-#main.active .gnb_menu li:nth-child(5){-webkit-animation-delay:.4s; animation-delay:.4s}
-#main.active .gnb_menu li:nth-child(6){-webkit-animation-delay:.5s; animation-delay:.5s}
-
-#main .gnb_menu li a{display:block; opacity:.5; padding:110px 0 26px 0; width:100%; height:100%; color:#ff229f; text-align:center; background-color:rgba(0,0,0,.3); background-repeat:no-repeat; background-position:center 35%; border: 1px solid #6a2960; border-radius:80px; -webkit-transition:.3s all 0s linear; transition:.3s all 0s linear; box-sizing:border-box}
-#main .gnb_menu li:before{display:block; content:''; position:relative; margin:auto; top:-10px; width:0; text-align:center;  border-top:10px solid #ff229f; border-left:9px solid transparent; border-right:9px solid transparent; -webkit-transition:.3s all 0s linear; transition:.3s all 0s linear; opacity:0}
-#main .gnb_menu li.menu1 a{background-image:url("../images/main/icoGnb01.png")}
-#main .gnb_menu li.menu2 a{background-image:url("../images/main/icoGnb02.png")}
-#main .gnb_menu li.menu3 a{background-image:url("../images/main/icoGnb03.png")}
-#main .gnb_menu li.menu4 a{background-image:url("../images/main/icoGnb04.png")}
-#main .gnb_menu li.menu5 a{background-image:url("../images/main/icoGnb05.png")}
-#main .gnb_menu li.menu6 a{background-image:url("../images/main/icoGnb06.png")}
-#main .gnb_menu li:hover a,
-#main .gnb_menu li:focus a,
-#main .gnb_menu li.on a{opacity:1; border: 1px solid #ff229f;}
-#main .gnb_menu li.on a{-webkit-animation:blink 2s cubic-bezier(0.4, 0, 0.2, 1) infinite; animation:blink 2s cubic-bezier(0.4, 0, 0.2, 1) infinite}
-
-@keyframes blink{0%{opacity:1} 50%{opacity:.7} 100%{opacity:1}}
-@keyframes arrowStr{0%{top:-10px} 50%{top:-15px} 100%{top:-10px}}
 
 /* 콘텐츠 섹션 공통 - 메뉴 */
 section > .sec_t{position:relative; color:#fff; text-align:center; font-size:50px; line-height:42px; -webkit-animation:toT .7s cubic-bezier(0.4, 0, 0.2, 1); animation:toT .7s cubic-bezier(0.4, 0, 0.2, 1); top:-30px; opacity:0; z-index:1}
@@ -164,7 +132,7 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 @keyframes rotate{0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)}}
 
 /* 포트폴리오 섹션 */
-#portfolio{background-color:#00d4cd; background-repeat:no-repeat; background-image:url("../images/main/bgPortfoilo_top.png"), url("../images/main/bgPortfolio_btm.png"); background-position:calc(50% - 585px) 10px, right bottom; background-attachment:scroll, fixed}
+#portfolio{background-color: #01d3ce;background-repeat:no-repeat;background-image:url("../images/main/bgPortfoilo_top.png"), url("../images/main/bgPortfolio_btm.png");background-position:calc(50% - 585px) 10px, right bottom;background-attachment:scroll, fixed;}
 #portfolio .el01{top:12px; left:calc(50% - 342px); -webkit-animation:blink 4s ease-in-out infinite; animation:blink 4s ease-in-out infinite}
 #portfolio .el02{top:182px; left:calc(50% + 669px); -webkit-animation:zoomIn 10s ease-out infinite; animation:zoomIn 10s ease-out infinite; -webkit-transform-origin:center; transform-origin:center}
 
@@ -333,72 +301,6 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 
 .ht_box >ul >li:nth-child(even){left:50%; text-align:left; border-left:1px solid #fff}
 .ht_box li:nth-child(even) .ht_point{float:left; right:8.5px}
-
-
-/* 스킬 섹션 */ 
-#skill{background:#ff229f url("../images/main/bgSkill_back.png") calc(50% - 330px) calc(50% - 100px) no-repeat; border-bottom:30px solid #ffcc00; overflow:hidden}
-#skill .wrap_cen{position:static}
-#skill .el01{top:50%; left:50%; margin:-859px 0 0 -888px; -webkit-animation:rotation 400s linear infinite; animation:rotation 400s linear infinite; transform-origin:center}
-
-@keyframes rotation{0%{-webkit-transform:rotate3D(0,0,0,0deg); transform:rotate3D(0,0,0,0deg)} 100%{-webkit-transform:rotate3D(5,5,20,360deg); transform:rotate3D(5,5,20,360deg)}}
-
-.sk_box{position:absolute; bottom:0; width:1400px; height:100%}
-.sk_box > ul{width:auto; height:100%}
-.sk_box > ul > li{float:left; position:relative; width:95px; height:100%}
-
-.sk_box .float_L{margin-left:120px}
-.sk_box .float_L > li{margin-right:20px}
-
-.sk_box .float_R{margin-right:120px}
-.sk_box .float_R > li{margin-left:20px}
-
-.sk_box .max{display:inline-block; position:absolute; width:100%; height:90%; bottom:0}
-#skill .progress{display:inline-block; position:absolute; width:100%; bottom:0; background-color:rgba(255, 204, 0, 0.8); -webkit-animation-duration:1s; animation-duration:1s; -webkit-animation-timing-function:cubic-bezier(0, 1.24, 0.86, 1.09); animation-timing-function:cubic-bezier(0, 1.24, 0.86, 1.09); background-repeat:no-repeat}
-#skill .progress.only{background-position:center 6px;}
-#skill .progress.double{background-size:44%, 60%;background-position:87% 30px, 17% 6px;}
-
-.sk_t .sk_ico{position:absolute}
- 
-#skill .photoshop .progress{-webkit-animation-name:bar-90; animation-name:bar-90; background-image:url("../images/main/icoSkill_ai.png"), url("../images/main/icoSkill_ps.png")}
-#skill .HTML5 .progress{-webkit-animation-name:bar-85; animation-name:bar-85; background-image:url("../images/main/icoSkill_css.png"), url("../images/main/icoSkill_html.png")}
-#skill .jQuery .progress{-webkit-animation-name:bar-70; animation-name:bar-70; background-image:url("../images/main/icoSkill_jq.png")}
-#skill .standard .progress{-webkit-animation-name:bar-90; animation-name:bar-90; background-image:url("../images/main/icoSkill_w3c.png")}
-#skill .accessibility .progress{-webkit-animation-name:bar-80; animation-name:bar-80; background-image:url("../images/main/icoSkill_cross.png"), url("../images/main/icoSkill_wa.png")}
-#skill .responsive .progress{-webkit-animation-name:bar-90; animation-name:bar-90; background-image:url("../images/main/icoSkill_respond.png")}
-
-#skill.active .photoshop .progress{height:90%; -webkit-animation-name:bar90; animation-name:bar90}
-#skill.active .HTML5 .progress{height:85%; -webkit-animation-name:bar85; animation-name:bar85}
-#skill.active .jQuery .progress{height:70%; -webkit-animation-name:bar70; animation-name:bar70}
-#skill.active .standard .progress{height:90%; -webkit-animation-name:bar90; animation-name:bar90}
-#skill.active .accessibility .progress{height:80%; -webkit-animation-name:bar80; animation-name:bar80}
-#skill.active .responsive .progress{height:90%; -webkit-animation-name:bar90; animation-name:bar90}
-
-@keyframes bar30{0%{height:0%} 100%{height:30%}}
-@keyframes bar40{0%{height:0%} 100%{height:40%}}
-@keyframes bar50{0%{height:0%} 100%{height:50%}}
-@keyframes bar60{0%{height:0%} 100%{height:60%}}
-@keyframes bar70{0%{height:0%} 100%{height:70%}}
-@keyframes bar75{0%{height:0%} 100%{height:75%}}
-@keyframes bar80{0%{height:0%} 100%{height:80%}}
-@keyframes bar85{0%{height:0%} 100%{height:85%}}
-@keyframes bar90{0%{height:0%} 100%{height:90%}}
-@keyframes bar95{0%{height:0%} 100%{height:95%}}
-@keyframes bar100{0%{height:0%} 100%{height:100%}}
-
-@keyframes bar-30{0%{height:30%} 100%{height:0%}}
-@keyframes bar-40{0%{height:40%} 100%{height:0%}}
-@keyframes bar-50{0%{height:50%} 100%{height:0%}}
-@keyframes bar-60{0%{height:60%} 100%{height:0%}}
-@keyframes bar-70{0%{height:70%} 100%{height:0%}}
-@keyframes bar-75{0%{height:75%} 100%{height:0%}}
-@keyframes bar-80{0%{height:80%} 100%{height:0%}}
-@keyframes bar-85{0%{height:85%} 100%{height:0%}}
-@keyframes bar-90{0%{height:90%} 100%{height:0%}}
-@keyframes bar-95{0%{height:95%} 100%{height:0%}}
-@keyframes bar-100{0%{height:100%} 100%{height:0%}}
-
-.sk_t{position:absolute;width:100%;bottom:0;color:#fff;line-height:18px;text-align:center;background: linear-gradient(to bottom, rgba(255, 204, 0, 0),  rgba(255, 204, 0, 1));}
-.sk_box .sk_c{position:absolute; width:100%; top:-22px; color:#fff; text-align:center}
 
 /* 컨택 섹션 */ 
 #contact{background-image: url("../images/main/bgContact_cen.png"), url("../images/main/bgContact_back2.png"), url("../images/main/bgContact_back2.png"), url("../images/main/bgContact_back.jpg");background-position: center, -300px calc(100% + 300px), calc(100% + 280px) -200px, center;background-attachment:scroll, fixed, fixed, fixed;background-repeat: no-repeat, no-repeat, no-repeat, repeat;background-size:auto, auto, auto, cover;overflow:hidden;}

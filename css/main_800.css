@@ -36,14 +36,9 @@ section > .sec_t{font-size:40px; line-height:26px}
 
 .sub_logo{margin-bottom:20px}
 #main .sub_logo img{width:100%; max-width:345px}
-.main_copy{padding:0; border-left:0}
-.main_copy:before{display:block; content:''; margin:20px auto; width:100px; border-top:3px solid #ff0090}
-#main .main_copy img{width:100%; max-width:463px}
 .main_ct{padding:0; border-left:0}
 
 /* 메인섹션 - 메뉴 */
-.main_menu{left:0; background-color:rgba(0,0,0,.3); -webkit-animation:toB2 1s ease-in-out;; animation:toB2 1s ease-in-out; opacity:0; bottom:-30px}
-#main.active .main_menu{-webkit-animation:fromB2 1s ease-in-out; animation:fromB2 1s ease-in-out; -webkit-animation-fill-mode:backwards; animation-fill-mode:backwards; opacity:1; bottom:0}
 #main .gnb_menu{width:100%; margin:0 20px; box-sizing:border-box}
 
 #main .gnb_menu li:before{margin-top:10px}
@@ -99,7 +94,6 @@ section > .sec_t{font-size:40px; line-height:26px}
 
 /* 컨택 섹션 */ 
 #contact .sub_txt{width:100%; box-sizing:border-box}
-#contact .main_copy img{width:100%; max-width:551px}
 
 /* 반응형 ---------------------------------------------------*/ 
 @media screen and (max-width:767px){
