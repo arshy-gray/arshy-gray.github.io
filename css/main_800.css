@@ -17,15 +17,13 @@ section{padding:60px 0}
 section > .sec_t{font-size:40px; line-height:26px}
 
 /* 메인섹션 - 메인카피 */
-.main_txt{padding:0 30px; width:100%; top:0; box-sizing:border-box;}
+.main_txt{padding:0 30px;width:100%;box-sizing:border-box;}
 
 .txtBox_st1{text-align:center}
 .txtBox_st1 .float_L,
 .txtBox_st1 .float_R{clear:both; float:None !important}
 
-.sub_logo{margin-bottom:20px}
 #main .sub_logo img{width:100%; max-width:345px}
-.main_ct{padding:0; border-left:0}
 
 /* 메인섹션 - 메뉴 */
 #main .gnb_menu{width:100%; margin:0 20px; box-sizing:border-box}

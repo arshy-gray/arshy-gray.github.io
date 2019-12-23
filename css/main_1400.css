@@ -71,7 +71,7 @@ section{clear:both; position:relative; padding:90px 0; box-sizing:border-box}
 }
 
 /* 메인섹션 - 메인카피 */
-.main_txt{position:relative;padding:30px;top:10%;text-align:center;overflow:hidden;}
+.main_txt{position:relative;padding:30px;top:10%;text-align:center;overflow:hidden;box-sizing: border-box;}
 .main_txt .sub_logo {display:block}
 .main_ct{display:inline-block;margin-top:20px;padding:10px 20px; line-height:18px; color:#fff; border-top:3px solid #ff0090;opacity:.9}
 
