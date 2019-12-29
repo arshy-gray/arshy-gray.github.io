@@ -118,6 +118,7 @@ section > .sec_t{font-size:40px; line-height:26px}
 
 /* 메인섹션 */
 #main{background-size:50px, cover}
+.main_ct {width:100%;box-sizing:border-box;padding:10px}
 #main .el01{top:67px; left:calc(100% - 105px)}
 
 /* 메인섹션 - 메뉴 */
