@@ -73,7 +73,7 @@ section{clear:both; position:relative; padding:90px 0; box-sizing:border-box}
 /* 메인섹션 - 메인카피 */
 .main_txt{position:relative;padding:30px;top:10%;text-align:center;overflow:hidden;box-sizing: border-box;}
 .main_txt .sub_logo {display:block}
-.main_ct{display:inline-block;margin-top:20px;padding:10px 20px; line-height:18px; color:#fff; border-top:3px solid #ff0090;opacity:.9}
+.main_ct{display:inline-block;margin-top:20px;padding: 10px 100px;line-height:18px;color:#fff;border-top:3px solid #ff0090;opacity:.9;}
 
 section .txtBox_st1 .sub_logo img{position:relative; -webkit-animation:toL 1s ease-in-out; animation:toL 1s ease-in-out; opacity:0; right:30px}
 section .txtBox_st1 .main_ct span{position:relative; -webkit-animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); opacity:0; bottom:30px}
