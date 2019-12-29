@@ -397,10 +397,6 @@ $(window).load(function(){
 											'<span class="pf_li_t"><i class="fa fa-link"></i>웹사이트</span>' +
 											'<span class="pf_li_c"><a href="' + item.link + '" title="' + item.linkTitle + '" target="' + item.winTarget + '">' + item.link_ex + '</a></span>' +
 										'</li>' +
-										'<li class="pf_c7">' +
-											'<span class="pf_li_t"><i class="fa fa-lightbulb-o"></i>플러그인제작</span>' +
-											'<span class="pf_li_c">' + item.jquery + '</span>' +
-										'</li>' +
 									'</ul>' +
 								'</div>' +
 								'<div class="dt_img"><img src="' + item.images.detail + '" alt="포트폴리오 상세" /></div>' +
