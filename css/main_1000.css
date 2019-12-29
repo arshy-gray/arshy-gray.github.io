@@ -27,8 +27,3 @@
 
 /* 포트폴리오 섹션 */
 #portfolio .el02{left:calc(50% + 469px)}
-
-/* 스킬 섹션 */ 
-.sk_box{width:1000px}
-.sk_box .float_L{margin-left:0}
-.sk_box .float_R{margin-right:0}

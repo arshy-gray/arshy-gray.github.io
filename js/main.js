@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 	var $body = $('body'),
+		$wrapper = $('#wrapper'),
 		winHeight = $(window).outerHeight(),
 		$container = $('#loading'),// 1
 		$progress = $container.find('.progress');
@@ -81,7 +82,8 @@ $(document).ready(function(){
 
             // current가 99.9보다 크면 100으로 간주하여 종료
             if (current > 99.9) {
-                current = 100;				
+                current = 100;
+                $wrapper.addClass('on');				
             }
         }
 
@@ -96,22 +98,10 @@ $(window).load(function(){
 			$header = $(this),
 			$gnb = $header.find('.gnb_menu'), // 헤더 스타일 저장
 			$section01 = $('#main'),
-
-			//메뉴 복사
-			$gnbClone = $gnb.clone(),
-			$gnbClone2 = $gnb.clone(),
-
-			//헤더 스타일 복사할 영역에 추가할 HTML 코드
-			$menuMobile = $('#gnb_m'), //모바일 메뉴 삽입 위치
-			$menuMain = $section01.find('.main_menu'), //main 메뉴 삽입 위치
 			
 			//웹 페이지상단에서 section01 아래 위치까지의 길이
 			//section01의 상단 위치 + section01의 높이
-			threshold = $menuMain.offset().top + $menuMain.outerHeight();
-				
-		//메뉴 삽입
-		$menuMobile.append($gnbClone); //모바일 메뉴
-		$menuMain.append($gnbClone2); //메인 메뉴
+			threshold = $section01.outerHeight();
 		
 		//스크롤시 헤더 스타일 변화, 초당 15회
 		$window.on('scroll', $.throttle(1000 / 15, function(){
@@ -136,34 +126,7 @@ $(window).load(function(){
 		}
 	});
 
-	/* 모바일메뉴 -------------------*/
-	(function(){
-		var $mMenuContainer = $('.gnb_m_box'),
-			$mobileBtn = $('#all_m'),
-			$gnbContainer = $('#gnb_m'),
-			$gnbWidth = $gnbContainer.find('.gnb_menu').css('width'),
-			$wrapper = $('#wrapper'),
-			$bgAll = $('#bg_allmenu');
 
-			$mobileBtn.on('click', function(){
-				if($mMenuContainer.hasClass('on')){
-					$wrapper.removeClass('on');
-					$bgAll.removeClass('on');
-					$mMenuContainer.removeClass('on');
-				}else{
-					$wrapper.addClass('on');
-					$bgAll.addClass('on');
-					$mMenuContainer.addClass('on');
-				}
-			});
-
-			$bgAll.on('click', function(){
-				$wrapper.removeClass('on');
-				$bgAll.removeClass('on');
-				$mMenuContainer.removeClass('on');
-			});
-
-	})();
 
 	  /* Project Slide -------------- */
     $('.slide_wrap').each(function () {
@@ -333,7 +296,6 @@ $(window).load(function(){
 
 	 /* Portfolio -------------- */
 	 $('#pf_gellery').each(function () {
-
         // #gallery요소가 갤러리 컨테이너
         var $container = $(this),
 			$loadMoreButton = $('#load-more'), // 추가 버튼
@@ -391,11 +353,11 @@ $(window).load(function(){
                 // 추가 데이터의 배열
                 slicedData = filteredData.slice(addedd, addedd + addItemCount);
 
-
             // slicedData의 요소마다 DOM 요소를 생성
             $.each(slicedData, function (i, item) {
-                var itemHTML =
-                       '<li class="pf_item is-loading">' +
+            	var itemHTML = '';
+
+              itemHTML += '<li class="pf_item is-loading">' +
 						'<div class="pf_thumb">' +
 							'<div class="img_box"><img src="' + item.images.thumb + '" alt="' + item.title + '" /></div>' +
 							'<div class="txt_box">' +
@@ -408,9 +370,13 @@ $(window).load(function(){
 						'</div>' +
 						'<div class="pf_hover">' +
 							'<div class="btn_box"><ul>' +
-								'<li class="detail_btn"><a href="#none" title="자세히보기"><i class="fa fa-search"></i></a></li>' +
-								'<li class="siteLink_btn"><a href="' + item.link + '" title="웹사이트 바로가기"><i class="fa fa-link"></i></a></li>' +
-							'</ul></div>' +
+								'<li class="detail_btn"><a href="#none" title="자세히보기"><i class="fa fa-search"></i></a></li>';
+
+						if(item.link){
+								itemHTML += '<li class="siteLink_btn"><a href="' + item.link + '" title="' + item.linkTitle +'" target="' + item.winTarget + '"><i class="fa fa-link"></i></a></li>';
+							}					
+
+						itemHTML += '</ul></div>' +
 						'</div>' +
 						'<div class="pf_detail">' +
 								'<div class="btn_close"><a href="#none"><img src="./images/main/btn2_close.png" alt="닫기" /></a></div>' +
@@ -426,23 +392,23 @@ $(window).load(function(){
 											'<span class="pf_li_t"><i class="fa fa-calendar"></i>프로젝트기간</span>' +
 											'<span class="pf_li_c">' + item.project + '</span>' +
 										'</li>' +
-										'<li class="pf_c4">' +
-											'<span class="pf_li_t"><i class="fa fa-wrench"></i>CMS</span>' +
-											'<span class="pf_li_c">' + item.cms + '</span>' +
-										'</li>' +
 										'<li class="pf_c5">' +
 											'<span class="pf_li_t"><i class="fa fa-keyboard-o"></i>사용언어</span>' +
 											'<span class="pf_li_c">' + item.language + '</span>' +
 										'</li>' +
-										'<li class="pf_c6">' +
+										'<li class="pf_c4">' +
+											'<span class="pf_li_t"><i class="fa fa-wrench"></i>개발환경</span>' +
+											'<span class="pf_li_c">' + item.task_environment + '</span>' +
+										'</li>';
+
+										if(item.link){
+											itemHTML += '<li class="pf_c6">' +
 											'<span class="pf_li_t"><i class="fa fa-link"></i>웹사이트</span>' +
 											'<span class="pf_li_c"><a href="' + item.link + '" title="' + item.linkTitle + '" target="' + item.winTarget + '">' + item.link_ex + '</a></span>' +
-										'</li>' +
-										'<li class="pf_c7">' +
-											'<span class="pf_li_t"><i class="fa fa-lightbulb-o"></i>플러그인제작</span>' +
-											'<span class="pf_li_c">' + item.jquery + '</span>' +
-										'</li>' +
-									'</ul>' +
+										'</li>';
+										}
+										
+									itemHTML += '</ul>' +
 								'</div>' +
 								'<div class="dt_img"><img src="' + item.images.detail + '" alt="포트폴리오 상세" /></div>' +
 							'</div>' +
@@ -494,19 +460,18 @@ $(window).load(function(){
                 // all이 클릭 된 경우 모든 JSON 데이터를 저장
                 filteredData = allData;
             } // all 이외의 경우, 키와 일치하는 데이터를 추출
-			else if(key === 'ONLY PC' || key === 'PC&MOBILE' || key === 'RESPONSIVE'){
+						else if(key === 'ONLY PC' || key === 'PC&MOBILE' || key === 'RESPONSIVE'){
                 filteredData = $.grep(allData, function (item) {
                     return item.category === key;
                 });
-            } else {
-                 filteredData = $.grep(allData, function (item) {
-					return item.category2 === key;
-                });
+		            } else {
+		                 filteredData = $.grep(allData, function (item) {
+							return item.category2 === key;
+		                });
             }              
 
             // 항목을 추가
-            addItems(true);
-			
+            addItems(true);			
         }
 
 	 // 호버 효과
@@ -570,8 +535,7 @@ $(window).load(function(){
 			$('.pf_detail').removeClass('on').css('display','none');
 			$body.css({height:'auto', 'overflow-y':'auto'});
 			$('.page_hd').css('display','block');
-		});			
-
+		});	
     });
 
 	/* 풀페이지 : (콘텐츠 생성된 뒤에 실행해야하므로 최하단에 선언)-------------------*/
@@ -610,7 +574,6 @@ $(window).load(function(){
 			//풀페이지 콘텐츠(제목 제외) 최소 높이값
 			$section[i].find('.wrap_cen').css('minHeight', el3);
 		};
-
 	})();		
 
 	//반응형 초기화
@@ -645,8 +608,7 @@ $(window).load(function(){
 			//풀페이지 콘텐츠(제목 제외) 최소 높이값
 			$section[i].find('.wrap_cen').css('minHeight', el3);
 			
-		};
-		
+		};		
 	}));
 
 	/* 스크롤에 따른 동적효과 : (풀페이지 하단에 선언)-------------------*/
@@ -688,8 +650,5 @@ $(window).load(function(){
 					$gnbMain.eq(i).addClass('on');
 				}
 			}
-
-	})); 
-	
+	})); 	
 });
-

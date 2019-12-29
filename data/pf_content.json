@@ -1,326 +1,370 @@
 [
 	{
-		"title": "Song Aeri Portfolio",
+		"title": "KONVINI.ver2",
+		"type": "반응형",
+		"category": "RESPONSIVE",
+		"category2": "LINKED",
+		"part": "Publishing 100%",
+		"project": "2019.07 ~ 2019.10",
+		"images": {
+			"thumb": "../images/main/pfImg025.jpg",
+			"detail": "../images/sub/pf_detailImg025.jpg"
+		},
+		"task_environment": "PHP(template_), Apache",
+		"language": "HTML, SCSS, jQuery",
+		"link": "http://konvini.jp/",
+		"link_ex": "http://konvini.jp/",
+		"winTarget":"_blank",
+		"linkTitle":"새창"
+	},
+	{
+		"title": "SHINAND",
+		"type": "반응형",
+		"category": "RESPONSIVE",
+		"category2": "LINKED",
+		"part": "Publishing 100%",
+		"project": "2019.07 ~ 2019.08",
+		"images": {
+			"thumb": "../images/main/pfImg024.jpg",
+			"detail": "../images/sub/pf_detailImg024.jpg"
+		},
+		"task_environment": "Apache",
+		"language": "HTML, CSS, jQuery",
+		"link": "http://shinand.com/",
+		"link_ex": "http://shinand.com/",
+		"winTarget":"_blank",
+		"linkTitle":"새창"
+	},
+	{
+		"title": "KONVINATION",
+		"type": "반응형",
+		"category": "RESPONSIVE",
+		"category2": "LINKED",
+		"part": "Publishing 100%",
+		"project": "2019.02",
+		"images": {
+			"thumb": "../images/main/pfImg023.jpg",
+			"detail": "../images/sub/pf_detailImg023.jpg"
+		},
+		"task_environment": "Apache",
+		"language": "HTML, CSS, jQuery",
+		"link": "http://konvination.co.kr/",
+		"link_ex": "http://konvination.co.kr/",
+		"winTarget":"_blank",
+		"linkTitle":"새창"
+	},
+	{
+		"title": "배차반장 웹플랫폼",
+		"type": "PC",
+		"category": "ONLY PC",
+		"category2": "LINKED",
+		"part": "Publishing 100%",
+		"project": "2018.09 ~ 2019.05",
+		"images": {
+			"thumb": "../images/main/pfImg022.jpg",
+			"detail": "../images/sub/pf_detailImg022.jpg"
+		},
+		"task_environment": "ASP.net, Apache",
+		"language": "HTML, CSS, jQuery",
+		"link": "https://service.배차반장.com/",
+		"link_ex": "https://service.배차반장.com/",
+		"winTarget":"_blank",
+		"linkTitle":"새창"
+	},
+	{
+		"title": "배차반장",
+		"type": "반응형",
+		"category": "RESPONSIVE",
+		"category2": "LINKED",
+		"part": "Publishing 100%",
+		"project": "2018.11 ~ 2019.02",
+		"images": {
+			"thumb": "../images/main/pfImg021.jpg",
+			"detail": "../images/sub/pf_detailImg021.jpg"
+		},
+		"task_environment": "Apache",
+		"language": "HTML, CSS, jQuery",
+		"link": "https://www.배차반장.com/",
+		"link_ex": "https://www.배차반장.com/",
+		"winTarget":"_blank",
+		"linkTitle":"새창"
+	},
+	{
+		"title": "DollyAndMolly",
+		"type": "반응형",
+		"category": "RESPONSIVE",
+		"category2": "LINKED",
+		"part": "Publishing 100%",
+		"project": "2017.07 ~ 2017.09",
+		"images": {
+			"thumb": "../images/main/pfImg020.jpg",
+			"detail": "../images/sub/pf_detailImg020.jpg"
+		},
+		"task_environment": "Cafe24",
+		"language": "HTML, CSS, jQuery",
+		"link": "https://www.dollymolly.com",
+		"link_ex": "https://www.dollymolly.com",
+		"winTarget":"_blank",
+		"linkTitle":"새창"
+	},
+	{
+		"title": "KONVINI.ver1",
+		"type": "반응형",
+		"category": "RESPONSIVE",
+		"part": "Publishing 100%",
+		"project": "2017.05 ~ 2018.01",
+		"images": {
+			"thumb": "../images/main/pfImg019.jpg",
+			"detail": "../images/sub/pf_detailImg019.jpg"
+		},
+		"task_environment": "PHP(template_), Apache",
+		"language": "HTML, CSS, jQuery"
+	},
+	{
+		"title": "Aeri's Portfolio",
 		"type": "반응형",
 		"category": "RESPONSIVE",
 		"category2": "INDIVIDUAL",
-		"part": "Design 100% + Coding 100%",
+		"part": "Design & Publishing 100%",
 		"project": "2017.03 ~ 2017.04",
-		"build": "14일",
 		"images": {
 			"thumb": "../images/main/pfImg018.jpg",
 			"detail": "../images/sub/pf_detailImg018.jpg"
 		},
-		"cms": "Hard Coding",
-		"language": "HTML, CSS, jQuery, JSON",
-		"link": "#none",
-		"link_ex": "http://ars6631.kr/",
-		"winTarget":"_self",
-		"linkTitle":"현재 접속하신 사이트입니다.",
-		"jquery":"- Fullpage & parallax 100%<br />- 슬라이드 배너 70%<br />- 아코디언 메뉴 100%"
+		"task_environment": "Apache",
+		"language": "HTML, CSS, jQuery, JSON"
 	},
 	{
 		"title": "신안군 중개장터",
 		"type": "반응형",
 		"category": "RESPONSIVE",
-		"part": "Design 90% + Coding 90%",
+		"category2": "LINKED",
+		"part": "Design & Publishing 90%",
 		"project": "2016.08 ~ 2016.12",
-		"build": "2일",
 		"images": {
 			"thumb": "../images/main/pfImg017.jpg",
 			"detail": "../images/sub/pf_detailImg017.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "http://www.shinanmarket.kr/",
 		"link_ex": "http://www.shinanmarket.kr/",
 		"winTarget":"_blank",
-		"linkTitle":"새창",
-		"jquery":"- 아코디언 메뉴 100%"
+		"linkTitle":"새창"
 	},
 	{
 		"title": "강진만 생태공원(최종안)",
 		"type": "반응형",
 		"category": "RESPONSIVE",
-		"part": "Design 100% + Coding 100%",
+		"part": "Design & Publishing 100%",
 		"project": "2016.07 ~ 2016.08",
-		"build": "2일",
 		"images": {
 			"thumb": "../images/main/pfImg016.jpg",
 			"detail": "../images/sub/pf_detailImg016.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "#none",
-		"link_ex": "-",
-		"winTarget":"_self",
-		"linkTitle":"연결 가능한 주소가 없습니다",
-		"jquery":"- 아코디언 메뉴 100%<br />- 슬라이드 갤러리 70%"
+		"task_environment": "자사 솔루션",
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강진만 생태공원(1안)",
 		"type": "반응형",
 		"category": "RESPONSIVE",
-		"part": "Design 100% + Coding 100%",
+		"part": "Design & Publishing 100%",
 		"project": "2016.07 ~ 2016.08",
-		"build": "3일",
 		"images": {
 			"thumb": "../images/main/pfImg015.jpg",
 			"detail": "../images/sub/pf_detailImg015.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "#none",
-		"link_ex": "-",
-		"winTarget":"_self",
-		"linkTitle":"연결 가능한 주소가 없습니다",
-		"jquery":"- 아코디언 메뉴 100%"
+		"task_environment": "자사 솔루션",
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "마이산 다옴펜션",
 		"type": "PC, Mobile",
 		"category": "PC&MOBILE",
-		"part": "Design 100% + Coding 100%",
+		"category2": "LINKED",
+		"part": "Design & Publishing 100%",
 		"project": "2016.07 ~ 2016.07",
-		"build": "2일",
 		"images": {
 			"thumb": "../images/main/pfImg014.jpg",
 			"detail": "../images/sub/pf_detailImg014.jpg"
 		},
-		"cms": "그누보드",
+		"task_environment": "Gnuboard",
 		"language": "HTML, CSS, jQuery",
 		"link": "http://maisan-daom.kr/",
 		"link_ex": "http://maisan-daom.kr/",
 		"winTarget":"_blank",
-		"linkTitle":"새창",
-		"jquery":"- 아코디언 메뉴 100%<br />- 서브페이지 네비게이션(서브) 메뉴"
+		"linkTitle":"새창"
 	},
 	{
 		"title": "장성군청 외국어",
 		"type": "PC",
 		"category": "ONLY PC",
-		"part": "Design 100% + Coding 100%",
+		"category2": "LINKED",
+		"part": "Design & Publishing 100%",
 		"project": "2016.04 ~ 2016.06",
-		"build": "2일",
 		"images": {
 			"thumb": "../images/main/pfImg013.jpg",
 			"detail": "../images/sub/pf_detailImg013.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "http://www.jangseong.go.kr/home/eng",
 		"link_ex": "http://www.jangseong.go.kr/home/eng",
 		"winTarget":"_blank",
-		"linkTitle":"새창",
-		"jquery":"-"
+		"linkTitle":"새창"
 	},
 	{
 		"title": "장성군청 의회",
 		"type": "반응형",
 		"category": "RESPONSIVE",
-		"part": "Design 100% + Coding 100%",
+		"category2": "LINKED",
+		"part": "Design & Publishing 100%",
 		"project": "2016.04 ~ 2016.06",
-		"build": "3일",
 		"images": {
 			"thumb": "../images/main/pfImg012.jpg",
 			"detail": "../images/sub/pf_detailImg012.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "http://council.jangseong.go.kr/",
 		"link_ex": "http://council.jangseong.go.kr/",
 		"winTarget":"_blank",
-		"linkTitle":"새창",
-		"jquery":"- 아코디언 메뉴 100%<br />- 기타 jQuery 이벤트"
+		"linkTitle":"새창"
 	},
 	{
 		"title": "신안군청 ICT",
 		"type": "PC",
 		"category": "ONLY PC",
-		"part": "Design 100% + Coding 100%",
+		"part": "Design & Publishing 100%",
 		"project": "2016.02 ~ 2016.06",
-		"build": "2일",
 		"images": {
 			"thumb": "../images/main/pfImg011.jpg",
 			"detail": "../images/sub/pf_detailImg011.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "#none",
-		"link_ex": "해당사이트 보안문제로 주소 첨부하지 못하는 점 양해바랍니다.",
-		"winTarget":"_self",
-		"linkTitle":"연결 가능한 주소가 없습니다",
-		"jquery":"- 메뉴전환 100%"
+		"task_environment": "자사 솔루션",
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강동대학교 외국어",
 		"type": "PC",
 		"category": "ONLY PC",
-		"part": "Coding 100%",
+		"part": "Publishing 100%",
 		"project": "2015.09 ~ 2016.02",
-		"build": "1일",
 		"images": {
 			"thumb": "../images/main/pfImg010.jpg",
 			"detail": "../images/sub/pf_detailImg010.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "http://eng.gangdong.ac.kr/",
-		"link_ex": "http://eng.gangdong.ac.kr/",
-		"winTarget":"_blank",
-		"linkTitle":"새창",
-		"jquery":"-"
+		"task_environment": "자사 솔루션",
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강동대학교 부속기간",
 		"type": "PC",
 		"category": "ONLY PC",
-		"part": "Design 100% + Coding 100%",
+		"part": "Design & Publishing 100%",
 		"project": "2015.09 ~ 2016.02",
-		"build": "2일",
 		"images": {
 			"thumb": "../images/main/pfImg009.jpg",
 			"detail": "../images/sub/pf_detailImg009.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "http://dorm.gangdong.ac.kr",
-		"link_ex": "http://dorm.gangdong.ac.kr",
-		"winTarget":"_blank",
-		"linkTitle":"새창",
-		"jquery":"-"
+		"task_environment": "자사 솔루션",
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강동대학교 학과 st.4",
 		"type": "PC",
 		"category": "ONLY PC",
-		"part": "Coding 100%",
+		"part": "Publishing 100%",
 		"project": "2015.09 ~ 2016.02",
-		"build": "1일",
 		"images": {
 			"thumb": "../images/main/pfImg008.jpg",
 			"detail": "../images/sub/pf_detailImg008.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "http://thegdusound.gangdong.ac.kr/",
-		"link_ex": "http://thegdusound.gangdong.ac.kr/",
-		"winTarget":"_blank",
-		"linkTitle":"새창",
-		"jquery":"-"
+		"task_environment": "자사 솔루션",
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강동대학교 학과 st.3",
 		"type": "PC",
 		"category": "ONLY PC",
-		"part": "Coding 100%",
+		"part": "Publishing 100%",
 		"project": "2015.09 ~ 2016.02",
-		"build": "1일",
 		"images": {
 			"thumb": "../images/main/pfImg007.jpg",
 			"detail": "../images/sub/pf_detailImg007.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "http://hotel.gangdong.ac.kr/",
-		"link_ex": "http://hotel.gangdong.ac.kr/",
-		"winTarget":"_blank",
-		"linkTitle":"새창",
-		"jquery":"-"
+		"task_environment": "자사 솔루션",
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강동대학교 학과 st.2",
 		"type": "PC",
 		"category": "ONLY PC",
-		"part": "Design 100% + Coding 100%",
+		"part": "Design & Publishing 100%",
 		"project": "2015.09 ~ 2016.02",
-		"build": "2일",
 		"images": {
 			"thumb": "../images/main/pfImg006.jpg",
 			"detail": "../images/sub/pf_detailImg006.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "http://interior.gangdong.ac.kr",
-		"link_ex": "http://interior.gangdong.ac.kr",
-		"winTarget":"_blank",
-		"linkTitle":"새창",
-		"jquery":"-"
+		"task_environment": "자사 솔루션",
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강동대학교 학과 st.1",
 		"type": "PC",
 		"category": "ONLY PC",
-		"part": "Design 100% + Coding 100%",
+		"part": "Design & Publishing 100%",
 		"project": "2015.09 ~ 2016.02",
-		"build": "2일",
 		"images": {
 			"thumb": "../images/main/pfImg005.jpg",
 			"detail": "../images/sub/pf_detailImg005.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "http://police.gangdong.ac.kr/",
-		"link_ex": "http://police.gangdong.ac.kr/",
-		"winTarget":"_blank",
-		"linkTitle":"새창",
-		"jquery":"-"
+		"task_environment": "자사 솔루션",
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강동대학교 입시(최종안)",
 		"type": "PC, Mobile",
 		"category": "PC&MOBILE",
-		"part": "Design 100% + Coding 100%",
+		"part": "Design & Publishing 100%",
 		"project": "2015.09 ~ 2016.02",
-		"build": "3일",
 		"images": {
 			"thumb": "../images/main/pfImg004.jpg",
 			"detail": "../images/sub/pf_detailImg004.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "http://ipsi.gangdong.ac.kr/",
-		"link_ex": "http://ipsi.gangdong.ac.kr/",
-		"winTarget":"_blank",
-		"linkTitle":"새창",
-		"jquery":"-"
+		"task_environment": "자사 솔루션",
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강동대학교 입시(1안)",		
 		"type": "반응형",
 		"category": "RESPONSIVE",
-		"part": "Coding 100%",
+		"part": "Publishing 100%",
 		"project": "2015.09 ~ 2016.02",
-		"build": "2일",
 		"images": {
 			"thumb": "../images/main/pfImg003.jpg",
 			"detail": "../images/sub/pf_detailImg003.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "#none",
-		"link_ex": "-",
-		"winTarget":"_self",
-		"linkTitle":"연결 가능한 주소가 없습니다",
-		"jquery":"-"
+		"task_environment": "자사 솔루션",
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "신안군청 외국어",
 		"type": "PC",
 		"category": "ONLY PC",
-		"part": "Design 100% + Coding 100%",
+		"category2": "LINKED",
+		"part": "Design & Publishing 100%",
 		"project": "2015.08 ~ 2015.12",
-		"build": "3일",
 		"images": {
 			"thumb": "../images/main/pfImg001.jpg",
 			"detail": "../images/sub/pf_detailImg001.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "http://eng.shinan.go.kr/",
 		"link_ex": "http://eng.shinan.go.kr/",
 		"winTarget":"_blank",
-		"linkTitle":"새창",
-		"jquery":"-"
+		"linkTitle":"새창"
 	}
 ]
