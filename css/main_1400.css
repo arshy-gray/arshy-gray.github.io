@@ -23,7 +23,7 @@ body{position:relative}
 .page_hd{position:fixed;padding:5px 0;top:0;box-sizing:border-box;background:transparent;-webkit-transition:.3s all 0s cubic-bezier(0, 0, 0, 0.64);transition:.3s all 0s cubic-bezier(0, 0, 0, 0.64);z-index:99999;}
 .page_hd .logo{display:none}
 
-.page_hd .float_R{margin:9px 0}
+.page_hd .float_R{margin:9px 0;}
 #gnb_pc .gnb_menu li{float:left}
 #gnb_pc .gnb_menu li:not(:first-child) {margin-left:15px}
 #gnb_pc .gnb_menu li a {font-size:13px;color:#eee}
