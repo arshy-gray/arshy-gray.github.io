@@ -9,7 +9,7 @@
 			"thumb": "../images/main/pfImg025.jpg",
 			"detail": "../images/sub/pf_detailImg025.jpg"
 		},
-		"cms": "-",
+		"task_environment": "PHP(template_), Apache",
 		"language": "HTML, SCSS, jQuery",
 		"link": "http://konvini.jp/",
 		"link_ex": "http://konvini.jp/",
@@ -26,7 +26,7 @@
 			"thumb": "../images/main/pfImg024.jpg",
 			"detail": "../images/sub/pf_detailImg024.jpg"
 		},
-		"cms": "-",
+		"task_environment": "Apache",
 		"language": "HTML, CSS, jQuery",
 		"link": "http://shinand.com/",
 		"link_ex": "http://shinand.com/",
@@ -43,7 +43,7 @@
 			"thumb": "../images/main/pfImg023.jpg",
 			"detail": "../images/sub/pf_detailImg023.jpg"
 		},
-		"cms": "-",
+		"task_environment": "Apache",
 		"language": "HTML, CSS, jQuery",
 		"link": "http://konvination.co.kr/",
 		"link_ex": "http://konvination.co.kr/",
@@ -60,7 +60,7 @@
 			"thumb": "../images/main/pfImg022.jpg",
 			"detail": "../images/sub/pf_detailImg022.jpg"
 		},
-		"cms": "-",
+		"task_environment": "ASP.net, Apache",
 		"language": "HTML, CSS, jQuery",
 		"link": "https://service.배차반장.com/",
 		"link_ex": "https://service.배차반장.com/",
@@ -77,7 +77,7 @@
 			"thumb": "../images/main/pfImg021.jpg",
 			"detail": "../images/sub/pf_detailImg021.jpg"
 		},
-		"cms": "-",
+		"task_environment": "Apache",
 		"language": "HTML, CSS, jQuery",
 		"link": "https://www.배차반장.com/",
 		"link_ex": "https://www.배차반장.com/",
@@ -94,7 +94,7 @@
 			"thumb": "../images/main/pfImg020.jpg",
 			"detail": "../images/sub/pf_detailImg020.jpg"
 		},
-		"cms": "-",
+		"task_environment": "Cafe24",
 		"language": "HTML, CSS, jQuery",
 		"link": "https://www.dollymolly.com",
 		"link_ex": "https://www.dollymolly.com",
@@ -111,7 +111,7 @@
 			"thumb": "../images/main/pfImg019.jpg",
 			"detail": "../images/sub/pf_detailImg019.jpg"
 		},
-		"cms": "-",
+		"task_environment": "PHP(template_), Apache",
 		"language": "HTML, CSS, jQuery",
 		"link": "javascript:void(0);",
 		"link_ex": "-",
@@ -129,7 +129,7 @@
 			"thumb": "../images/main/pfImg018.jpg",
 			"detail": "../images/sub/pf_detailImg018.jpg"
 		},
-		"cms": "-",
+		"task_environment": "Apache",
 		"language": "HTML, CSS, jQuery, JSON",
 		"link": "javascript:void(0);",
 		"link_ex": "https://fe-aeri.github.io/",
@@ -146,7 +146,7 @@
 			"thumb": "../images/main/pfImg017.jpg",
 			"detail": "../images/sub/pf_detailImg017.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "http://www.shinanmarket.kr/",
 		"link_ex": "http://www.shinanmarket.kr/",
@@ -163,7 +163,7 @@
 			"thumb": "../images/main/pfImg016.jpg",
 			"detail": "../images/sub/pf_detailImg016.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "javascript:void(0);",
 		"link_ex": "-",
@@ -180,7 +180,7 @@
 			"thumb": "../images/main/pfImg015.jpg",
 			"detail": "../images/sub/pf_detailImg015.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "javascript:void(0);",
 		"link_ex": "-",
@@ -197,7 +197,7 @@
 			"thumb": "../images/main/pfImg014.jpg",
 			"detail": "../images/sub/pf_detailImg014.jpg"
 		},
-		"cms": "그누보드",
+		"task_environment": "Gnuboard",
 		"language": "HTML, CSS, jQuery",
 		"link": "http://maisan-daom.kr/",
 		"link_ex": "http://maisan-daom.kr/",
@@ -214,7 +214,7 @@
 			"thumb": "../images/main/pfImg013.jpg",
 			"detail": "../images/sub/pf_detailImg013.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "http://www.jangseong.go.kr/home/eng",
 		"link_ex": "http://www.jangseong.go.kr/home/eng",
@@ -231,7 +231,7 @@
 			"thumb": "../images/main/pfImg012.jpg",
 			"detail": "../images/sub/pf_detailImg012.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "http://council.jangseong.go.kr/",
 		"link_ex": "http://council.jangseong.go.kr/",
@@ -248,7 +248,7 @@
 			"thumb": "../images/main/pfImg011.jpg",
 			"detail": "../images/sub/pf_detailImg011.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "javascript:void(0);",
 		"link_ex": "해당사이트 보안문제로 주소 첨부하지 못하는 점 양해바랍니다.",
@@ -265,7 +265,7 @@
 			"thumb": "../images/main/pfImg010.jpg",
 			"detail": "../images/sub/pf_detailImg010.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "javascript:void(0);",
 		"link_ex": "-",
@@ -282,7 +282,7 @@
 			"thumb": "../images/main/pfImg009.jpg",
 			"detail": "../images/sub/pf_detailImg009.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "javascript:void(0);",
 		"link_ex": "-",
@@ -299,7 +299,7 @@
 			"thumb": "../images/main/pfImg008.jpg",
 			"detail": "../images/sub/pf_detailImg008.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "javascript:void(0);",
 		"link_ex": "-",
@@ -316,7 +316,7 @@
 			"thumb": "../images/main/pfImg007.jpg",
 			"detail": "../images/sub/pf_detailImg007.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "javascript:void(0);",
 		"link_ex": "-",
@@ -333,7 +333,7 @@
 			"thumb": "../images/main/pfImg006.jpg",
 			"detail": "../images/sub/pf_detailImg006.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "javascript:void(0);",
 		"link_ex": "-",
@@ -350,7 +350,7 @@
 			"thumb": "../images/main/pfImg005.jpg",
 			"detail": "../images/sub/pf_detailImg005.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "javascript:void(0);",
 		"link_ex": "-",
@@ -367,7 +367,7 @@
 			"thumb": "../images/main/pfImg004.jpg",
 			"detail": "../images/sub/pf_detailImg004.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "javascript:void(0);",
 		"link_ex": "-",
@@ -384,7 +384,7 @@
 			"thumb": "../images/main/pfImg003.jpg",
 			"detail": "../images/sub/pf_detailImg003.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "javascript:void(0);",
 		"link_ex": "-",
@@ -401,7 +401,7 @@
 			"thumb": "../images/main/pfImg001.jpg",
 			"detail": "../images/sub/pf_detailImg001.jpg"
 		},
-		"cms": "(주)렛츠온 솔루션",
+		"task_environment": "자사 솔루션",
 		"language": "HTML, CSS, jQuery",
 		"link": "http://eng.shinan.go.kr/",
 		"link_ex": "http://eng.shinan.go.kr/",

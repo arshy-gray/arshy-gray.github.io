@@ -387,13 +387,13 @@ $(window).load(function(){
 											'<span class="pf_li_t"><i class="fa fa-calendar"></i>프로젝트기간</span>' +
 											'<span class="pf_li_c">' + item.project + '</span>' +
 										'</li>' +
-										'<li class="pf_c4">' +
-											'<span class="pf_li_t"><i class="fa fa-wrench"></i>CMS</span>' +
-											'<span class="pf_li_c">' + item.cms + '</span>' +
-										'</li>' +
 										'<li class="pf_c5">' +
 											'<span class="pf_li_t"><i class="fa fa-keyboard-o"></i>사용언어</span>' +
 											'<span class="pf_li_c">' + item.language + '</span>' +
+										'</li>' +
+										'<li class="pf_c4">' +
+											'<span class="pf_li_t"><i class="fa fa-wrench"></i>개발환경</span>' +
+											'<span class="pf_li_c">' + item.task_environment + '</span>' +
 										'</li>' +
 										'<li class="pf_c6">' +
 											'<span class="pf_li_t"><i class="fa fa-link"></i>웹사이트</span>' +
