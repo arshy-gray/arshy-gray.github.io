@@ -3,6 +3,7 @@
 		"title": "KONVINI.ver2",
 		"type": "반응형",
 		"category": "RESPONSIVE",
+		"category2": "LINKED",
 		"part": "Publishing 100%",
 		"project": "2019.07 ~ 2019.10",
 		"images": {
@@ -20,6 +21,7 @@
 		"title": "SHINAND",
 		"type": "반응형",
 		"category": "RESPONSIVE",
+		"category2": "LINKED",
 		"part": "Publishing 100%",
 		"project": "2019.07 ~ 2019.08",
 		"images": {
@@ -37,6 +39,7 @@
 		"title": "KONVINATION",
 		"type": "반응형",
 		"category": "RESPONSIVE",
+		"category2": "LINKED",
 		"part": "Publishing 100%",
 		"project": "2019.02",
 		"images": {
@@ -54,6 +57,7 @@
 		"title": "배차반장 웹플랫폼",
 		"type": "PC",
 		"category": "ONLY PC",
+		"category2": "LINKED",
 		"part": "Publishing 100%",
 		"project": "2018.09 ~ 2019.05",
 		"images": {
@@ -71,6 +75,7 @@
 		"title": "배차반장",
 		"type": "반응형",
 		"category": "RESPONSIVE",
+		"category2": "LINKED",
 		"part": "Publishing 100%",
 		"project": "2018.11 ~ 2019.02",
 		"images": {
@@ -88,6 +93,7 @@
 		"title": "DollyAndMolly",
 		"type": "반응형",
 		"category": "RESPONSIVE",
+		"category2": "LINKED",
 		"part": "Publishing 100%",
 		"project": "2017.07 ~ 2017.09",
 		"images": {
@@ -132,6 +138,7 @@
 		"title": "신안군 중개장터",
 		"type": "반응형",
 		"category": "RESPONSIVE",
+		"category2": "LINKED",
 		"part": "Design & Publishing 90%",
 		"project": "2016.08 ~ 2016.12",
 		"images": {
@@ -175,6 +182,7 @@
 		"title": "마이산 다옴펜션",
 		"type": "PC, Mobile",
 		"category": "PC&MOBILE",
+		"category2": "LINKED",
 		"part": "Design & Publishing 100%",
 		"project": "2016.07 ~ 2016.07",
 		"images": {
@@ -192,6 +200,7 @@
 		"title": "장성군청 외국어",
 		"type": "PC",
 		"category": "ONLY PC",
+		"category2": "LINKED",
 		"part": "Design & Publishing 100%",
 		"project": "2016.04 ~ 2016.06",
 		"images": {
@@ -209,6 +218,7 @@
 		"title": "장성군청 의회",
 		"type": "반응형",
 		"category": "RESPONSIVE",
+		"category2": "LINKED",
 		"part": "Design & Publishing 100%",
 		"project": "2016.04 ~ 2016.06",
 		"images": {
@@ -343,6 +353,7 @@
 		"title": "신안군청 외국어",
 		"type": "PC",
 		"category": "ONLY PC",
+		"category2": "LINKED",
 		"part": "Design & Publishing 100%",
 		"project": "2015.08 ~ 2015.12",
 		"images": {

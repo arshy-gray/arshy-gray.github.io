@@ -460,14 +460,14 @@ $(window).load(function(){
                 // all이 클릭 된 경우 모든 JSON 데이터를 저장
                 filteredData = allData;
             } // all 이외의 경우, 키와 일치하는 데이터를 추출
-			else if(key === 'ONLY PC' || key === 'PC&MOBILE' || key === 'RESPONSIVE'){
+						else if(key === 'ONLY PC' || key === 'PC&MOBILE' || key === 'RESPONSIVE'){
                 filteredData = $.grep(allData, function (item) {
                     return item.category === key;
                 });
-            } else {
-                 filteredData = $.grep(allData, function (item) {
-					return item.category2 === key;
-                });
+		            } else {
+		                 filteredData = $.grep(allData, function (item) {
+							return item.category2 === key;
+		                });
             }              
 
             // 항목을 추가
