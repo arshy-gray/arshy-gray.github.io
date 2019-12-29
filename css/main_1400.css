@@ -203,7 +203,7 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 .sub_hd .wrap_cen{padding:13px 20px; background:#ff229f; box-sizing:border-box}
 .pf_detail .btn_close{position:fixed}
 .pf_detail .btn_close a{position:fixed; display:block; float:right; top:30px; right:60px; line-height:0}
-.dt_txt{position:relative;padding:30px 35px;background: #f1f1f1;border-bottom: 1px solid #e1e1e1;overflow:hidden;z-index:0;}
+.dt_txt{position:relative;padding:30px 35px;background: #f1f1f1;border-bottom: 1px solid #eee;overflow:hidden;z-index:0;}
 .pf_detail .pf_t{float:left;width:50%;font-size:36px;line-height:40px;font-weight: 700;color: #333;}
 .pf_detail .type{display:block;font-size:20px;font-weight: 300;}
 .pf_detail .pf_c{float:left; width:50%; margin-top:7px; overflow:hidden}
