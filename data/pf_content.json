@@ -112,11 +112,7 @@
 			"detail": "../images/sub/pf_detailImg019.jpg"
 		},
 		"task_environment": "PHP(template_), Apache",
-		"language": "HTML, CSS, jQuery",
-		"link": "javascript:void(0);",
-		"link_ex": "-",
-		"winTarget":"_self",
-		"linkTitle":"연결 가능한 주소가 없습니다."
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "Aeri's Portfolio",
@@ -130,11 +126,7 @@
 			"detail": "../images/sub/pf_detailImg018.jpg"
 		},
 		"task_environment": "Apache",
-		"language": "HTML, CSS, jQuery, JSON",
-		"link": "javascript:void(0);",
-		"link_ex": "https://fe-aeri.github.io/",
-		"winTarget":"_self",
-		"linkTitle":"현재 접속하신 사이트입니다."
+		"language": "HTML, CSS, jQuery, JSON"
 	},
 	{
 		"title": "신안군 중개장터",
@@ -164,11 +156,7 @@
 			"detail": "../images/sub/pf_detailImg016.jpg"
 		},
 		"task_environment": "자사 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "javascript:void(0);",
-		"link_ex": "-",
-		"winTarget":"_self",
-		"linkTitle":"연결 가능한 주소가 없습니다"
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강진만 생태공원(1안)",
@@ -181,11 +169,7 @@
 			"detail": "../images/sub/pf_detailImg015.jpg"
 		},
 		"task_environment": "자사 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "javascript:void(0);",
-		"link_ex": "-",
-		"winTarget":"_self",
-		"linkTitle":"연결 가능한 주소가 없습니다"
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "마이산 다옴펜션",
@@ -249,11 +233,7 @@
 			"detail": "../images/sub/pf_detailImg011.jpg"
 		},
 		"task_environment": "자사 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "javascript:void(0);",
-		"link_ex": "해당사이트 보안문제로 주소 첨부하지 못하는 점 양해바랍니다.",
-		"winTarget":"_self",
-		"linkTitle":"연결 가능한 주소가 없습니다"
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강동대학교 외국어",
@@ -266,11 +246,7 @@
 			"detail": "../images/sub/pf_detailImg010.jpg"
 		},
 		"task_environment": "자사 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "javascript:void(0);",
-		"link_ex": "-",
-		"winTarget":"_self",
-		"linkTitle":"연결 가능한 주소가 없습니다"
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강동대학교 부속기간",
@@ -283,11 +259,7 @@
 			"detail": "../images/sub/pf_detailImg009.jpg"
 		},
 		"task_environment": "자사 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "javascript:void(0);",
-		"link_ex": "-",
-		"winTarget":"_self",
-		"linkTitle":"연결 가능한 주소가 없습니다"
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강동대학교 학과 st.4",
@@ -300,11 +272,7 @@
 			"detail": "../images/sub/pf_detailImg008.jpg"
 		},
 		"task_environment": "자사 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "javascript:void(0);",
-		"link_ex": "-",
-		"winTarget":"_self",
-		"linkTitle":"연결 가능한 주소가 없습니다"
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강동대학교 학과 st.3",
@@ -317,11 +285,7 @@
 			"detail": "../images/sub/pf_detailImg007.jpg"
 		},
 		"task_environment": "자사 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "javascript:void(0);",
-		"link_ex": "-",
-		"winTarget":"_self",
-		"linkTitle":"연결 가능한 주소가 없습니다"
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강동대학교 학과 st.2",
@@ -334,11 +298,7 @@
 			"detail": "../images/sub/pf_detailImg006.jpg"
 		},
 		"task_environment": "자사 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "javascript:void(0);",
-		"link_ex": "-",
-		"winTarget":"_self",
-		"linkTitle":"연결 가능한 주소가 없습니다"
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강동대학교 학과 st.1",
@@ -351,11 +311,7 @@
 			"detail": "../images/sub/pf_detailImg005.jpg"
 		},
 		"task_environment": "자사 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "javascript:void(0);",
-		"link_ex": "-",
-		"winTarget":"_self",
-		"linkTitle":"연결 가능한 주소가 없습니다"
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강동대학교 입시(최종안)",
@@ -368,11 +324,7 @@
 			"detail": "../images/sub/pf_detailImg004.jpg"
 		},
 		"task_environment": "자사 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "javascript:void(0);",
-		"link_ex": "-",
-		"winTarget":"_self",
-		"linkTitle":"연결 가능한 주소가 없습니다"
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "강동대학교 입시(1안)",		
@@ -385,11 +337,7 @@
 			"detail": "../images/sub/pf_detailImg003.jpg"
 		},
 		"task_environment": "자사 솔루션",
-		"language": "HTML, CSS, jQuery",
-		"link": "javascript:void(0);",
-		"link_ex": "-",
-		"winTarget":"_self",
-		"linkTitle":"연결 가능한 주소가 없습니다"
+		"language": "HTML, CSS, jQuery"
 	},
 	{
 		"title": "신안군청 외국어",

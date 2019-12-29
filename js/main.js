@@ -355,8 +355,9 @@ $(window).load(function(){
 
             // slicedData의 요소마다 DOM 요소를 생성
             $.each(slicedData, function (i, item) {
-                var itemHTML =
-                       '<li class="pf_item is-loading">' +
+            	var itemHTML = '';
+
+              itemHTML += '<li class="pf_item is-loading">' +
 						'<div class="pf_thumb">' +
 							'<div class="img_box"><img src="' + item.images.thumb + '" alt="' + item.title + '" /></div>' +
 							'<div class="txt_box">' +
@@ -369,9 +370,13 @@ $(window).load(function(){
 						'</div>' +
 						'<div class="pf_hover">' +
 							'<div class="btn_box"><ul>' +
-								'<li class="detail_btn"><a href="#none" title="자세히보기"><i class="fa fa-search"></i></a></li>' +
-								'<li class="siteLink_btn"><a href="' + item.link + '" title="' + item.linkTitle +'" target="' + item.winTarget + '"><i class="fa fa-link"></i></a></li>' +
-							'</ul></div>' +
+								'<li class="detail_btn"><a href="#none" title="자세히보기"><i class="fa fa-search"></i></a></li>';
+
+						if(item.link){
+								itemHTML += '<li class="siteLink_btn"><a href="' + item.link + '" title="' + item.linkTitle +'" target="' + item.winTarget + '"><i class="fa fa-link"></i></a></li>';
+							}					
+
+						itemHTML += '</ul></div>' +
 						'</div>' +
 						'<div class="pf_detail">' +
 								'<div class="btn_close"><a href="#none"><img src="./images/main/btn2_close.png" alt="닫기" /></a></div>' +
@@ -394,12 +399,16 @@ $(window).load(function(){
 										'<li class="pf_c4">' +
 											'<span class="pf_li_t"><i class="fa fa-wrench"></i>개발환경</span>' +
 											'<span class="pf_li_c">' + item.task_environment + '</span>' +
-										'</li>' +
-										'<li class="pf_c6">' +
+										'</li>';
+
+										if(item.link){
+											itemHTML += '<li class="pf_c6">' +
 											'<span class="pf_li_t"><i class="fa fa-link"></i>웹사이트</span>' +
 											'<span class="pf_li_c"><a href="' + item.link + '" title="' + item.linkTitle + '" target="' + item.winTarget + '">' + item.link_ex + '</a></span>' +
-										'</li>' +
-									'</ul>' +
+										'</li>';
+										}
+										
+									itemHTML += '</ul>' +
 								'</div>' +
 								'<div class="dt_img"><img src="' + item.images.detail + '" alt="포트폴리오 상세" /></div>' +
 							'</div>' +
