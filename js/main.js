@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 	var $body = $('body'),
+		$wrapper = $('#wrapper'),
 		winHeight = $(window).outerHeight(),
 		$container = $('#loading'),// 1
 		$progress = $container.find('.progress');
@@ -81,7 +82,8 @@ $(document).ready(function(){
 
             // current가 99.9보다 크면 100으로 간주하여 종료
             if (current > 99.9) {
-                current = 100;				
+                current = 100;
+                $wrapper.addClass('on');				
             }
         }
 
