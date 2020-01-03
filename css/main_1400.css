@@ -6,8 +6,8 @@
 .no-js #loading .text1,
 .no-js #loading .text2{display:none}
 
-.no-js #loading .text3{position:relative; display:block; margin-top:70px; text-align:center}
-.no-js #loading .text3 a{color:#ffff00}
+/*.no-js #loading .text3{position:relative; display:block; margin-top:70px; text-align:center}*/
+/*.no-js #loading .text3 a{color:#ffff00}*/
 
 /* 전체 */
 body{position:relative}
@@ -347,8 +347,8 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 #loading .progress-bar .bar_L{position:absolute; top:0; left:0; width:50%; height:100%; z-index:2; overflow:hidden}
 #loading .progress-complete .progress-bar{border-top-color:#fec6e6}
 
-#loading .text2,
-#loading .text3{display:none}
+/*#loading .text2,*/
+/*#loading .text3{display:none}*/
 
 /* 반응형 ******/
 @media all and (max-width:1619px){
