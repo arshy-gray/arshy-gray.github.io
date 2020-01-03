@@ -300,7 +300,7 @@ $(window).load(function(){
         var $container = $(this),
 			$loadMoreButton = $('#load-more'), // 추가 버튼
             $filter = $('#gellery-filter'),    // 필터링 양식
-            addItemCount = 7,					// 표시 된 항목 수
+            addItemCount = 8,					// 표시 된 항목 수
             addadd = 0,                        
             allData = [],                      // 모든 JSON 데이터
             filteredData = [];                 // 필터링 된 JSON 데이터;
