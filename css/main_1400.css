@@ -181,12 +181,13 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 .pf_thumb .img_box{max-height:500px; line-height:0; border-bottom:3px dashed #fff; overflow:hidden}
 .pf_thumb img{width:100%}
 .pf_thumb .txt_box{padding:25px 20px; border-top:3px dashed #00d4cd; background:#fff}
-.pf_thumb h4{font-size:18px; line-height:18px; color:#2e2e2e}
+.pf_thumb h4{font-size: 22px;line-height: 1.2;color:#2e2e2e;word-break: keep-all;}
 .pf_thumb ul{margin-top:15px}
 .pf_thumb span{display:inline-block}
-.pf_thumb .pf_th_li_t{width: 12px;font-size: 1px;}
-.pf_thumb i{margin-right:5px;font-size: 14px;}
-.pf_thumb .pf_th_li_c{margin-left:10px; color:#909090; font-weight:300; line-height:22px}
+.pf_thumb .pf_th_li_t{display:inline-block;line-height: 18px;overflow: hidden;color: transparent;vertical-align: top;}
+.pf_thumb .pf_th_li_t i {color:#555}
+.pf_thumb i{display: inline-block;margin-right:5px;font-size: 14px;vertical-align: bottom;}
+.pf_thumb .pf_th_li_c{display: inline-block;width: calc(100% - 21px);margin-left: 2px;color:#909090;font-weight:300;line-height:22px;}
 
 .pf_hover{position:absolute; width:100%; height:100%; background:rgba(255,204,0,.9); -webkit-transition:.5s opacity 0s ease-in-out; transition:.5s opacity 0s ease-in-out}
 .pf_hover .btn_box{display:table; width:100%; height:100%}
@@ -202,14 +203,14 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 .pf_layer{position: absolute;top: 50%;left: 50%;width: 1000px;transform: translate(-50%,-50%);background-color: #f1f1f1;overflow: hidden;z-index:1;}
 
 .pf_txt_basic {float:right;width: 380px;padding: 35px 30px 0;box-sizing: border-box;}
-.pf_txt_basic .pf_t {font-size:44px;line-height:1;font-weight: 700;color: #333;}
+.pf_txt_basic .pf_t {font-size: 39px;line-height: 1.2;font-weight: 700;color: #333;word-break: keep-all;}
 .pf_txt_basic .type {margin-top:10px;font-size:16px;line-height:1;color:#555}
 
 .basic_main_type {margin-top: 25px;}
 
 .type_device {position:relative;display:inline-block;}
 .type_device > li:not(:last-child) {display:inline-block;margin-right:10px;font-size:23px;line-height:1;vertical-align: middle;color:#333;}
-.type_device > li:last-child {position:absolute;top:50%;left:50%;font-size: 19px;color: #ff229f;text-shadow: 0 0 3px #fff;transform: translate(-50%,-50%);}
+.type_device > li.responsive {position:absolute;top:50%;left:50%;font-size: 19px;color: #ff229f;text-shadow: 0 0 3px #fff;transform: translate(-50%,-50%);}
 
 .type_browser {display: inline-block;border-left:1px solid #ccc;}
 .type_browser > li{position:relative;display: inline-block;margin-left:10px;vertical-align: middle;line-height: 1;}
@@ -328,7 +329,6 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 .ht_box >ul >li:nth-child(odd){right:calc(50% - 1px); border-right:1px solid #fff;}
 .ht_box li:nth-child(odd) .ht_point{float:right; left:7.5px}
 .ht_box li:nth-child(odd) .ht_c{right: 5px;}
-.ht_box li:nth-child(odd) .ht_c .content2 li {/* float:right; */}
 
 .ht_box >ul >li:nth-child(even){left:50%; text-align:left; border-left:1px solid #fff}
 .ht_box li:nth-child(even) .ht_point{float:left; right:8.5px}
@@ -352,7 +352,7 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 #contact .tel_num img{width:100%; max-width:285px;}
 #contact .mail a{color:#888}
 #contact .gitHub {margin-top:30px}
-#contact .gitHub a{color: #099893;}
+#contact .gitHub a{color: #fff;}
 #contact .mail:hover a,
 #contact .gitHub:hover a{text-decoration:underline}
 .main_footer{position:absolute; padding:5px 0; bottom:30px; background:rgba(255,255,255,.1)}

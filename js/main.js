@@ -300,7 +300,7 @@ $(window).load(function(){
         var $container = $(this),
 			$loadMoreButton = $('#load-more'), // 추가 버튼
             $filter = $('#gellery-filter'),    // 필터링 양식
-            addItemCount = 10,					// 표시 된 항목 수
+            addItemCount = 7,					// 표시 된 항목 수
             addadd = 0,                        
             allData = [],                      // 모든 JSON 데이터
             filteredData = [];                 // 필터링 된 JSON 데이터;
@@ -363,8 +363,8 @@ $(window).load(function(){
 							'<div class="txt_box">' +
 								'<h4>'+ item.title + '</h4>' +
 								'<ul>' +
-									'<li><span class="pf_th_li_t"><i class="fa fa-bar-chart" title="참여율"></i>참여율</span><span class="pf_th_li_c">' + item.part +'</span></li>' +
-									'<li><span class="pf_th_li_t"><i class="fa fa-calendar" title="프로젝트기간"></i>프로젝트기간</span><span class="pf_th_li_c">' + item.project +'</span></li>' +
+									'<li><span class="pf_th_li_t"><i class="fas fa-chart-bar" title="참여율"></i></span><span class="pf_th_li_c">' + item.part +'</span></li>' +
+									'<li><span class="pf_th_li_t"><i class="fas fa-calendar-alt" title="프로젝트기간"></i></span><span class="pf_th_li_c">' + item.project +'</span></li>' +
 								'</ul>' +
 							'</div>' +
 						'</div>' +
@@ -395,7 +395,7 @@ $(window).load(function(){
 								}
 
                 				if(item.category === 'RESPONSIVE') {
-                                    itemHTML += '<li><i class="fas fa-sync-alt"></i></li>';
+                                    itemHTML += '<li class="responsive"><i class="fas fa-sync-alt"></i></li>';
                                 }
 
                                 itemHTML += '</ul>' +
