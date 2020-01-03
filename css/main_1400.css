@@ -203,13 +203,13 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 .pf_layer{position: absolute;top: 50%;left: 50%;width: 1000px;transform: translate(-50%,-50%);background-color: #f1f1f1;overflow: hidden;z-index:1;}
 
 .pf_txt_basic {float:right;width: 380px;padding: 35px 30px 0;box-sizing: border-box;}
-.pf_txt_basic .pf_t {font-size: 39px;line-height: 1.2;font-weight: 700;color: #333;word-break: keep-all;}
+.pf_txt_basic .pf_t {font-size: 35px;line-height: 1.2;font-weight: 700;color: #333;word-break: keep-all;}
 .pf_txt_basic .type {margin-top:10px;font-size:16px;line-height:1;color:#555}
 
 .basic_main_type {margin-top: 25px;}
 
 .type_device {position:relative;display:inline-block;}
-.type_device > li:not(:last-child) {display:inline-block;margin-right:10px;font-size:23px;line-height:1;vertical-align: middle;color:#333;}
+.type_device > li:not(.responsived) {display:inline-block;margin-right:10px;font-size:23px;line-height:1;vertical-align: middle;color:#333;}
 .type_device > li.responsive {position:absolute;top:50%;left:50%;font-size: 19px;color: #ff229f;text-shadow: 0 0 3px #fff;transform: translate(-50%,-50%);}
 
 .type_browser {display: inline-block;border-left:1px solid #ccc;}

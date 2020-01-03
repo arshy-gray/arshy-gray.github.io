@@ -62,7 +62,7 @@ section > .sec_t{font-size:40px; line-height:26px}
 .pf_item{margin-bottom:1%}
 
 .pf_txt_basic {padding:25px 20px}
-.pf_txt_basic .pf_t {font-size: 33px}
+.pf_txt_basic .pf_t {font-size: 29px;}
 .pf_txt_basic .type {font-size: 14px}
 
 .type_device > li:not(:last-child) {margin-right: 9px;font-size:18px;}
@@ -199,13 +199,10 @@ section > .sec_t{font-size:40px; line-height:26px}
 @media screen and (max-width:399px){
 
 /* 포트폴리오 섹션 */
-.pf_detail .pf_c span{}
 .pf_detail .pf_c1{background-position:left top}
 .pf_detail .pf_c2{background-position:left top}
 .pf_detail .pf_c3{background-position:left top}
 .pf_detail .pf_c4{background-position:left top}
 .pf_detail .pf_c5{background-position:left top}
-
-.pf_detail .pf_li_c{}
 
 }/* e.399px */
