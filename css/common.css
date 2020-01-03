@@ -18,10 +18,10 @@ img, a img, input.image{border:0 none; margin:0; padding:0}
 
 .imgFix{display:inline-block; line-height:0}
 
-a:link{color:#000; text-decoration:none}
+a:link{/* color:#000; */text-decoration:none;}
 a:active{color:#000; text-decoration:none}
-a:visited{color:#000; text-decoration:none}
-a:hover{color:#F30; text-decoration:none}
+a:visited{/* color:#000; */text-decoration:none;}
+a:hover{/* color:#F30; */text-decoration:none;}
 
 .hidden{position:absolute !important; visibility:hidden !important; font-size:0 !important; line-height:0 !important; height:0 !important; overflow:hidden !important}
 .float_L{float:left !important}

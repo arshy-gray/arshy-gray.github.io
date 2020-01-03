@@ -379,12 +379,12 @@ $(window).load(function(){
 						itemHTML += '</ul></div>' +
 						'</div>' +
 						'<div class="pf_detail">' +
-							'<div class="pf_layer" title="이미지를 클릭하면 닫힙니다.">' +
+							'<div class="pf_layer">' +
 								'<div class="pf_txt_basic">' +
 									'<div class="txt_basic_main">' +
                             			'<div class="basic_main_tit">' +
 											'<h4 class="pf_t">' + item.title + '</h4>' +
-											'<span class="type">(' + item.intro + ')</span>' +
+											'<span class="type">' + item.intro + '</span>' +
                            				 '</div>' +
 										'<div class="basic_main_type">' +
                             				'<ul class="type_device">' +
@@ -448,8 +448,8 @@ $(window).load(function(){
 									'</div>' +
 								'</div>' +
 								'<div class="pf_img"><img src="' + item.images.detail + '" alt="포트폴리오 상세" /></div>' +
-								'<div class="pf_txt_detail">' +
-									'<ul class="txt_detail_tit">';
+								'<div class="pf_txt_detail tab_wrap">' +
+									'<ul class="txt_detail_tit tab_tit">';
 
 							if(item.work.scope){
                                 itemHTML += '<li class="on"><i class="fas fa-tasks"></i>업무범위</li>';
@@ -464,7 +464,7 @@ $(window).load(function(){
 							}
 
                 		itemHTML += '</ul>' +
-									'<ul class="txt_detail_ctt">';
+									'<ul class="txt_detail_ctt tab_ctt">';
 
 						if(item.work.scope){
 							itemHTML += '<li class="detail_scope on">' + item.work.scope.page;
@@ -478,32 +478,32 @@ $(window).load(function(){
 
 						if(item.work.task){
 							itemHTML += '<li class="detail_task">' +
-											'<ul>';
+											'<ol class="ol_desc">';
 
 								for(var taskItem in item.work.task){
 									itemHTML += '<li>' + item.work.task[taskItem] + '</li>';
 								}
 
-								itemHTML += '</ul>' +
+								itemHTML += '</ol>' +
 										'</li>';
 						}
 
 						if(item.work.result){
 							itemHTML += '<li class="detail_result">' +
-											'<ul>';
+											'<ol class="ol_desc">';
 
 								for(var resultItem in item.work.result){
 									itemHTML += '<li>' + item.work.result[resultItem] + '</li>';
 								}
 
-								itemHTML += '</ul>' +
+								itemHTML += '</ol>' +
 										'</li>';
 						}
 
 						itemHTML += '</ul>' +
 								'</div>' +
+								'<a href="javascript:vold(0);" class="btn_close"><img src="./images/main/btn2_close.png" alt="닫기" /></a>' +
 							'</div>' +
-							'<div class="btn_close"><a href="javascript:vold(0);"><img src="./images/main/btn2_close.png" alt="닫기" /></a></div>' +
 							'<div class="close_bg"></div>' +
 						'</div>' +
 					'</li>';
@@ -624,7 +624,7 @@ $(window).load(function(){
 			$('.page_hd').css('display','none');
 		});
 
-		$(this).on('click', '.pf_detail img', function(){
+		$(this).on('click', '.pf_detail .close_bg, .pf_detail .btn_close', function(){
 			$('.pf_detail').removeClass('on').css('display','none');
 			$body.css({height:'auto', 'overflow-y':'auto'});
 			$('.page_hd').css('display','block');
@@ -666,8 +666,8 @@ $(window).load(function(){
 			
 			//풀페이지 콘텐츠(제목 제외) 최소 높이값
 			$section[i].find('.wrap_cen').css('minHeight', el3);
-		};
-	})();		
+		}
+	})();
 
 	//반응형 초기화
 	$(window).resize($.throttle(1000 / 3, function () {
@@ -701,7 +701,7 @@ $(window).load(function(){
 			//풀페이지 콘텐츠(제목 제외) 최소 높이값
 			$section[i].find('.wrap_cen').css('minHeight', el3);
 			
-		};		
+		}
 	}));
 
 	/* 스크롤에 따른 동적효과 : (풀페이지 하단에 선언)-------------------*/
@@ -743,5 +743,16 @@ $(window).load(function(){
 					$gnbMain.eq(i).addClass('on');
 				}
 			}
-	})); 	
+	}));
+});
+
+$(document).on('click', '.tab_tit > li', function(){
+    var idx = $(this).index();
+
+    $(this).addClass('on')
+        .siblings('li').removeClass('on');
+
+    $(this).parent('ul').siblings(".tab_ctt")
+        .children('li').eq(idx).addClass('on')
+        .siblings('li').removeClass('on');
 });
