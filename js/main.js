@@ -17,8 +17,8 @@ $(document).ready(function(){
 
         var $progressBar  = $container.find('.progress-bar'),  // 2
             $progressText = $container.find('.progress-text'), // 3
-			$bar_R = $progressBar.find('.bar_R');
-			$bar_L = $progressBar.find('.bar_L');
+			$bar_R = $progressBar.find('.bar_R'),
+			$bar_L = $progressBar.find('.bar_L'),
 
             // 2. 진행률 표시 막대 부분
             // 3. 진행률 표시 텍스트 부분
@@ -300,8 +300,8 @@ $(window).load(function(){
         var $container = $(this),
 			$loadMoreButton = $('#load-more'), // 추가 버튼
             $filter = $('#gellery-filter'),    // 필터링 양식
-            addItemCount = 4;
-            addedd = 0,                        // 표시 된 항목 수
+            addItemCount = 10,					// 표시 된 항목 수
+            addadd = 0,                        
             allData = [],                      // 모든 JSON 데이터
             filteredData = [];                 // 필터링 된 JSON 데이터;
 		
@@ -351,7 +351,7 @@ $(window).load(function(){
 
             var elements = [],
                 // 추가 데이터의 배열
-                slicedData = filteredData.slice(addedd, addedd + addItemCount);
+                slicedData = filteredData.slice(addadd, addadd + addItemCount);
 
             // slicedData의 요소마다 DOM 요소를 생성
             $.each(slicedData, function (i, item) {
@@ -363,8 +363,8 @@ $(window).load(function(){
 							'<div class="txt_box">' +
 								'<h4>'+ item.title + '</h4>' +
 								'<ul>' +
-									'<li><span class="pf_th_li_t"><i class="fa fa-bar-chart"></i>참여율</span><span class="pf_th_li_c">' + item.part +'</span></li>' +
-									'<li><span class="pf_th_li_t"><i class="fa fa-calendar"></i>프로젝트기간</span><span class="pf_th_li_c">' + item.project +'</span></li>' +
+									'<li><span class="pf_th_li_t"><i class="fa fa-bar-chart" title="참여율"></i>참여율</span><span class="pf_th_li_c">' + item.part +'</span></li>' +
+									'<li><span class="pf_th_li_t"><i class="fa fa-calendar" title="프로젝트기간"></i>프로젝트기간</span><span class="pf_th_li_c">' + item.project +'</span></li>' +
 								'</ul>' +
 							'</div>' +
 						'</div>' +
@@ -431,10 +431,10 @@ $(window).load(function(){
                 });
 
             // 추가 된 항목 수량 갱신
-            addedd += slicedData.length;
+            addadd += slicedData.length;
 
             // JSON 데이터가 추가 된 후에 있으면 추가 버튼을 지운다
-            if (addedd < filteredData.length) {
+            if (addadd < filteredData.length) {
                 $loadMoreButton.show();
             } else {
                 $loadMoreButton.hide();
@@ -454,7 +454,7 @@ $(window).load(function(){
             // 필터링 된 항목의 데이터를 재설정과
             // 추가 된 항목 수를 재설정
             filteredData = [];
-            addedd = 0;
+            addadd = 0;
 
            if (key === 'ALL') {
                 // all이 클릭 된 경우 모든 JSON 데이터를 저장
