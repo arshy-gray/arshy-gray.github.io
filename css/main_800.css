@@ -62,7 +62,7 @@ section > .sec_t{font-size:40px; line-height:26px}
 .pf_item{margin-bottom:1%}
 
 .pf_txt_basic {padding:25px 20px}
-.pf_txt_basic .pf_t {font-size: 29px;}
+.pf_txt_basic .pf_t {font-size: 26px;}
 .pf_txt_basic .type {font-size: 14px}
 
 .type_device > li:not(:last-child) {margin-right: 9px;font-size:18px;}
