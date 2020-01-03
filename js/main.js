@@ -370,7 +370,7 @@ $(window).load(function(){
 						'</div>' +
 						'<div class="pf_hover">' +
 							'<div class="btn_box"><ul>' +
-								'<li class="detail_btn"><a href="#none" title="자세히보기"><i class="fa fa-search"></i></a></li>';
+								'<li class="detail_btn"><a href="javascript:vold(0);" title="자세히보기"><i class="fa fa-search"></i></a></li>';
 
 						if(item.link){
 								itemHTML += '<li class="siteLink_btn"><a href="' + item.link + '" title="' + item.linkTitle +'" target="' + item.winTarget + '"><i class="fa fa-link"></i></a></li>';
@@ -379,39 +379,132 @@ $(window).load(function(){
 						itemHTML += '</ul></div>' +
 						'</div>' +
 						'<div class="pf_detail">' +
-								'<div class="btn_close"><a href="#none"><img src="./images/main/btn2_close.png" alt="닫기" /></a></div>' +
-							'<div class="wrap_cen" title="이미지를 클릭하면 닫힙니다.">' +
-								'<div class="dt_txt">' +
-									'<h4 class="pf_t">' + item.title + '<span class="type">(' + item.type + ')</span></h4>' +
-									'<ul class="pf_c">' +
-										'<li class="pf_c1">' +
-											'<span class="pf_li_t"><i class="fa fa-bar-chart"></i>참여율</span>' +
-											'<span class="pf_li_c">' + item.part + '</span>' +
-										'</li>' +
-										'<li class="pf_c2">' +
-											'<span class="pf_li_t"><i class="fa fa-calendar"></i>프로젝트기간</span>' +
-											'<span class="pf_li_c">' + item.project + '</span>' +
-										'</li>' +
-										'<li class="pf_c5">' +
-											'<span class="pf_li_t"><i class="fa fa-keyboard-o"></i>사용언어</span>' +
-											'<span class="pf_li_c">' + item.language + '</span>' +
-										'</li>' +
-										'<li class="pf_c4">' +
-											'<span class="pf_li_t"><i class="fa fa-wrench"></i>개발환경</span>' +
-											'<span class="pf_li_c">' + item.task_environment + '</span>' +
-										'</li>';
+							'<div class="pf_layer" title="이미지를 클릭하면 닫힙니다.">' +
+								'<div class="pf_txt_basic">' +
+									'<div class="txt_basic_main">' +
+                            			'<div class="basic_main_tit">' +
+											'<h4 class="pf_t">' + item.title + '</h4>' +
+											'<span class="type">(' + item.intro + ')</span>' +
+                           				 '</div>' +
+										'<div class="basic_main_type">' +
+                            				'<ul class="type_device">' +
+												'<li><i class="fas fa-desktop"></i></li>';
 
-										if(item.link){
-											itemHTML += '<li class="pf_c6">' +
-											'<span class="pf_li_t"><i class="fa fa-link"></i>웹사이트</span>' +
-											'<span class="pf_li_c"><a href="' + item.link + '" title="' + item.linkTitle + '" target="' + item.winTarget + '">' + item.link_ex + '</a></span>' +
-										'</li>';
-										}
-										
-									itemHTML += '</ul>' +
+								if(item.category !== 'ONLY PC'){
+									itemHTML += '<li><i class="fas fa-mobile-alt"></i></li>';
+								}
+
+                				if(item.category === 'RESPONSIVE') {
+                                    itemHTML += '<li><i class="fas fa-sync-alt"></i></li>';
+                                }
+
+                                itemHTML += '</ul>' +
+											'<ul class="type_browser">' +
+												'<li><img src="./images/main/browser_chrome.png" alt="chrome"></li>' +
+												'<li><img src="./images/main/browser_ie.png" alt="ie"><span class="browser_ver">' + item.browser.ie + '</span></li>';
+
+								if(item.browser.safari){
+                                    itemHTML += '<li><img src="./images/main/browser_safari.png" alt="safari"></li>';
+								}
+
+								itemHTML += '</ul>' +
+										'</div>' +
+									'</div>' +
+									'<div class="txt_basic_sub">' +
+										'<ul class="pf_c">' +
+											'<li>' +
+												'<span class="pf_li_t"><i class="fas fa-calendar-alt"></i>프로젝트기간</span>' +
+												'<span class="pf_li_c">' + item.project + '</span>' +
+											'</li>' +
+											'<li>' +
+												'<span class="pf_li_t"><i class="fas fa-users"></i>구성원</span>' +
+												'<span class="pf_li_c">' + item.member + '</span>' +
+											'</li>' +
+											'<li>' +
+												'<span class="pf_li_t"><i class="fas fa-user-tag"></i>주요역할</span>' +
+												'<span class="pf_li_c">' + item.main_role + '</span>' +
+											'</li>' +
+											'<li>' +
+												'<span class="pf_li_t"><i class="fas fa-chart-bar"></i>참여율</span>' +
+												'<span class="pf_li_c">' + item.part + '</span>' +
+											'</li>' +
+											'<li>' +
+												'<span class="pf_li_t"><i class="fas fa-code"></i>사용언어</span>' +
+												'<span class="pf_li_c">' + item.language + '</span>' +
+											'</li>' +
+											'<li>' +
+												'<span class="pf_li_t"><i class="fas fa-laptop-code"></i>개발환경</span>' +
+												'<span class="pf_li_c">' + item.task_environment + '</span>' +
+											'</li>';
+
+							if(item.link){
+								itemHTML += '<li>' +
+												'<span class="pf_li_t"><i class="fas fa-external-link-alt"></i>웹사이트</span>' +
+												'<span class="pf_li_c"><a href="' + item.link + '" title="새창" target="_blank">' + item.link + '</a></span>' +
+											'</li>';
+							}
+
+							itemHTML += '</ul>' +
+									'</div>' +
 								'</div>' +
-								'<div class="dt_img"><img src="' + item.images.detail + '" alt="포트폴리오 상세" /></div>' +
+								'<div class="pf_img"><img src="' + item.images.detail + '" alt="포트폴리오 상세" /></div>' +
+								'<div class="pf_txt_detail">' +
+									'<ul class="txt_detail_tit">';
+
+							if(item.work.scope){
+                                itemHTML += '<li class="on"><i class="fas fa-tasks"></i>업무범위</li>';
+							}
+
+							if(item.work.task){
+                                itemHTML += '<li><i class="fas fa-graduation-cap"></i>주요기여</li>';
+							}
+
+							if(item.work.result){
+                                itemHTML += '<li><i class="fas fa-trophy"></i>주요성과</li>';
+							}
+
+                		itemHTML += '</ul>' +
+									'<ul class="txt_detail_ctt">';
+
+						if(item.work.scope){
+							itemHTML += '<li class="detail_scope on">' + item.work.scope.page;
+
+								if(item.work.scope.comment){
+                                    itemHTML += '<span class="comment">' + item.work.scope.comment + '</span>';
+								}
+
+                            itemHTML += '</li>';
+						}
+
+						if(item.work.task){
+							itemHTML += '<li class="detail_task">' +
+											'<ul>';
+
+								for(var taskItem in item.work.task){
+									itemHTML += '<li>' + item.work.task[taskItem] + '</li>';
+								}
+
+								itemHTML += '</ul>' +
+										'</li>';
+						}
+
+						if(item.work.result){
+							itemHTML += '<li class="detail_result">' +
+											'<ul>';
+
+								for(var resultItem in item.work.result){
+									itemHTML += '<li>' + item.work.result[resultItem] + '</li>';
+								}
+
+								itemHTML += '</ul>' +
+										'</li>';
+						}
+
+						itemHTML += '</ul>' +
+								'</div>' +
 							'</div>' +
+							'<div class="btn_close"><a href="javascript:vold(0);"><img src="./images/main/btn2_close.png" alt="닫기" /></a></div>' +
+							'<div class="close_bg"></div>' +
 						'</div>' +
 					'</li>';
                 elements.push($(itemHTML).get(0));
