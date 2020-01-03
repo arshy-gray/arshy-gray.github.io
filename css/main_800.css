@@ -3,7 +3,7 @@
 /* 전체 */
 body{overflow-x:hidden}
 #wrapper{position:relative;right:0;min-width: 360px;transition:.3s right 0s linear;box-sizing: border-box;overflow: hidden;}
-.wrap_cen{width:100%;padding:0 20px;box-sizing:border-box;}
+.wrap_cen{width:100%;min-width: 360px;padding:0 20px;box-sizing:border-box;}
 
 /* 헤더 */
 #all_m a{display:block; line-height:0}
