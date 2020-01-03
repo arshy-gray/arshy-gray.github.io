@@ -478,7 +478,7 @@ $(window).load(function(){
 
 						if(item.work.task){
 							itemHTML += '<li class="detail_task">' +
-											'<ol class="ol_desc">';
+											'<ol class="ol_decimal">';
 
 								for(var taskItem in item.work.task){
 									itemHTML += '<li>' + item.work.task[taskItem] + '</li>';
@@ -490,7 +490,7 @@ $(window).load(function(){
 
 						if(item.work.result){
 							itemHTML += '<li class="detail_result">' +
-											'<ol class="ol_desc">';
+											'<ol class="ol_decimal">';
 
 								for(var resultItem in item.work.result){
 									itemHTML += '<li>' + item.work.result[resultItem] + '</li>';
