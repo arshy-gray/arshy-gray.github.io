@@ -94,7 +94,7 @@ section.active .txtBox_st1 .main_ct span{-webkit-animation:fromR .7s cubic-bezie
 
 /* 콘텐츠 섹션 공통 - 메뉴 */
 section > .sec_t{position:relative; color:#fff; text-align:center; font-size:50px; line-height:42px; -webkit-animation:toT .7s cubic-bezier(0.4, 0, 0.2, 1); animation:toT .7s cubic-bezier(0.4, 0, 0.2, 1); top:-30px; opacity:0; z-index:1}
-section h2 + .set_ct{position:relative; margin-top:5px; text-align:center; color:#fff; -webkit-animation:toT .7s cubic-bezier(0.4, 0, 0.2, 1); animation:toT .7s cubic-bezier(0.4, 0, 0.2, 1); top:-30px; opacity:0; -webkit-transition:.3s opacity 0s linear; transition:.3s opacity 0s linear}
+section h2 + .set_ct{position:relative;margin-top: 10px;text-align:center;color:#fff;line-height: 18px;-webkit-animation:toT .7s cubic-bezier(0.4, 0, 0.2, 1);animation:toT .7s cubic-bezier(0.4, 0, 0.2, 1);top:-30px;opacity:0;-webkit-transition:.3s opacity 0s linear;transition:.3s opacity 0s linear;}
 
 section.active > .sec_t{-webkit-animation:fromT .7s cubic-bezier(0.4, 0, 0.2, 1); animation:fromT .7s cubic-bezier(0.4, 0, 0.2, 1); -webkit-animation-fill-mode:backwards; animation-fill-mode:backwards; top:0; opacity:1;}
 section.active > .sec_t:after{-webkit-animation:fromT .7s cubic-bezier(0.4, 0, 0.2, 1) .1s; animation:fromT .7s cubic-bezier(0.4, 0, 0.2, 1) .1s; -webkit-animation-fill-mode:backwards; animation-fill-mode:backwards; top:0; opacity:1;}

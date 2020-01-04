@@ -2,7 +2,7 @@
 
 html{height:100%; font-family:'Noto Sans KR', sans-serif; font-size:14px; letter-spacing:-.5px}
 body, p, ul, ol, li, dl, dt, dd, form, table, th, td, fieldset, input, textarea, select, button, h1, h2, h3, h4, h5, h6, pre{margin:0; padding:0; list-style:none}
-body, input, textarea, select, button{color:#666; font-family:'Noto Sans KR', sans-serif; font-size:14px; line-height:22px; letter-spacing:-.5px}
+body, input, textarea, select, button{color:#666;font-family:'Noto Sans KR', sans-serif;font-size:14px;line-height: 22px;letter-spacing:-.5px;}
 iframe{border:0}
 figure{margin:0}
 
