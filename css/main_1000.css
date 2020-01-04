@@ -28,6 +28,12 @@
 /* 포트폴리오 섹션 */
 #portfolio .el02{left:calc(50% + 469px)}
 
+.pf_thumb .txt_box {padding:20px 15px}
+.pf_thumb h4 {font-size: 16px;}
+.pf_thumb ul {margin-top:10px}
+.pf_thumb .pf_th_li_t,
+.pf_thumb .pf_th_li_c {font-size:12px}
+
 .grid-sizer, .pf_item{width: calc((100% - 1%*3)/4);}
 
 .pf_layer{top: 0;left: 0;margin: 5% 10px;width: calc(100% - 10px*2);background-color: #f1f1f1;transform: translate(0,0);overflow: hidden;z-index:1;}
