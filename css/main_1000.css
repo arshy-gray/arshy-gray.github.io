@@ -47,4 +47,4 @@
 .pf_txt_detail {float:none;width:100%;padding:35px 30px;box-sizing: border-box;}
 
 .pf_img {float:none;width:100%;height: auto;text-align:center;}
-.pf_img img {width:50%;}
+.pf_img img {width: 80vw;max-width: 1004px;}
