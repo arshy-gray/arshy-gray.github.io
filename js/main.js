@@ -388,23 +388,23 @@ $(window).load(function(){
                            				 '</div>' +
 										'<div class="basic_main_type">' +
                             				'<ul class="type_device">' +
-												'<li><i class="fas fa-desktop"></i></li>';
+												'<li><i class="fas fa-desktop" title="PC"></i></li>';
 
 								if(item.category !== 'ONLY PC'){
-									itemHTML += '<li><i class="fas fa-mobile-alt"></i></li>';
+									itemHTML += '<li><i class="fas fa-mobile-alt" title="Mobile"></i></li>';
 								}
 
                 				if(item.category === 'RESPONSIVE') {
-                                    itemHTML += '<li class="responsive"><i class="fas fa-sync-alt"></i></li>';
+                                    itemHTML += '<li class="responsive"><i class="fas fa-sync-alt"title="반응형"></i></li>';
                                 }
 
                                 itemHTML += '</ul>' +
 											'<ul class="type_browser">' +
-												'<li><img src="./images/main/browser_chrome.png" alt="chrome"></li>' +
-												'<li><img src="./images/main/browser_ie.png" alt="ie"><span class="browser_ver">' + item.browser.ie + '</span></li>';
+												'<li><img src="./images/main/browser_chrome.png" title="Chrome" alt="chrome"></li>' +
+												'<li><img src="./images/main/browser_ie.png" title="Internet Explorer" alt="ie"><span class="browser_ver">' + item.browser.ie + '</span></li>';
 
 								if(item.browser.safari){
-                                    itemHTML += '<li><img src="./images/main/browser_safari.png" alt="safari"></li>';
+                                    itemHTML += '<li><img src="./images/main/browser_safari.png" title="Safari" alt="safari"></li>';
 								}
 
 								itemHTML += '</ul>' +
