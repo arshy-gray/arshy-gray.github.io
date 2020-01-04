@@ -186,8 +186,8 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 .pf_thumb span{display:inline-block}
 .pf_thumb .pf_th_li_t{display:inline-block;line-height: 18px;overflow: hidden;color: transparent;vertical-align: top;}
 .pf_thumb .pf_th_li_t i {color:#555}
-.pf_thumb i{display: inline-block;margin-right:5px;font-size: 14px;vertical-align: bottom;}
-.pf_thumb .pf_th_li_c{display: inline-block;width: calc(100% - 21px);margin-left: 2px;color:#909090;font-weight:300;line-height:22px;}
+.pf_thumb i{display: inline-block;width: 21px;font-size: 14px;line-height: 1.2;text-align: center;vertical-align: bottom;}
+.pf_thumb .pf_th_li_c{display: inline-block;width: calc(100% - 21px);color:#909090;font-weight:300;line-height: 1.7;}
 
 .pf_hover{position:absolute; width:100%; height:100%; background:rgba(255,204,0,.9); -webkit-transition:.5s opacity 0s ease-in-out; transition:.5s opacity 0s ease-in-out}
 .pf_hover .btn_box{display:table; width:100%; height:100%}
