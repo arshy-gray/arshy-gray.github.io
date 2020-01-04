@@ -73,7 +73,8 @@ section > .sec_t{font-size:40px; line-height:26px}
 .type_browser > li img {width:19px}
 
 .txt_basic_sub {margin-top:15px}
-.txt_basic_sub .pf_li_t {width: 86px;}
+.txt_basic_sub .pf_li_t {width: 93px;}
+.txt_basic_sub .pf_li_c {width:calc(100% - 93px)}
 .txt_basic_sub .pf_c > li {font-size:12px;line-height:18px}
 
 .pf_txt_detail {padding:25px 20px}
