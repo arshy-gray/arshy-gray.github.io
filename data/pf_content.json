@@ -187,6 +187,31 @@
 		}
 	},
 	{
+		"title": "셔틀콕",
+		"intro": "셔틀콕 서비스 안내",
+		"category": "RESPONSIVE",
+		"browser": {
+			"chrome" : true,
+			"ie" : "9",
+			"safari" : true
+		},
+		"member": "2명 (퍼블리셔1, 디자이너1)",
+		"main_role": "메인 퍼블리셔",
+		"part": "Publishing 100%",
+		"project": "2018.11",
+		"images": {
+			"thumb": "../images/main/pfImg026.jpg",
+			"detail": "../images/sub/pf_detailImg026.jpg"
+		},
+		"task_environment": "Wordpress, Apache",
+		"language": "HTML, CSS, Javascript(jQuery)",
+		"work":{
+			"scope":{
+				"page":"원페이지(메인, 차량, 서비스, 이용방법, 운임표, 견전문의 FAQ)"
+			}
+		}
+	},
+	{
 		"title": "DollyAndMolly",
 		"intro": "개인 브랜드 쇼핑몰",
 		"category": "RESPONSIVE",
