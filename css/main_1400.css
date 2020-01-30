@@ -244,7 +244,7 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 .pf_detail .close_bg {position: fixed;top:0;left:0;width: calc(100% - 17px);height:100%;z-index:0;box-sizing:border-box;}
 
 #load-more{display:block; position:relative; margin:30px auto 0 auto; padding:8px 10px 10px 10px; text-align:center; font-size:40px; color:#fff; background:transparent; border:1px solid #fff; cursor:pointer; -webkit-animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); top:30px; opacity:0; overflow:hidden}
-#portfolio.active #load-more{-webkit-animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1);animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1);top:0;left: 0;opacity:1;}
+#portfolio.active #load-more{-webkit-animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1); top:0; opacity:1}
 #load-more:hover{background:rgba(255,255,255,.9); color:#00d4cd}
 
 /* 히스토리 섹션 */
