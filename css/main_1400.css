@@ -178,7 +178,7 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 .gutter-sizer{width: 1%;}
 .pf_item{float:left;margin-bottom: 15px;overflow:hidden;}
 .pf_item:hover{box-shadow:5px 5px 50px rgba(0,0,0,.5)}
-.pf_item.is-loading {visibility:hidden}
+.pf_item.is-loading {opacity:0}
 .pf_thumb{line-height:0}
 .pf_thumb .img_box{max-height:500px; line-height:0; border-bottom:3px dashed #fff; overflow:hidden}
 .pf_thumb img{width:100%;}
