@@ -339,10 +339,14 @@ $(window).load(function(){
             addItems();
 
             // 추가 버튼을 클릭하면 추가로 표시
-            $loadMoreButton.on('click', addItems);
+            $loadMoreButton.on('click', function(){
+				$loadMoreButton.addClass('is-loading');
+			}, addItems);
 
             // 필터 라디오 버튼이 변경되면 필터링을 수행
-            $filter.on('change', 'input[type="radio"]', filterItems);
+            $filter.on('change', 'input[type="radio"]', function(){		
+				$portfolio.addClass('is-loading');
+			}, filterItems);
 
 			// 항목 링크에 호버 효과 처리 등록
             $container.on('mouseenter mouseleave', '.pf_item', hoverDirection);
@@ -354,8 +358,6 @@ $(window).load(function(){
             var elements = [],
                 // 추가 데이터의 배열
 				slicedData = filteredData.slice(addadd, addadd + addItemCount);
-				
-			$loadMoreButton.addClass('is-loading');
 								
             // slicedData의 요소마다 DOM 요소를 생성
             $.each(slicedData, function (i, item) {
