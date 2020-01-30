@@ -134,14 +134,18 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 
 /* 포트폴리오 섹션 */
 #portfolio{background-color: #01d3ce;background-repeat:no-repeat;background-image:url("../images/main/bgPortfoilo_top.png"), url("../images/main/bgPortfolio_btm.png");background-position:calc(50% - 585px) 10px, right bottom;background-attachment:scroll, fixed;}
+#portfolio.is-loading {height:100vh}
+
 #portfolio .el01{top:12px; left:calc(50% - 342px); -webkit-animation:blink 4s ease-in-out infinite; animation:blink 4s ease-in-out infinite}
 #portfolio .el02{top:182px; left:calc(50% + 669px); -webkit-animation:zoomIn 10s ease-out infinite; animation:zoomIn 10s ease-out infinite; -webkit-transform-origin:center; transform-origin:center}
 
 @keyframes zoomIn{0%{transform:scale(1)} 5%{transform:scale(1.1)} 10%{transform:scale(1)} 15%{transform:scale(1.1)} 20%{transform:scale(1)} 25%{transform:scale(1.1)} 30%{transform:scale(1)}  100%{transform:scale(1)}}
 
-#pf_gellery{-webkit-transition:.3s all 0s cubic-bezier(0.4, 0, 0.2, 1); transition:.3s all 0s cubic-bezier(0.4, 0, 0.2, 1); -webkit-animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); top:30px; opacity:0}
+#pf_gellery{-webkit-transition:.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);transition:.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);-webkit-animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1);animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1);top:30px;opacity:0;overflow: hidden;}
 #portfolio.active #pf_gellery{-webkit-animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1); -webkit-animation-fill-mode:backwards; animation-fill-mode:backwards; top:0; opacity:1;}
-#pf_gellery.is-loading {display:none}
+#portfolio.is-loading #pf_gellery {height: calc(100vh - 450px) !important;visibility:hidden;}
+
+#pf_gellery:after {display:block;content:'';clear:both;}
 
 .pf_box{padding-bottom:30px}
 
@@ -244,7 +248,7 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 .pf_detail .close_bg {position: fixed;top:0;left:0;width: calc(100% - 17px);height:100%;z-index:0;box-sizing:border-box;}
 
 #load-more{display:block; position:relative; margin:30px auto 0 auto; padding:8px 10px 10px 10px; text-align:center; font-size:40px; color:#fff; background:transparent; border:1px solid #fff; cursor:pointer; -webkit-animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); top:30px; opacity:0; overflow:hidden}
-#portfolio.active #load-more{-webkit-animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1); top:0; opacity:1}
+#portfolio.active:not(.is-loading)  #load-more{-webkit-animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1); top:0; opacity:1}
 #load-more:hover{background:rgba(255,255,255,.9); color:#00d4cd}
 
 /* 히스토리 섹션 */
