@@ -298,6 +298,7 @@ $(window).load(function(){
 	 $('#pf_gellery').each(function () {
         // #gallery요소가 갤러리 컨테이너
         var $container = $(this),
+			$portfolio = $('#portfolio'),
 			$loadMoreButton = $('#load-more'), // 추가 버튼
             $filter = $('#gellery-filter'),    // 필터링 양식
             addItemCount = 8,					// 표시 된 항목 수
@@ -352,7 +353,7 @@ $(window).load(function(){
                 // 추가 데이터의 배열
                 slicedData = filteredData.slice(addadd, addadd + addItemCount);
 				
-			$container.addClass('is-loading');
+			$portfolio.addClass('is-loading');
 				
             // slicedData의 요소마다 DOM 요소를 생성
             $.each(slicedData, function (i, item) {
@@ -514,10 +515,9 @@ $(window).load(function(){
             // DOM 요소의 배열을 컨테이너에 넣고 Masonry 레이아웃을 실행
             $container
                 .append(elements)
-                .imagesLoaded(function () {
-					$container
-						.removeClass('is-loading')
-						.masonry('appended', elements);
+                .imagesLoaded(function () {					
+					$portfolio.removeClass('is-loading');
+					$container.masonry('appended', elements);
 
                     // 필터링시 재배치
                     if (filter) {
