@@ -143,9 +143,8 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 
 #pf_gellery{-webkit-transition:.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);transition:.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);-webkit-animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1);animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1);top:30px;opacity:0;overflow: hidden;}
 #portfolio.active #pf_gellery{-webkit-animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1); -webkit-animation-fill-mode:backwards; animation-fill-mode:backwards; top:0; opacity:1;}
-#portfolio.is-loading #pf_gellery {height: calc(100vh - 450px) !important;visibility:hidden;}
-
-#pf_gellery:after {display:block;content:'';clear:both;}
+#portfolio.is-loading #pf_gellery {position:relative;height: calc(100vh - 450px) !important}
+#portfolio.is-loading #pf_gellery:after {display:block;content:'';position:absolute;top:50%;left:50%;width: 29px;height: 30px;transform:translate(-50%,-50%);background: url("../images/main/loading2.png") center no-repeat;-webkit-animation:rotate 1.2s infinite;animation:rotate 1.2s infinite;-webkit-animation-play-state:running;animation-play-state:running;}
 
 .pf_box{padding-bottom:30px}
 
@@ -179,6 +178,7 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 .gutter-sizer{width: 1%;}
 .pf_item{float:left;margin-bottom: 15px;overflow:hidden;}
 .pf_item:hover{box-shadow:5px 5px 50px rgba(0,0,0,.5)}
+#portfolio.is-loading .pf_item {visibility:hidden}
 .pf_thumb{line-height:0}
 .pf_thumb .img_box{max-height:500px; line-height:0; border-bottom:3px dashed #fff; overflow:hidden}
 .pf_thumb img{width:100%;}
