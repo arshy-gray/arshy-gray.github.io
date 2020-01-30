@@ -572,11 +572,9 @@ $(window).load(function(){
 							return item.category2 === key;
 		                });
             }       
-			
-			$loadMoreButton.show();		
 
             // 항목을 추가
-			addItems(true);	
+			addItems(true);		
         }
 
 	 // 호버 효과
