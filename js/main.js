@@ -310,8 +310,7 @@ $(window).load(function(){
 				var addItemCount = 4;              
 			}else{
 				var addItemCount = 6; 
-			}*/
-
+			}*/		
 
 		//옵션을 설정 Masonry를 준비
         $container.masonry({
@@ -352,12 +351,14 @@ $(window).load(function(){
             var elements = [],
                 // 추가 데이터의 배열
                 slicedData = filteredData.slice(addadd, addadd + addItemCount);
-
+				
+			$container.addClass('is-loading');
+				
             // slicedData의 요소마다 DOM 요소를 생성
             $.each(slicedData, function (i, item) {
             	var itemHTML = '';
 
-              itemHTML += '<li class="pf_item is-loading">' +
+              itemHTML += '<li class="pf_item">' +
 						'<div class="pf_thumb">' +
 							'<div class="img_box"><img src="' + item.images.thumb + '" alt="' + item.title + '" /></div>' +
 							'<div class="txt_box">' +
@@ -514,8 +515,9 @@ $(window).load(function(){
             $container
                 .append(elements)
                 .imagesLoaded(function () {
-                    $(elements).removeClass('is-loading');
-                    $container.masonry('appended', elements);
+					$container
+						.removeClass('is-loading')
+                    	.masonry('appended', elements);
 
                     // 필터링시 재배치
                     if (filter) {
