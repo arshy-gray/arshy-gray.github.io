@@ -35,16 +35,3 @@
 .pf_thumb .pf_th_li_c {font-size:12px}
 
 .grid-sizer, .pf_item{width: calc((100% - 1%*3)/4);}
-
-.pf_layer{top: 0;left: 0;margin: 5% 10px;width: calc(100% - 10px*2);background-color: #f1f1f1;transform: translate(0,0);overflow: hidden;z-index:1;}
-
-.pf_txt_basic {position:relative;float:none;width:100%;padding:35px 30px}
-.pf_txt_basic:after {display:block;content:'';clear:both}
-
-.txt_basic_main:after {display:block;content:'';clear:both}
-.basic_main_type {margin-top: 15px}
-
-.pf_txt_detail {float:none;width:100%;padding:35px 30px;box-sizing: border-box;}
-
-.pf_img {float:none;width:100%;height: auto;text-align:center;}
-.pf_img img {width: 80vw;max-width: 1004px;}
