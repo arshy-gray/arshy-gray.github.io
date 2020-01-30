@@ -141,7 +141,7 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 
 #pf_gellery{-webkit-transition:.3s all 0s cubic-bezier(0.4, 0, 0.2, 1); transition:.3s all 0s cubic-bezier(0.4, 0, 0.2, 1); -webkit-animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); top:30px; opacity:0}
 #portfolio.active #pf_gellery{-webkit-animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1); -webkit-animation-fill-mode:backwards; animation-fill-mode:backwards; top:0; opacity:1;}
-#pf_gellery.is-loading {opacity:0 !important}
+#pf_gellery.is-loading {display:none}
 
 .pf_box{padding-bottom:30px}
 
