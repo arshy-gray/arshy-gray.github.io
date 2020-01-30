@@ -84,6 +84,19 @@ section > .sec_t{font-size:40px; line-height:26px}
 
 .pf_img img {width:100%}
 
+.pf_layer{top: 0;left: 0;margin: 5% 10px;width: calc(100% - 10px*2);background-color: #f1f1f1;transform: translate(0,0);overflow: hidden;z-index:1;}
+
+.pf_txt_basic {position:relative;float:none;width:100%;padding:35px 30px}
+.pf_txt_basic:after {display:block;content:'';clear:both}
+
+.txt_basic_main:after {display:block;content:'';clear:both}
+.basic_main_type {margin-top: 15px}
+
+.pf_txt_detail {float:none;width:100%;padding:35px 30px;box-sizing: border-box;}
+
+.pf_img {float:none;width:100%;height: auto;text-align:center;}
+.pf_img img {width: 80vw;max-width: 1004px;} 
+
 /* 히스토리 섹션 */
 #history{background-position: -280px calc(50% + 20px), calc(100% + 280px) calc(50% + 20px), -300px -500px, calc(100% + 300px) calc(100% + 500px);}
 
@@ -119,6 +132,7 @@ section > .sec_t{font-size:40px; line-height:26px}
 /* 포트폴리오 섹션 */
 #portfolio .wrap_cen {padding:0 5px 0 10px;}
 .grid-sizer, .pf_item{width:48.5%}
+
 
 /* 히스토리 섹션 */
 #history{background-position:-350px calc(50% + 20px), calc(100% + 350px) calc(50% + 20px), -300px -500px, calc(100% + 300px) calc(100% + 500px)}
