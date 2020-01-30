@@ -181,7 +181,7 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 #portfolio.is-loading .pf_item,
 .pf_item.is-loading {opacity:0}
 .pf_thumb{line-height:0}
-.pf_thumb .img_box{max-height:500px; line-height:0; border-bottom:3px dashed #fff; overflow:hidden}
+.pf_thumb .img_box{max-height: 330px;line-height:0;border-bottom:3px dashed #fff;overflow:hidden;}
 .pf_thumb img{width:100%;}
 .pf_thumb .txt_box{padding:25px 20px; border-top:3px dashed #00d4cd; background:#fff}
 .pf_thumb h4{font-size: 22px;line-height: 1.2;color:#2e2e2e;word-break: keep-all;}
