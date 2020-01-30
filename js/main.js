@@ -549,7 +549,6 @@ $(window).load(function(){
                 masonryItems = $container.masonry('getItemElements');
 
 			$portfolio.addClass('is-loading');
-			$loadMoreButton.hide();
 
             // Masonry 항목을 삭제
             $container.masonry('remove', masonryItems);
