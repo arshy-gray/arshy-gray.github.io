@@ -331,7 +331,9 @@ $(window).load(function(){
             allData = data;
 
             // 초기 상태에서는 필터링하지 않고 그대로 전체 데이터를 전달
-            filteredData = allData;
+			filteredData = allData;			
+			
+			$portfolio.addClass('is-loading');
 
             // 첫 번째 항목을 표시
             addItems();
@@ -352,14 +354,12 @@ $(window).load(function(){
             var elements = [],
                 // 추가 데이터의 배열
                 slicedData = filteredData.slice(addadd, addadd + addItemCount);
-				
-			$portfolio.addClass('is-loading');
-				
+								
             // slicedData의 요소마다 DOM 요소를 생성
             $.each(slicedData, function (i, item) {
             	var itemHTML = '';
 
-              itemHTML += '<li class="pf_item">' +
+              itemHTML += '<li class="pf_item is-loading">' +
 						'<div class="pf_thumb">' +
 							'<div class="img_box"><img src="' + item.images.thumb + '" alt="' + item.title + '" /></div>' +
 							'<div class="txt_box">' +
@@ -517,6 +517,7 @@ $(window).load(function(){
                 .append(elements)
                 .imagesLoaded(function () {					
 					$portfolio.removeClass('is-loading');
+					$('.pf_item').removeClass('is-loading');
 					$container.masonry('appended', elements);
 
                     // 필터링시 재배치
