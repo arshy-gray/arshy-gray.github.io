@@ -353,6 +353,7 @@ $(window).load(function(){
                 slicedData = filteredData.slice(addadd, addadd + addItemCount);
 				
 			$container.addClass('is-loading');
+			$loadMoreButton.hide();
 				
             // slicedData의 요소마다 DOM 요소를 생성
             $.each(slicedData, function (i, item) {
@@ -517,7 +518,9 @@ $(window).load(function(){
                 .imagesLoaded(function () {
 					$container
 						.removeClass('is-loading')
-                    	.masonry('appended', elements);
+						.masonry('appended', elements);
+						
+					$loadMoreButton.show();
 
                     // 필터링시 재배치
                     if (filter) {
