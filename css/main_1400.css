@@ -14,7 +14,7 @@ body{position:relative}
 #wrapper{opacity: 0;width:100%;min-width:1400px;overflow: hidden;}
 #wrapper.on{opacity:1}
 .wrap_cen{clear:both;position:relative;margin:0 auto;width:1400px;height:100%;overflow:hidden;}
-*::selection {background: #ff229f; color: #fff}
+*::selection {background: #ff229f;color: #fff;}
 .bg_el{position:absolute; top:0; left:0; width:100%; height:100%; z-index:0}
 .bg_el span{position:absolute; top:0; left:0;}
 .bg_el img{position:relative}
@@ -219,7 +219,6 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 .type_browser .browser_ver {position:absolute;display: block;top: -3px;right:-5px;padding:1px;width: 14px;height: 14px;font-size:10px;line-height: 1;text-align: center;color:#fff;background-color:#3278bc;border-radius:50%;box-sizing:border-box;}
 
 .txt_basic_sub {margin-top: 25px;}
-.txt_basic_sub .pf_c > li {}
 .txt_basic_sub .pf_c > li i {display:inline-block;width: 22px;text-align: center;}
 .txt_basic_sub .pf_li_t {display:inline-block;width: 105px;vertical-align: top;}
 .txt_basic_sub .pf_li_c {display:inline-block;width: calc(100% - 105px);font-weight:300;color:#777;vertical-align: top;}
@@ -247,8 +246,12 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 .pf_detail .btn_close img {vertical-align:top}
 .pf_detail .close_bg {position: fixed;top:0;left:0;width: calc(100% - 17px);height:100%;z-index:0;box-sizing:border-box;}
 
-#load-more{display:block; position:relative; margin:30px auto 0 auto; padding:8px 10px 10px 10px; text-align:center; font-size:40px; color:#fff; background:transparent; border:1px solid #fff; cursor:pointer; -webkit-animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); top:30px; opacity:0; overflow:hidden}
-#portfolio.active:not(.is-loading)  #load-more{-webkit-animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1); top:0; opacity:1}
+#load-more{display:block; position:relative; margin:30px auto 0 auto;background:transparent; -webkit-animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:toB .7s cubic-bezier(0.4, 0, 0.2, 1); top:30px; opacity:0; overflow:hidden}
+#load-more:not(.is-loading) {padding:8px 10px 10px 10px; text-align:center; font-size:40px; color:#fff;  border:1px solid #fff; cursor:pointer}
+#load-more.is-loading {font-size:0;width: 29px;height: 30px;transform:translate(-50%,-50%);border:0;pointer-events:none;cursor: default;outline:0;}
+#load-more.is-loading:after {display:block;content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:url("../images/main/loading2.png") center no-repeat;-webkit-animation:rotate 1.2s infinite;animation:rotate 1.2s infinite;-webkit-animation-play-state:running;animation-play-state:running}
+
+#portfolio.active:not(.is-loading) #load-more{-webkit-animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1); animation:fromB .7s cubic-bezier(0.4, 0, 0.2, 1); top:0; opacity:1}
 #load-more:hover{background:rgba(255,255,255,.9); color:#00d4cd}
 
 /* 히스토리 섹션 */
