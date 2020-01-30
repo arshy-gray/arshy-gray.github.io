@@ -341,12 +341,11 @@ $(window).load(function(){
             // 추가 버튼을 클릭하면 추가로 표시
             $loadMoreButton.on('click', function(){
 				$loadMoreButton.addClass('is-loading');
-			}, addItems);
+				addItems();
+			});
 
             // 필터 라디오 버튼이 변경되면 필터링을 수행
-            $filter.on('change', 'input[type="radio"]', function(){		
-				$portfolio.addClass('is-loading');
-			}, filterItems);
+            $filter.on('change', 'input[type="radio"]', filterItems);
 
 			// 항목 링크에 호버 효과 처리 등록
             $container.on('mouseenter mouseleave', '.pf_item', hoverDirection);
@@ -549,6 +548,9 @@ $(window).load(function(){
                 // 추가 된 Masonry 아이템
                 masonryItems = $container.masonry('getItemElements');
 
+			$portfolio.addClass('is-loading');
+			$loadMoreButton.hide();
+
             // Masonry 항목을 삭제
             $container.masonry('remove', masonryItems);
 
@@ -569,10 +571,12 @@ $(window).load(function(){
 		                 filteredData = $.grep(allData, function (item) {
 							return item.category2 === key;
 		                });
-            }              
+            }       
+			
+			$loadMoreButton.show();		
 
             // 항목을 추가
-            addItems(true);			
+			addItems(true);	
         }
 
 	 // 호버 효과
