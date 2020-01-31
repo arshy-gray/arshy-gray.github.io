@@ -217,7 +217,7 @@ background-position:calc(50% - 743px) 158px, calc(50% - 182px) -87px, calc(50% +
 
 .type_browser {display: inline-block;border-left:1px solid #ccc;}
 .type_browser > li{position:relative;display: inline-block;margin-left:10px;vertical-align: middle;line-height: 1;}
-.type_browser .browser_ver {position:absolute;display: block;top: -3px;right:-5px;padding:1px;width: 14px;height: 14px;font-size:10px;line-height: 1;text-align: center;color:#fff;background-color:#3278bc;border-radius:50%;box-sizing:border-box;}
+.type_browser .browser_ver {position:absolute;display: block;bottom: 0;right: -2px;font-size: 11px;font-weight: bold;text-shadow: -3px -3px 3px #f1f1f1;line-height: 1;text-align: center;color: #096dbb;}
 
 .txt_basic_sub {margin-top: 25px;}
 .txt_basic_sub .pf_c > li i {display:inline-block;width: 22px;text-align: center;}
