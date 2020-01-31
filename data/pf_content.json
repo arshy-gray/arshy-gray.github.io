@@ -10,7 +10,7 @@
 			"safari" : true
 		},
 		"member": "7명 (개발자4, 퍼블리셔1, 디자이너2)",
-		"main_role": "메인 퍼블리셔",
+		"main_role": "사이트 전반 퍼블리싱 전담",
 		"part": "Publishing 100%",
 		"project": "2019.07 ~ 2019.10",
 		"images": {
@@ -53,7 +53,7 @@
 			"safari" : true
 		},
 		"member": "2명 (퍼블리셔1, 디자이너1)",
-		"main_role": "메인 퍼블리셔",
+		"main_role": "사이트 전반 퍼블리싱 전담",
 		"part": "Publishing 100%",
 		"project": "2019.07 ~ 2019.08",
 		"images": {
@@ -95,7 +95,7 @@
 			"safari" : true
 		},
 		"member": "2명 (퍼블리셔1, 디자이너1)",
-		"main_role": "메인 퍼블리셔",
+		"main_role": "사이트 전반 퍼블리싱 전담",
 		"part": "Publishing 100%",
 		"project": "2019.02",
 		"images": {
@@ -124,8 +124,8 @@
 			"ie" : "9",
 			"safari" : false
 		},
-		"member": "4명 (개발자3, 퍼블리셔1, 디자이너1)",
-		"main_role": "메인 퍼블리셔",
+		"member": "6명 (기획자1, 개발자3, 퍼블리셔1, 디자이너1)",
+		"main_role": "사이트 전반 퍼블리싱 전담",
 		"part": "Publishing 100%",
 		"project": "2018.09 ~ 2019.05",
 		"images": {
@@ -166,8 +166,8 @@
 			"ie" : "9",
 			"safari" : true
 		},
-		"member": "2명 (퍼블리셔1, 디자이너1)",
-		"main_role": "메인 퍼블리셔",
+		"member": "3명 (기획자1, 퍼블리셔1, 디자이너1)",
+		"main_role": "사이트 전반 퍼블리싱 전담",
 		"part": "Publishing 100%",
 		"project": "2018.11 ~ 2019.02",
 		"images": {
@@ -196,7 +196,7 @@
 			"safari" : true
 		},
 		"member": "2명 (퍼블리셔1, 디자이너1)",
-		"main_role": "메인 퍼블리셔",
+		"main_role": "사이트 전반 퍼블리싱 전담",
 		"part": "Publishing 100%",
 		"project": "2018.11",
 		"images": {
@@ -222,7 +222,7 @@
 			"safari" : true
 		},
 		"member": "2명 (퍼블리셔1, 디자이너1)",
-		"main_role": "메인 퍼블리셔",
+		"main_role": "사이트 전반 퍼블리싱 전담",
 		"part": "Publishing 100%",
 		"project": "2017.07 ~ 2017.09",
 		"images": {
@@ -262,7 +262,7 @@
 			"safari" : true
 		},
 		"member": "5명 (개발자3, 퍼블리셔1, 디자이너1)",
-		"main_role": "메인 퍼블리셔",
+		"main_role": "사이트 전반 퍼블리싱 전담",
 		"part": "Publishing 100%",
 		"project": "2017.05 ~ 2018.01",
 		"images": {
@@ -332,7 +332,7 @@
 			"safari" : true
 		},
 		"member": "2명 (개발자1, 디자이너1)",
-		"main_role": "메인 디자이너(퍼블리싱 포함)",
+		"main_role": "사이트 전반 디자인 및 퍼블리싱 ",
 		"part": "Design & Publishing 90%",
 		"project": "2016.08 ~ 2016.12",
 		"images": {
@@ -363,7 +363,7 @@
 			"safari" : true
 		},
 		"member": "2명 (개발자1, 디자이너1)",
-		"main_role": "메인 디자이너(퍼블리싱 포함)",
+		"main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
 		"part": "Design & Publishing 100%",
 		"project": "2016.07 ~ 2016.08",
 		"images": {
@@ -394,7 +394,7 @@
 			"safari" : true
 		},
 		"member": "2명 (개발자1, 디자이너1)",
-		"main_role": "메인 디자이너(퍼블리싱 포함)",
+		"main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
 		"part": "Design & Publishing 100%",
 		"project": "2016.07 ~ 2016.08",
 		"images": {
@@ -420,7 +420,7 @@
 			"safari" : true
 		},
 		"member": "2명 (개발자1, 디자이너1)",
-		"main_role": "메인 디자이너(퍼블리싱 포함)",
+		"main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
 		"part": "Design & Publishing 100%",
 		"project": "2016.07 ~ 2016.07",
 		"images": {
@@ -451,7 +451,7 @@
 			"safari" : true
 		},
 		"member": "2명 (개발자1, 디자이너1)",
-		"main_role": "메인 디자이너(퍼블리싱 포함)",
+		"main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
 		"part": "Design & Publishing 100%",
 		"project": "2016.04 ~ 2016.06",
 		"images": {
@@ -481,7 +481,7 @@
 			"safari" : true
 		},
 		"member": "2명 (개발자1, 디자이너1)",
-		"main_role": "메인 디자이너(퍼블리싱 포함)",
+		"main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
 		"part": "Design & Publishing 100%",
 		"project": "2016.04 ~ 2016.06",
 		"images": {
@@ -510,7 +510,7 @@
 			"safari" : true
 		},
 		"member": "2명 (개발자1, 디자이너1)",
-		"main_role": "메인 디자이너(퍼블리싱 포함)",
+		"main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
 		"part": "Design & Publishing 100%",
 		"project": "2016.02 ~ 2016.06",
 		"images": {
@@ -539,7 +539,7 @@
 			"safari" : true
 		},
 		"member": "3명 (개발자1, 디자이너2)",
-		"main_role": "서브 디자이너 (퍼블리싱 포함)",
+		"main_role": "사이트 전반 퍼블리싱 전담 ",
 		"part": "Publishing 100%",
 		"project": "2015.09 ~ 2016.02",
 		"images": {
@@ -564,7 +564,7 @@
 			"safari" : true
 		},
 		"member": "2명 (개발자1, 디자이너1)",
-		"main_role": "메인 디자이너(퍼블리싱 포함)",
+		"main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
 		"part": "Design & Publishing 100%",
 		"project": "2015.09 ~ 2016.02",
 		"images": {
@@ -592,7 +592,7 @@
 			"safari" : true
 		},
 		"member": "3명 (개발자1, 디자이너2)",
-		"main_role": "서브 디자이너 (퍼블리싱 포함)",
+		"main_role": "사이트 전반 퍼블리싱 전담 ",
 		"part": "Design 50%(Sub Page), Publishing 100%",
 		"project": "2015.09 ~ 2016.02",
 		"images": {
@@ -620,7 +620,7 @@
 			"safari" : true
 		},
 		"member": "3명 (개발자1, 디자이너2)",
-		"main_role": "서브 디자이너 (퍼블리싱 포함)",
+		"main_role": "사이트 전반 퍼블리싱 전담 ",
 		"part": "Design 50%(Sub Page), Publishing 100%",
 		"project": "2015.09 ~ 2016.02",
 		"images": {
@@ -648,7 +648,7 @@
 			"safari" : true
 		},
 		"member": "2명 (개발자1, 디자이너1)",
-		"main_role": "메인 디자이너 (퍼블리싱 포함)",
+		"main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
 		"part": "Design & Publishing 100%",
 		"project": "2015.09 ~ 2016.02",
 		"images": {
@@ -676,7 +676,7 @@
 			"safari" : true
 		},
 		"member": "2명 (개발자1, 디자이너1)",
-		"main_role": "메인 디자이너 (퍼블리싱 포함)",
+		"main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
 		"part": "Design & Publishing 100%",
 		"project": "2015.09 ~ 2016.02",
 		"images": {
@@ -704,7 +704,7 @@
 			"safari" : true
 		},
 		"member": "2명 (개발자1, 디자이너1)",
-		"main_role": "메인 디자이너 (퍼블리싱 포함)",
+		"main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
 		"part": "Design & Publishing 100%",
 		"project": "2015.09 ~ 2016.02",
 		"images": {
@@ -732,7 +732,7 @@
 			"safari" : true
 		},
 		"member": "3명 (개발자1, 디자이너2)",
-		"main_role": "서브 디자이너 (퍼블리싱 포함)",
+		"main_role": "사이트 전반 퍼블리싱 전담 ",
 		"part": "Publishing 100%",
 		"project": "2015.09 ~ 2016.02",
 		"images": {
@@ -758,7 +758,7 @@
 			"safari" : true
 		},
 		"member": "2명 (개발자1, 디자이너1)",
-		"main_role": "메인 디자이너(퍼블리싱 포함)",
+		"main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
 		"part": "Design & Publishing 100%",
 		"project": "2015.08 ~ 2015.12",
 		"images": {
