@@ -617,11 +617,11 @@ $(window).load(function(){
 		}
 
 		// jQuery UI Button
-		$('.filter-form input[type="radio"]').button({
-			icons: {
-				primary: 'icon-radio'
-			}
-		});
+		// $('.filter-form input[type="radio"]').button({
+		// 	icons: {
+		// 		primary: 'icon-radio'
+		// 	}
+		// });
 
 		//포트폴리오 디테일 이미지 온오프
 		var winHeight = $(window).height(),
