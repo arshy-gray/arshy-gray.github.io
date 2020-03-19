@@ -145,9 +145,9 @@
 		<div class="wrap_cen">
 			<article class="pf_box">
 				<h3 class="hidden">분야별 포트폴리오</h3>
-				<div class="filtr_wrap">
+				<div class="filter_wrap">
 				 <form class="filter-form" id="gellery-filter">
-					 <ul class="filter-group">
+					 <ul class="filter-group filter-type-device">
 						<li class="form-item radioItem">
 							<input type="radio" name="filter" id="filter-all" value="ALL" checked title="ALL" />
 							<label for="filter-all" title="전체 사이트 모음입니다." >All</label>
@@ -164,14 +164,16 @@
 							<input type="radio" name="filter" id="filter-onlypc" value="ONLY PC"  title="ONLY PC" />
 							<label for="filter-onlypc" title="PC 버전 사이트 모음입니다." >ONLY PC</label>
 						</li>
-						<li class="form-item chkItem">
-							<input type="checkbox" name="filter-linked" id="filter-linked" value="LINKED"  title="LINKED" />
-							<label for="filter-linked" title="현재 서비스 중인 사이트 모음입니다." >LINKED</label>
-						</li>
 						<!-- <li class="form-item">
 							<input type="radio" name="filter" id="filter-individual" value="INDIVIDUAL" title="INDIVIDUAL" />
 							<label for="filter-individual" title="개인적으로 구축한 사이트 모음입니다.">INDIVIDUAL</label>
 						</li> -->
+					</ul>
+					<ul class="filter-group filter-type-linked">
+						<li class="form-item chkItem">
+							<input type="checkbox" name="filter-linked" id="filter-linked" value="LINKED"  title="LINKED" />
+							<label for="filter-linked" title="현재 서비스 중인 사이트 모음입니다." >LINKED</label>
+						</li>
 					</ul>
 				</form>
 				</div>
