@@ -56,7 +56,7 @@ section > .sec_t{font-size:40px; line-height:26px}
 
 .form-item label{color:#fff; border:0}
 .form-item input:checked ~ label,
-.form-item label:hover{color:#ffff00; border:0}
+.form-item label:hover, .form-item label:focus{color:#ffff00; border:0; animation:none}
 
 .grid-sizer, .pf_item{width:32.3%}
 .pf_item{margin-bottom:1%}
