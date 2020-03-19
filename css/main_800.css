@@ -51,12 +51,12 @@ section > .sec_t{font-size:40px; line-height:26px}
 
 .filtr_wrap{overflow-x:scroll; -webkit-overflow-style:none;}
 .filtr_wrap::-webkit-scrollbar{width:0; height:0; display:none}
-.filter-group{text-align:center; border-top:1px solid #affdfb; border-bottom:1px solid #affdfb}
-.form-item{width:auto; margin:0 5px; border:0}
+.filter-type-device{border:solid #affdfb;border-width:1px 0;}
+.form-item.radioItem{width:auto; margin:0 5px; border:0}
 
 .form-item label{color:#fff; border:0}
-.form-item input:checked ~ label,
-.form-item label:hover, .form-item label:focus{color:#ffff00; border:0; animation:none}
+.form-item input[type="radio"]:checked ~ label {color:#ffff00;border:0;animation:none}
+.form-item.chkItem { margin-top:10px}
 
 .grid-sizer, .pf_item{width:32.3%}
 .pf_item{margin-bottom:1%}
@@ -68,7 +68,6 @@ section > .sec_t{font-size:40px; line-height:26px}
 .type_device > li:not(:last-child) {margin-right: 9px;font-size:18px;}
 .type_device > li.responsive {font-size:16px}
 
-.type_browser {}
 .type_browser > li {margin-left:7px}
 .type_browser > li img {width:19px}
 

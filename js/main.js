@@ -345,7 +345,7 @@ $(window).load(function(){
 			});
 
             // 필터 라디오 버튼이 변경되면 필터링을 수행
-            $filter.on('change', 'input[type="radio"]', filterItems);
+            $filter.on('change', '.form-item input', filterItems);
 
 			// 항목 링크에 호버 효과 처리 등록
             $container.on('mouseenter mouseleave', '.pf_item', hoverDirection);
@@ -543,10 +543,10 @@ $(window).load(function(){
        
 		// 항목을 필터링한다.
         function filterItems () {
-            var key = $(this).val(),// 체크 된 라디오 버튼의 value
-
-                // 추가 된 Masonry 아이템
-                masonryItems = $container.masonry('getItemElements');
+			var key1 = $('.filter-group').find('.form-item').find('input[type="radio"]:checked').val(),// 체크 된 라디오 버튼의 value
+				key2 = $('.filter-group').find('.form-item').find('input[type="checkbox"]').prop('checked'),// 체크 된 체크 버튼의 value
+				
+				masonryItems = $container.masonry('getItemElements');// 추가 된 Masonry 아이템
 
 			$portfolio.addClass('is-loading');
 
@@ -558,20 +558,20 @@ $(window).load(function(){
             filteredData = [];
             addadd = 0;
 
-           if (key === 'ALL') {
-                // all이 클릭 된 경우 모든 JSON 데이터를 저장
-                filteredData = allData;
-            } // all 이외의 경우, 키와 일치하는 데이터를 추출
-						else if(key === 'ONLY PC' || key === 'PC&MOBILE' || key === 'RESPONSIVE'){
+           if (key1 === 'ALL') { // 1차필터링 - all이 클릭 된 경우 모든 JSON 데이터를 저장
+				filteredData = allData;
+			} else { // all 이외의 경우, 키와 일치하는 데이터를 추출		
                 filteredData = $.grep(allData, function (item) {
-                    return item.category === key;
+                    return item.category1 === key1;
                 });
-		            } else {
-		                 filteredData = $.grep(allData, function (item) {
-							return item.category2 === key;
-		                });
-            }       
+			}
 
+			if (key2) { // 1차 필터링 데이터 기반 2차 필터링 - linked
+				filteredData = $.grep(filteredData, function (item) {
+                    return item.linked === key2;
+                });
+			}
+			
             // 항목을 추가
 			addItems(true);		
         }
@@ -615,13 +615,6 @@ $(window).load(function(){
 				direction = Math.round((Math.atan2(y, x) * (180 / Math.PI) + 180) / 90  + 3) % 4;
 			return direction;
 		}
-
-		// jQuery UI Button
-		$('.filter-form input[type="radio"]').button({
-			icons: {
-				primary: 'icon-radio'
-			}
-		});
 
 		//포트폴리오 디테일 이미지 온오프
 		var winHeight = $(window).height(),
