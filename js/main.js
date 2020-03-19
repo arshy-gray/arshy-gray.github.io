@@ -558,7 +558,7 @@ $(window).load(function(){
             filteredData = [];
             addadd = 0;
 
-           if (key1 === 'ALL') { // all이 클릭 된 경우 모든 JSON 데이터를 저장
+           if (key1 === 'ALL') { // 1차필터링 - all이 클릭 된 경우 모든 JSON 데이터를 저장
 				filteredData = allData;
 			} else { // all 이외의 경우, 키와 일치하는 데이터를 추출		
                 filteredData = $.grep(allData, function (item) {
@@ -566,7 +566,7 @@ $(window).load(function(){
                 });
 			}
 
-			if (key2) { // all이 클릭 된 경우 모든 JSON 데이터를 저장
+			if (key2) { // 1차 필터링 데이터 기반 2차 필터링 - linked
 				filteredData = $.grep(filteredData, function (item) {
                     return item.linked === key2;
                 });
