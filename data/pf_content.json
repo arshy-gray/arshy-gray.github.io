@@ -2,8 +2,8 @@
 	{
 		"title": "KONVINI Ver.2",
 		"intro": "국내 패션 브랜드 편집숍(일본, 홍콩)",
-		"category": "RESPONSIVE",
-		"category2": "LINKED",
+		"category1": "RESPONSIVE",
+		"linked": true,
 		"browser": {
 			"chrome" : true,
 			"ie" : "9",
@@ -45,8 +45,8 @@
 	{
 		"title": "SHINAND",
 		"intro": "SHINAND 사업안내",
-		"category": "RESPONSIVE",
-		"category2": "LINKED",
+		"category1": "RESPONSIVE",
+		"linked": true,
 		"browser": {
 			"chrome" : true,
 			"ie" : "9",
@@ -87,8 +87,8 @@
 	{
 		"title": "KONVINATION",
 		"intro": "KONVINATION 사업안내",
-		"category": "RESPONSIVE",
-		"category2": "LINKED",
+		"category1": "RESPONSIVE",
+		"linked": true,
 		"browser": {
 			"chrome" : true,
 			"ie" : "9",
@@ -117,8 +117,8 @@
 	{
 		"title": "배차반장 웹플랫폼",
 		"intro": "기업화물 주선 웹플랫폼",
-		"category": "ONLY PC",
-		"category2": "LINKED",
+		"category1": "ONLY PC",
+		"linked": true,
 		"browser": {
 			"chrome" : true,
 			"ie" : "9",
@@ -159,8 +159,8 @@
 	{
 		"title": "배차반장",
 		"intro": "배차반장 서비스 안내",
-		"category": "RESPONSIVE",
-		"category2": "LINKED",
+		"category1": "RESPONSIVE",
+		"linked": true,
 		"browser": {
 			"chrome" : true,
 			"ie" : "9",
@@ -189,7 +189,7 @@
 	{
 		"title": "셔틀콕",
 		"intro": "셔틀콕 서비스 안내",
-		"category": "RESPONSIVE",
+		"category1": "RESPONSIVE",
 		"browser": {
 			"chrome" : true,
 			"ie" : "9",
@@ -214,8 +214,8 @@
 	{
 		"title": "DollyAndMolly",
 		"intro": "개인 브랜드 쇼핑몰",
-		"category": "RESPONSIVE",
-		"category2": "LINKED",
+		"category1": "RESPONSIVE",
+		"linked": true,
 		"browser": {
 			"chrome" : true,
 			"ie" : "9",
@@ -255,7 +255,7 @@
 	{
 		"title": "KONVINI Ver.1",
 		"intro": "국내 패션 브랜드 편집숍(일본, 홍콩)",
-		"category": "RESPONSIVE",
+		"category1": "RESPONSIVE",
 		"browser": {
 			"chrome" : true,
 			"ie" : "9",
@@ -292,8 +292,8 @@
 	{
 		"title": "Aeri's Portfolio",
 		"intro": "개인 포트폴리오",
-		"category": "RESPONSIVE",
-		"category2": "INDIVIDUAL",
+		"category1": "RESPONSIVE",
+		"linked": "INDIVIDUAL",
 		"browser": {
 			"chrome" : true,
 			"ie" : "9",
@@ -324,8 +324,8 @@
 	{
 		"title": "신안군 중개장터",
 		"intro": "신안특산물 중개장터",
-		"category": "RESPONSIVE",
-		"category2": "LINKED",
+		"category1": "RESPONSIVE",
+		"linked": true,
 		"browser": {
 			"chrome" : true,
 			"ie" : "8",
@@ -356,7 +356,7 @@
 	{
 		"title": "강진만 생태공원 Ver.2",
 		"intro": "강진만 생태공원 안내",
-		"category": "RESPONSIVE",
+		"category1": "RESPONSIVE",
 		"browser": {
 			"chrome" : true,
 			"ie" : "8",
@@ -387,7 +387,7 @@
 	{
 		"title": "강진만 생태공원 Ver.1",
 		"intro": "강진만 생태공원 안내",
-		"category": "RESPONSIVE",
+		"category1": "RESPONSIVE",
 		"browser": {
 			"chrome" : true,
 			"ie" : "8",
@@ -412,8 +412,8 @@
 	{
 		"title": "마이산 다옴펜션",
 		"intro": "펜션 안내 및 예약 서비스",
-		"category": "PC&MOBILE",
-		"category2": "LINKED",
+		"category1": "PC&MOBILE",
+		"linked": true,
 		"browser": {
 			"chrome" : true,
 			"ie" : "8",
@@ -443,8 +443,8 @@
 	{
 		"title": "장성군청 다국어 (영어, 일본어, 중국어)",
 		"intro": "장성군청 안내",
-		"category": "ONLY PC",
-		"category2": "LINKED",
+		"category1": "ONLY PC",
+		"linked": true,
 		"browser": {
 			"chrome" : true,
 			"ie" : "8",
@@ -473,8 +473,8 @@
 	{
 		"title": "장성군청 의회",
 		"intro": "장성군청 의회 안내",
-		"category": "RESPONSIVE",
-		"category2": "LINKED",
+		"category1": "RESPONSIVE",
+		"linked": true,
 		"browser": {
 			"chrome" : true,
 			"ie" : "8",
@@ -503,7 +503,7 @@
 	{
 		"title": "신안군청 ICT",
 		"intro": "군청 내 종합현황시스템",
-		"category": "ONLY PC",
+		"category1": "ONLY PC",
 		"browser": {
 			"chrome" : true,
 			"ie" : "8",
@@ -532,7 +532,7 @@
 	{
 		"title": "강동대학교 외국어",
 		"intro": "강동대학교 안내",
-		"category": "ONLY PC",
+		"category1": "ONLY PC",
 		"browser": {
 			"chrome" : true,
 			"ie" : "8",
@@ -557,7 +557,7 @@
 	{
 		"title": "강동대학교 부속기간",
 		"intro": "강동대학교 부속기간 안내",
-		"category": "ONLY PC",
+		"category1": "ONLY PC",
 		"browser": {
 			"chrome" : true,
 			"ie" : "8",
@@ -585,7 +585,7 @@
 	{
 		"title": "강동대학교 학과 St.4",
 		"intro": "강동대학교 학과 안내",
-		"category": "ONLY PC",
+		"category1": "ONLY PC",
 		"browser": {
 			"chrome" : true,
 			"ie" : "8",
@@ -613,7 +613,7 @@
 	{
 		"title": "강동대학교 학과 St.3",
 		"intro": "강동대학교 학과 안내",
-		"category": "ONLY PC",
+		"category1": "ONLY PC",
 		"browser": {
 			"chrome" : true,
 			"ie" : "8",
@@ -641,7 +641,7 @@
 	{
 		"title": "강동대학교 학과 St.2",
 		"intro": "강동대학교 학과 안내",
-		"category": "ONLY PC",
+		"category1": "ONLY PC",
 		"browser": {
 			"chrome" : true,
 			"ie" : "8",
@@ -669,7 +669,7 @@
 	{
 		"title": "강동대학교 학과 St.1",
 		"intro": "강동대학교 학과 안내",
-		"category": "ONLY PC",
+		"category1": "ONLY PC",
 		"browser": {
 			"chrome" : true,
 			"ie" : "8",
@@ -697,7 +697,7 @@
 	{
 		"title": "강동대학교 입시 Ver.2",
 		"intro": "강동대학교 입시 안내",
-		"category": "PC&MOBILE",
+		"category1": "PC&MOBILE",
 		"browser": {
 			"chrome" : true,
 			"ie" : "8",
@@ -725,7 +725,7 @@
 	{
 		"title": "강동대학교 입시 Ver.1",
 		"intro": "강동대학교 입시 안내",
-		"category": "RESPONSIVE",
+		"category1": "RESPONSIVE",
 		"browser": {
 			"chrome" : true,
 			"ie" : "8",
@@ -750,8 +750,8 @@
 	{
 		"title": "신안군청 다국어 (영어, 일본어, 중국어)",
 		"intro": "신안군청 안내",
-		"category": "ONLY PC",
-		"category2": "LINKED",
+		"category1": "ONLY PC",
+		"linked": true,
 		"browser": {
 			"chrome" : true,
 			"ie" : "8",
