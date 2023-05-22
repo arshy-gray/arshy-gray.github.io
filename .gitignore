@@ -1,2 +1,11 @@
-/psd
-/.idea
+
+**/.sass-cache/**
+*.css.map
+
+# Dependency directory
+node_modules
+.idea
+.vscode
+
+# Garbage files
+.DS_Store

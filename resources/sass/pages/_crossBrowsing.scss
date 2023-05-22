@@ -1,0 +1,163 @@
+// crossBrowsing style
+
+/* loading */
+#load-more {
+  &:hover {
+    background: #fff;
+  }
+  .active#portfolio & {
+    padding: 10px 10px 20px 10px;
+  }
+}
+
+#loading .progress-bar {
+  width: 100%;
+}
+
+/* safari */
+.safari {
+  #main {
+    background-position: 90% 40px, center;
+    .bg_el {
+      display: none;
+    }
+  }
+
+  /* background section */
+  #portfolio {
+    background-position: 20px 10px, right bottom;
+    .el01 {
+      left: 35%;
+    }
+    .el02 {
+      left: 85%;
+    }
+
+    &.active #load-more {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  /* history section */
+  #history {
+    background-position: left 52%, right 52%, -300px -500px, 130% -200%;
+    .el06 {
+      left: 50%;
+      margin-left: -430px;
+    }
+  }
+  .foot_print_top {
+    left: 50%;
+    margin-left: 150px;
+  }
+  .foot_print_btm {
+    left: 50%;
+    margin-left: -350px;
+  }
+
+  .ht_box {
+    > ul > li:nth-child(odd) {
+      right: 50%;
+      margin-right: -1px;
+    }
+    li:nth-child(odd) .ht_ico {
+      right: -84px;
+    }
+  }
+
+  /* skill section */
+  #skill {
+    background: #ff229f url("/resources/images/main/bgSkill_back.png") 150% -700px no-repeat;
+    .progress {
+      background-color: rgb(255, 204, 0);
+    }
+  }
+  /* contact section */
+  #contact {
+    background-position: center, -300px 170%, 120% -200px, center;
+    .el01 {
+      top: 50%;
+      margin-top: -489px;
+      left: 50%;
+      margin-left: -627px;
+    }
+    .el02 {
+      top: 50%;
+      margin-top: -12px;
+      left: 50%;
+      margin-left: 466px;
+    }
+    .el03 {
+      top: 50%;
+      margin-top: -200px;
+      left: 50%;
+      margin-left: 50px;
+    }
+  }
+
+  /* loading */
+  #loading {
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    background-image: url("/resources/images/main/LDpage_bg.jpg");
+    .progress {
+      background: url("/resources/images/main/LDpage_moon.png") center -50px no-repeat;
+      .txt_box {
+        margin-left: 18px;
+      }
+    }
+    .bar0 {
+      left: 6px;
+    }
+    .text1 {
+      left: 20px;
+    }
+  }
+}
+
+/* 반응형 ---------------------------------------------------*/
+@media screen and (max-width: 1399px) {
+  .safari {
+    /* portfolio section */
+    #portfolio {
+      background-position: -170px -100px, right bottom;
+    }
+    #portfolio .el01 {
+      left: 20%;
+    }
+  }
+} /* e.1399px */
+
+@media screen and (max-width: 999px) {
+  /* portfolio secion  */
+  .safari #portfolio {
+    background-image: url("/resources/images/main/bgPortfolio_btm.png");
+    background-position: right bottom;
+    background-attachment: fixed;
+  }
+} /* e.999px */
+
+@media screen and (max-width: 767px) {
+  /* history sesction */
+  .safari #history {
+    background-position: -140% 52%, 240% 52%, -300px -500px, 130% -200%;
+  }
+} /* e.767px */
+
+@media screen and (max-width: 599px) {
+  /* history sesction */
+  #hisroty .bg_el {
+    display: none;
+  }
+
+  .safari .ht_box {
+    > ul > li:nth-child(odd) {
+      right: auto;
+    }
+    li:nth-child(odd) .ht_ico {
+      right: auto;
+    }
+  }
+} /* e.599px */
