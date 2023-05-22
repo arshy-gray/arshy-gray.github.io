@@ -1,0 +1,131 @@
+//ellipsis 말줄임시 사용, 기본 1줄(1줄이면서 webkit-box로 사용할경우 boxline:1)
+@mixin ellipsis($count:1,$boxline:null){
+	overflow:hidden;
+	text-overflow:ellipsis;
+	@if $count == 1{
+		@if $boxline{
+			display:-webkit-box;
+			-webkit-line-clamp:$boxline;
+			-webkit-box-orient:vertical;
+		}@else{
+			white-space:nowrap;
+		}
+	}@else{
+		display:-webkit-box;
+		-webkit-line-clamp:$count;
+		-webkit-box-orient:vertical;
+	}
+}
+// position center
+@mixin center-positon($width,$height:$width){
+	position:absolute;
+	width:$width;
+	height:$height;
+	top:50%;
+	left:50%;
+	margin-top:- half($height);
+	margin-left:- half($width);
+}
+//appearance
+@mixin appearance($appearance){
+	-webkit-appearance:$appearance;
+	-moz-appearance:$appearance;
+	appearance:$appearance;
+}
+//User select
+@mixin user-select($select){
+	-webkit-user-select:$select;
+	user-select:$select;
+}
+//position property
+@mixin position($position, $top:null, $right:null, $bottom:null, $left:null) {
+	position:$position;
+	top:$top;
+	right:$right;
+	bottom:$bottom;
+	left:$left;
+}
+@mixin fixed($args...){
+	@include position(fixed, $args...);
+}
+@mixin absolute($args...){
+	@include position(absolute, $args...);
+}
+@mixin sticky($args...){
+	@include position(sticky, $args...);
+}
+@mixin posrt($right:0, $top:$right){
+	@include absolute($right:$right, $top:$top);
+}
+@mixin poslt($left:0, $top:$left){
+	@include absolute($left:$left, $top:$top);
+}
+@mixin posrb($right:0, $bottom:$right){
+	@include absolute($right:$right, $bottom:$bottom);
+}
+@mixin poslb($left:0, $bottom:$left){
+	@include absolute($left:$left, $bottom:$bottom);
+}
+
+// 가상클래스
+@mixin before($display:block,$content:''){
+	&:before{
+		content:$content;
+		display:$display;
+		@content;
+	}
+}
+@mixin after($display:block,$content:''){
+	&:after{
+		content:$content;
+		display:$display;
+		@content;
+	}
+}
+
+//box-size model
+@mixin size($width, $height:$width){
+	width:$width;
+	height:$height;
+}
+//font
+@mixin font($font-size, $line-height, $color:null){
+	font-size:$font-size;
+	line-height:$line-height;
+	color:$color;
+}
+//height
+@mixin vt-m($height, $line-height:$height){
+	height: $height;
+	line-height: $line-height;
+}
+// image sprite
+@mixin sprite-width($sprite) {
+	width: nth($sprite, 5);
+}
+@mixin sprite-height($sprite) {
+	height: nth($sprite, 6);
+}
+@mixin sprite-size($sprite) {
+	@include sprite-width($sprite);
+	@include sprite-height($sprite);
+}
+@mixin sprite-position($sprite,$ipt:null) {
+	$sprite-offset-x: nth($sprite, 3);
+	$sprite-offset-y: nth($sprite, 4);
+	background-position: $sprite-offset-x $sprite-offset-y $ipt;
+}
+@mixin sprite-image($sprite) {
+	$sprite-image: nth($sprite, 9);
+	background-image: url(../spr/#{$sprite-image});
+	background-repeat:no-repeat;
+}
+@mixin sprite($sprite,$ipt:null) {
+	@include sprite-position($sprite,$ipt);
+	@include sprite-width($sprite);
+	@include sprite-size($sprite);
+}
+@mixin imgsprite($sprite) {
+	@include sprite-image($sprite);
+	@include sprite($sprite);
+}

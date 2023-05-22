@@ -1,0 +1,61 @@
+//= layout
+%blind{
+	position:absolute;
+	@include size(0);
+	opacity:0;
+	font-size:0;
+	overflow:hidden;
+}
+%clearfix{
+	&:after{
+		content:'';
+		clear:both;
+		display:table;
+	}
+}
+%table-layout{
+	display:table;
+	width:100%;
+	table-layout:fixed;
+}
+%inline-vtc{
+	font-size:0;
+	> .inline-vtc{
+		display:inline-block;
+		vertical-align:top;
+	}
+}
+// %center-wrap{
+// 	width:$center-wid;
+// 	margin:0 auto;
+// 	padding-left:$wid-gap;
+// 	padding-right:$wid-gap;
+// 	box-sizing:border-box;
+// }
+//가로 스크롤
+%width-scr{
+	font-size:0;
+	white-space:nowrap;
+	overflow-y:hidden;
+	overflow-x:auto;
+}
+//= text
+%no-text{
+	color:transparent;
+	font-size:0;
+	line-height:0;
+}
+//= image
+// ico_spr 스프라이트
+%img-common{
+	background:url(../spr/common.png) no-repeat;
+}
+%img-replace{
+	font-size:0;
+	line-height:0;
+	color:transparent;
+}
+%img-reset{
+	width:100%;
+	vertical-align:top;
+}
