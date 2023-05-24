@@ -368,14 +368,11 @@ $(window).load(function () {
           '<li class="detail_btn"><a href="javascript:vold(0);" title="자세히보기"><i class="fa fa-search"></i></a></li>';
 
         if (item.link) {
-          itemHTML +=
-            '<li class="siteLink_btn"><a href="' +
-            item.link +
-            '" title="' +
-            item.linkTitle +
-            '" target="' +
-            item.winTarget +
-            '"><i class="fa fa-link"></i></a></li>';
+          itemHTML += '<li class="siteLink_btn"><a href="' + item.link + '" title="';
+
+          item.linkTitle ? (itemHTML += item.linkTitle) : (itemHTML += "사이트 바로가기");
+
+          itemHTML += '" target="_blank"><i class="fa fa-link"></i></a></li>';
         }
 
         itemHTML +=
@@ -383,6 +380,7 @@ $(window).load(function () {
           "</div>" +
           '<div class="pf_detail">' +
           '<div class="pf_layer">' +
+          '<div class="pf_layer_ctt">' +
           '<div class="pf_txt_basic">' +
           '<div class="txt_basic_main">' +
           '<div class="basic_main_tit">' +
@@ -394,15 +392,18 @@ $(window).load(function () {
           "</span>" +
           "</div>" +
           '<div class="basic_main_type">' +
-          '<ul class="type_device">' +
-          '<li><i class="fas fa-desktop" title="PC"></i></li>';
+          '<ul class="type_device">';
 
-        if (item.category !== "ONLY PC") {
+        if (item.device !== "MOBILE" || item.device === "RESPONSIVE") {
+          itemHTML += '<li><i class="fas fa-desktop" title="PC"></i></li>';
+        }
+
+        if (item.device !== "PC" || item.device === "RESPONSIVE") {
           itemHTML += '<li><i class="fas fa-mobile-alt" title="Mobile"></i></li>';
         }
 
-        if (item.category === "RESPONSIVE") {
-          itemHTML += '<li class="responsive"><i class="fas fa-sync-alt"title="반응형"></i></li>';
+        if (item.device === "RESPONSIVE") {
+          itemHTML += '<li class="responsive"><i class="fas fa-sync-alt" title="반응형"></i></li>';
         }
 
         itemHTML +=
@@ -468,17 +469,17 @@ $(window).load(function () {
             item.link +
             '" title="새창" target="_blank">' +
             item.link +
-            "</a></span>" +
-            "</li>";
+            '</a>';
+
+          if (item.linkTitle) itemHTML += ' <br /><em class="c_blue"><b>(' + item.linkTitle + ")</b></em>";
+
+          itemHTML += "</span></li>";
         }
 
         itemHTML +=
           "</ul>" +
           "</div>" +
           "</div>" +
-          '<div class="pf_img"><img src="' +
-          item.images.detail +
-          '" alt="포트폴리오 상세" /></div>' +
           '<div class="pf_txt_detail tab_wrap">' +
           '<ul class="txt_detail_tit tab_tit">';
 
@@ -497,37 +498,45 @@ $(window).load(function () {
         itemHTML += "</ul>" + '<ul class="txt_detail_ctt tab_ctt">';
 
         if (item.work.scope) {
-          itemHTML += '<li class="detail_scope on">' + item.work.scope.page;
+          itemHTML += '<li class="detail_scope on">' + "<ul>";
 
-          if (item.work.scope.comment) {
-            itemHTML += '<span class="comment">' + item.work.scope.comment + "</span>";
+          for (var pageItem in item.work.scope.page) {
+            itemHTML += "<li>" + item.work.scope.page[pageItem];
           }
 
-          itemHTML += "</li>";
+          if (item.work.scope.comment) {
+            itemHTML += '<span class="comment">' + item.work.scope.comment + "</span></li>";
+          }
+
+          itemHTML += "</ul></li>";
         }
 
         if (item.work.task) {
-          itemHTML += '<li class="detail_task">' + '<ol class="ol_decimal">';
+          itemHTML += '<li class="detail_task">' + "<ul>";
 
           for (var taskItem in item.work.task) {
             itemHTML += "<li>" + item.work.task[taskItem] + "</li>";
           }
 
-          itemHTML += "</ol>" + "</li>";
+          itemHTML += "</ul></li>";
         }
 
         if (item.work.result) {
-          itemHTML += '<li class="detail_result">' + '<ol class="ol_decimal">';
+          itemHTML += '<li class="detail_result">' + "<ul>";
 
           for (var resultItem in item.work.result) {
             itemHTML += "<li>" + item.work.result[resultItem] + "</li>";
           }
 
-          itemHTML += "</ol>" + "</li>";
+          itemHTML += "</ul></li>";
         }
 
         itemHTML +=
           "</ul>" +
+          "</div>" +
+          '<div class="pf_img"><img src="' +
+          item.images.detail +
+          '" alt="포트폴리오 상세" /></div>' +
           "</div>" +
           '<a href="javascript:vold(0);" class="btn_close"><img src="/resources/images/main/btn2_close.png" alt="닫기" /></a>' +
           "</div>" +
@@ -562,9 +571,10 @@ $(window).load(function () {
     }
 
     // 항목을 필터링한다.
-    function filterItems() {
-      var key1 = $(".filter-group").find(".form-item").find('input[type="radio"]:checked').val(), // 체크 된 라디오 버튼의 value
-        key2 = $(".filter-group").find(".form-item").find('input[type="checkbox"]').prop("checked"), // 체크 된 체크 버튼의 value
+    function filterItems(item) {
+      var keyOffice = $(".filter-type-office").find('input[type="radio"]:checked').val(), // 오피스 필터
+        keyDevice = $(".filter-type-device").find('input[type="radio"]:checked').val(), // 디바이스 필터
+        keyLinked = $(".filter-type-linked").find('input[type="checkbox"]').prop("checked"), // 링크 여부 필터
         masonryItems = $container.masonry("getItemElements"); // 추가 된 Masonry 아이템
 
       $portfolio.addClass("is-loading");
@@ -577,20 +587,27 @@ $(window).load(function () {
       filteredData = [];
       addadd = 0;
 
-      if (key1 === "ALL") {
+      if (keyOffice === "ALL") {
         // 1차필터링 - all이 클릭 된 경우 모든 JSON 데이터를 저장
         filteredData = allData;
       } else {
         // all 이외의 경우, 키와 일치하는 데이터를 추출
         filteredData = $.grep(allData, function (item) {
-          return item.category1 === key1;
+          return item.office === keyOffice;
         });
       }
 
-      if (key2) {
-        // 1차 필터링 데이터 기반 2차 필터링 - linked
+      if (keyDevice !== "ALL") {
+        // 2차 필터링 - device
         filteredData = $.grep(filteredData, function (item) {
-          return item.linked === key2;
+          return item.device === keyDevice;
+        });
+      }
+
+      if (keyLinked) {
+        // 3차 필터링 - linked
+        filteredData = $.grep(filteredData, function (item) {
+          return item.link === keyLinked;
         });
       }
 

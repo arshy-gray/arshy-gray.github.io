@@ -160,7 +160,7 @@
     height: 0;
     display: none;
   }
-  .filter-type-device {
+  .filter-type-office {
     border: solid #affdfb;
     border-width: 1px 0;
   }
@@ -169,6 +169,11 @@
       width: auto;
       margin: 0 5px;
       border: 0;
+      input[type="radio"]:checked ~ label {
+        color: #ffff00;
+        border: 0;
+        animation: none;
+      }
     }
     &.chkItem {
       margin-top: 10px;
@@ -177,11 +182,6 @@
     label {
       color: #fff;
       border: 0;
-    }
-    input[type="radio"]:checked ~ label {
-      color: #ffff00;
-      border: 0;
-      animation: none;
     }
   }
 
@@ -247,24 +247,19 @@
     }
   }
 
-  .pf_img img {
-    width: 100%;
+  .pf_layer {
+    background-color: #f1f1f1;
+    z-index: 1;
   }
 
-  .pf_layer {
-    top: 0;
-    left: 0;
-    margin: 5% 10px;
-    width: calc(100% - 10px * 2);
-    background-color: #f1f1f1;
-    transform: translate(0, 0);
+  .pf_layer_ctt {
+    display: block;
     overflow: hidden;
-    z-index: 1;
+    overflow-y: auto;
   }
 
   .pf_txt_basic {
     position: relative;
-    float: none;
     width: 100%;
     padding: 35px 30px;
     &:after {
@@ -284,19 +279,20 @@
   }
 
   .pf_txt_detail {
-    float: none;
     width: 100%;
-    padding: 35px 30px;
+    padding: 0 30px 35px;
     box-sizing: border-box;
   }
 
   .pf_img {
-    float: none;
+    position: static;
+    overflow: hidden;
     width: 100%;
     height: auto;
     text-align: center;
     img {
       width: 80vw;
+      // width: 100%;
       max-width: 1004px;
     }
   }
