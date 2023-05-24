@@ -1,58 +1,249 @@
 [
   {
+    "title": "위메프 · 딜/상품 상세 추천 상품 테마",
+    "intro": "위메프 서비스 내 딜/상품 상세페이지 하단 추천 상품 테마 14개 영역 신규 개발",
+    "office": "WMP",
+    "device": "MOBILE",
+    "browser": {
+      "chrome": true,
+      "ie": "11",
+      "safari": true
+    },
+    "member": "10명 (UI 1 · FE 1 · BE 5 · 디자이너 1 · 기획자 1 · PO 1)",
+    "main_role": "UI개발 전담",
+    "part": "UI개발 100%",
+    "project": "2022.10 ~ 2022.11",
+    "images": {
+      "thumb": "../resources/images/main/pfImg030.jpg",
+      "detail": "../resources/images/sub/pf_detailImg030.jpg"
+    },
+    "task_environment": "Gulp, yarn, Git, Jenkins",
+    "language": "HTML, CSS(SCSS), JavaScript(jQuery)",
+    "link": "https://mw.wemakeprice.com/product/2125995753",
+    "linkTitle": "모바일 환경에서 확인 가능, 상품별 노출 테마 상이",
+    "work": {
+      "scope": {
+        "page": [
+          "<strong>[딜/상품 상세 공통]</strong><br /><em class='c_blue'><1개 테마 6개 영역></em><br />높은 별점을 받은 연관 상품/특가 상품/연관 추천 상품/이 상품 어때요?/함께 보면 좋아요/이런 상품을 찾으셨나요?",
+          "<strong>[상품 상세]</strong> <br /><em class='c_blue'><7개 테마 8개 영역></em><br />인기 상품과 비교 · 비슷한 옵션/가격대 인기 상품 · 인기 브랜드의 추천 상품 · 6개월간 최저가 상품 · 사용자들의 평가가 좋은 맞춤형 비교 상품 · 결정이 어려울 땐 5초 쇼핑 · 구매 가이드"
+        ]
+      },
+      "task": [
+        "<strong>[공통]</strong><br /><em class='c_blue'><총 8개 테마의 각 영역별 재사용 가능한 요소 공통 UI개발></em><br />- 타이틀 영역(ad 뱃지 유무, 서브 타이틀 유무 등)<br />- 상품리스트 영역(가로 스크롤 5가지 타입, 상품 순위 유무, 상품 속성 유무, 상품정보 가로/세로형, 상품정보 유무, 하단 리뷰 유무 등)<br />- 필터 영역(필터 문구 전 뱃지 색상 상이, 필터 문구 후 아이콘 유무)<br />- 각 영역별 위치 및 영역 유무 무관",
+        "<strong>[인기 상품과 비교]</strong><br />- 현재 상품 좌측 고정, 비교 상품 영역 가로 스크롤 구현<br />- 비교 속성 더 보기(일정 길이 이상일 때 노출) 온/오프 여부에 따른 UI구현",
+        "<strong>[6개월간 최저가 상품]</strong><br /><em class='c_blue'><월별 가격 그래프></em><br />- 꺾은선 그래프 : 가격 정보의 xy 좌표값에 따라 SVG 그래프 UI구현- 막대 그래프 : 가격 정보의 높이값(최대/최소값에 대한 비율)에 따라 그래프 UI구현"
+      ],
+      "result": [
+        "1. 다양하고 복잡도 높은 8개 테마의 공통 UI 정립 -> 작업 생산성 향상, 사용성 증가로 인한 코드 간소화",
+        "2. 복잡도 높은 UI의 FE개발 가이드 제공(인기 상품과 비교, 6개월간 최적 상품) -> 원활한 협업으로 생산성 향상",
+        "3. 상세 페이지 유입 유저의 구매전환율 상승",
+        "4. 거래액, 광고수익, 수수료 수익을 확보4. 사내 Best Practice 선정(속도와 도전)"
+      ]
+    }
+  },
+  {
+    "title": "위메프 · 주문서",
+    "intro": "위메프 서비스 내 주문서 개선(주문서 가격표기 & 결제수단 노출 방식 개선)",
+    "office": "WMP",
+    "device": "MOBILE",
+    "browser": {
+      "chrome": true,
+      "ie": "11",
+      "safari": true
+    },
+    "member": "14명 (UI 1 · FE 2 · BE 3 · 디자이너 1 · 기획자 2 · QA 5)",
+    "main_role": "UI개발 전담",
+    "part": "UI개발 100%",
+    "project": "2023.02 ~ 2023.04",
+    "images": {
+      "thumb": "../resources/images/main/pfImg029.jpg",
+      "detail": "../resources/images/sub/pf_detailImg029.jpg"
+    },
+    "task_environment": "Gulp, yarn, Git, Jenkins",
+    "language": "HTML, CSS(SCSS), JavaScript(jQuery)",
+    "link": "https://mw.wemakeprice.com/product/2125995753",
+    "linkTitle": "모바일 환경에서 로그인 후 확인 가능, 상품상세 > 상품옵션 선택 > 구매하기 > 주문/결제페이지",
+    "work": {
+      "scope": {
+        "page": [
+          "주문상품 · 결제금액(휴대폰인증 포함) · 결제수단(카드선택/무이자혜택 팝업 포함) · 약관 동의 · 하단버튼(AB-test) 영역"
+        ]
+      },
+      "task": [
+        "<strong>[주문상품]</strong><br />- 상품별 옵션 케이스별 대응 (선택/텍스트 동일 옵션 나열 방법, ‘n개’ 옵션명과 나란히 나열 등)",
+        "<strong>[결제금액]</strong><br />- 기존 할인혜택, 쿠폰, 포인트 영역 삭제 후 결제금액 영역에 통합<br />- 포인트 인증번호 케이스별(인증, 인증번호 발송/재발송, 전송완료, 인증시간 초과, 인증완료) 대응<br />- 각 요소의 유무, 할인 유무에 따른 케이스별 대응",
+        "<strong>[결제수단]</strong><br />1. 신용/체크카드 영역<br />- 카드 저장 유무 대응<br />- On-Off시(펼침/접힘) 공통 UI 정립<br />- Off : 카드명 말줄임처리 가변 대응<br />- On : 카드 스와이프 영역(카드번호/카드포인트사용 등 유무 대응) – Off에서 전환시 미작동 대응<br />2. SNS/기타 결제 버튼 - 단 개수에 따른 크기, 케이스별(버튼 유무, 활성화 여부 등) 대응"
+      ],
+      "result": [
+        "1. 주문서 스크롤 방식 변경(전체 페이지 스크롤 -> 콘텐츠 영역만 스크롤)<br />- 하단 여백 수동으로 잡아주던 부분을 자동으로 잡히게 변경 -> 스타일코드 효율적으로 개선 후 생산성 향상(불필요한 케이스 대응 제거)<br />- 결제페이지 이탈 > 주문서 랜딩 후 비정상 렌더링 이슈 대응 -> UX 개선",
+        "2. 복잡도 높은 UI케이스 대응 및 가이드 제공(누락된 케이스 요청) -> 다양한 케이스에 유연하게 대응하여 UI완성도 향상3. 복잡도 높았던 UI/UX를 간소화 -> UX 개선, 결제완료율 향상"
+      ]
+    }
+  },
+  {
+    "title": "위메프 · 최근본·찜",
+    "intro": "위메프 서비스 내 최근본·찜 페이지 신규 개발",
+    "office": "WMP",
+    "device": "MOBILE",
+    "browser": {
+      "chrome": true,
+      "ie": "11",
+      "safari": true
+    },
+    "member": "14명 (UI 1 · FE 3 · BE 3 · AOS 2 · IOS 4 · 디자이너 2 · 기획자 1)",
+    "main_role": "UI개발 전담",
+    "part": "UI개발 100%",
+    "project": "2022.03 ~ 2022.04",
+    "images": {
+      "thumb": "../resources/images/main/pfImg028.jpg",
+      "detail": "../resources/images/sub/pf_detailImg028.jpg"
+    },
+    "task_environment": "Gulp, yarn, Git, Jenkins",
+    "language": "HTML, CSS(SCSS), JavaScript(jQuery)",
+    "link": "https://mfront.wd.wemakeprice.com/mypage/recentViews",
+    "linkTitle": "모바일 환경에서 확인 가능",
+    "work": {
+      "scope": {
+        "page": [
+          "마이페이지/장바구니 내 최근본·찜 탭(찜한 상품/스토어 리스트, 최근 본 상품/스토어/검색 리스트, 키워드별 추천 상품, 유사 상품 추천 등)"
+        ]
+      },
+      "task": [
+        "<strong>[최근 본·찜]</strong><br />- 기존 최근 본/찜 개별 탭 -> 최근 본·찜으로 통합",
+        "<strong>[최근 본 히스토리]</strong><br />- 필터 영역 스티키(상단 헤더/마이페이지 탭 영역 유무, 스크롤 방향에 따른 숨김/노출 유무)<br />- 타입별(상품/스토어/검색) UI 구현(이미지 유무, 버튼 유무, 문구 유무, 기본 아이콘 유무 등 마크업 공통/분기처리 고려)<br />- 날짜별 그룹핑(날짜별 리스트 중간에 추천 상품영역 노출 유무)<br />- 각 리스트별 리스트 없을 때 빈 화면 UI<br />- 마이페이지&장바구니 내 최근본·찜 공통 처리"
+      ],
+      "result": [
+        "1. 추후 장바구니 내 탭을 웹뷰로 전환시 필요한 부분 선처리 -> 작업 효율 향상",
+        "2. 최근 본·찜 별도 페이지 구성으로 해당 영역 모듈화 -> 사용성 향상",
+        "3. 메타데이터를 담은최근 본·찜 손쉽게 확인 -> 구매전환율 향상3. 구매 내역을 손쉽게 확인 -> 사용자 편의성 향상"
+      ]
+    }
+  },
+  {
+    "title": "위메프 버티컬 · Wstyle",
+    "intro": "위메프 버티컬 패션/뷰티 서비스 신규 구축 및 개선",
+    "office": "WMP",
+    "device": "MOBILE",
+    "browser": {
+      "chrome": true,
+      "ie": "11",
+      "safari": true
+    },
+    "member": "45명 이상 (UI 개발자 2 · FE 개발자 12 · BE 개발자 9 · 디자이너 2 · 기획자 5 · IOS 5 · AOS 3 · QA 7 외)",
+    "main_role": "신규 영역 UI개발 전담(Wstyle T6.",
+    "part": "UI개발 100%",
+    "project": "2020.09 ~ 2021.08",
+    "images": {
+      "thumb": "../resources/images/main/pfImg027.jpg",
+      "detail": "../resources/images/sub/pf_detailImg027.jpg"
+    },
+    "task_environment": "Gulp, yarn, Git, Jenkins",
+    "language": "HTML, CSS(SCSS), JavaScript(jQuery)",
+    "work": {
+      "scope": {
+        "page": ["홈(추천/신상/베스트/브랜드피드/오늘의브랜드 탭, 신상/오늘의브랜드 상세, 스플래시, 앱 업데이트 유도), 대분류 그룹 및 카테고리(2&3차/3&4차 Depth), 검색결과, 상품상세, 브랜(브렌드/기획전 상세, 쿠폰 다운로드 팝업), 위메프 기획전[오늘의 브랜드/브랜드 피드/공유하기 팝업(AOS, IOS)]"]
+      },
+      "task": [
+        "<strong>[공통]</strong><br />1. 공통 상품리스트 UI개발<br />&nbsp;&nbsp;- 종류 : 이미지 2단형(리뷰 유무), 이미지 2/3단 3X4 썸네일형, 이미지 가로 스크롤형, 상품 없는 경우<br />&nbsp;&nbsp;- 찜버튼 클릭 이벤트 버블링 대응(상품링크 외부로 마크업 설계 및 스타일로 위치 조정)<br />2. 공통 필터 UI 개발<br />3. 각 페이지 필터/카테고리 영역 스티키 처리",
+        "<strong>[홈]</strong><br /><추천 탭(다이나믹 큐레이션)><br />1. 템플릿 3종(상품 가로 스크롤형, 상품 배너형, 이미지 배너형) UI 개발<br />2. 어드민 에디터 환경에서 테스트",
+        "<strong>[상품상세]</strong><br />1. 위메프 상품상세 기반 UI 개발 (공통 영역 외 분기)",
+        "<strong>[브랜드]</strong><br /><브랜드 상세><br />1. 유사 브랜드 추천 영역<br />&nbsp;&nbsp;- 브랜드데이 진행중 브랜드 그라데이션 라인 애니메이션",
+        "<strong>[위메프 기획전]</strong><br /><오늘의 브랜드, 브랜드 피드 공통><br />1. 콘텐츠 영역을 W스타일과 공통영역으로 개발<br />2. 상이한 부분은 분기처리<br /><오늘의 브랜드><br />1. W스타일 내 기획전 상세에서도 공통영역 사용<br /><브랜드 피드><br />1. 피드 이미지 내 상품 태깅 UI 개발<br />&nbsp;&nbsp;- 좌우 좌표값에 따라 left/right 정렬<br />&nbsp;&nbsp;- 피드 이미지 클릭시 태깅 내 상품 정보 On-Off"
+      ],
+      "result": [
+        "1. 초기 개발환경 셋팅",
+        "2. 위메프와 연동되는 서비스 공통작업 및 기타 영역 분기 처리 -> 사용성 향상",
+        "3. 애자일 팀구성으로",
+        "4. Wstyle TF 완료 후 Wstyle 관련 부서로 업무 인수인계 및 문서 작성<br />- 개발환경 셋팅<br />- 테스트 환경 및 환경별 테스트 방법<br />- 공통범위 정의<br />- 기타 주의사항 및 히스토리 등"
+      ]
+    }
+  },
+  {
+    "title": "Portfolio",
+    "intro": "개인 포트폴리오",
+    "office": "SELF",
+    "device": "RESPONSIVE",
+    "browser": {
+      "chrome": true,
+      "ie": "9",
+      "safari": false
+    },
+    "member": "1명",
+    "main_role": "UI개발, 기획, 디자인 전반",
+    "part": "Design & UI개발 100%",
+    "project": "2017.03 ~ 2023.05",
+    "images": {
+      "thumb": "../resources/images/main/pfImg018.jpg",
+      "detail": "../resources/images/sub/pf_detailImg018.jpg"
+    },
+    "task_environment": "Gulp, yarn, Git",
+    "language": "HTML, CSS, Javascript(jQuery), JSON",
+    "work": {
+      "scope": {
+        "page": ["원페이지(메인, 프로젝트, 히스토리, 컨택), 프로젝트 레이어팝업"]
+      },
+      "task": [
+        "1. fullpage 구현",
+        "2. parallax 구현",
+        "3. 오픈소스 활용 : 콘텐츠 필터 / 로딩진행률 / smooth-scroll / imagesloaded / masonry / load more / 마우스방향감지"
+      ]
+    }
+  },
+  {
     "title": "KONVINI Ver.2",
     "intro": "국내 패션 브랜드 편집숍(일본, 홍콩)",
-    "category1": "RESPONSIVE",
+    "office": "LF",
+    "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
       "ie": "9",
       "safari": true
     },
-    "member": "7명 (개발자4, 퍼블리셔1, 디자이너2)",
-    "main_role": "사이트 전반 퍼블리싱 전담",
-    "part": "Publishing 100%",
+    "member": "7명 (UI 개발자 1 · FE & BE 개발자 4 · 디자이너 2)",
+    "main_role": "사이트 전반 UI개발 전담",
+    "part": "UI개발 100%",
     "project": "2019.07 ~ 2019.10",
     "images": {
       "thumb": "../resources/images/main/pfImg025.jpg",
       "detail": "../resources/images/sub/pf_detailImg025.jpg"
     },
-    "task_environment": "PHP(template_), Apache",
+    "task_environment": "Git, PHP(template_), Apache",
     "language": "HTML, SCSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "메인, 상품, 검색, 주문, 결제, 장바구니, 마이페이지(메인, 주문조회, 교환·반품) 등 주요 페이지 약 30장",
+        "page": ["메인, 상품, 검색, 주문, 결제, 장바구니, 마이페이지(메인, 주문조회, 교환·반품) 등 주요 페이지 약 30장"],
         "comment": "(브랜드, 이벤트, 쿠폰, 포인트 및 일반 콘텐츠 페이지 제외)"
       },
       "task": [
-        "PC 디자인 토대로 사이트 전반 반응형 재설계",
-        "접속 국가별 공지 팝업 on/off 기능 추가",
-        "상단 헤더 고정 모션 리펙토링",
-        "메인 브랜드 세일 영역 좌우 스크롤 버튼 구현",
-        "상단 인기검색어 슬라이딩 구현 (bxslider)",
-        "상품리스트 필터 레이어 추가"
+        "1. PC 디자인 토대로 사이트 전반 반응형 재설계",
+        "2. 접속 국가별 공지 팝업 on/off 기능 추가",
+        "3. 상단 헤더 고정 모션 리펙토링",
+        "4. 메인 브랜드 세일 영역 좌우 스크롤 버튼 구현",
+        "5. 상단 인기검색어 슬라이딩 구현 (bxslider)",
+        "6. 상품리스트 필터 레이어 추가"
       ],
       "result": [
-        "반응형 재설계로 인한 각 디바이스별 UI 최적화",
-        "공지 팝업 기능 개선으로 사용 편의성 향상",
-        "모션 리팩토링으로 인한 UI 최적화",
-        "SCSS 도입을 통한 스타일 모듈화로 유지보수 용이",
-        "리뉴얼 외 페이지 신규 레이아웃에 맞춰 UI 최적화"
+        "1. 반응형 재설계로 인한 각 디바이스별 UI 개발자 최적화",
+        "2. 공지 팝업 기능 개선으로 사용 편의성 향상",
+        "3. 모션 리팩토링으로 인한 UI 개발자 최적화",
+        "4. SCSS 도입을 통한 스타일 모듈화로 유지보수 용이",
+        "5. 리뉴얼 외 페이지 신규 레이아웃에 맞춰 UI 개발자 최적화"
       ]
     }
   },
   {
     "title": "SHINAND",
     "intro": "SHINAND 사업안내",
-    "category1": "RESPONSIVE",
-    "linked": true,
+    "office": "LF",
+    "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
       "ie": "9",
       "safari": true
     },
-    "member": "2명 (퍼블리셔1, 디자이너1)",
-    "main_role": "사이트 전반 퍼블리싱 전담",
-    "part": "Publishing 100%",
+    "member": "2명 (UI 개발자 1 · 디자이너 1)",
+    "main_role": "사이트 전반 UI개발 전담",
+    "part": "UI개발 100%",
     "project": "2019.07 ~ 2019.08",
     "images": {
       "thumb": "../resources/images/main/pfImg024.jpg",
@@ -63,38 +254,38 @@
     "link": "http://shinand.com/",
     "work": {
       "scope": {
-        "page": "Home 외 회사소개 관련 7섹션(원페이지)"
+        "page": ["Home 외 회사소개 관련 7섹션(원페이지)"]
       },
       "task": [
-        "사이트 전반 반응형 및 인터랙션 디자인 설계",
-        "FullPage 구현",
-        "2번 구현시 모바일은 일반 스크롤페이지로 전환",
-        "Parallax 구현 (PC : 섹션별, Mobile : 스크롤 위치, PC&Mobile : 메뉴 활성화)",
-        "섹션별 헤더 스타일 변경",
-        "섹션별 또는 스크롤 위치에 따른 메뉴 활성화"
+        "1. 사이트 전반 반응형 및 인터랙션 디자인 설계",
+        "2. FullPage 구현",
+        "3. 2번 구현시 모바일은 일반 스크롤페이지로 전환",
+        "4. Parallax 구현 (PC : 섹션별, Mobile : 스크롤 위치, PC&Mobile : 메뉴 활성화)",
+        "5. 섹션별 헤더 스타일 변경",
+        "6. 섹션별 또는 스크롤 위치에 따른 메뉴 활성화"
       ],
       "result": [
-        "반응형 설계로 인한 각 디바이스별 UI 최적화",
-        "모바일에서 일반 스크롤페이지로 전환하여 기기 높이에 따른 콘텐츠 잘림 현상 방지 (FullPage 한계 극복)",
-        "Parallax 구현시 각 상황별로 모션 실행 체크값을 변경하여 각 상황별 UI 최적화",
-        "SCSS 도입을 통한 스타일 모듈화로 유지보수 용이",
-        "2, 3번 구현으로 디자인 재설계 불필요, 개발시간 단축"
+        "1. 반응형 설계로 인한 각 디바이스별 UI 개발자 최적화",
+        "2. 모바일에서 일반 스크롤페이지로 전환하여 기기 높이에 따른 콘텐츠 잘림 현상 방지 (FullPage 한계 극복)",
+        "3. Parallax 구현시 각 상황별로 모션 실행 체크값을 변경하여 각 상황별 UI 개발자 최적화",
+        "4. SCSS 도입을 통한 스타일 모듈화로 유지보수 용이",
+        "5. 2, 3번 구현으로 디자인 재설계 불필요, 개발시간 단축"
       ]
     }
   },
   {
     "title": "KONVINATION",
     "intro": "KONVINATION 사업안내",
-    "category1": "RESPONSIVE",
-    "linked": true,
+    "office": "LF",
+    "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
       "ie": "9",
       "safari": true
     },
-    "member": "2명 (퍼블리셔1, 디자이너1)",
-    "main_role": "사이트 전반 퍼블리싱 전담",
-    "part": "Publishing 100%",
+    "member": "2명 (UI 개발자 1 · 디자이너 1)",
+    "main_role": "사이트 전반 UI개발 전담",
+    "part": "UI개발 100%",
     "project": "2019.02",
     "images": {
       "thumb": "../resources/images/main/pfImg023.jpg",
@@ -105,66 +296,66 @@
     "link": "http://konvination.co.kr/",
     "work": {
       "scope": {
-        "page": "메인(원페이지), 영문변환"
+        "page": ["메인(원페이지), 영문변환"]
       },
-      "task": ["- i18n 라이브러리 활용 다국어 사이트 제작"]
+      "task": ["&nbsp;&nbsp;- i18n 라이브러리 활용 다국어 사이트 제작"]
     }
   },
   {
     "title": "배차반장 웹플랫폼",
     "intro": "기업화물 주선 웹플랫폼",
-    "category1": "ONLY PC",
-    "linked": true,
+    "office": "LF",
+    "device": "PC",
     "browser": {
       "chrome": true,
       "ie": "9",
       "safari": false
     },
-    "member": "6명 (기획자1, 개발자3, 퍼블리셔1, 디자이너1)",
-    "main_role": "사이트 전반 퍼블리싱 전담",
-    "part": "Publishing 100%",
+    "member": "6명 (UI 개발자 1 · FE & BE 개발자 3 · 디자이너 1 · 기획자 1)",
+    "main_role": "사이트 전반 UI개발 전담",
+    "part": "UI개발 100%",
     "project": "2018.09 ~ 2019.05",
     "images": {
       "thumb": "../resources/images/main/pfImg022.jpg",
       "detail": "../resources/images/sub/pf_detailImg022.jpg"
     },
-    "task_environment": "ASP.net, Apache",
+    "task_environment": "Git, ASP.net, Apache",
     "language": "HTML, CSS, Javascript(jQuery)",
     "link": "https://service.배차반장.com/",
     "work": {
       "scope": {
-        "page": "운송현황, 배차주문 (상·하차지, 상·하차일시, 차량정보, 추가정보, 주문서), 거래명세서, 일자별 운임료, 공지사항, 설정(내정보, 기업정보)"
+        "page": ["운송현황, 배차주문 (상·하차지, 상·하차일시, 차량정보, 추가정보, 주문서), 거래명세서, 일자별 운임료, 공지사항, 설정(내정보, 기업정보)"]
       },
       "task": [
-        "초기 DevExpress로 개발된 영역 하드코딩으로 리팩토링",
-        "요소 선택 및 상태에 따른 이벤트 제어기능 구현 (상/하차지 추가/삭제, 담당자 선택/추가/삭제, 차량정보 입력)",
-        "공통 모달 팝업 제작",
-        "거래명세서(DevExpress Grid) 가로 스크롤 기능 추가",
-        "주문서 텍스트 입력 유무에 따른 스타일 구분",
-        "네이버 지도 API Customizing"
+        "1. 초기 DevExpress로 개발된 영역 하드코딩으로 리팩토링",
+        "2. 요소 선택 및 상태에 따른 이벤트 제어기능 구현 (상/하차지 추가/삭제, 담당자 선택/추가/삭제, 차량정보 입력)",
+        "3. 공통 모달 팝업 제작",
+        "4. 거래명세서(DevExpress Gri4. 가로 스크롤 기능 추가",
+        "5. 주문서 텍스트 입력 유무에 따른 스타일 구분",
+        "6. 네이버 지도 API Customizing"
       ],
       "result": [
-        "DevExpress 제거를 통한 UI 최적화",
-        "복잡도 높은 배차주문 페이지를 최대한 간소화하여 UI/UX 최적화",
-        "2번 구현시 주로 input 태그 활용하여 JS 이벤트 복잡도 최소화",
-        "공통 모달 팝업 활용으로 마크업 복잡도 감소 및 팝업 작업 편의성 향상",
-        "DevExpress 구조상 불가능했던 Grid 가로 스크롤을 스타일의 강제 제어를 통해 UI 최적화"
+        "1. DevExpress 제거를 통한 UI 개발자 최적화",
+        "2. 복잡도 높은 배차주문 페이지를 최대한 간소화하여 UI/UX 최적화",
+        "3. 2번 구현시 주로 input 태그 활용하여 JS 이벤트 복잡도 최소화",
+        "4. 공통 모달 팝업 활용으로 마크업 복잡도 감소 및 팝업 작업 편의성 향상",
+        "5. DevExpress 구조상 불가능했던 Grid 가로 스크롤을 스타일의 강제 제어를 통해 UI 개발자 최적화"
       ]
     }
   },
   {
     "title": "배차반장",
     "intro": "배차반장 서비스 안내",
-    "category1": "RESPONSIVE",
-    "linked": true,
+    "office": "LF",
+    "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
       "ie": "9",
       "safari": true
     },
-    "member": "3명 (기획자1, 퍼블리셔1, 디자이너1)",
-    "main_role": "사이트 전반 퍼블리싱 전담",
-    "part": "Publishing 100%",
+    "member": "3명 (UI 개발자 1 · 디자이너 1 · 기획자 1)",
+    "main_role": "사이트 전반 UI개발 전담",
+    "part": "UI개발 100%",
     "project": "2018.11 ~ 2019.02",
     "images": {
       "thumb": "../resources/images/main/pfImg021.jpg",
@@ -175,23 +366,24 @@
     "link": "https://www.배차반장.com/",
     "work": {
       "scope": {
-        "page": "메인, 서비스, 이용정보, 이벤트"
+        "page": ["메인, 서비스, 이용정보, 이벤트"]
       },
-      "task": ["메인페이지 각 섹션 위치별(홀, 짝) 스타일 규격화"]
+      "task": ["1. 메인페이지 각 섹션 위치별(홀, 짝) 스타일 규격화"]
     }
   },
   {
     "title": "셔틀콕",
     "intro": "셔틀콕 서비스 안내",
-    "category1": "RESPONSIVE",
+    "office": "LF",
+    "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
       "ie": "9",
       "safari": true
     },
-    "member": "2명 (퍼블리셔1, 디자이너1)",
-    "main_role": "사이트 전반 퍼블리싱 전담",
-    "part": "Publishing 100%",
+    "member": "2명 (UI 개발자 1 · 디자이너 1)",
+    "main_role": "사이트 전반 UI개발 전담",
+    "part": "UI개발 100%",
     "project": "2018.11",
     "images": {
       "thumb": "../resources/images/main/pfImg026.jpg",
@@ -201,22 +393,23 @@
     "language": "HTML, CSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "원페이지(메인, 차량, 서비스, 이용방법, 운임표, 견전문의 FAQ)"
+        "page": ["1. 원페이지(메인, 차량, 서비스, 이용방법, 운임표, 견전문의 FAQ)"]
       }
     }
   },
   {
     "title": "DollyAndMolly",
     "intro": "개인 브랜드 쇼핑몰",
-    "category1": "RESPONSIVE",
+    "office": "LF",
+    "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
       "ie": "9",
       "safari": true
     },
-    "member": "2명 (퍼블리셔1, 디자이너1)",
-    "main_role": "사이트 전반 퍼블리싱 전담",
-    "part": "Publishing 100%",
+    "member": "2명 (UI 개발자 1 · 디자이너 1)",
+    "main_role": "사이트 전반 UI개발 전담",
+    "part": "UI개발 100%",
     "project": "2017.07 ~ 2017.09",
     "images": {
       "thumb": "../resources/images/main/pfImg020.jpg",
@@ -226,105 +419,75 @@
     "language": "HTML, CSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "메인, Store, 장바구니, 결제, 검색, 계정, Campaign(LookBook) 등 약 15페이지 + 국가별, 기기별 결제모듈(한국, 미국 / PC, Mobile)"
+        "page": ["메인, Store, 장바구니, 결제, 검색, 계정, Campaign(LookBook) 등 약 15페이지 + 국가별, 기기별 결제모듈(한국, 미국 / PC, Mobil5."]
       },
       "task": [
-        "국가별, 기기별로 분기된 결제모듈로 인해 총 4개의 사이트 제작",
-        "메인 FullPage 구현",
-        "상품등록 폼 활용하여 일반 콘텐츠 등록 가능하게 연동(룩북 등)",
-        "접속 국가별 리다이렉팅",
-        "초기 구매한 디자인 90%이상 Customizing",
-        "어드민 매뉴얼 작성(콘텐츠 및 상품 등록 매뉴얼)"
+        "1. 국가별, 기기별로 분기된 결제모듈로 인해 총 4개의 사이트 제작",
+        "2. 메인 FullPage 구현",
+        "3. 상품등록 폼 활용하여 일반 콘텐츠 등록 가능하게 연동(룩북 등)",
+        "4. 접속 국가별 리다이렉팅",
+        "5. 초기 구매한 디자인 90%이상 Customizing",
+        "6. 어드민 매뉴얼 작성(콘텐츠 및 상품 등록 매뉴얼)"
       ],
       "result": [
-        "일반 콘텐츠 등록을 상품 등록하는 것처럼 구현하여 비개발직군인 담당자의 사용편의성 향상",
-        "결제 모듈이 다른 4개의 사이트를 가능한 통일된 코드로 사용하여 유지보수 최적화",
-        "접속 국가별 리다이렉팅을 통해 단일화 된 주소로 홍보 가능하게 마케팅 효율성 향상",
-        "어드민 매뉴얼 작성으로 추후 인수인계 간소화 및 업무 효율도 향상 "
+        "1. 일반 콘텐츠 등록을 상품 등록하는 것처럼 구현하여 비개발직군인 담당자의 사용편의성 향상",
+        "2. 결제 모듈이 다른 4개의 사이트를 가능한 통일된 코드로 사용하여 유지보수 최적화",
+        "3. 접속 국가별 리다이렉팅을 통해 단일화 된 주소로 홍보 가능하게 마케팅 효율성 향상",
+        "4. 어드민 매뉴얼 작성으로 추후 인수인계 간소화 및 업무 효율도 향상 "
       ]
     }
   },
   {
     "title": "KONVINI Ver.1",
     "intro": "국내 패션 브랜드 편집숍(일본, 홍콩)",
-    "category1": "RESPONSIVE",
+    "office": "LF",
+    "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
       "ie": "9",
       "safari": true
     },
-    "member": "5명 (개발자3, 퍼블리셔1, 디자이너1)",
-    "main_role": "사이트 전반 퍼블리싱 전담",
-    "part": "Publishing 100%",
+    "member": "5명 (UI 개발자 1 · 디자이너 1 · FE & BE 개발자 3)",
+    "main_role": "사이트 전반 UI개발 전담",
+    "part": "UI개발 100%",
     "project": "2017.05 ~ 2018.01",
     "images": {
       "thumb": "../resources/images/main/pfImg019.jpg",
       "detail": "../resources/images/sub/pf_detailImg019.jpg"
     },
-    "task_environment": "PHP(template_), Apache",
+    "task_environment": "Git, PHP(template_), Apache",
     "language": "HTML, CSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "메인, 상품, 브랜드, 매거진, 프레스, 검색, 주문, 결제, 장바구니, 즐겨찾기, 주문조회, 교환·반품, 포인트, 쿠폰 등 약 40페이지 외 DM 7페이지"
+        "page": ["메인, 상품, 브랜드, 매거진, 프레스, 검색, 주문, 결제, 장바구니, 즐겨찾기, 주문조회, 교환·반품, 포인트, 쿠폰 등 약 40페이지 외 DM 7페이지"]
       },
       "task": [
-        "PC 최적화 디자인 토대로 반응형 설계(테이블형 디자인, 다중 슬라이드 등)",
-        "상품이미지를 규격화된 사이즈로 출력되게 스타일링(반응형으로 이미지 비율 유지)",
-        "이미지 비율 계산 후 각 경우에 따라 출력방법 선택하는 JS 작성",
-        "아이폰 Bounce 기능 블락 처리"
+        "1. PC 최적화 디자인 토대로 반응형 설계(테이블형 디자인, 다중 슬라이드 등)",
+        "2. 상품이미지를 규격화된 사이즈로 출력되게 스타일링(반응형으로 이미지 비율 유지)",
+        "3. 이미지 비율 계산 후 각 경우에 따라 출력방법 선택하는 JS 작성",
+        "4. 아이폰 Bounce 기능 블락 처리"
       ],
       "result": [
-        "복잡도 높은 PC형 디자인을 반응형으로 설계하여 각 디바이스 UI 최적화",
-        "비규격 사이즈의 상품 이미지를 등록 대비 UI 최적화로 자유로운 상품 등록 가능, 업무 능률 향상",
-        "조조타운 입점 후 상품이미지 변경으로 인한 UI 이슈를 해결하여 기존 상품 재등록 불필요, 개발 기간 단축",
-        "아이폰 Bounce 기능 제어로 UX 최적화"
-      ]
-    }
-  },
-  {
-    "title": "Aeri's Portfolio",
-    "intro": "개인 포트폴리오",
-    "category1": "RESPONSIVE",
-    "linked": "INDIVIDUAL",
-    "browser": {
-      "chrome": true,
-      "ie": "9",
-      "safari": false
-    },
-    "member": "1명",
-    "main_role": "기획, 디자인, 퍼블리싱 전반",
-    "part": "Design & Publishing 100%",
-    "project": "2017.03 ~ 2017.04",
-    "images": {
-      "thumb": "../resources/images/main/pfImg018.jpg",
-      "detail": "../resources/images/sub/pf_detailImg018.jpg"
-    },
-    "task_environment": "Apache",
-    "language": "HTML, CSS, Javascript(jQuery), JSON",
-    "work": {
-      "scope": {
-        "page": "원페이지(메인, 프로젝트, 포트폴리오, 스킬, 컨택), 포트폴리오 레이어팝업"
-      },
-      "task": [
-        "fullpage 구현",
-        "parallax 구현",
-        "프로젝트 슬라이드 배너 (오픈소스 70% 변형)",
-        "오픈 플러그인 : smooth-scroll / imagesloaded / masonry / load more / 콘텐츠 필터 / 로딩진행률 / 마우스방향감지"
+        "1. 복잡도 높은 PC형 디자인을 반응형으로 설계하여 각 디바이스 UI 개발자 최적화",
+        "2. 비규격 사이즈의 상품 이미지를 등록 대비 UI 개발자 최적화로 자유로운 상품 등록 가능, 업무 능률 향상",
+        "3. 조조타운 입점 후 상품이미지 변경으로 인한 UI 개발자 이슈를 해결하여 기존 상품 재등록 불필요, 개발 기간 단축",
+        "4. 아이폰 Bounce 기능 제어로 UX 최적화"
       ]
     }
   },
   {
     "title": "신안군 중개장터",
     "intro": "신안특산물 중개장터",
-    "category1": "RESPONSIVE",
+    "office": "LETSON",
+    "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (개발자1, 디자이너1)",
-    "main_role": "사이트 전반 디자인 및 퍼블리싱 ",
-    "part": "Design & Publishing 90%",
+    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
+    "main_role": "사이트 전반 디자인 및 UI개발",
+    "part": "Design & UI개발 90%",
     "project": "2016.08 ~ 2016.12",
     "images": {
       "thumb": "../resources/images/main/pfImg017.jpg",
@@ -334,27 +497,28 @@
     "language": "HTML, CSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "메인, 상품리스트, 상품상세, 신안우수농산물생산, 천사섬신안, 특산품생산관내업체, 고객센터 등 약 15페이지"
+        "page": ["메인, 상품리스트, 상품상세, 신안우수농산물생산, 천사섬신안, 특산품생산관내업체, 고객센터 등 약 15페이지"]
       },
       "task": [
-        "메뉴 모듈 UI 제작으로 유지보수 간편화",
-        "테이블 구조의 솔루션을 DIV 구조로 업그레이드",
-        "상품 상세 디자인 규격화"
+        "1. 메뉴 모듈 UI 개발자 제작으로 유지보수 간편화",
+        "2. 테이블 구조의 솔루션을 DIV 구조로 업그레이드",
+        "3. 상품 상세 디자인 규격화"
       ]
     }
   },
   {
     "title": "강진만 생태공원 Ver.2",
     "intro": "강진만 생태공원 안내",
-    "category1": "RESPONSIVE",
+    "office": "LETSON",
+    "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (개발자1, 디자이너1)",
-    "main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
-    "part": "Design & Publishing 100%",
+    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
+    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
+    "part": "Design & UI개발 100%",
     "project": "2016.07 ~ 2016.08",
     "images": {
       "thumb": "../resources/images/main/pfImg016.jpg",
@@ -364,24 +528,25 @@
     "language": "HTML, CSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "메인, 강진만생태공원, 1131종 생물다양성, 사이버투어, 스마트관람안내, 관람/체험, 소통마당, 정보마당, 강진만갈대축제 등"
+        "page": ["메인, 강진만생태공원, 1131종 생물다양성, 사이버투어, 스마트관람안내, 관람/체험, 소통마당, 정보마당, 강진만갈대축제 등"]
       },
-      "task": ["사이트에 최적화된 슬라이드 갤러리 제작"],
-      "result": ["1차 시안 작업 후 고객사의 니즈 파악하여 2차 시안 제안으로 고객사 만족도 향상"]
+      "task": ["1. 사이트에 최적화된 슬라이드 갤러리 제작"],
+      "result": ["1. 1차 시안 작업 후 고객사의 니즈 파악하여 2차 시안 제안으로 고객사 만족도 향상"]
     }
   },
   {
     "title": "강진만 생태공원 Ver.1",
     "intro": "강진만 생태공원 안내",
-    "category1": "RESPONSIVE",
+    "office": "LETSON",
+    "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (개발자1, 디자이너1)",
-    "main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
-    "part": "Design & Publishing 100%",
+    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
+    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
+    "part": "Design & UI개발 100%",
     "project": "2016.07 ~ 2016.08",
     "images": {
       "thumb": "../resources/images/main/pfImg015.jpg",
@@ -391,23 +556,23 @@
     "language": "HTML, CSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "메인, 강진만생태공원, 1131종 생물다양성, 사이버투어, 스마트관람안내, 관람/체험, 소통마당, 정보마당, 강진만갈대축제 등"
+        "page": ["메인, 강진만생태공원, 1131종 생물다양성, 사이버투어, 스마트관람안내, 관람/체험, 소통마당, 정보마당, 강진만갈대축제 등"]
       }
     }
   },
   {
     "title": "마이산 다옴펜션",
     "intro": "펜션 안내 및 예약 서비스",
-    "category1": "PC&MOBILE",
-    "linked": true,
+    "office": "LETSON",
+    "device": "PC&MOBILE",
     "browser": {
       "chrome": true,
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (개발자1, 디자이너1)",
-    "main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
-    "part": "Design & Publishing 100%",
+    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
+    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
+    "part": "Design & UI개발 100%",
     "project": "2016.07 ~ 2016.07",
     "images": {
       "thumb": "../resources/images/main/pfImg014.jpg",
@@ -418,23 +583,24 @@
     "link": "http://maisan-daom.kr/",
     "work": {
       "scope": {
-        "page": "메인, 다옴펜션소개, 객실안내, 실시간예약, 부대시설, 주변관광지, 오시는길, 커뮤니티 등 약 20페이지"
+        "page": ["메인, 다옴펜션소개, 객실안내, 실시간예약, 부대시설, 주변관광지, 오시는길, 커뮤니티 등 약 20페이지"]
       },
-      "task": ["그누보드 메뉴 모듈 활용 네비게이션 모듈화", "동종업계 벤치마킹을 통해 필요한 콘텐츠 기획 및 제작"]
+      "task": ["1. 그누보드 메뉴 모듈 활용 네비게이션 모듈화", "2. 동종업계 벤치마킹을 통해 필요한 콘텐츠 기획 및 제작"]
     }
   },
   {
     "title": "장성군청 다국어 (영어, 일본어, 중국어)",
     "intro": "장성군청 안내",
-    "category1": "ONLY PC",
+    "office": "LETSON",
+    "device": "PC",
     "browser": {
       "chrome": true,
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (개발자1, 디자이너1)",
-    "main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
-    "part": "Design & Publishing 100%",
+    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
+    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
+    "part": "Design & UI개발 100%",
     "project": "2016.04 ~ 2016.06",
     "images": {
       "thumb": "../resources/images/main/pfImg013.jpg",
@@ -444,24 +610,24 @@
     "language": "HTML, CSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "HOME, About Jangseong, Yellow City, Tourist, Living, Multicultural Homes, Agricultural Specialties, Community 등 약 20페이지"
+        "page": ["HOME, About Jangseong, Yellow City, Tourist, Living, Multicultural Homes, Agricultural Specialties, Community 등 약 20페이지"]
       },
-      "task": ["1개 디자인을 각 국가마다 포인트 컬러를 변경하여 작업"]
+      "task": ["1. 1개 디자인을 각 국가마다 포인트 컬러를 변경하여 작업"]
     }
   },
   {
     "title": "장성군청 의회",
     "intro": "장성군청 의회 안내",
-    "category1": "RESPONSIVE",
-    "linked": true,
+    "office": "LETSON",
+    "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (개발자1, 디자이너1)",
-    "main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
-    "part": "Design & Publishing 100%",
+    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
+    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
+    "part": "Design & UI개발 100%",
     "project": "2016.04 ~ 2016.06",
     "images": {
       "thumb": "../resources/images/main/pfImg012.jpg",
@@ -472,23 +638,24 @@
     "link": "https://www.jangseong.go.kr/home/council",
     "work": {
       "scope": {
-        "page": "메인, 열린의장실, 의회소개, 의원소개, 의회소식, 의회자료실, 참여마당, 회의록 등 약 30페이지"
+        "page": ["메인, 열린의장실, 의회소개, 의원소개, 의회소식, 의회자료실, 참여마당, 회의록 등 약 30페이지"]
       },
-      "result": ["PL로서 첫 반응형 사이트 제작"]
+      "result": ["1. PL로서 첫 반응형 사이트 제작"]
     }
   },
   {
     "title": "신안군청 ICT",
     "intro": "군청 내 종합현황시스템",
-    "category1": "ONLY PC",
+    "office": "LETSON",
+    "device": "PC",
     "browser": {
       "chrome": true,
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (개발자1, 디자이너1)",
-    "main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
-    "part": "Design & Publishing 100%",
+    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
+    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
+    "part": "Design & UI개발 100%",
     "project": "2016.02 ~ 2016.06",
     "images": {
       "thumb": "../resources/images/main/pfImg011.jpg",
@@ -498,23 +665,24 @@
     "language": "HTML, CSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "메인, 역점시책사업, 중심권개발사업, 투자유치, 군정현황, 문화관광, 영상보기, 관내고, 부가정보 등"
+        "page": ["메인, 역점시책사업, 중심권개발사업, 투자유치, 군정현황, 문화관광, 영상보기, 관내고, 부가정보 등"]
       },
-      "task": ["100인치 터치스크린에 최적화하여 기존 솔루션 업그레이드", "메뉴 위치 및 레이아웃 전환 기능 개발"]
+      "task": ["1. 100인치 터치스크린에 최적화하여 기존 솔루션 업그레이드", "2. 메뉴 위치 및 레이아웃 전환 기능 개발"]
     }
   },
   {
     "title": "강동대학교 외국어",
     "intro": "강동대학교 안내",
-    "category1": "ONLY PC",
+    "office": "LETSON",
+    "device": "PC",
     "browser": {
       "chrome": true,
       "ie": "8",
       "safari": true
     },
-    "member": "3명 (개발자1, 디자이너2)",
-    "main_role": "사이트 전반 퍼블리싱 전담 ",
-    "part": "Publishing 100%",
+    "member": "3명 (UI 개발자 & 디자이너 2 · FE & BE 개발자 1)",
+    "main_role": "사이트 전반 UI개발 전담 ",
+    "part": "UI개발 100%",
     "project": "2015.09 ~ 2016.02",
     "images": {
       "thumb": "../resources/images/main/pfImg010.jpg",
@@ -524,22 +692,23 @@
     "language": "HTML, CSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "HOME, About GangDong, GangDong Vision, Education 등"
+        "page": ["HOME, About GangDong, GangDong Vision, Education 등"]
       }
     }
   },
   {
     "title": "강동대학교 부속기간",
     "intro": "강동대학교 부속기간 안내",
-    "category1": "ONLY PC",
+    "office": "LETSON",
+    "device": "PC",
     "browser": {
       "chrome": true,
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (개발자1, 디자이너1)",
-    "main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
-    "part": "Design & Publishing 100%",
+    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
+    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
+    "part": "Design & UI개발 100%",
     "project": "2015.09 ~ 2016.02",
     "images": {
       "thumb": "../resources/images/main/pfImg009.jpg",
@@ -549,23 +718,24 @@
     "language": "HTML, CSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "메인, 부속기관 소개, 커뮤니티, 인사말, 설림목적 및 연혁, 교직원소개, 찾아오시는 길 등 각 부속기관별 상이",
-        "task": ["1개 디자인을 각 5개 기관(기숙사, 산학협력단, 신문방송국, 창업교육센터, 평생교육원)에 맞춤형으로 작업"]
+        "page": ["메인, 부속기관 소개, 커뮤니티, 인사말, 설림목적 및 연혁, 교직원소개, 찾아오시는 길 등 각 부속기관별 상이"],
+        "task": ["1. 1개 디자인을 각 5개 기관(기숙사, 산학협력단, 신문방송국, 창업교육센터, 평생교육원)에 맞춤형으로 작업"]
       }
     }
   },
   {
     "title": "강동대학교 학과 St.4",
     "intro": "강동대학교 학과 안내",
-    "category1": "ONLY PC",
+    "office": "LETSON",
+    "device": "PC",
     "browser": {
       "chrome": true,
       "ie": "8",
       "safari": true
     },
-    "member": "3명 (개발자1, 디자이너2)",
-    "main_role": "사이트 전반 퍼블리싱 전담 ",
-    "part": "Design 50%(Sub Page), Publishing 100%",
+    "member": "3명 (UI 개발자 & 디자이너 2 · FE & BE 개발자 1)",
+    "main_role": "사이트 전반 UI개발 전담 ",
+    "part": "Design 50%(Sub Pag5., UI개발 100%",
     "project": "2015.09 ~ 2016.02",
     "images": {
       "thumb": "../resources/images/main/pfImg008.jpg",
@@ -575,23 +745,24 @@
     "language": "HTML, CSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "메인, 학과소개, 교수진소개, 교육과정, 입학안내, 커뮤니티 등"
+        "page": ["메인, 학과소개, 교수진소개, 교육과정, 입학안내, 커뮤니티 등"]
       },
-      "task": ["1개 디자인을 각 5개 학과에 맞춤형으로 작업"]
+      "task": ["1. 1개 디자인을 각 5개 학과에 맞춤형으로 작업"]
     }
   },
   {
     "title": "강동대학교 학과 St.3",
     "intro": "강동대학교 학과 안내",
-    "category1": "ONLY PC",
+    "office": "LETSON",
+    "device": "PC",
     "browser": {
       "chrome": true,
       "ie": "8",
       "safari": true
     },
-    "member": "3명 (개발자1, 디자이너2)",
-    "main_role": "사이트 전반 퍼블리싱 전담 ",
-    "part": "Design 50%(Sub Page), Publishing 100%",
+    "member": "3명 (UI 개발자 & 디자이너 2 · FE & BE 개발자 1)",
+    "main_role": "사이트 전반 UI개발 전담 ",
+    "part": "Design 50%(Sub Pag5., UI개발 100%",
     "project": "2015.09 ~ 2016.02",
     "images": {
       "thumb": "../resources/images/main/pfImg007.jpg",
@@ -601,23 +772,24 @@
     "language": "HTML, CSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "메인, 학과소개, 교수진소개, 교육과정, 입학안내, 커뮤니티 등"
+        "page": ["메인, 학과소개, 교수진소개, 교육과정, 입학안내, 커뮤니티 등"]
       },
-      "task": ["1개 디자인을 각 1개 학과에 맞춤형으로 작업"]
+      "task": ["1. 1개 디자인을 각 1개 학과에 맞춤형으로 작업"]
     }
   },
   {
     "title": "강동대학교 학과 St.2",
     "intro": "강동대학교 학과 안내",
-    "category1": "ONLY PC",
+    "office": "LETSON",
+    "device": "PC",
     "browser": {
       "chrome": true,
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (개발자1, 디자이너1)",
-    "main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
-    "part": "Design & Publishing 100%",
+    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
+    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
+    "part": "Design & UI개발 100%",
     "project": "2015.09 ~ 2016.02",
     "images": {
       "thumb": "../resources/images/main/pfImg006.jpg",
@@ -627,23 +799,23 @@
     "language": "HTML, CSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "메인, 학과소개, 교수진소개, 교육과정, 입학안내, 커뮤니티 등"
+        "page": ["메인, 학과소개, 교수진소개, 교육과정, 입학안내, 커뮤니티 등"]
       },
-      "task": ["1개 디자인을 각 8개 학과에 맞춤형으로 작업"]
+      "task": ["1. 1개 디자인을 각 8개 학과에 맞춤형으로 작업"]
     }
   },
   {
     "title": "강동대학교 학과 St.1",
     "intro": "강동대학교 학과 안내",
-    "category1": "ONLY PC",
+    "device": "PC",
     "browser": {
       "chrome": true,
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (개발자1, 디자이너1)",
-    "main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
-    "part": "Design & Publishing 100%",
+    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
+    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
+    "part": "Design & UI개발 100%",
     "project": "2015.09 ~ 2016.02",
     "images": {
       "thumb": "../resources/images/main/pfImg005.jpg",
@@ -653,23 +825,24 @@
     "language": "HTML, CSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "메인, 학과소개, 교수진소개, 교육과정, 입학안내, 커뮤니티 등"
+        "page": ["메인, 학과소개, 교수진소개, 교육과정, 입학안내, 커뮤니티 등"]
       },
-      "task": ["1개 디자인을 각 12개 학과에 맞춤형으로 작업"]
+      "task": ["1. 1개 디자인을 각 12개 학과에 맞춤형으로 작업"]
     }
   },
   {
     "title": "강동대학교 입시 Ver.2",
     "intro": "강동대학교 입시 안내",
-    "category1": "PC&MOBILE",
+    "office": "LETSON",
+    "device": "PC&MOBILE",
     "browser": {
       "chrome": true,
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (개발자1, 디자이너1)",
-    "main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
-    "part": "Design & Publishing 100%",
+    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
+    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
+    "part": "Design & UI개발 100%",
     "project": "2015.09 ~ 2016.02",
     "images": {
       "thumb": "../resources/images/main/pfImg004.jpg",
@@ -679,23 +852,24 @@
     "language": "HTML, CSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "메인, 수시1차모집, 수시2차모집, 정시모닙, 전공심화, 산업체위탁, 입학정보, 입학도우미 등"
+        "page": ["메인, 수시1차모집, 수시2차모집, 정시모닙, 전공심화, 산업체위탁, 입학정보, 입학도우미 등"]
       },
-      "result": ["1차 시안 이후 디자인 변경 요청에 빠른 대응으로 고객만족도 향상"]
+      "result": ["1. 1차 시안 이후 디자인 변경 요청에 빠른 대응으로 고객만족도 향상"]
     }
   },
   {
     "title": "강동대학교 입시 Ver.1",
     "intro": "강동대학교 입시 안내",
-    "category1": "RESPONSIVE",
+    "office": "LETSON",
+    "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
       "ie": "8",
       "safari": true
     },
-    "member": "3명 (개발자1, 디자이너2)",
-    "main_role": "사이트 전반 퍼블리싱 전담 ",
-    "part": "Publishing 100%",
+    "member": "3명 (UI 개발자 & 디자이너 2 · FE & BE 개발자 1)",
+    "main_role": "사이트 전반 UI개발 전담 ",
+    "part": "UI개발 100%",
     "project": "2015.09 ~ 2016.02",
     "images": {
       "thumb": "../resources/images/main/pfImg003.jpg",
@@ -705,23 +879,23 @@
     "language": "HTML, CSS, Javascript(jQuery)",
     "work": {
       "scope": {
-        "page": "메인, 수시1차모집, 수시2차모집, 정시모닙, 전공심화, 산업체위탁, 입학정보, 입학도우미 등"
+        "page": ["메인, 수시1차모집, 수시2차모집, 정시모닙, 전공심화, 산업체위탁, 입학정보, 입학도우미 등"]
       }
     }
   },
   {
     "title": "신안군청 다국어 (영어, 일본어, 중국어)",
     "intro": "신안군청 안내",
-    "category1": "ONLY PC",
-    "linked": true,
+    "office": "LETSON",
+    "device": "PC",
     "browser": {
       "chrome": true,
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (개발자1, 디자이너1)",
-    "main_role": "사이트 전반 디자인 및 퍼블리싱 전담 ",
-    "part": "Design & Publishing 100%",
+    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
+    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
+    "part": "Design & UI개발 100%",
     "project": "2015.08 ~ 2015.12",
     "images": {
       "thumb": "../resources/images/main/pfImg001.jpg",
@@ -732,9 +906,9 @@
     "link": "http://eng.shinan.go.kr/",
     "work": {
       "scope": {
-        "page": "HOME, About Shinan, Shinan Sea Salt, Industries/Economy, Tourism, Information on Living 등 약 15페이지"
+        "page": ["HOME, About Shinan, Shinan Sea Salt, Industries/Economy, Tourism, Information on Living 등 약 15페이지"]
       },
-      "result": ["첫 PL로 활약함으로써 프로젝트 전반적인 프로세스 습득"]
+      "result": ["1. 첫 PL로 활약함으로써 프로젝트 전반적인 프로세스 습득"]
     }
   }
 ]

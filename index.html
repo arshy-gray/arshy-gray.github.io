@@ -121,27 +121,53 @@
             <h3 class="hidden">분야별 포트폴리오</h3>
             <div class="filter_wrap">
               <form class="filter-form" id="gellery-filter">
-                <ul class="filter-group filter-type-device">
+                <ul class="filter-group filter-group-main filter-type-office filter-radio">
                   <li class="form-item radioItem">
-                    <input type="radio" name="filter" id="filter-all" value="ALL" checked title="ALL" />
-                    <label for="filter-all" title="전체 사이트 모음입니다.">All</label>
+                    <input type="radio" name="filter-office" id="filter-Office-all" value="ALL" checked/>
+                    <label for="filter-Office-all" title="전체 사이트 모음입니다.">All</label>
                   </li>
                   <li class="form-item radioItem">
-                    <input type="radio" name="filter" id="filter-responsive" value="RESPONSIVE" title="RESPONSIVE" />
-                    <label for="filter-responsive" title="반응형 사이트 모음입니다.">RESPONSIVE</label>
+                    <input type="radio" name="filter-office" id="filter-office-wmp" value="WMP"/>
+                    <label for="filter-office-wmp" title="PC 버전 사이트 모음입니다.">위메프</label>
                   </li>
                   <li class="form-item radioItem">
-                    <input type="radio" name="filter" id="filter-pcmobile" value="PC&MOBILE" title="PC&MOBILE" />
-                    <label for="filter-pcmobile" title="PC&MOBILE 버전 사이트 모음입니다.">PC & MOBILE</label>
+                    <input type="radio" name="filter-office" id="filter-office-lf" value="LF"/>
+                    <label for="filter-office-lf" title="반응형 사이트 모음입니다.">로지포커스</label>
                   </li>
                   <li class="form-item radioItem">
-                    <input type="radio" name="filter" id="filter-onlypc" value="ONLY PC" title="ONLY PC" />
-                    <label for="filter-onlypc" title="PC 버전 사이트 모음입니다.">ONLY PC</label>
+                    <input type="radio" name="filter-office" id="filter-office-letson" value="LETSON"/>
+                    <label for="filter-office-letson" title="반응형 사이트 모음입니다.">렛츠온</label>
+                  </li>
+                  <li class="form-item radioItem">
+                    <input type="radio" name="filter-office" id="filter-office-self" value="SELF"/>
+                    <label for="filter-office-self" title="반응형 사이트 모음입니다.">개인</label>
                   </li>
                 </ul>
-                <ul class="filter-group filter-type-linked">
+                <ul class="filter-group filter-group-sub filter-type-device filter-radio">
+                  <li class="form-item radioItem2">
+                    <input type="radio" name="filter-device" id="filter-device-all" value="ALL" checked/>
+                    <label for="filter-device-all" title="전체 사이트 모음입니다.">All</label>
+                  </li>
+                  <li class="form-item radioItem2">
+                    <input type="radio" name="filter-device" id="filter-mobile" value="MOBILE" />
+                    <label for="filter-mobile" title="PC 버전 사이트 모음입니다.">ONLY MOBILE</label>
+                  </li>
+                  <li class="form-item radioItem2">
+                    <input type="radio" name="filter-device" id="filter-responsive" value="RESPONSIVE" />
+                    <label for="filter-responsive" title="반응형 사이트 모음입니다.">RESPONSIVE</label>
+                  </li>
+                  <li class="form-item radioItem2">
+                    <input type="radio" name="filter-device" id="filter-pcmobile" value="PC&MOBILE" />
+                    <label for="filter-pcmobile" title="PC&MOBILE 버전 사이트 모음입니다.">PC & MOBILE</label>
+                  </li>
+                  <li class="form-item radioItem2">
+                    <input type="radio" name="filter-device" id="filter-pc" value="PC" title="PC" />
+                    <label for="filter-pc" title="PC 버전 사이트 모음입니다.">ONLY PC</label>
+                  </li>
+                </ul>
+                <ul class="filter-group filter-group-sub filter-type-linked filter-chk">
                   <li class="form-item chkItem">
-                    <input type="checkbox" name="filter-linked" id="filter-linked" value="LINKED" title="LINKED" />
+                    <input type="checkbox" name="filter-linked" id="filter-linked" value="LINKED"/>
                     <label for="filter-linked" title="현재 서비스 중인 사이트 모음입니다.">LINKED</label>
                   </li>
                 </ul>
@@ -259,7 +285,7 @@
                 <ul class="ht_c">
                   <li class="date">2007-03 ~ 2011-02</li>
                   <li class="content1">조선대학교 졸업</li>
-                  <li class="content2">컴퓨터공학과 학사</li>
+                  <li class="content2">컴퓨터공학과</li>
                 </ul>
               </li>
             </ul>
