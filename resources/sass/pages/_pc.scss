@@ -61,6 +61,10 @@ body {
     position: relative;
   }
 }
+.c_blue {
+  color: #2a93e9;
+  font-style: normal;
+}
 /* 헤더 */
 .page_hd {
   position: fixed;
@@ -479,6 +483,9 @@ section {
   margin: 20px auto 40px;
   text-align: center;
 }
+.filter-group ~ .filter-group {
+  margin-top: 20px;
+}
 .form-item {
   position: relative;
   text-align: center;
@@ -492,20 +499,11 @@ section {
     label:focus {
       border-top: 3px solid #fff;
     }
-  }
-  &.chkItem {
-    display: block;
-    margin-top: 20px;
-  }
-  input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    &:checked ~ label {
-      color: #fff;
-    }
-    &[type="radio"] {
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
       ~ label {
         width: 100%;
         padding: 5px 0 10px 0;
@@ -514,27 +512,38 @@ section {
         border-top: 3px solid #fff;
       }
     }
-    &[type="checkbox"] {
+    ~ &.radioItem {
+      margin-left: 4px;
+    }
+  }
+  &.radioItem2 {
+    display: inline-block;
+    label:focus {
+      border-top: 3px solid #fff;
+    }
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
       ~ label {
         position: relative;
         line-height: 1;
         &:before {
           content: "";
           display: inline-block;
-          margin-right: 5px;
-          width: 10px;
-          height: 10px;
+          margin-right: 8px;
+          @include size(15px);
           vertical-align: middle;
           border: 1px solid #affdfb;
+          border-radius: 50%;
         }
         &:after {
           content: "";
           display: block;
-          position: absolute;
-          top: 5px;
-          left: 2px;
-          width: 8px;
-          height: 8px;
+          @include poslt(3px, 4px);
+          @include size(11px);
+          border-radius: 50%;
         }
       }
       &:checked ~ label {
@@ -545,6 +554,49 @@ section {
           background-color: #fff;
         }
       }
+    }
+    ~ &.radioItem2 {
+      margin-left: 15px;
+    }
+  }
+  &.chkItem {
+    display: block;
+    input {
+      ~ label {
+        position: relative;
+        line-height: 1;
+        &:before {
+          content: "";
+          display: inline-block;
+          margin-right: 8px;
+          @include size(15px);
+          vertical-align: middle;
+          border: 1px solid #affdfb;
+        }
+        &:after {
+          content: "";
+          display: block;
+          @include poslt(3px, 4px);
+          @include size(11px);
+        }
+      }
+      &:checked ~ label {
+        &:before {
+          border-color: #fff;
+        }
+        &:after {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    &:checked ~ label {
+      color: #fff;
     }
   }
   label {
@@ -580,7 +632,7 @@ section {
   margin-bottom: 15px;
   overflow: hidden;
   &:hover {
-    box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.3);
   }
   #portfolio.is-loading &,
   &.is-loading {
@@ -705,18 +757,23 @@ section {
 }
 
 .pf_layer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 1000px;
-  transform: translate(-50%, -50%);
+  @include absolute(5vh, 0, 5vh, 50%);
+  width: 90%;
+  max-width: 1300px;
+  transform: translateX(-50%);
   background-color: #f1f1f1;
   overflow: hidden;
   z-index: 1;
 }
 
+.pf_layer_ctt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
+}
+
 .pf_txt_basic {
-  float: right;
   width: 380px;
   padding: 35px 30px 0;
   box-sizing: border-box;
@@ -728,9 +785,9 @@ section {
     word-break: keep-all;
   }
   .type {
+    display: block;
     margin-top: 10px;
     font-size: 16px;
-    line-height: 1;
     color: #555;
   }
 }
@@ -807,6 +864,7 @@ section {
     vertical-align: top;
     a {
       color: #777;
+      word-break: break-all;
       &:hover {
         text-decoration: underline;
       }
@@ -815,7 +873,6 @@ section {
 }
 
 .pf_txt_detail {
-  float: right;
   width: 380px;
   padding: 25px 35px 40px;
   box-sizing: border-box;
@@ -869,13 +926,15 @@ section {
     &.on {
       display: block;
     }
+    strong {
+      color: #333;
+    }
   }
 }
 
 .pf_img {
-  float: left;
-  width: 620px;
-  height: 620px;
+  @include poslt;
+  @include size(calc(100% - 380px), 100%);
   background-color: #fff;
   overflow-y: auto;
   overflow-x: hidden;
@@ -914,7 +973,6 @@ section {
   position: relative;
   margin: 30px auto 0 auto;
   background: transparent;
-  -webkit-animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   top: 30px;
   opacity: 0;
@@ -924,7 +982,7 @@ section {
     text-align: center;
     font-size: 40px;
     color: #fff;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     cursor: pointer;
   }
   &.is-loading {
