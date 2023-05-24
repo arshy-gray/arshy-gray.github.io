@@ -469,9 +469,9 @@ $(window).load(function () {
             item.link +
             '" title="새창" target="_blank">' +
             item.link +
-            '"</a>';
+            '</a>';
 
-          if (item.linkTitle) itemHTML += ' <em class="c_blue"><b>(' + item.linkTitle + ")</b></em>";
+          if (item.linkTitle) itemHTML += ' <br /><em class="c_blue"><b>(' + item.linkTitle + ")</b></em>";
 
           itemHTML += "</span></li>";
         }
