@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,width=device-width,height=device-height">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,width=device-width,height=device-height" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     <!-- Favicons Generated with favicon.il.ly -->
@@ -78,25 +78,34 @@
       </header>
       <!-- // #main_hd -->
 
-      <section id="main" class="active on fullpage">
+      <section id="main" class="on fullpage">
         <h2 class="hidden">Main</h2>
-
-        <div class="bg_el">
-          <span class="el01"><img src="/resources/images/main/bgMain_pinlight.png" alt="" /></span>
-        </div>
 
         <div class="wrap_cen">
           <article class="main_txt txtBox_st1">
             <h3 class="hidden">slogan</h3>
 
-            <p class="sub_logo">
-              <a href="#main"><img src="/resources/images/main/name_top.png" alt="Song Ae Ri" /></a>
-            </p>
+            <div class="main_ct">
+              <ul class="contact_group">
+                <li class="sub_logo">
+                  <a href="#main">
+                    <img src="/resources/images/main/name.png" alt="Song Ae Ri" />
+                  </a>
+                </li>
 
-            <p class="main_ct">
-              끊임없이 변화하고 발전하는 IT기술과 함께<br />
-              언제나 나란히 걸을 수 있는 도전자가 되겠습니다.
-            </p>
+                <li class="tel_num">
+                  <a href="tel:010-6331-0512">
+                    <img src="/resources/images/main/tel_num.png" alt="010-6631-0512" />
+                  </a>
+                </li>
+                <li class="mail">
+                  <a href="mailto:arshy.gray@gmail.com">arshy.gray@gmail.com</a>
+                </li>
+                <li class="gitHub">
+                  <a href="https://github.com/arshy-gray" target="_blank">https://github.com/arshy-gray</a>
+                </li>
+              </ul>
+            </div>
           </article>
           <!-- // .main_txt -->
         </div>
@@ -107,7 +116,7 @@
       <section id="portfolio">
         <h2 class="sec_t">PROJECT</h2>
         <p class="set_ct">
-        	e-Commerce, 관공서, 사업 및 서비스 안내 사이트 등<br />
+          e-Commerce, 관공서, 사업 및 서비스 안내 사이트 등<br />
           현재까지 참여한 프로젝트 모음입니다.
         </p>
 
@@ -123,29 +132,29 @@
               <form class="filter-form" id="gellery-filter">
                 <ul class="filter-group filter-group-main filter-type-office filter-radio">
                   <li class="form-item radioItem">
-                    <input type="radio" name="filter-office" id="filter-Office-all" value="ALL" checked/>
+                    <input type="radio" name="filter-office" id="filter-Office-all" value="ALL" checked />
                     <label for="filter-Office-all" title="전체 사이트 모음입니다.">All</label>
                   </li>
                   <li class="form-item radioItem">
-                    <input type="radio" name="filter-office" id="filter-office-wmp" value="WMP"/>
+                    <input type="radio" name="filter-office" id="filter-office-wmp" value="WMP" />
                     <label for="filter-office-wmp" title="PC 버전 사이트 모음입니다.">위메프</label>
                   </li>
                   <li class="form-item radioItem">
-                    <input type="radio" name="filter-office" id="filter-office-lf" value="LF"/>
+                    <input type="radio" name="filter-office" id="filter-office-lf" value="LF" />
                     <label for="filter-office-lf" title="반응형 사이트 모음입니다.">로지포커스</label>
                   </li>
                   <li class="form-item radioItem">
-                    <input type="radio" name="filter-office" id="filter-office-letson" value="LETSON"/>
+                    <input type="radio" name="filter-office" id="filter-office-letson" value="LETSON" />
                     <label for="filter-office-letson" title="반응형 사이트 모음입니다.">렛츠온</label>
                   </li>
                   <li class="form-item radioItem">
-                    <input type="radio" name="filter-office" id="filter-office-self" value="SELF"/>
+                    <input type="radio" name="filter-office" id="filter-office-self" value="SELF" />
                     <label for="filter-office-self" title="반응형 사이트 모음입니다.">개인</label>
                   </li>
                 </ul>
                 <ul class="filter-group filter-group-sub filter-type-device filter-radio">
                   <li class="form-item radioItem2">
-                    <input type="radio" name="filter-device" id="filter-device-all" value="ALL" checked/>
+                    <input type="radio" name="filter-device" id="filter-device-all" value="ALL" checked />
                     <label for="filter-device-all" title="전체 사이트 모음입니다.">All</label>
                   </li>
                   <li class="form-item radioItem2">
@@ -167,7 +176,7 @@
                 </ul>
                 <ul class="filter-group filter-group-sub filter-type-linked filter-chk">
                   <li class="form-item chkItem">
-                    <input type="checkbox" name="filter-linked" id="filter-linked" value="LINKED"/>
+                    <input type="checkbox" name="filter-linked" id="filter-linked" value="LINKED" />
                     <label for="filter-linked" title="현재 서비스 중인 사이트 모음입니다.">LINKED</label>
                   </li>
                 </ul>
@@ -212,16 +221,50 @@
           <article class="ht_box">
             <h3 class="hidden">연혁</h3>
             <ul>
+              <li class="ht_edu">
+                <div class="ht_ico">학교</div>
+                <div class="ht_point"><span></span></div>
+                <ul class="ht_c">
+                  <li class="date">2007-03 ~ 2011-02</li>
+                  <li class="content1">조선대학교 졸업</li>
+                  <li class="content2">컴퓨터공학과</li>
+                </ul>
+              </li>
+              <li class="ht_license">
+                <div class="ht_ico">자격증</div>
+                <div class="ht_point"><span></span></div>
+                <ul class="ht_c">
+                  <li class="date">2010-05</li>
+                  <li class="content1">정보처리기사 취득</li>
+                </ul>
+              </li>
+              <li class="ht_license">
+                <div class="ht_ico">자격증</div>
+                <div class="ht_point"><span></span></div>
+                <ul class="ht_c">
+                  <li class="date">2011-07</li>
+                  <li class="content1">컴퓨터그래픽스운용기능사 취득</li>
+                </ul>
+              </li>
+              <li class="ht_license">
+                <div class="ht_ico">자격증</div>
+                <div class="ht_point"><span></span></div>
+                <ul class="ht_c">
+                  <li class="date">2015-04</li>
+                  <li class="content1">웹디자인기능사 취득</li>
+                </ul>
+              </li>
               <li class="ht_company">
                 <div class="ht_ico">직장</div>
                 <div class="ht_point"><span></span></div>
                 <ul class="ht_c">
-                  <li class="date">2020-04 ~</li>
-                  <li class="content1">(주)위메프 근무</li>
-                  <li class="content1_2">e-Commerce</li>
+                  <li class="date">2015-07 ~ 2017-01</li>
+                  <li class="content1">(주)렛츠온 근무</li>
+                  <li class="content1_2">웹에이젼시</li>
                   <li class="content2">
                     <ul>
-                      <li>UI Developer</li>
+                      <li>Designer</li>
+                      <li>UI Deviloper</li>
                     </ul>
                   </li>
                 </ul>
@@ -244,48 +287,14 @@
                 <div class="ht_ico">직장</div>
                 <div class="ht_point"><span></span></div>
                 <ul class="ht_c">
-                  <li class="date">2015-07 ~ 2017-01</li>
-                  <li class="content1">(주)렛츠온 근무</li>
-                  <li class="content1_2">웹에이젼시</li>
+                  <li class="date">2020-04 ~</li>
+                  <li class="content1">(주)위메프 근무</li>
+                  <li class="content1_2">e-Commerce</li>
                   <li class="content2">
                     <ul>
-                      <li>Designer</li>
-                      <li>UI Deviloper</li>
+                      <li>UI Developer</li>
                     </ul>
                   </li>
-                </ul>
-              </li>
-              <li class="ht_license">
-                <div class="ht_ico">자격증</div>
-                <div class="ht_point"><span></span></div>
-                <ul class="ht_c">
-                  <li class="date">2015-04</li>
-                  <li class="content1">웹디자인기능사 취득</li>
-                </ul>
-              </li>
-              <li class="ht_license">
-                <div class="ht_ico">자격증</div>
-                <div class="ht_point"><span></span></div>
-                <ul class="ht_c">
-                  <li class="date">2011-07</li>
-                  <li class="content1">컴퓨터그래픽스운용기능사 취득</li>
-                </ul>
-              </li>
-              <li class="ht_license">
-                <div class="ht_ico">자격증</div>
-                <div class="ht_point"><span></span></div>
-                <ul class="ht_c">
-                  <li class="date">2010-05</li>
-                  <li class="content1">정보처리기사 취득</li>
-                </ul>
-              </li>
-              <li class="ht_edu">
-                <div class="ht_ico">학교</div>
-                <div class="ht_point"><span></span></div>
-                <ul class="ht_c">
-                  <li class="date">2007-03 ~ 2011-02</li>
-                  <li class="content1">조선대학교 졸업</li>
-                  <li class="content2">컴퓨터공학과</li>
                 </ul>
               </li>
             </ul>
@@ -313,7 +322,7 @@
             <ul class="contact_group">
               <li class="sub_logo">
                 <a href="#main">
-                  <img src="/resources/images/main/name_btm.png" alt="Song Ae Ri" />
+                  <img src="/resources/images/main/name.png" alt="Song Ae Ri" />
                 </a>
               </li>
 
@@ -344,7 +353,7 @@
     <div class="progress_box" id="loading">
       <div class="progress">
         <ul class="txt_box">
-          <li class="progress-img"><img src="/resources/images/main/name_btm.png" alt="Song Aeri" /></li>
+          <li class="sub_logo"><img src="/resources/images/main/name.png" alt="Song Aeri" /></li>
           <li class="tel_num"><img src="/resources/images/main/tel_num.png" alt="010-6631-0512" /></li>
           <li class="mail">arshy.gray@gmail.com</li>
         </ul>
