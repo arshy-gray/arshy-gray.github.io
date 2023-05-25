@@ -80,14 +80,23 @@ $(document).ready(function () {
         $wrapper.addClass("on");
       }
     }
+
+    timer = setInterval(function () {
+      $("#main").addClass("active");
+    }, 2000);
   }
 });
 $(window).load(function () {
+  var $window = $(window);
+
+  // 스크롤 이벤트를 발생하여 처음 로딩할 때의 위치를 결정
+  timer = setInterval(function () {
+    $window.trigger("scroll");
+  }, 500);
+
   /* 고정헤더 -------------------*/
   $(".page_hd").each(function () {
-    var $window = $(window), //Window 객체
-      $header = $(this),
-      $gnb = $header.find(".gnb_menu"), // 헤더 스타일 저장
+    var $header = $(this),
       $section01 = $("#main"),
       //웹 페이지상단에서 section01 아래 위치까지의 길이
       //section01의 상단 위치 + section01의 높이
@@ -104,9 +113,6 @@ $(window).load(function () {
         }
       })
     );
-
-    // 스크롤 이벤트를 발생하여 처음 로딩할 때의 위치를 결정
-    $window.trigger("scroll");
   });
 
   /*  gnb메뉴 (Smooth scroll) ------------------  */
@@ -116,163 +122,6 @@ $(window).load(function () {
     afterScroll: function () {
       location.hash = $(this).attr("href");
     },
-  });
-
-  /* Project Slide -------------- */
-  $(".slide_wrap").each(function () {
-    // 변수의 준비
-
-    var $container = $(this), // a
-      $slideGroup = $container.find(".slides"), // b
-      $slides = $slideGroup.find("li"), // c
-      $slidesImg = $slides.find("img"),
-      $nav = $container.find(".drection_btn"), // e
-      // 슬라이드 쇼의 각 요소의 jQuery 객체
-      // a 슬라이드 쇼 전체 컨테이너
-      // b 모든 슬라이드의 정리 (슬라이드 그룹)
-      // c 각 슬라이드
-      // d 각 슬라이드 이미지
-      // e 방향
-
-      slideCount = $slides.length, // 슬라이드 장수
-      slideEA = 0,
-      currentIndex = 0, // 현재 슬라이드의 인덱스
-      duration = 500, // 다음 슬라이드에 애니메이션의 소요 시간
-      easing = "swing", // 다음 슬라이드에 애니메이션의 이징 종류
-      interval = 7500, // 자동으로 다음 슬라이드로 옮길 때까지의 시간
-      timer; // 타이머
-
-    //표시할 슬라이드개수 지정
-    if (767 < $(window).outerWidth(true) + 17) {
-      slideEA = 2;
-    } else {
-      slideEA = 1;
-    }
-
-    //함수 정의
-    //모든 슬라이드를 나타내는 함수
-    function goToSlide(index) {
-      //슬라이드 이미지를 대상 인덱스에 맞게 보이기
-      $slidesImg.animate({ opacity: 0 }, duration);
-
-      for (i = 0; i <= (slideCount / slideEA) % slideEA; i++) {
-        $slidesImg.eq(index * slideEA + i).animate({ opacity: 1 }, duration);
-      }
-
-      //현재 슬라이드의 높이값 저장
-      slideHeight();
-
-      //현재 슬라이드의 인덱스값을 저장
-      currentIndex = index;
-
-      //네비게이션과 인디케이터 상태를 업데이트
-      updateNav();
-    }
-
-    //이미지높이에 따른 슬라이드 높이 자동계산
-    function slideHeight() {
-      var slideHeight = $slidesImg.height();
-
-      $container.css("height", slideHeight);
-    }
-
-    //슬라이드 상태에 따라 내비게이션과 인디케이터를 업데이트하는 함수
-    function updateNav() {
-      var $navPrev = $nav.find(".prev"),
-        $navNext = $nav.find(".next");
-
-      //첫번째 슬라이드 prev 삭제
-      if (currentIndex === 0) {
-        $navPrev.addClass("disabled");
-      } else {
-        $navPrev.removeClass("disabled");
-      }
-
-      //마지막 슬라이드 next 삭제
-      if (currentIndex === slideCount / slideEA - 1) {
-        $navNext.addClass("disabled");
-      } else {
-        $navNext.removeClass("disabled");
-      }
-    }
-
-    //타이머를 시작하는 함수
-    function startTimer() {
-      //변수 internval로 설정한 시간마다 작업을 수행
-      timer = setInterval(function () {
-        //현재 슬라이드의 인덱스에 따라 다음에 표시할 슬라이드를 결정
-        //마지막 슬라이드라면 첫번째 슬라이드의 인덱스값을 저장
-        var nextIndex = (currentIndex + 1) % (slideCount / slideEA);
-
-        goToSlide(nextIndex);
-      }, interval);
-    }
-
-    //타이머를 중지시키는 함수
-    function stopTimer() {
-      clearInterval(timer);
-    }
-
-    //이벤트 등록
-    //내비게션 링크를 클릭하면 해당 슬라이드를 표시
-    $nav.on("click", "li", function (event) {
-      event.preventDefault();
-      if ($(this).hasClass("prev")) {
-        goToSlide(currentIndex - 1);
-      } else {
-        goToSlide(currentIndex + 1);
-      }
-    });
-
-    //마우스오버 시에는 타이머를 정지시키고, 마우스아웃 시에는 타이머를 작동
-    $container.on({
-      mouseenter: stopTimer,
-      mouseleave: startTimer,
-    });
-
-    //슬라이드쇼 시작
-    //첫번째슬라이드표시
-    goToSlide(currentIndex);
-
-    //타이머시작
-    startTimer();
-
-    //반응형 초기화
-    $(window).resize(
-      $.throttle(1500 / 1, function () {
-        //슬라이드 초기화 중 이미지 로딩표시
-        $(".slides").addClass("loading");
-
-        (function () {
-          //표시할 슬라이드개수 지정
-          if (767 < $(window).outerWidth(true) + 17) {
-            slideEA = 2;
-            currentIndex = currentIndex % slideEA;
-          } else {
-            slideEA = 1;
-            currentIndex = currentIndex;
-          }
-
-          //슬라이드 업데이트
-          $slidesImg.animate({ opacity: 0 }, duration);
-
-          for (i = 0; i <= (slideCount / slideEA) % slideEA; i++) {
-            $slidesImg.eq(currentIndex * slideEA + i).animate({ opacity: 1 }, duration);
-          }
-
-          //현재 슬라이드의 높이값 저장
-          slideHeight();
-
-          //네비게이션과 인디케이터 상태를 업데이트
-          updateNav();
-        })();
-
-        //슬라이드 초기화 후 이미지 로딩표시
-        setTimeout(function () {
-          $(".slides").removeClass("loading");
-        }, 3000);
-      })
-    );
   });
 
   /* Portfolio -------------- */
@@ -380,18 +229,17 @@ $(window).load(function () {
           "</div>" +
           '<div class="pf_detail">' +
           '<div class="pf_layer">' +
-          '<div class="pf_layer_ctt">' +
-          '<div class="pf_txt_basic">' +
-          '<div class="txt_basic_main">' +
-          '<div class="basic_main_tit">' +
-          '<h4 class="pf_t">' +
+          '<div class="pf_layer_tit">' +
+          '<h4 class="pf_main_tit">' +
           item.title +
           "</h4>" +
-          '<span class="type">' +
+          '<span class="pf_intro">' +
           item.intro +
           "</span>" +
           "</div>" +
-          '<div class="basic_main_type">' +
+          '<div class="pf_layer_ctt">' +
+          '<div class="pf_info">' +
+          '<div class="pf_info_type">' +
           '<ul class="type_device">';
 
         if (item.device !== "MOBILE" || item.device === "RESPONSIVE") {
@@ -409,10 +257,14 @@ $(window).load(function () {
         itemHTML +=
           "</ul>" +
           '<ul class="type_browser">' +
-          '<li><img src="/resources/images/main/browser_chrome.png" title="Chrome" alt="chrome"></li>' +
-          '<li><img src="/resources/images/main/browser_ie.png" title="Internet Explorer" alt="ie"><span class="browser_ver">' +
-          item.browser.ie +
-          "</span></li>";
+          '<li><img src="/resources/images/main/browser_chrome.png" title="Chrome" alt="chrome"></li>';
+
+        if (item.browser.ie) {
+          itemHTML +=
+            '<li><img src="/resources/images/main/browser_ie.png" title="Internet Explorer" alt="ie"><span class="browser_ver">' +
+            item.browser.ie +
+            "</span></li>";
+        }
 
         if (item.browser.safari) {
           itemHTML += '<li><img src="/resources/images/main/browser_safari.png" title="Safari" alt="safari"></li>';
@@ -421,41 +273,40 @@ $(window).load(function () {
         itemHTML +=
           "</ul>" +
           "</div>" +
-          "</div>" +
           '<div class="txt_basic_sub">' +
           '<ul class="pf_c">' +
           "<li>" +
-          '<span class="pf_li_t"><i class="fas fa-calendar-alt"></i>프로젝트기간</span>' +
+          '<span class="pf_li_t">프로젝트기간<i class="fas fa-calendar-alt"></i></span>' +
           '<span class="pf_li_c">' +
           item.project +
           "</span>" +
           "</li>" +
           "<li>" +
-          '<span class="pf_li_t"><i class="fas fa-users"></i>구성원</span>' +
+          '<span class="pf_li_t">구성원<i class="fas fa-users"></i></span>' +
           '<span class="pf_li_c">' +
           item.member +
           "</span>" +
           "</li>" +
           "<li>" +
-          '<span class="pf_li_t"><i class="fas fa-user-tag"></i>주요역할</span>' +
+          '<span class="pf_li_t">주요역할<i class="fas fa-user-tag"></i></span>' +
           '<span class="pf_li_c">' +
           item.main_role +
           "</span>" +
           "</li>" +
           "<li>" +
-          '<span class="pf_li_t"><i class="fas fa-chart-bar"></i>참여율</span>' +
+          '<span class="pf_li_t">참여율<i class="fas fa-chart-bar"></i></span>' +
           '<span class="pf_li_c">' +
           item.part +
           "</span>" +
           "</li>" +
           "<li>" +
-          '<span class="pf_li_t"><i class="fas fa-code"></i>사용언어</span>' +
+          '<span class="pf_li_t">사용언어<i class="fas fa-code"></i></span>' +
           '<span class="pf_li_c">' +
           item.language +
           "</span>" +
           "</li>" +
           "<li>" +
-          '<span class="pf_li_t"><i class="fas fa-laptop-code"></i>개발환경</span>' +
+          '<span class="pf_li_t">개발환경<i class="fas fa-laptop-code"></i></span>' +
           '<span class="pf_li_c">' +
           item.task_environment +
           "</span>" +
@@ -464,12 +315,12 @@ $(window).load(function () {
         if (item.link) {
           itemHTML +=
             "<li>" +
-            '<span class="pf_li_t"><i class="fas fa-external-link-alt"></i>웹사이트</span>' +
+            '<span class="pf_li_t">웹사이트<i class="fas fa-external-link-alt"></i></span>' +
             '<span class="pf_li_c"><a href="' +
             item.link +
             '" title="새창" target="_blank">' +
             item.link +
-            '</a>';
+            "</a>";
 
           if (item.linkTitle) itemHTML += ' <br /><em class="c_blue"><b>(' + item.linkTitle + ")</b></em>";
 
@@ -480,7 +331,7 @@ $(window).load(function () {
           "</ul>" +
           "</div>" +
           "</div>" +
-          '<div class="pf_txt_detail tab_wrap">' +
+          '<div class="pf_info_detail tab_wrap">' +
           '<ul class="txt_detail_tit tab_tit">';
 
         if (item.work.scope) {
@@ -607,7 +458,10 @@ $(window).load(function () {
       if (keyLinked) {
         // 3차 필터링 - linked
         filteredData = $.grep(filteredData, function (item) {
-          return item.link === keyLinked;
+          // link 값이 있을 때 필터링
+          item.link ? (linkFt = true) : (linkFt = false);
+
+          return linkFt === keyLinked;
         });
       }
 
@@ -680,81 +534,6 @@ $(window).load(function () {
     });
   });
 
-  /* 풀페이지 : (콘텐츠 생성된 뒤에 실행해야하므로 최하단에 선언)-------------------*/
-  (function fullPage() {
-    var htmlHeight = $("html").outerHeight(),
-      $section = [$(".fullpage")], //풀페이지 적용할 섹션
-      sectionLen = $section.length;
-
-    //적용할 높이값 및 최소높이값 계산
-    for (var i = 0; i < sectionLen; i++) {
-      //풀페이지 높이값
-      $section[i].css("height", htmlHeight);
-
-      //풀페이지 최소 높이값 계산 변수선언
-      var el1 = $section[i].find("> h2").outerHeight(true),
-        el2 = $section[i].find("> p").outerHeight(true),
-        el3 = 0,
-        el3Len = $section[i].find("article").length,
-        sectionMinHeight,
-        sectionMaxHeight;
-
-      //article 개수만큼 높이 환산
-      for (var j = 0, el3Sum = []; j < el3Len; j++) {
-        el3Sum[j] = $section[i].find("article:nth-child(" + (j + 1) + ")").outerHeight(true);
-        el3 += el3Sum[j];
-      }
-
-      //풀페이지 최소 높이값
-      sectionMinHeight = el1 + el2 + el3 + ($section[i].outerHeight(true) - $section[i].height());
-      $section[i].css("minHeight", sectionMinHeight);
-
-      //풀페이지 콘텐츠(제목 제외) 최대 높이값
-      sectionMaxHeight = htmlHeight - ($section[i].outerHeight(true) - $section[i].height()) - el1 - el2;
-      $section[i].find(".wrap_cen").css("maxHeight", sectionMaxHeight);
-
-      //풀페이지 콘텐츠(제목 제외) 최소 높이값
-      $section[i].find(".wrap_cen").css("minHeight", el3);
-    }
-  })();
-
-  //반응형 초기화
-  $(window).resize(
-    $.throttle(1000 / 3, function () {
-      var htmlHeight = $("html").outerHeight(),
-        $section = [$(".fullpage")], //풀페이지 적용할 섹션
-        sectionLen = $section.length;
-
-      //적용할 높이값 및 최소높이값 계산
-      for (var i = 0; i < sectionLen; i++) {
-        //풀페이지 높이값
-        $section[i].css("height", htmlHeight);
-
-        //풀페이지 최소 높이값 계산 변수선언
-        var el1 = $section[i].find("> h2").outerHeight(true),
-          el2 = $section[i].find("> p").outerHeight(true),
-          el3 = 0,
-          el3Len = $section[i].find("article").length,
-          sectionMinHeight,
-          sectionMaxHeight;
-
-        //article 개수만큼 높이 환산
-        for (var j = 0, el3Sum = []; j < el3Len; j++) {
-          el3Sum[j] = $section[i].find("article:nth-child(" + (j + 1) + ")").outerHeight(true);
-          el3 += el3Sum[j];
-        }
-
-        //풀페이지 콘텐츠(제목 제외) 최대 높이값
-        sectionMaxHeight = htmlHeight - ($section[i].outerHeight(true) - $section[i].height()) - el1 - el2;
-        $section[i].find(".wrap_cen").css("maxHeight", sectionMaxHeight);
-
-        //풀페이지 콘텐츠(제목 제외) 최소 높이값
-        $section[i].find(".wrap_cen").css("minHeight", el3);
-      }
-    })
-  );
-
-  /* 스크롤에 따른 동적효과 : (풀페이지 하단에 선언)-------------------*/
   $(window).on(
     "scroll",
     $.throttle(
