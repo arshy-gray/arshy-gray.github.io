@@ -68,7 +68,7 @@ body {
 /* 헤더 */
 .page_hd {
   position: fixed;
-  padding: 5px 15px;
+  padding: 5px 20px;
   top: 0;
   box-sizing: border-box;
   background: transparent;
@@ -79,7 +79,7 @@ body {
   }
 
   .float_R {
-    margin: 9px 0;
+    margin: 5px 0;
   }
 }
 #gnb_pc .gnb_menu li {
@@ -100,11 +100,10 @@ body {
 .page_hd {
   &.visible {
     background: #fff;
-    border-radius: 0 0 30px 30 30px;
+    border-radius: 0 0 30px 30px;
     border-bottom: 1px solid #ececec;
     .logo {
       display: block;
-      margin: 4px 0;
       width: 60px;
       a {
         display: block;
@@ -818,6 +817,7 @@ section {
   @extend %flex-vtc;
   align-items: flex-end;
   height: 100%;
+  padding-bottom:40px;
   overflow: hidden;
   overflow-y: auto;
 }
@@ -826,6 +826,7 @@ section {
   padding: $pf-pop-info-ctt-tb-gap $pf-pop-info-lr-gap;
   box-sizing: border-box;
   border-left: 1px solid #f1f1f1;
+  border-radius: 30px 30px 0 0;
   font-size: 15px;
   background: #fcfcfc;
 }
@@ -921,10 +922,12 @@ section {
   box-sizing: border-box;
   border-left: 1px solid #f1f1f1;
   background: #fcfcfc;
-  border-bottom: $pf-pop-info-tb-gap solid #f1f1f1;
+  border-radius: 0 0 30px 30px;
 }
 
 .txt_detail_tit {
+  display: flex;
+  gap: 6px;
   padding: 0 $pf-pop-info-lr-gap;
   &:after {
     display: block;
@@ -932,16 +935,16 @@ section {
     clear: both;
   }
   > li {
+    flex: 1;
     position: relative;
-    display: inline-block;
     padding: 10px 5px;
-    width: calc(100% / 3);
     max-width: 150px;
     color: #333;
     line-height: 1;
     text-align: center;
     border: 1px solid #777;
     box-sizing: border-box;
+    border-radius: 12px;
     opacity: 0.5;
     z-index: 0;
     &:hover {

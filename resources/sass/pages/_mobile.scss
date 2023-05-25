@@ -237,8 +237,8 @@
   .pf_img {
     position: static;
     overflow: hidden;
-    width: $m-pf-pop-info-wid;
-    height: auto;
+    @include size($m-pf-pop-info-wid, auto);
+    margin-top: 40px;
     text-align: center;
     img {
       max-width: 1004px;
