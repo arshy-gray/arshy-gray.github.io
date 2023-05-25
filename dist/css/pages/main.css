@@ -101,17 +101,26 @@ body {
 /* 헤더 */
 .page_hd {
   position: fixed;
-  padding: 5px 20px;
-  top: 0;
+  top: 10px;
+  padding: 0 25px;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+  z-index: 99999;
+}
+.page_hd .wrap_cen {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2px 15px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 25px;
   background: transparent;
   -webkit-transition: 0.3s all 0s cubic-bezier(0, 0, 0, 0.64);
   -o-transition: 0.3s all 0s cubic-bezier(0, 0, 0, 0.64);
   -moz-transition: 0.3s all 0s cubic-bezier(0, 0, 0, 0.64);
   transition: 0.3s all 0s cubic-bezier(0, 0, 0, 0.64);
-  z-index: 99999;
 }
 .page_hd .logo {
   display: none;
@@ -119,29 +128,17 @@ body {
 .page_hd .float_R {
   margin: 5px 0;
 }
-
-#gnb_pc .gnb_menu li {
-  float: left;
-}
-#gnb_pc .gnb_menu li:not(:first-child) {
-  margin-left: 15px;
-}
-#gnb_pc .gnb_menu li a {
-  font-size: 13px;
-  color: #eee;
-}
-#gnb_pc .gnb_menu li a:hover, #gnb_pc .gnb_menu li.on a {
-  color: #ffff00;
-}
-
-.page_hd.visible {
-  background: #fff;
-  border-radius: 0 0 30px 30px;
+.page_hd.visible .wrap_cen {
+  background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid #ececec;
 }
 .page_hd.visible .logo {
   display: block;
-  width: 60px;
+  width: 50px;
+  padding: 5px 0;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .page_hd.visible .logo a {
   display: block;
@@ -150,13 +147,27 @@ body {
   width: 100%;
 }
 .page_hd.visible #gnb_pc .gnb_menu a {
-  color: #000;
+  color: #333;
 }
 .page_hd.visible #gnb_pc .gnb_menu li a:hover, .page_hd.visible #gnb_pc .gnb_menu li.on a {
   color: #ff229f;
 }
 .pf_on .page_hd {
   display: none;
+}
+
+#gnb_pc .gnb_menu li {
+  float: left;
+}
+#gnb_pc .gnb_menu li:not(:first-child) {
+  margin-left: 10px;
+}
+#gnb_pc .gnb_menu li a {
+  font-size: 13px;
+  color: #eee;
+}
+#gnb_pc .gnb_menu li a:hover, #gnb_pc .gnb_menu li.on a {
+  color: #ffff00;
 }
 
 /* 섹션공통 */
@@ -2833,14 +2844,6 @@ section.active h2 + .set_ct {
   }
   #bg_allmenu.on {
     display: block;
-  }
-  /* 섹션공통 */
-  section {
-    padding: 60px 0;
-  }
-  section > .sec_t {
-    font-size: 40px;
-    line-height: 26px;
   }
   #main {
     /* 메인섹션 - 메뉴 */
