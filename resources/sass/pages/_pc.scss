@@ -68,12 +68,19 @@ body {
 /* 헤더 */
 .page_hd {
   position: fixed;
-  padding: 5px 20px;
-  top: 0;
+  top: 10px;
+  padding: 0 25px;
   box-sizing: border-box;
-  background: transparent;
-  transition: 0.3s all 0s cubic-bezier(0, 0, 0, 0.64);
   z-index: 99999;
+  .wrap_cen {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2px 15px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    background: transparent;
+    transition: 0.3s all 0s cubic-bezier(0, 0, 0, 0.64);
+  }
   .logo {
     display: none;
   }
@@ -81,30 +88,16 @@ body {
   .float_R {
     margin: 5px 0;
   }
-}
-#gnb_pc .gnb_menu li {
-  float: left;
-  &:not(:first-child) {
-    margin-left: 15px;
-  }
-  a {
-    font-size: 13px;
-    color: #eee;
-  }
-  a:hover,
-  &.on a {
-    color: #ffff00;
-  }
-}
-
-.page_hd {
   &.visible {
-    background: #fff;
-    border-radius: 0 0 30px 30px;
-    border-bottom: 1px solid #ececec;
+    .wrap_cen {
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid #ececec;
+    }
     .logo {
       display: block;
-      width: 60px;
+      width: 50px;
+      padding: 5px 0;
+      box-sizing: border-box;
       a {
         display: block;
       }
@@ -115,7 +108,7 @@ body {
 
     #gnb_pc .gnb_menu {
       a {
-        color: #000;
+        color: #333;
       }
       li {
         a:hover,
@@ -127,6 +120,20 @@ body {
   }
   .pf_on & {
     display: none;
+  }
+}
+#gnb_pc .gnb_menu li {
+  float: left;
+  &:not(:first-child) {
+    margin-left: 10px;
+  }
+  a {
+    font-size: 13px;
+    color: #eee;
+  }
+  a:hover,
+  &.on a {
+    color: #ffff00;
   }
 }
 
@@ -235,7 +242,7 @@ section {
       a {
         display: inline-block;
         line-height: 0;
-        padding:0 10%;
+        padding: 0 10%;
       }
     }
     .tel_num {
@@ -817,7 +824,7 @@ section {
   @extend %flex-vtc;
   align-items: flex-end;
   height: 100%;
-  padding-bottom:40px;
+  padding-bottom: 40px;
   overflow: hidden;
   overflow-y: auto;
 }
