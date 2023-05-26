@@ -20,11 +20,6 @@
           flex-direction: column;
 }
 
-section#portfolio, section#history {
-  height: auto;
-  min-height: 100vh;
-}
-
 /* no-js *********/
 .no-js #loading .bar_box {
   display: none;
@@ -225,8 +220,11 @@ section {
           box-sizing: border-box;
   /* 콘텐츠 섹션 공통 - 메뉴 */
 }
-section:not(.default_h) {
+section:not(#history):not(#portfolio) {
   height: 100vh;
+}
+section #portfolio {
+  min-height: 100vh;
 }
 section > .sec_t {
   position: relative;
@@ -296,6 +294,7 @@ section.active h2 + .set_ct {
   opacity: 0.9;
   z-index: 9;
 }
+
 /* 메인섹션 */
 #main {
   background-repeat: no-repeat;
