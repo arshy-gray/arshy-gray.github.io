@@ -423,7 +423,7 @@ $(window).load(function () {
 
     // 항목을 필터링한다.
     function filterItems(item) {
-      var keyOffice = $(".filter-type-office").find('input[type="radio"]:checked').val(), // 오피스 필터
+      var keyCompany = $(".filter-type-company").find('input[type="radio"]:checked').val(), // 오피스 필터
         keyDevice = $(".filter-type-device").find('input[type="radio"]:checked').val(), // 디바이스 필터
         keyLinked = $(".filter-type-linked").find('input[type="checkbox"]').prop("checked"), // 링크 여부 필터
         masonryItems = $container.masonry("getItemElements"); // 추가 된 Masonry 아이템
@@ -438,13 +438,13 @@ $(window).load(function () {
       filteredData = [];
       addadd = 0;
 
-      if (keyOffice === "ALL") {
+      if (keyCompany === "ALL") {
         // 1차필터링 - all이 클릭 된 경우 모든 JSON 데이터를 저장
         filteredData = allData;
       } else {
         // all 이외의 경우, 키와 일치하는 데이터를 추출
         filteredData = $.grep(allData, function (item) {
-          return item.office === keyOffice;
+          return item.company === keyCompany;
         });
       }
 

@@ -73,6 +73,7 @@ body {
   box-sizing: border-box;
   z-index: 99999;
   .wrap_cen {
+    display: flex;
     max-width: 1400px;
     margin: 0 auto;
     padding: 2px 15px;
@@ -81,12 +82,42 @@ body {
     background: transparent;
     transition: 0.3s all 0s cubic-bezier(0, 0, 0, 0.64);
   }
+  .logo_wrap,
+  .gnb_wrap {
+    margin: 5px 0;
+  }
   .logo {
     display: none;
   }
+  // gnb
+  .gnb_wrap,
+  #gnb_pc {
+    display: flex;
+    flex: 1;
+  }
 
-  .float_R {
-    margin: 5px 0;
+  .gnb_menu {
+    flex: 1;
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%;
+    }
+    li {
+      padding: 0 1%;
+      a {
+        display: block;
+        font-size: 13px;
+        color: #eee;
+      }
+      &.on a {
+        color: #ffff00;
+      }
+      a:hover{
+        font-weight:bold;
+      }
+    }
   }
   &.visible {
     .wrap_cen {
@@ -111,7 +142,6 @@ body {
         color: #333;
       }
       li {
-        a:hover,
         &.on a {
           color: #ff229f;
         }
@@ -122,30 +152,17 @@ body {
     display: none;
   }
 }
-#gnb_pc .gnb_menu li {
-  float: left;
-  &:not(:first-child) {
-    margin-left: 10px;
-  }
-  a {
-    font-size: 13px;
-    color: #eee;
-  }
-  a:hover,
-  &.on a {
-    color: #ffff00;
-  }
-}
 
 /* 섹션공통 */
 section {
   clear: both;
   position: relative;
   padding: 90px 0;
-  height: 100vh;
   min-height: 750px;
   box-sizing: border-box;
-
+  &:not(.default_h) {
+    height: 100vh;
+  }
   /* 콘텐츠 섹션 공통 - 메뉴 */
   > .sec_t {
     position: relative;

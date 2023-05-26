@@ -2,7 +2,7 @@
   {
     "title": "위메프 · 딜/상품 상세 추천 상품 테마",
     "intro": "위메프 서비스 내 딜/상품 상세페이지 하단 추천 상품 테마 14개 영역 신규 개발",
-    "office": "WMP",
+    "company": "WMP",
     "device": "MOBILE",
     "browser": {
       "chrome": true,
@@ -44,7 +44,7 @@
   {
     "title": "위메프 · 주문서",
     "intro": "위메프 서비스 내 주문서 개선(주문서 가격표기 & 결제수단 노출 방식 개선)",
-    "office": "WMP",
+    "company": "WMP",
     "device": "MOBILE",
     "browser": {
       "chrome": true,
@@ -83,7 +83,7 @@
   {
     "title": "위메프 · 최근본·찜",
     "intro": "위메프 서비스 내 최근본·찜 페이지 신규 개발",
-    "office": "WMP",
+    "company": "WMP",
     "device": "MOBILE",
     "browser": {
       "chrome": true,
@@ -122,7 +122,7 @@
   {
     "title": "위메프 버티컬 · Wstyle",
     "intro": "위메프 버티컬 패션/뷰티 서비스 신규 구축 및 개선",
-    "office": "WMP",
+    "company": "WMP",
     "device": "MOBILE",
     "browser": {
       "chrome": true,
@@ -161,7 +161,7 @@
   {
     "title": "Portfolio",
     "intro": "개인 포트폴리오",
-    "office": "SELF",
+    "company": "SELF",
     "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
@@ -190,7 +190,7 @@
   {
     "title": "KONVINI Ver.2",
     "intro": "국내 패션 브랜드 편집숍(일본, 홍콩)",
-    "office": "LF",
+    "company": "LF",
     "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
@@ -232,7 +232,7 @@
   {
     "title": "SHINAND",
     "intro": "SHINAND 사업안내",
-    "office": "LF",
+    "company": "LF",
     "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
@@ -274,7 +274,7 @@
   {
     "title": "KONVINATION",
     "intro": "KONVINATION 사업안내",
-    "office": "LF",
+    "company": "LF",
     "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
@@ -302,7 +302,7 @@
   {
     "title": "배차반장 웹플랫폼",
     "intro": "기업화물 주선 웹플랫폼",
-    "office": "LF",
+    "company": "LF",
     "device": "PC",
     "browser": {
       "chrome": true,
@@ -344,7 +344,7 @@
   {
     "title": "배차반장",
     "intro": "배차반장 서비스 안내",
-    "office": "LF",
+    "company": "LF",
     "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
@@ -372,7 +372,7 @@
   {
     "title": "셔틀콕",
     "intro": "셔틀콕 서비스 안내",
-    "office": "LF",
+    "company": "LF",
     "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
@@ -398,7 +398,7 @@
   {
     "title": "DollyAndMolly",
     "intro": "개인 브랜드 쇼핑몰",
-    "office": "LF",
+    "company": "LF",
     "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
@@ -438,7 +438,7 @@
   {
     "title": "KONVINI Ver.1",
     "intro": "국내 패션 브랜드 편집숍(일본, 홍콩)",
-    "office": "LF",
+    "company": "LF",
     "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
@@ -476,7 +476,7 @@
   {
     "title": "신안군 중개장터",
     "intro": "신안특산물 중개장터",
-    "office": "LETSON",
+    "company": "LETSON",
     "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
@@ -507,7 +507,7 @@
   {
     "title": "강진만 생태공원 Ver.2",
     "intro": "강진만 생태공원 안내",
-    "office": "LETSON",
+    "company": "LETSON",
     "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
@@ -535,7 +535,7 @@
   {
     "title": "강진만 생태공원 Ver.1",
     "intro": "강진만 생태공원 안내",
-    "office": "LETSON",
+    "company": "LETSON",
     "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
@@ -561,7 +561,7 @@
   {
     "title": "마이산 다옴펜션",
     "intro": "펜션 안내 및 예약 서비스",
-    "office": "LETSON",
+    "company": "LETSON",
     "device": "PC&MOBILE",
     "browser": {
       "chrome": true,
@@ -589,7 +589,7 @@
   {
     "title": "장성군청 다국어 (영어, 일본어, 중국어)",
     "intro": "장성군청 안내",
-    "office": "LETSON",
+    "company": "LETSON",
     "device": "PC",
     "browser": {
       "chrome": true,
@@ -616,7 +616,7 @@
   {
     "title": "장성군청 의회",
     "intro": "장성군청 의회 안내",
-    "office": "LETSON",
+    "company": "LETSON",
     "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
@@ -644,7 +644,7 @@
   {
     "title": "신안군청 ICT",
     "intro": "군청 내 종합현황시스템",
-    "office": "LETSON",
+    "company": "LETSON",
     "device": "PC",
     "browser": {
       "chrome": true,
@@ -671,7 +671,7 @@
   {
     "title": "강동대학교 외국어",
     "intro": "강동대학교 안내",
-    "office": "LETSON",
+    "company": "LETSON",
     "device": "PC",
     "browser": {
       "chrome": true,
@@ -697,7 +697,7 @@
   {
     "title": "강동대학교 부속기간",
     "intro": "강동대학교 부속기간 안내",
-    "office": "LETSON",
+    "company": "LETSON",
     "device": "PC",
     "browser": {
       "chrome": true,
@@ -724,7 +724,7 @@
   {
     "title": "강동대학교 학과 St.4",
     "intro": "강동대학교 학과 안내",
-    "office": "LETSON",
+    "company": "LETSON",
     "device": "PC",
     "browser": {
       "chrome": true,
@@ -751,7 +751,7 @@
   {
     "title": "강동대학교 학과 St.3",
     "intro": "강동대학교 학과 안내",
-    "office": "LETSON",
+    "company": "LETSON",
     "device": "PC",
     "browser": {
       "chrome": true,
@@ -778,7 +778,7 @@
   {
     "title": "강동대학교 학과 St.2",
     "intro": "강동대학교 학과 안내",
-    "office": "LETSON",
+    "company": "LETSON",
     "device": "PC",
     "browser": {
       "chrome": true,
@@ -831,7 +831,7 @@
   {
     "title": "강동대학교 입시 Ver.2",
     "intro": "강동대학교 입시 안내",
-    "office": "LETSON",
+    "company": "LETSON",
     "device": "PC&MOBILE",
     "browser": {
       "chrome": true,
@@ -858,7 +858,7 @@
   {
     "title": "강동대학교 입시 Ver.1",
     "intro": "강동대학교 입시 안내",
-    "office": "LETSON",
+    "company": "LETSON",
     "device": "RESPONSIVE",
     "browser": {
       "chrome": true,
@@ -884,7 +884,7 @@
   {
     "title": "신안군청 다국어 (영어, 일본어, 중국어)",
     "intro": "신안군청 안내",
-    "office": "LETSON",
+    "company": "LETSON",
     "device": "PC",
     "browser": {
       "chrome": true,
