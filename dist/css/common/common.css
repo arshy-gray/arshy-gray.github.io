@@ -562,13 +562,6 @@ a:active {
   overflow: hidden !important;
 }
 
-.float_L {
-  float: left !important;
-}
-.float_R {
-  float: right !important;
-}
-
 .clearFix {
   clear: both;
   overflow: hidden;
