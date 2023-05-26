@@ -114,9 +114,6 @@ body {
       &.on a {
         color: #ffff00;
       }
-      a:hover {
-        font-weight: bold;
-      }
     }
   }
   &.visible {
@@ -958,7 +955,7 @@ section {
     flex: 1;
     position: relative;
     padding: 10px 5px;
-    max-width: 150px;
+    max-width: 200px;
     color: #333;
     line-height: 1;
     text-align: center;
@@ -1082,9 +1079,12 @@ section {
   &:hover {
     background: rgba(255, 255, 255, 0.9);
     color: #00d4cd;
+    background: #fff;
+  }
+  #portfolio.active & {
+    padding: 20px 100px 25px;
   }
 }
-
 /* 히스토리 섹션 */
 #history {
   background-color: #ffcc00;
