@@ -69,25 +69,30 @@ body {
 .page_hd {
   position: fixed;
   top: 10px;
-  padding: 0 25px;
+  padding: 0 15px;
   box-sizing: border-box;
   z-index: 99999;
   .wrap_cen {
     display: flex;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 2px 15px;
+    padding: 2px 20px;
     box-sizing: border-box;
     border-radius: 25px;
     background: transparent;
     transition: 0.3s all 0s cubic-bezier(0, 0, 0, 0.64);
   }
-  .logo_wrap,
-  .gnb_wrap {
-    margin: 5px 0;
-  }
   .logo {
-    display: none;
+    visibility: hidden;
+    width: 50px;
+    padding: 8px 0;
+    box-sizing: border-box;
+    a {
+      display: block;
+    }
+    img {
+      width: 100%;
+    }
   }
   // gnb
   .gnb_wrap,
@@ -105,9 +110,10 @@ body {
       height: 100%;
     }
     li {
-      padding: 0 1%;
+      padding: 0 0.3%;
       a {
         display: block;
+        padding: 5px;
         font-size: 13px;
         color: #eee;
       }
@@ -119,19 +125,9 @@ body {
   &.visible {
     .wrap_cen {
       background: rgba(255, 255, 255, 0.95);
-      border-bottom: 1px solid #ececec;
     }
     .logo {
-      display: block;
-      width: 50px;
-      padding: 5px 0;
-      box-sizing: border-box;
-      a {
-        display: block;
-      }
-      img {
-        width: 100%;
-      }
+      visibility: visible;
     }
 
     #gnb_pc .gnb_menu {

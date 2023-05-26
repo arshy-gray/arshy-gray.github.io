@@ -91,17 +91,13 @@ $(window).load(function () {
 
   /* 고정헤더 -------------------*/
   $(".page_hd").each(function () {
-    var $header = $(this),
-      $section01 = $("#main"),
-      //웹 페이지상단에서 section01 아래 위치까지의 길이
-      //section01의 상단 위치 + section01의 높이
-      threshold = $section01.outerHeight();
+    var $header = $(this);
 
     //스크롤시 헤더 스타일 변화, 초당 15회
     $window.on(
       "scroll",
       $.throttle(1000 / 15, function () {
-        if ($window.scrollTop() > threshold) {
+        if ($window.scrollTop() > 0) {
           $header.addClass("visible");
         } else {
           $header.removeClass("visible");
@@ -113,15 +109,6 @@ $(window).load(function () {
     setTimeout(function () {
       $window.trigger("scroll");
     }, 2000);
-  });
-
-  /*  gnb메뉴 (Smooth scroll) ------------------  */
-  $(".gnb_menu a").smoothScroll({
-    easing: "easeOutExpo",
-    speed: 1500,
-    afterScroll: function () {
-      location.hash = $(this).attr("href");
-    },
   });
 
   /* Portfolio -------------- */
@@ -545,35 +532,21 @@ $(window).load(function () {
           htmlHeight = $("html").outerHeight(),
           winTop = $(window).scrollTop(),
           winBtm = winTop + htmlHeight,
-          $gnbPC = $("#gnb_pc .gnb_menu li"),
-          $gnbM = $("#gnb_m .gnb_menu li"),
-          $gnbMain = $("#main .gnb_menu li");
+          $gnbPC = $("#gnb_pc .gnb_menu li");
 
         for (i = 0; i < sectLen; i++) {
-          var sectHeight = $sect.eq(i).outerHeight(true),
-            sectPosition = $sect.eq(i).offset().top,
-            comparisonValue = sectPosition + 150;
+          var sectPosition = $sect.eq(i).offset().top,
+            comparisonValue = sectPosition + (htmlHeight / 3) * 2; // 뷰포트 높이 의 2/3 지점
 
           //동적효과 실행
+          // 뷰포트 높이 의 2/3 지점 지날때 섹션 활성화
           if (comparisonValue <= winBtm) {
-            $sect.eq(i).addClass("active").addClass("on");
-            $sect.removeClass("on");
-            $sect.eq(i).addClass("on");
+            $sect.eq(i).addClass("active").addClass("on").siblings().removeClass("on");
+            //스크롤 위치에 따른 gnb 활성화
+            $gnbPC.eq(i).addClass("on").siblings().removeClass("on");
           } else {
             //동적효과 취소
             $sect.eq(i).removeClass("active");
-          }
-
-          //스크롤 위치에 따른 섹션구분
-          if ($sect.eq(i).hasClass("on")) {
-            $gnbPC.removeClass("on");
-            $gnbPC.eq(i).addClass("on");
-
-            $gnbM.removeClass("on");
-            $gnbM.eq(i).addClass("on");
-
-            $gnbMain.removeClass("on");
-            $gnbMain.eq(i).addClass("on");
           }
         }
       }
@@ -581,10 +554,11 @@ $(window).load(function () {
   );
 });
 
+//= 클릭 이벤트
 $(document).on("click", ".tab_tit > li", function () {
+  //== 프로젝트 팝업 내 상세 설명 탭 메뉴
   var idx = $(this).index();
 
   $(this).addClass("on").siblings("li").removeClass("on");
-
   $(this).parent("ul").siblings(".tab_ctt").children("li").eq(idx).addClass("on").siblings("li").removeClass("on");
 });
