@@ -42,8 +42,8 @@ body {
   @extend %clearfix;
 }
 *::selection {
-  background: #ff229f;
-  color: #fff;
+  background: #ffeaf6;
+  color: #6b007d;
 }
 .bg_el {
   position: absolute;
@@ -842,8 +842,8 @@ section {
   border-radius: 30px 30px 0 0;
   font-size: 15px;
   background: #fcfcfc;
-  border:solid #e7e7e7;
-  border-width:1px 1px 0 1px;
+  border: solid #e7e7e7;
+  border-width: 1px 1px 0 1px;
 }
 
 .type_device {
@@ -938,8 +938,8 @@ section {
   border-left: 1px solid #fafafa;
   background: #fcfcfc;
   border-radius: 0 0 30px 30px;
-  border:solid #e7e7e7;
-  border-width:0 1px 1px 1px;
+  border: solid #e7e7e7;
+  border-width: 0 1px 1px 1px;
 }
 
 .txt_detail_tit {

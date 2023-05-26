@@ -62,13 +62,13 @@ body {
 }
 
 *::-moz-selection {
-  background: #ff229f;
-  color: #fff;
+  background: #ffeaf6;
+  color: #6b007d;
 }
 
 *::selection {
-  background: #ff229f;
-  color: #fff;
+  background: #ffeaf6;
+  color: #6b007d;
 }
 
 .bg_el {
