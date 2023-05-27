@@ -993,8 +993,59 @@ section {
     &.on {
       display: block;
     }
-    strong {
-      color: #333;
+  }
+  .work_main_tit,
+  .work_sub_tit {
+    display: block;
+  }
+  .work_main_tit {
+    color: #333;
+    font-weight: bold;
+    &:before {
+      content: "[";
+    }
+    &:after {
+      content: "]";
+    }
+    &:before,
+    &:after {
+      display: inline-block;
+      vertical-align: top;
+    }
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+  .work_sub_tit {
+    color: #2a93e9;
+    font-style: normal;
+    &:before {
+      content: "<";
+    }
+    &:after {
+      content: ">";
+    }
+    &:before,
+    &:after {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+  .work_ol,
+  .work_ul {
+    padding-left: 15px;
+    + .work_sub_tit {
+      margin-top: 10px;
+    }
+  }
+  .work_ol {
+    > li {
+      list-style: decimal;
+    }
+  }
+  .work_ul {
+    > li {
+      list-style: disc;
     }
   }
 }

@@ -335,38 +335,69 @@ $(window).load(function () {
 
         itemHTML += "</ul>" + '<ul class="txt_detail_ctt tab_ctt">';
 
+        // 프로젝트 상세 설명 리스트 출력 함수
+        function generateHTML(item, className) {
+          let itemHTML = "";
+          if (item && item.length > 0) {
+            itemHTML += '<li class="' + className + '">';
+
+            // 각 아이템별 빈값, 빈문자열일 경우 비노출
+            item.forEach(function (workItem) {
+              // 메인 타이틀
+              if (workItem.main_tit && workItem.main_tit.length > 0) {
+                if (workItem.main_tit.Length !== 1 && workItem.main_tit[0] !== "")
+                  itemHTML += '<strong class="work_main_tit">' + workItem.main_tit + "</strong>";
+              }
+              // 서브타이틀
+              if (workItem.sub_tit && workItem.sub_tit.length > 0) {
+                workItem.sub_tit.forEach(function (subTitItem, sTitIdx) {
+                  if (workItem.sub_tit.Length !== 1 && workItem.sub_tit[0] !== "")
+                    itemHTML += '<em class="work_sub_tit">' + subTitItem + "</em>";
+
+                  // 번호 리스트
+                  if (workItem.ol && workItem.ol.length > sTitIdx) {
+                    if (workItem.ol[0].Length !== 1 && workItem.ol[0][0] !== "") itemHTML += '<ol class="work_ol">';
+
+                    workItem.ol[sTitIdx].forEach(function (olItem, olIdx) {
+                      // 리스트별 아이템
+                      if (workItem.ol[0].Length !== 1 && workItem.ol[0][0] !== "")
+                        itemHTML += "<li><span>" + olItem + "</span>";
+
+                      // 블릿 리스트
+                      if (workItem.ul && workItem.ul.length > sTitIdx && workItem.ul[sTitIdx][olIdx].length !== 0) {
+                        itemHTML += '<ul class="work_ul">';
+                        workItem.ul[sTitIdx][olIdx].forEach(function (ulItem) {
+                          itemHTML += "<li>" + ulItem + "</li>";
+                        });
+                        itemHTML += "</ul>";
+                      }
+                      if (workItem.ol[0].Length !== 1 && workItem.ol[0][0] !== "") itemHTML += "</li>";
+                    });
+                    if (workItem.ol[0].Length !== 1 && workItem.ol[0][0] !== "") itemHTML += "</ol>";
+                  }
+                });
+              }
+            });
+
+            itemHTML += "</li>";
+          }
+
+          return itemHTML;
+        }
+
+        // 프로젝트 업무범위
         if (item.work.scope) {
-          itemHTML += '<li class="detail_scope on">' + "<ul>";
-
-          for (var pageItem in item.work.scope.page) {
-            itemHTML += "<li>" + item.work.scope.page[pageItem];
-          }
-
-          if (item.work.scope.comment) {
-            itemHTML += '<span class="comment">' + item.work.scope.comment + "</span></li>";
-          }
-
-          itemHTML += "</ul></li>";
+          itemHTML += generateHTML(item.work.scope, "detail_scope on");
         }
 
+        // 프로젝트 주요기여
         if (item.work.task) {
-          itemHTML += '<li class="detail_task">' + "<ul>";
-
-          for (var taskItem in item.work.task) {
-            itemHTML += "<li>" + item.work.task[taskItem] + "</li>";
-          }
-
-          itemHTML += "</ul></li>";
+          itemHTML += generateHTML(item.work.task, "detail_task");
         }
 
+        // 프로젝트 주요성과
         if (item.work.result) {
-          itemHTML += '<li class="detail_result">' + "<ul>";
-
-          for (var resultItem in item.work.result) {
-            itemHTML += "<li>" + item.work.result[resultItem] + "</li>";
-          }
-
-          itemHTML += "</ul></li>";
+          itemHTML += generateHTML(item.work.result, "detail_result");
         }
 
         itemHTML +=
@@ -536,7 +567,7 @@ $(window).load(function () {
 
         for (i = 0; i < sectLen; i++) {
           var sectPosition = $sect.eq(i).offset().top,
-            comparisonValue = sectPosition + (htmlHeight / 3) * 2; // 뷰포트 높이 의 2/3 지점
+            comparisonValue = sectPosition + (htmlHeight / 3) * 1; // 뷰포트 높이 의 2/5 지점
 
           //동적효과 실행
           // 뷰포트 높이 의 2/3 지점 지날때 섹션 활성화

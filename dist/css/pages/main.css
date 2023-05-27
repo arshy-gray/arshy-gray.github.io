@@ -1635,8 +1635,54 @@ section.active h2 + .set_ct {
 .txt_detail_ctt > li.on {
   display: block;
 }
-.txt_detail_ctt > li strong {
+.txt_detail_ctt .work_main_tit,
+.txt_detail_ctt .work_sub_tit {
+  display: block;
+}
+.txt_detail_ctt .work_main_tit {
   color: #333;
+  font-weight: bold;
+}
+.txt_detail_ctt .work_main_tit:before {
+  content: "[";
+}
+.txt_detail_ctt .work_main_tit:after {
+  content: "]";
+}
+.txt_detail_ctt .work_main_tit:before, .txt_detail_ctt .work_main_tit:after {
+  display: inline-block;
+  vertical-align: top;
+}
+.txt_detail_ctt .work_main_tit:not(:first-child) {
+  margin-top: 15px;
+}
+.txt_detail_ctt .work_sub_tit {
+  color: #2a93e9;
+  font-style: normal;
+}
+.txt_detail_ctt .work_sub_tit:before {
+  content: "<";
+}
+.txt_detail_ctt .work_sub_tit:after {
+  content: ">";
+}
+.txt_detail_ctt .work_sub_tit:before, .txt_detail_ctt .work_sub_tit:after {
+  display: inline-block;
+  vertical-align: top;
+}
+.txt_detail_ctt .work_ol,
+.txt_detail_ctt .work_ul {
+  padding-left: 15px;
+}
+.txt_detail_ctt .work_ol + .work_sub_tit,
+.txt_detail_ctt .work_ul + .work_sub_tit {
+  margin-top: 10px;
+}
+.txt_detail_ctt .work_ol > li {
+  list-style: decimal;
+}
+.txt_detail_ctt .work_ul > li {
+  list-style: disc;
 }
 
 .pf_img {
