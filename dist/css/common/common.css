@@ -423,6 +423,7 @@ html {
   font-family: "Noto Sans KR", sans-serif;
   font-size: 14px;
   letter-spacing: -0.5px;
+  scroll-behavior: smooth;
 }
 
 body,
@@ -560,13 +561,6 @@ a:active {
   line-height: 0 !important;
   height: 0 !important;
   overflow: hidden !important;
-}
-
-.float_L {
-  float: left !important;
-}
-.float_R {
-  float: right !important;
 }
 
 .clearFix {
