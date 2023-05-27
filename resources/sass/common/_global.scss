@@ -22,14 +22,6 @@ a {
   height: 0 !important;
   overflow: hidden !important;
 }
-.float {
-  &_L {
-    float: left !important;
-  }
-  &_R {
-    float: right !important;
-  }
-}
 .clearFix {
   clear: both;
   overflow: hidden;
