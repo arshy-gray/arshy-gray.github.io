@@ -3252,7 +3252,7 @@ section.active h2 + .set_ct {
     max-width: 100%;
   }
   #main .main_ct .gitHub a {
-    padding: 10px 25px;
+    padding: 15px 30px;
   }
   /* 포트폴리오 섹션 */
   #portfolio .wrap_cen {
