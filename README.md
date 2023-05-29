@@ -31,7 +31,7 @@
    * parallax
    * Intro : 로딩 진행율
    * Project : 이미지 슬라이더
-   * Project, Portfolio : JSON 데이터 바인딩
+   * Project, Portfolio : JSON 데이터 Ajax 요청 및 처리
    * Skill : 막대그래프
 4. 오픈소스 활용
    * Portfolio : 리스트 필터
