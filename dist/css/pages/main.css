@@ -20,6 +20,13 @@
           flex-direction: column;
 }
 
+.form-item {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+}
+
 /* no-js *********/
 .no-js #loading .bar_box {
   display: none;
@@ -407,7 +414,7 @@ section.active h2 + .set_ct {
   position: relative;
   display: inline-block;
   padding: 20px 50px;
-  color: #eee;
+  color: #ededed;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 31px;
   -webkit-transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
@@ -422,8 +429,8 @@ section.active h2 + .set_ct {
   opacity: 0;
 }
 #main .main_ct .gitHub a:hover {
-  background: rgba(192, 72, 122, 0.25);
-  color: #f4068c;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
   text-shadow: 0 0 white;
 }
 #main.active .txtBox_st1 .sub_logo img {
@@ -1040,6 +1047,7 @@ section.active h2 + .set_ct {
   top: 30px;
   text-align: center;
   border-radius: 12px;
+  overflow: hidden;
   -webkit-animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
      -moz-animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
        -o-animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1237,7 +1245,7 @@ section.active h2 + .set_ct {
   line-height: 0;
 }
 .pf_thumb .img_box {
-  max-height: 330px;
+  max-height: 370px;
   line-height: 0;
   border-bottom: 3px dashed #fff;
   overflow: hidden;
