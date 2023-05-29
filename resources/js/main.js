@@ -356,12 +356,12 @@ $(window).load(function () {
 
                   // 번호 리스트
                   if (workItem.ol && workItem.ol.length > sTitIdx) {
-                    if (workItem.ol[0].Length !== 1 && workItem.ol[0][0] !== "") itemHTML += '<ol class="work_ol">';
+                    var isOl = workItem.ol[0].Length !== 1 && workItem.ol[0][0] !== "";
+                    if (isOl) itemHTML += '<ol class="work_ol">';
 
                     workItem.ol[sTitIdx].forEach(function (olItem, olIdx) {
                       // 리스트별 아이템
-                      if (workItem.ol[0].Length !== 1 && workItem.ol[0][0] !== "")
-                        itemHTML += "<li><span>" + olItem + "</span>";
+                      if (isOl) itemHTML += "<li><span>" + olItem + "</span>";
 
                       // 블릿 리스트
                       if (workItem.ul && workItem.ul.length > sTitIdx && workItem.ul[sTitIdx][olIdx].length !== 0) {
@@ -371,9 +371,9 @@ $(window).load(function () {
                         });
                         itemHTML += "</ul>";
                       }
-                      if (workItem.ol[0].Length !== 1 && workItem.ol[0][0] !== "") itemHTML += "</li>";
+                      if (isOl) itemHTML += "</li>";
                     });
-                    if (workItem.ol[0].Length !== 1 && workItem.ol[0][0] !== "") itemHTML += "</ol>";
+                    if (isOl) itemHTML += "</ol>";
                   }
                 });
               }

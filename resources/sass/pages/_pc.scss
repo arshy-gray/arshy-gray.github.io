@@ -283,7 +283,7 @@ section {
         position: relative;
         display: inline-block;
         padding: 20px 50px;
-        color: #eee;
+        color: #ededed;
         background: rgba(2555, 255, 255, 0.2);
         border-radius: 31px;
         transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
@@ -291,8 +291,8 @@ section {
         top: 30px;
         opacity: 0;
         &:hover {
-          background: rgb(192 72 122 / 25%);
-          color: #f4068c;
+          background: rgba(255, 255, 255, 0.3);
+          color: #fff;
           text-shadow: 0 0 white;
         }
       }
@@ -527,6 +527,8 @@ section {
   top: 30px;
   text-align: center;
   border-radius: 12px;
+  overflow:hidden;
+  @extend %backface;
   animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   &.radioItem {
     display: inline-block;
