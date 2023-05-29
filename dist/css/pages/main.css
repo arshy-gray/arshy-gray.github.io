@@ -223,7 +223,7 @@ section {
 section:not(#history):not(#portfolio) {
   height: 100vh;
 }
-section #portfolio {
+section#portfolio {
   min-height: 100vh;
 }
 section > .sec_t {
