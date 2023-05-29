@@ -129,7 +129,7 @@ $(window).load(function () {
 			}else{
 				var addItemCount = 6; 
 			}*/
-    
+
     //옵션을 설정 Masonry를 준비
     $container.masonry({
       columnWidth: ".grid-sizer",
@@ -164,7 +164,9 @@ $(window).load(function () {
       $filter.on("change", ".form-item input", filterItems);
 
       // 항목 링크에 호버 효과 처리 등록
-      $container.on("mouseenter mouseleave", ".pf_item", hoverDirection);
+      $container.on("mouseenter mouseleave", ".pf_item", hoverDirection).on("mouseenter mouseleave", function () {
+        $container.masonry("layout");
+      });
     }
 
     // 항목을 생성하고 문서에 삽입
@@ -426,7 +428,7 @@ $(window).load(function () {
           $container.masonry("layout");
         });
       });
-
+      
       // 추가 된 항목 수량 갱신
       addadd += slicedData.length;
 
