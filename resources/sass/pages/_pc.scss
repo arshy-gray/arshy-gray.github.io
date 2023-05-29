@@ -156,7 +156,7 @@ section {
   &:not(#history):not(#portfolio) {
     height: 100vh;
   }
-  #portfolio {
+  &#portfolio {
     min-height: 100vh;
   }
   /* 콘텐츠 섹션 공통 - 메뉴 */

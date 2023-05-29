@@ -22,7 +22,7 @@ $(document).ready(function () {
 
       // imagesLoaded 라이브러리에서 body 요소의 이미지 로딩을 모니터링
       // 동시에 body 전체 이미지 수를 저장
-      imgLoad = imagesLoaded("body"),
+      imgLoad = imagesLoaded($body),
       imgTotal = imgLoad.images.length,
       // 읽기를 완료 한 이미지의 숫자 카운터와
       // 진행률 표시의 현재 위치에 해당하는 수치 (모두 처음에는 0)
@@ -129,7 +129,7 @@ $(window).load(function () {
 			}else{
 				var addItemCount = 6; 
 			}*/
-
+    
     //옵션을 설정 Masonry를 준비
     $container.masonry({
       columnWidth: ".grid-sizer",
@@ -168,7 +168,7 @@ $(window).load(function () {
     }
 
     // 항목을 생성하고 문서에 삽입
-    function addItems(filter) {
+    function addItems() {
       var elements = [],
         // 추가 데이터의 배열
         slicedData = filteredData.slice(addadd, addadd + addItemCount);
@@ -414,18 +414,17 @@ $(window).load(function () {
           "</li>";
         elements.push($(itemHTML).get(0));
       });
-
       // DOM 요소의 배열을 컨테이너에 넣고 Masonry 레이아웃을 실행
-      $container.append(elements).imagesLoaded(function () {
-        $portfolio.removeClass("is-loading");
-        $(".pf_item").removeClass("is-loading");
-        $loadMoreButton.removeClass("is-loading");
-        $container.masonry("appended", elements);
+      $container.append(elements).masonry("appended", elements, true).masonry();
 
-        // 필터링시 재배치
-        if (filter) {
-          $container.masonry();
-        }
+      $portfolio.removeClass("is-loading");
+      $(".pf_item").removeClass("is-loading");
+      $loadMoreButton.removeClass("is-loading");
+
+      $container.delay(100).fadeIn(100, function () {
+        $container.imagesLoaded(function () {
+          $container.masonry("layout");
+        });
       });
 
       // 추가 된 항목 수량 갱신
@@ -440,7 +439,7 @@ $(window).load(function () {
     }
 
     // 항목을 필터링한다.
-    function filterItems(item) {
+    function filterItems() {
       var keyCompany = $(".filter-type-company").find('input[type="radio"]:checked').val(), // 오피스 필터
         keyDevice = $(".filter-type-device").find('input[type="radio"]:checked').val(), // 디바이스 필터
         keyLinked = $(".filter-type-linked").find('input[type="checkbox"]').prop("checked"), // 링크 여부 필터
@@ -484,7 +483,7 @@ $(window).load(function () {
       }
 
       // 항목을 추가
-      addItems(true);
+      addItems();
     }
 
     // 호버 효과
