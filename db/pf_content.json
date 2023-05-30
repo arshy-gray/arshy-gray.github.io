@@ -15,6 +15,7 @@
     "project": "2022.10 ~ 2022.11",
     "images": {
       "thumb": "../resources/images/main/pfImg030.jpg",
+      "thumb_h": "long",
       "detail": "../resources/images/sub/pf_detailImg030.jpg"
     },
     "task_environment": "Gulp, yarn, Git, Jenkins",
@@ -121,6 +122,7 @@
     "project": "2023.02 ~ 2023.04",
     "images": {
       "thumb": "../resources/images/main/pfImg029.jpg",
+      "thumb_h": "long",
       "detail": "../resources/images/sub/pf_detailImg029.jpg"
     },
     "task_environment": "Gulp, yarn, Git, Jenkins",
@@ -215,6 +217,7 @@
     "project": "2022.03 ~ 2022.04",
     "images": {
       "thumb": "../resources/images/main/pfImg028.jpg",
+      "thumb_h": "long",
       "detail": "../resources/images/sub/pf_detailImg028.jpg"
     },
     "task_environment": "Gulp, yarn, Git, Jenkins",
@@ -287,6 +290,7 @@
     "project": "2020.09 ~ 2021.08",
     "images": {
       "thumb": "../resources/images/main/pfImg027.jpg",
+      "thumb_h": "long",
       "detail": "../resources/images/sub/pf_detailImg027.jpg"
     },
     "task_environment": "Gulp, yarn, Git, Jenkins",
@@ -394,6 +398,7 @@
     "project": "2017.03 ~ 2023.05",
     "images": {
       "thumb": "../resources/images/main/pfImg018.jpg",
+      "thumb_h": "long",
       "detail": "../resources/images/sub/pf_detailImg018.jpg"
     },
     "task_environment": "Gulp, yarn, Git",
@@ -518,6 +523,7 @@
     "project": "2019.07 ~ 2019.10",
     "images": {
       "thumb": "../resources/images/main/pfImg025.jpg",
+      "thumb_h": "long",
       "detail": "../resources/images/sub/pf_detailImg025.jpg"
     },
     "task_environment": "Git, PHP(template_), Apache",
@@ -641,6 +647,7 @@
     "project": "2019.02",
     "images": {
       "thumb": "../resources/images/main/pfImg023.jpg",
+      "thumb_h": "long",
       "detail": "../resources/images/sub/pf_detailImg023.jpg"
     },
     "task_environment": "Apache",
@@ -750,6 +757,7 @@
     "project": "2018.11 ~ 2019.02",
     "images": {
       "thumb": "../resources/images/main/pfImg021.jpg",
+      "thumb_h": "long",
       "detail": "../resources/images/sub/pf_detailImg021.jpg"
     },
     "task_environment": "Apache",
@@ -788,6 +796,7 @@
     "project": "2018.11",
     "images": {
       "thumb": "../resources/images/main/pfImg026.jpg",
+      "thumb_h": "long",
       "detail": "../resources/images/sub/pf_detailImg026.jpg"
     },
     "task_environment": "Wordpress, Apache",
@@ -881,6 +890,7 @@
     "project": "2017.05 ~ 2018.01",
     "images": {
       "thumb": "../resources/images/main/pfImg019.jpg",
+      "thumb_h": "long",
       "detail": "../resources/images/sub/pf_detailImg019.jpg"
     },
     "task_environment": "Git, PHP(template_), Apache",
@@ -960,6 +970,7 @@
     "project": "2016.08 ~ 2016.12",
     "images": {
       "thumb": "../resources/images/main/pfImg017.jpg",
+      "thumb_h": "long",
       "detail": "../resources/images/sub/pf_detailImg017.jpg"
     },
     "task_environment": "자사 솔루션",
@@ -1061,6 +1072,7 @@
     "project": "2016.07 ~ 2016.08",
     "images": {
       "thumb": "../resources/images/main/pfImg015.jpg",
+      "thumb_h": "long",
       "detail": "../resources/images/sub/pf_detailImg015.jpg"
     },
     "task_environment": "자사 솔루션",
@@ -1103,6 +1115,7 @@
     "project": "2016.07 ~ 2016.07",
     "images": {
       "thumb": "../resources/images/main/pfImg014.jpg",
+      "thumb_h": "long",
       "detail": "../resources/images/sub/pf_detailImg014.jpg"
     },
     "task_environment": "Gnuboard",
