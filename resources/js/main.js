@@ -179,8 +179,12 @@ $(window).load(function () {
       $.each(slicedData, function (i, item) {
         var itemHTML = "";
 
+        itemHTML += '<li class="pf_item ';
+
+        if (item.images.thumb_h) itemHTML += "thumb_h_" + item.images.thumb_h + " ";
+
         itemHTML +=
-          '<li class="pf_item is-loading">' +
+          'is-loading">' +
           '<div class="pf_thumb">' +
           '<div class="img_box"><img src="' +
           item.images.thumb +
@@ -428,7 +432,7 @@ $(window).load(function () {
           $container.masonry("layout");
         });
       });
-      
+
       // 추가 된 항목 수량 갱신
       addadd += slicedData.length;
 

@@ -527,7 +527,7 @@ section {
   top: 30px;
   text-align: center;
   border-radius: 12px;
-  overflow:hidden;
+  overflow: hidden;
   @extend %backface;
   animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   &.radioItem {
@@ -674,11 +674,17 @@ section {
   &.is-loading {
     opacity: 0;
   }
+  // 썸네일 높이
+  &.thumb_h_long {
+    .pf_thumb .img_box {
+      height: 0;
+      padding-bottom: 120%;
+    }
+  }
 }
 .pf_thumb {
   line-height: 0;
   .img_box {
-    max-height: 370px;
     line-height: 0;
     border-bottom: 3px dashed #fff;
     overflow: hidden;
