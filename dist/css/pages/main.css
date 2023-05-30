@@ -1240,12 +1240,15 @@ section.active h2 + .set_ct {
 #portfolio.is-loading .pf_item, .pf_item.is-loading {
   opacity: 0;
 }
+.pf_item.thumb_h_long .pf_thumb .img_box {
+  height: 0;
+  padding-bottom: 120%;
+}
 
 .pf_thumb {
   line-height: 0;
 }
 .pf_thumb .img_box {
-  max-height: 370px;
   line-height: 0;
   border-bottom: 3px dashed #fff;
   overflow: hidden;
