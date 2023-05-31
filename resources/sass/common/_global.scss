@@ -1,19 +1,5 @@
 //= global
-.imgFix {
-  display: inline-block;
-  line-height: 0;
-}
-a {
-  &:link,
-  &:active,
-  &:visited,
-  &:hover {
-    text-decoration: none;
-  }
-  &:active {
-    color: #000;
-  }
-}
+// 전체
 .hidden {
   position: absolute !important;
   visibility: hidden !important;
@@ -26,6 +12,17 @@ a {
   clear: both;
   overflow: hidden;
 }
+// 폰트
+.c_blue {
+  color: #2a93e9;
+  font-style: normal;
+}
+// 이미지
+.imgFix {
+  display: inline-block;
+  line-height: 0;
+}
+// 테이블
 .table_c1 {
   margin: 0 0 20px 0;
   table {
@@ -90,3 +87,27 @@ div.table_c1 table tfoot td {
   list-style: decimal;
   margin-left: 16px;
 }
+// parallex 요소
+.bg_el {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  img {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  // 전체
+  .m_br {
+    display: block;
+  }
+} // e.479px

@@ -1,0 +1,230 @@
+//= Intro
+#intro {
+  background-repeat: no-repeat;
+  background-image: url("/resources/images/main/bgMain_moon.png"), url("/resources/images/main/bgMain_back.jpg");
+  background-position: calc(50% + 600px) 65px, center;
+  background-size: auto, cover;
+  background-attachment: fixed;
+
+  /* 메인섹션 - 메인카피 */
+  .main_txt,
+  .main_ct {
+    height: 100%;
+  }
+  .main_txt {
+    text-align: center;
+  }
+  .main_ct {
+    .contact_group {
+      display: flex;
+      flex-direction: column;
+      width: 480px;
+      height: 100%;
+      margin: 0 auto;
+    }
+    .sub_logo img {
+      transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: toL 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      right: 30px;
+      opacity: 0;
+    }
+    .tel_num,
+    .mail {
+      a {
+        transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
+        animation: toR 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        left: 30px;
+        opacity: 0;
+      }
+    }
+    .sub_logo {
+      margin-top: 10vh;
+      a {
+        display: inline-block;
+        line-height: 0;
+        padding: 0 10%;
+      }
+    }
+    .tel_num {
+      display: inline-block;
+      width: 100%;
+      max-width: 480px;
+      margin: 20px auto 0;
+      padding: 20px 15% 0;
+      line-height: 18px;
+      color: #fff;
+      border-top: 3px solid #ff0090;
+      opacity: 0.9;
+      box-sizing: border-box;
+      a {
+        display: inline-block;
+        line-height: 0;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .mail a {
+      display: inline-block;
+      color: #ffa6c6;
+    }
+    .gitHub {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      a {
+        position: relative;
+        display: inline-block;
+        padding: 20px 50px;
+        color: #ededed;
+        background: rgba(2555, 255, 255, 0.2);
+        border-radius: 31px;
+        transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
+        animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        top: 30px;
+        opacity: 0;
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+          color: #fff;
+          text-shadow: 0 0 white;
+        }
+      }
+    }
+  }
+  &.active {
+    .txtBox_st1 {
+      .sub_logo img {
+        position: relative;
+        animation: fromL 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 1;
+        right: 0;
+      }
+      .tel_num,
+      .mail {
+        a {
+          position: relative;
+          animation: fromR 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+          opacity: 1;
+          left: 0;
+        }
+      }
+    }
+    .gitHub a {
+      animation: fromB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      animation-fill-mode: backwards;
+      top: 0;
+      opacity: 1;
+    }
+  }
+}
+
+// 반응형 =====
+// tablet
+@media screen and (max-width: 1399px) {
+  #intro {
+    background-position: calc(100% - 50px) 40px, center;
+    background-size: 100px, cover;
+    .el01 {
+      top: 107px;
+      left: calc(100% - 145px);
+    }
+
+    /* 메인섹션 - 메뉴 */
+    .gnb_menu li {
+      margin: 0 2.3%;
+      width: 12%;
+      a {
+        padding: 74px 0 20px 0;
+        background-size: 40%;
+      }
+    }
+  }
+}
+// mobile
+@media screen and (max-width: 1023px) {
+  #intro {
+    .sub_logo img {
+      width: 100%;
+    }
+
+    /* 메인섹션 - 메뉴 */
+    .gnb_menu {
+      width: 100%;
+      margin: 0 20px;
+      box-sizing: border-box;
+
+      li {
+        width: 31.5%;
+        margin: 0;
+
+        &:before {
+          margin-top: 10px;
+          border-top: 8px solid #ff229f;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+        }
+        &:hover,
+        &.on {
+          &:before {
+            animation-play-state: paused;
+          }
+          a {
+            border: 0;
+          }
+        }
+        &:hover,
+        &.on {
+          &before {
+            animation: arrowStr2 1.5s linear infinite;
+          }
+        }
+
+        a {
+          padding: 84px 0 0 0;
+          background-color: transparent;
+          background-size: auto;
+          border: 0;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+} // e.1023
+
+@media screen and (max-width: 767px) {
+  // 메인 섹션
+  #intro {
+    .main_ct {
+      .contact_group {
+        margin: 0 15%;
+        width: auto;
+        max-width: 100%;
+      }
+      .gitHub {
+        a {
+          padding: 15px 30px;
+        }
+      }
+    }
+  }
+} // e.767
+@media screen and (max-width: 599px) {
+  #intro .el01 {
+    top: 67px;
+    left: calc(100% - 105px);
+  }
+  .main_ct {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  /* 메뉴 */
+  .main_menu {
+    margin-top: 30px;
+  }
+  #intro .gnb_menu li a {
+    padding: 50px 0 0 0;
+    background-size: 40px;
+  }
+}

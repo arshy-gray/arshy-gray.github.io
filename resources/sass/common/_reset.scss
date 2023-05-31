@@ -5,6 +5,10 @@ html {
   letter-spacing: -0.5px;
   scroll-behavior: smooth;
 }
+*::selection {
+  background: #ffeaf6;
+  color: #6b007d;
+}
 body,
 p,
 ul,
@@ -44,7 +48,9 @@ button {
   line-height: 22px;
   letter-spacing: -0.5px;
 }
-b{font-weight:bold}
+b {
+  font-weight: bold;
+}
 iframe {
   border: 0;
 }
@@ -107,4 +113,15 @@ input.image {
   border: 0 none;
   margin: 0;
   padding: 0;
+}
+a {
+  &:link,
+  &:active,
+  &:visited,
+  &:hover {
+    text-decoration: none;
+  }
+  &:active {
+    color: #000;
+  }
 }
