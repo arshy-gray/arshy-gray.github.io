@@ -1681,6 +1681,7 @@ section > .sec_t {
   line-height: 42px;
   color: #fff;
   text-align: center;
+  font-weight: bold;
   opacity: 0;
   -webkit-animation: toT 0.7s cubic-bezier(0.4, 0, 0.2, 1);
      -moz-animation: toT 0.7s cubic-bezier(0.4, 0, 0.2, 1);
