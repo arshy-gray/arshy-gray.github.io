@@ -408,7 +408,7 @@
         {
           "main_tit": [""],
           "sub_tit": ["원페이지"],
-          "ol": [["Intro", "Main", "Project", "History", "Contact"]],
+          "ol": [["Splash", "Intro", "Project", "History", "Contact"]],
           "ul": [[[], [], ["리스트","레이어 팝업"], [], []]]
         }
       ],
@@ -420,7 +420,7 @@
           "ul": [[[], ["imagesloaded"]]]
         },
         {
-          "main_tit": ["Intro"],
+          "main_tit": ["Splash"],
           "sub_tit": [""],
           "ol": [["로딩 진행율"]]
         },
@@ -445,7 +445,7 @@
           "sub_tit": ["2023년"],
           "ol": [
             [
-              "Main 페이지 구성 변경",
+              "Intro 페이지 구성 변경",
               "Gulp 셋팅",
               "Project : 리스트 'Company' 필터 추가",
               "Project : 팝업 내 탭 콘텐츠 텍스트 출력 방식 변경",
@@ -477,7 +477,7 @@
           ],
           "ul": [
             [
-              ["Intro, Main - Project(기존 Portfolio) - History - Contact"],
+              ["Splash, Intro - Project(기존 Portfolio) - History - Contact"],
               [],
               [],
               ["탭 콘텐츠(프로젝트 상세 설명) 추가", "디자인 고도화"]
@@ -490,7 +490,7 @@
           "ol": [["신규 구축", "로컬 내 Apache 환경에서 작업 및 서버 호스팅", "직접 구현", "오픈소스 활용"]],
           "ul": [
             [
-              ["Intro, Main - Project - Portfolio - History - Skill - Contact"],
+              ["Splash, Intro - Project - Portfolio - History - Skill - Contact"],
               [],
               [
                 "fullpage",

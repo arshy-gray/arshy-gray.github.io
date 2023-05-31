@@ -1,0 +1,161 @@
+//= contact
+#contact {
+  background-image: url("/resources/images/main/bgContact_cen.png"), url("/resources/images/main/bgContact_back2.png"),
+    url("/resources/images/main/bgContact_back2.png"), url("/resources/images/main/bgContact_back.jpg");
+  background-position: center, -300px calc(100% + 300px), calc(100% + 280px) -200px, center;
+  background-attachment: scroll, fixed, fixed, fixed;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+  background-size: auto, auto, auto, cover;
+  overflow: hidden;
+  .wrap_cen {
+    display: table;
+  }
+  .el01 {
+    top: calc(50% - 489px);
+    left: calc(50% - 627px);
+    animation: shake 3s ease-in-out infinite;
+  }
+  .el02 {
+    top: calc(50% - 12px);
+    left: calc(50% + 466px);
+    animation: shake 3s ease-in-out 1.5s infinite;
+  }
+  .el03 {
+    top: calc(50% - 230px);
+    left: calc(50% + 50px);
+    animation: nabi 4s ease-in-out infinite;
+    transform-origin: 38px 107px;
+  }
+  .contact_group {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -69px;
+    width: 290px;
+    text-align: center;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+  }
+  .sub_logo,
+  .tel_num,
+  .mail,
+  .gitHub {
+    a {
+      display: inline-block;
+      position: relative;
+    }
+  }
+
+  .sub_logo {
+    img {
+      width: 220px;
+    }
+  }
+  .tel_num img {
+    width: 100%;
+    max-width: 285px;
+  }
+  .mail a {
+    color: #888;
+  }
+  .gitHub {
+    margin-top: 30px;
+    a {
+      color: #fff;
+    }
+  }
+  .mail,
+  .gitHub {
+    &:hover a {
+      text-decoration: underline;
+    }
+  }
+  .sub_logo a {
+    transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: toL 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    right: 30px;
+    opacity: 0;
+  }
+  .tel_num,
+  .mail {
+    a {
+      transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: toR 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      left: 30px;
+      opacity: 0;
+    }
+  }
+  .gitHub a {
+    transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    top: 30px;
+    opacity: 0;
+  }
+  &.active {
+    .sub_logo a {
+      position: relative;
+      animation: fromL 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+      animation-fill-mode: backwards;
+      opacity: 1;
+      right: 0;
+    }
+    .tel_num,
+    .mail {
+      a {
+        position: relative;
+        animation: fromR 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        animation-fill-mode: backwards;
+        opacity: 1;
+        left: 0;
+      }
+    }
+    .tel_num {
+      a {
+        animation-delay: 0.3s;
+      }
+    }
+    .mail {
+      a {
+        animation-delay: 0.4s;
+      }
+    }
+    .gitHub a {
+      animation: fromB 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+      animation-fill-mode: backwards;
+      animation-fill-mode: backwards;
+      top: 0;
+      opacity: 1;
+    }
+  }
+}
+
+.main_footer {
+  position: absolute;
+  padding: 5px 0;
+  bottom: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  p {
+    color: #797979;
+    text-align: center;
+  }
+}
+// 반응형 =====
+// mobile
+@media screen and (max-width: 1023px) {
+  #contact .sub_txt {
+    width: 100%;
+    box-sizing: border-box;
+  }
+} // e.1023
+
+@media screen and (max-width: 479px) {
+  /* 전체 */
+  .m_br {
+    display: block;
+  }
+
+  /* 컨택 섹션 */
+  #contact .sub_txt {
+    margin: 40px auto;
+  }
+} // e.479p
