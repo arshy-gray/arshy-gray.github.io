@@ -4,13 +4,14 @@
 1. Intro 페이지 구성 변경(기존 내용 삭제 -> 연락처 정보 추가)
 2. Gulp 셋팅
    * 로컬 서버, reload 환경 구축
-3. Project 리스트 'Company' 필터 추가
-4. Project 팝업 내 탭 콘텐츠 텍스트 출력 방식 변경
+3. css -> SCSS 변환 및 폴더 구조화
+4. Project 리스트 'Company' 필터 추가
+5. Project 팝업 내 탭 콘텐츠 텍스트 출력 방식 변경
    * 일반 텍스트 -> 멀티 리스트
-5. 불필요한 js 삭제 -> css 구현
+6. 불필요한 js 삭제 -> css 구현
    * fullpage
    * smooth-scroll
-6. UI/UX 최적화
+7. UI/UX 최적화
    * Project 팝업
       + 모바일 레이아웃 변경(상세 내용 하단 -> 상단)
    * 기타 디자인 고도화
