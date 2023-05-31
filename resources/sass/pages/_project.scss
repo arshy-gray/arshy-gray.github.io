@@ -12,15 +12,12 @@
   .el01 {
     top: 12px;
     left: calc(50% - 342px);
-    -webkit-animation: blink 4s ease-in-out infinite;
     animation: blink 4s ease-in-out infinite;
   }
   .el02 {
     top: 182px;
     left: calc(50% + 669px);
-    -webkit-animation: zoomIn 10s ease-out infinite;
     animation: zoomIn 10s ease-out infinite;
-    -webkit-transform-origin: center;
     transform-origin: center;
   }
 
@@ -63,13 +60,9 @@
     height: calc(100vh - 450px) !important;
   }
   #project.is-loading &:after {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 29px;
-    height: 30px;
+    @include pseudo-init-ctt;
+    @include pos-abs-lt;
+    @include size(29px, 30px);
     transform: translate(-50%, -50%);
     background: url("/resources/images/main/loading2.png") center no-repeat;
     animation: rotate 1.2s infinite;
@@ -83,43 +76,40 @@
   margin: 20px auto 40px;
   text-align: center;
 }
-.filter-group ~ .filter-group {
-  margin-top: 20px;
+.filter-group {
+  @extend %flex-c;
+  ~ .filter-group {
+    margin-top: 25px;
+  }
 }
 .form-item {
   opacity: 0;
   position: relative;
   top: 30px;
   text-align: center;
-  border-radius: 12px;
   overflow: hidden;
-  @extend %backface;
   animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   &.radioItem {
-    display: inline-block;
     width: 134px;
     border: 1px solid #affdfb;
+    border-radius: 12px;
     label {
       border-top: 3px solid transparent;
       &:focus {
-        border-top: 3px solid #fff;
+        border-top: 3px solid color(dft, brightest);
       }
     }
     input {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
       ~ label {
         width: 100%;
         padding: 5px 0 10px 0;
       }
       &:checked ~ label {
-        border-top: 3px solid #fff;
+        border-top: 3px solid color(dft, brightest);
       }
     }
     ~ &.radioItem {
-      margin-left: 4px;
+      margin-left: 8px;
     }
   }
   &.radioItem2,
@@ -128,19 +118,15 @@
       ~ label {
         position: relative;
         line-height: 1;
-        &:before {
-          content: "";
-          display: inline-block;
+        @include pseudo-init(before, inline-block) {
           margin-right: 8px;
           @include size(22px);
           vertical-align: middle;
           border: 1px solid #affdfb;
         }
-        &:after {
-          content: "";
+        @include pseudo-init(after) {
           opacity: 0;
-          display: block;
-          @include poslt(4px);
+          @include pos-abs-lt(4px);
           @include size(16px);
           transform: scale(0);
           transition-property: transform, opacity;
@@ -148,31 +134,26 @@
         }
       }
       &:checked ~ label {
-        color: #fff;
+        color: color(dft, brightest);
         &:before {
-          border-color: #fff;
+          border-color: color(dft, brightest);
         }
         &:after {
-          background-color: #fff;
+          background-color: color(dft, brightest);
           opacity: 1;
           transform: scale(1);
         }
       }
     }
-    ~ &:nth-child(n + 1) {
-      margin-left: 15px;
+    ~ &:nth-child(n + 2) {
+      margin-left: 30px;
     }
   }
   &.radioItem2 {
-    display: inline-block;
     label:focus {
-      border-top: 3px solid #fff;
+      border-top: 3px solid color(dft, brightest);
     }
     input {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
       ~ label {
         &:before,
         &:after {
@@ -188,17 +169,16 @@
         &:before,
         &:after {
           border-radius: 5px;
+          @extend %backface;
         }
       }
     }
   }
   input {
-    position: absolute;
-    top: 0;
-    left: 0;
+    @include pos-abs-lt;
     opacity: 0;
     &:checked ~ label {
-      color: #fff;
+      color: color(dft, brightest);
     }
   }
   label {
@@ -209,7 +189,7 @@
     transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
     &:hover,
     &:focus {
-      color: #fff;
+      color: color(dft, brightest);
     }
   }
 
@@ -248,56 +228,47 @@
   }
 }
 .pf_thumb {
-  line-height: 0;
   .img_box {
-    line-height: 0;
-    border-bottom: 3px dashed #fff;
+    border-bottom: 3px dashed color(dft, brightest);
     overflow: hidden;
-  }
-  img {
-    width: 100%;
+    vertical-align: top;
+    @extend %imgFix;
+    img {
+      width: 100%;
+    }
   }
   .txt_box {
     padding: 25px 20px;
     border-top: 3px dashed #00d4cd;
-    background: #fff;
-  }
-  h4 {
-    font-size: 22px;
-    line-height: 1.2;
-    color: #2e2e2e;
-    word-break: keep-all;
-  }
-  ul {
-    margin-top: 15px;
-  }
-  span {
-    display: inline-block;
-  }
-  i {
-    display: inline-block;
-    width: 21px;
-    font-size: 14px;
-    line-height: 1.2;
-    text-align: center;
-    vertical-align: bottom;
+    background: color(dft, brightest);
+    ul {
+      margin-top: 15px;
+      > li {
+        @extend %flex-align-c;
+      }
+    }
+    h4 {
+      @include font(22px, 1.2, #2e2e2e);
+      font-weight: bold;
+    }
+    i {
+      width: 21px;
+      @include font(14px, 1.2);
+      text-align: center;
+    }
   }
   .pf_th_li_t {
-    display: inline-block;
     line-height: 18px;
     overflow: hidden;
-    color: transparent;
-    vertical-align: top;
     i {
-      color: #555;
+      color: color(dft, medium);
     }
   }
   .pf_th_li_c {
     display: inline-block;
     width: calc(100% - 21px);
-    color: #909090;
+    @include font(null, 1.7, #909090);
     font-weight: 300;
-    line-height: 1.7;
   }
 }
 .pf_hover {
@@ -308,15 +279,13 @@
   transition: 0.5s opacity 0s ease-in-out;
   .btn_box {
     display: table;
-    width: 100%;
-    height: 100%;
+    @include size(100%);
     ul {
       display: table-cell;
-      height: 100%;
+      @include size(100%);
+      padding: 0;
       text-align: center;
       vertical-align: middle;
-      width: 100%;
-      padding: 0;
     }
     li {
       display: inline-block;
@@ -324,23 +293,21 @@
       list-style-type: none;
       a {
         display: table;
-        border: 1px solid #fff;
+        border: 1px solid color(dft, brightest);
         border-radius: 50px;
         @include size(45px);
         text-align: center;
         vertical-align: middle;
         &:hover {
-          background: #fff;
+          background: color(dft, brightest);
         }
       }
       i {
-        color: #fff;
-        font-size: 21.5px;
-        line-height: 24px;
         display: table-cell;
+        @include font(21.5px, 24px, color(dft, brightest));
         vertical-align: middle;
         &:hover {
-          color: #ffcc00;
+          color: color(theme, history);
         }
       }
     }
@@ -350,20 +317,15 @@
 // 프로젝트 상세 레이어팝업
 .pf_detail {
   display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  @include pos-fix-lt;
+  @include size(100%);
   background: rgba(0, 0, 0, 0.7);
   box-sizing: border-box;
-  overflow-y: auto;
   z-index: 999;
 }
 .pf_layer {
-  @include absolute(5vh, 0, 5vh, 50%);
-  display: flex;
-  flex-direction: column;
+  @include pos-abs(5vh, 0, 5vh, 50%);
+  @extend %flex-vtc-layout;
   width: 90%;
   max-width: 1300px;
   transform: translateX(-50%);
@@ -373,7 +335,7 @@
   overflow: hidden;
 }
 .pf_layer_tit {
-  @extend %flex-vtc;
+  @extend %flex-vtc-layout;
   padding: $pf-pop-info-tb-gap 0 $pf-pop-info-ctt-tb-gap;
   align-items: flex-end;
   .pf_main_tit,
@@ -383,84 +345,74 @@
     box-sizing: border-box;
   }
   .pf_main_tit {
-    font-size: 35px;
-    line-height: 1.2;
     font-weight: 700;
-    color: #333;
+    @include font(35px, 1.2, color(dft, dark));
     word-break: keep-all;
   }
   .pf_intro {
     display: block;
     margin-top: 5px;
-    font-size: 17px;
-    color: #555;
+    @include font(17px, null, color(dft, medium));
   }
 }
 .pf_layer_ctt {
   flex: 1;
-  @extend %flex-vtc;
+  @extend %flex-vtc-layout;
   align-items: flex-end;
   height: 100%;
   padding-bottom: 40px;
-  overflow: hidden;
-  overflow-y: auto;
+  @extend %h-scr;
 }
 .pf_info {
   width: $pf-pop-info-wid;
   padding: $pf-pop-info-ctt-tb-gap $pf-pop-info-lr-gap;
   box-sizing: border-box;
-  border-left: 1px solid #fafafa;
   border-radius: 30px 30px 0 0;
   font-size: 15px;
   background: #fcfcfc;
-  border: solid #e7e7e7;
-  border-width: 1px 1px 0 1px;
+  border: 1px solid #fafafa;
 }
-
+.pf_info_type {
+  display: flex;
+}
 .type_device {
   position: relative;
-  display: inline-block;
+  @extend %flex-align-c;
+  justify-content: flex-end;
   width: 120px;
   text-align: right;
   > li {
     &:not(.responsived) {
-      display: inline-block;
       margin-right: 10px;
-      font-size: 23px;
-      line-height: 1;
-      vertical-align: middle;
-      color: #333;
+      @include font(23px, 1, color(dft, dark));
     }
     &.responsive {
-      @include posrt(8px, 50%);
-      @include font(19px, null, #ff229f);
-      text-shadow: 0 0 3px #fff;
+      @include pos-abs-rt(8px, 50%);
+      @include font(19px, null, color(theme, main));
+      text-shadow: 0 0 3px color(dft, brightest);
       transform: translateY(-50%);
     }
   }
 }
 
 .type_browser {
-  display: inline-block;
+  @extend %flex-align-c;
   border-left: 1px solid #ccc;
   > li {
     position: relative;
-    display: inline-block;
     margin-left: 10px;
-    vertical-align: middle;
-    line-height: 1;
+    @extend %imgFix;
+    &.ie + .safari {
+      margin-left: 13px;
+    }
   }
   .browser_ver {
-    position: absolute;
+    @include pos-abs-rt(-6px, -5px);
     display: block;
-    bottom: 0;
-    right: -2px;
-    font-size: 11px;
+    @include font(11px, 1, #096dbb);
     font-weight: bold;
     text-shadow: -3px -3px 3px #f1f1f1;
-    line-height: 1;
     text-align: center;
-    color: #096dbb;
   }
 }
 
@@ -491,7 +443,7 @@
   .pf_li_c {
     flex: 1;
     a {
-      color: #777;
+      color: color(dft, light);
       word-break: break-all;
       &:hover {
         text-decoration: underline;
@@ -500,8 +452,7 @@
   }
 }
 .pf_info_detail {
-  display: flex;
-  flex-direction: column;
+  @extend %flex-vtc-layout;
   width: $pf-pop-info-wid;
   padding-top: $pf-pop-info-ctt-tb-gap;
   @include font(16px, 1.8);
@@ -517,19 +468,14 @@
   display: flex;
   gap: 6px;
   padding: 0 $pf-pop-info-lr-gap;
-  &:after {
-    display: block;
-    content: "";
-    clear: both;
-  }
+  @extend %clearfix;
   > li {
     flex: 1;
     position: relative;
     padding: 10px 5px;
-    color: #333;
-    line-height: 1;
+    @include font(null, 1, color(dft, dark));
     text-align: center;
-    border: 1px solid #777;
+    border: 1px solid color(dft, light);
     box-sizing: border-box;
     border-radius: 12px;
     opacity: 0.5;
@@ -545,8 +491,8 @@
       z-index: 1;
     }
     &.on {
-      color: #fff;
-      background-color: #333;
+      color: color(dft, brightest);
+      background-color: color(dft, dark);
       opacity: 1;
       z-index: 1;
     }
@@ -569,7 +515,7 @@
     display: block;
   }
   .work_main_tit {
-    color: #333;
+    color: color(dft, dark);
     font-weight: bold;
     &:before {
       content: "[";
@@ -577,28 +523,18 @@
     &:after {
       content: "]";
     }
-    &:before,
-    &:after {
-      display: inline-block;
-      vertical-align: top;
-    }
     &:not(:first-child) {
       margin-top: 15px;
     }
   }
   .work_sub_tit {
-    color: #2a93e9;
+    color: color(tit, main);
     font-style: normal;
     &:before {
       content: "<";
     }
     &:after {
       content: ">";
-    }
-    &:before,
-    &:after {
-      display: inline-block;
-      vertical-align: top;
     }
   }
   .work_ol,
@@ -621,9 +557,9 @@
 }
 
 .pf_img {
-  @include poslt;
+  @include pos-abs-lt;
   @include size(calc(100% - $pf-pop-info-wid), 100%);
-  background-color: #fff;
+  background-color: color(dft, brightest);
   overflow-y: auto;
   overflow-x: hidden;
   img {
@@ -634,10 +570,10 @@
 .pf_detail {
   .btn_close {
     display: block;
-    @include posrt(30px, 0);
+    @include pos-abs-rt(30px, 0);
     line-height: 1;
     padding: 7px 20px;
-    background-color: #333;
+    background-color: color(dft, dark);
     box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
     z-index: 9;
     border-radius: 0 0 10px 10px;
@@ -646,7 +582,7 @@
     }
   }
   .close_bg {
-    @include fixed(0, null, null, 0);
+    @include pos-fix(0, null, null, 0);
     width: calc(100% - 17px);
     height: 100%;
     z-index: 0;
@@ -667,28 +603,21 @@
   &:not(.is-loading) {
     padding: 8px 10px 10px 10px;
     text-align: center;
-    font-size: 40px;
-    color: #fff;
-    border: 2px solid #fff;
+    @include font(40px, null, color(dft, brightest));
+    border: 2px solid color(dft, brightest);
     cursor: pointer;
   }
   &.is-loading {
     font-size: 0;
-    width: 29px;
-    height: 30px;
+    @include size(29px, 30px);
     transform: translate(-50%, -50%);
     border: 0;
     pointer-events: none;
     cursor: default;
     outline: 0;
-    &:after {
-      display: block;
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    @include pseudo-init(after) {
+      @include pos-abs-lt;
+      @include size(100%);
       background: url("/resources/images/main/loading2.png") center no-repeat;
       animation: rotate 1.2s infinite;
       animation-play-state: running;
@@ -700,7 +629,7 @@
   &:hover {
     background: rgba(255, 255, 255, 0.9);
     color: #00d4cd;
-    background: #fff;
+    background: color(dft, brightest);
   }
   #project.active & {
     padding: 20px 100px 25px;
@@ -709,13 +638,13 @@
 
 // 반응형 =====
 // pc
-@media all and (max-width: 1619px) {
+@include respond(1619px) {
   .pf_detail .wrap_cen {
     width: 80%;
   }
 } // e.1620
 
-@media screen and (max-width: 1399px) {
+@include respond(1399px) {
   #project .el02 {
     left: calc(50% + 469px);
   }
@@ -742,7 +671,7 @@
 } //e.1399
 
 // mobile
-@media screen and (max-width: 1023px) {
+@include respond(1023px) {
   #project .el02 {
     top: 105px;
     left: calc(100% - 66px);
@@ -753,8 +682,7 @@
     -webkit-overflow-style: none;
   }
   .filtr_wrap::-webkit-scrollbar {
-    width: 0;
-    height: 0;
+    @include size(0);
     display: none;
   }
   .filter-type-company {
@@ -767,7 +695,7 @@
       margin: 0 5px;
       border: 0;
       input[type="radio"]:checked ~ label {
-        color: #ffff00;
+        color: color(theme, sub);
         border: 0;
         animation: none;
       }
@@ -777,7 +705,7 @@
     }
 
     label {
-      color: #fff;
+      color: color(dft, brightest);
       border: 0;
     }
   }
@@ -860,7 +788,8 @@
     }
   }
 } // e.1023
-@media screen and (max-width: 767px) {
+
+@include respond(767px) {
   #project .wrap_cen {
     padding: 0 5px 0 10px;
   }
@@ -869,7 +798,8 @@
     width: 48.5%;
   }
 } // e.767
-@media screen and (max-width: 399px) {
+
+@include respond(399px) {
   // 프로젝트 상세 레이어 팝업
   .pf_detail {
     .pf_c1,
