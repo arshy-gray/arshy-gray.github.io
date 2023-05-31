@@ -1531,6 +1531,7 @@ textarea::-moz-focus-inner {
 }
 .bg_el img {
   position: relative;
+  width: auto;
 }
 
 @media screen and (max-width: 479px) {

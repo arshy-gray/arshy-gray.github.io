@@ -272,14 +272,14 @@
   }
 } // e.1023
 
-@include respond(1023px) {
+@include respond(767px) {
   #history {
     background-position: -350px calc(50% + 20px), calc(100% + 350px) calc(50% + 20px), -300px -500px,
       calc(100% + 300px) calc(100% + 500px);
   }
 } // e.767px
 
-@include respond(1023px) {
+@include respond(599px) {
   /* 히스토리 섹션 */
   #history {
     .bg_el {
