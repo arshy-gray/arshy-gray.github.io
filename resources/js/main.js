@@ -2,8 +2,8 @@ $(document).ready(function () {
   var $body = $("body"),
     $wrapper = $("#wrapper"),
     winHeight = $(window).outerHeight(),
-    $container = $("#loading"), // 1
-    $progress = $container.find(".progress");
+    $splachWrap = $("#splash"), // 1
+    $progress = $splachWrap.find(".progress");
   // 1. 진행률 표시 전체 컨테이너
 
   $progress.css({ height: winHeight });
@@ -13,8 +13,8 @@ $(document).ready(function () {
 
   // 이미지 로딩 상항 진행률을 표시
   function imagesProgress() {
-    var $progressBar = $container.find(".progress-bar"), // 2
-      $progressText = $container.find(".progress-text"), // 3
+    var $progressBar = $splachWrap.find(".progress-bar"), // 2
+      $progressText = $splachWrap.find(".progress-text"), // 3
       $bar_R = $progressBar.find(".bar_R"),
       $bar_L = $progressBar.find(".bar_L"),
       // 2. 진행률 표시 막대 부분
@@ -61,16 +61,16 @@ $(document).ready(function () {
         // 진행률 표시의 업데이트를 중지
         clearInterval(progressTimer);
         // CSS 스타일을 바꾸기 위하여 클래스를 추가
-        $container.addClass("progress-complete");
+        $splachWrap.addClass("progress-complete");
         // 진행률 막대와 텍스트를 동시에 애니메이션시키기 위해
         // 그룹화하고 하나의 jQuery 객체에
-        $container
+        $splachWrap
           // 0.3 초 대기
           .delay(300)
           // 1 초에 걸쳐 진행률 막대와 텍스트를 투명하게
           .animate({ opacity: 0 }, 1000, "easeInOutQuint", function () {
             //  오버레이를 none
-            $container.add($progress).css({ display: "none" });
+            $splachWrap.add($progress).css({ display: "none" });
           });
       }
 
@@ -114,8 +114,8 @@ $(window).load(function () {
   /* Portfolio -------------- */
   $("#pf_gellery").each(function () {
     // #gallery요소가 갤러리 컨테이너
-    var $container = $(this),
-      $portfolio = $("#portfolio"),
+    var $pfGellery = $(this),
+      $project = $("#project"),
       $loadMoreButton = $("#load-more"), // 추가 버튼
       $filter = $("#gellery-filter"), // 필터링 양식
       addItemCount = 10, // 표시 된 항목 수
@@ -131,7 +131,7 @@ $(window).load(function () {
 			}*/
 
     //옵션을 설정 Masonry를 준비
-    $container.masonry({
+    $pfGellery.masonry({
       columnWidth: ".grid-sizer",
       gutter: ".gutter-sizer",
       itemSelector: ".pf_item",
@@ -149,7 +149,7 @@ $(window).load(function () {
       // 초기 상태에서는 필터링하지 않고 그대로 전체 데이터를 전달
       filteredData = allData;
 
-      $portfolio.addClass("is-loading");
+      $project.addClass("is-loading");
 
       // 첫 번째 항목을 표시
       addItems();
@@ -164,8 +164,8 @@ $(window).load(function () {
       $filter.on("change", ".form-item input", filterItems);
 
       // 항목 링크에 호버 효과 처리 등록
-      $container.on("mouseenter mouseleave", ".pf_item", hoverDirection).on("mouseenter mouseleave", function () {
-        $container.masonry("layout");
+      $pfGellery.on("mouseenter mouseleave", ".pf_item", hoverDirection).on("mouseenter mouseleave", function () {
+        $pfGellery.masonry("layout");
       });
     }
 
@@ -421,15 +421,15 @@ $(window).load(function () {
         elements.push($(itemHTML).get(0));
       });
       // DOM 요소의 배열을 컨테이너에 넣고 Masonry 레이아웃을 실행
-      $container.append(elements).masonry("appended", elements, true).masonry();
+      $pfGellery.append(elements).masonry("appended", elements, true).masonry();
 
-      $portfolio.removeClass("is-loading");
+      $project.removeClass("is-loading");
       $(".pf_item").removeClass("is-loading");
       $loadMoreButton.removeClass("is-loading");
 
-      $container.delay(100).fadeIn(100, function () {
-        $container.imagesLoaded(function () {
-          $container.masonry("layout");
+      $pfGellery.delay(100).fadeIn(100, function () {
+        $pfGellery.imagesLoaded(function () {
+          $pfGellery.masonry("layout");
         });
       });
 
@@ -449,12 +449,12 @@ $(window).load(function () {
       var keyCompany = $(".filter-type-company").find('input[type="radio"]:checked').val(), // 오피스 필터
         keyDevice = $(".filter-type-device").find('input[type="radio"]:checked').val(), // 디바이스 필터
         keyLinked = $(".filter-type-linked").find('input[type="checkbox"]').prop("checked"), // 링크 여부 필터
-        masonryItems = $container.masonry("getItemElements"); // 추가 된 Masonry 아이템
+        masonryItems = $pfGellery.masonry("getItemElements"); // 추가 된 Masonry 아이템
 
-      $portfolio.addClass("is-loading");
+      $project.addClass("is-loading");
 
       // Masonry 항목을 삭제
-      $container.masonry("remove", masonryItems);
+      $pfGellery.masonry("remove", masonryItems);
 
       // 필터링 된 항목의 데이터를 재설정과
       // 추가 된 항목 수를 재설정

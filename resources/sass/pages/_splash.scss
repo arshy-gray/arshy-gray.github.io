@@ -1,0 +1,125 @@
+//= intro
+#splash {
+  // 진행률 표시
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: calc(50% - 15px) -50px, center top, center bottom;
+  background-size: auto, auto, cover;
+  background-image: url("/resources/images/main/LDpage_moon.png"), url("/resources/images/main/LDpage_cloud.png"),
+    url("/resources/images/main/LDpage_bg.jpg");
+  color: #fff;
+  z-index: 9999999;
+  overflow: hidden;
+
+  // no-js
+  .no-js & {
+    .bar_box,
+    .text1,
+    .text2 {
+      display: none;
+    }
+
+    .text3 {
+      position: relative;
+      display: block;
+      margin-top: 70px;
+      text-align: center;
+      a {
+        color: #ffff00;
+      }
+    }
+  }
+
+  .text2,
+  .text3 {
+    display: none;
+  }
+  .text1 {
+    position: relative;
+    top: 70px;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+  }
+  .progress {
+    position: fixed;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .txt_box {
+      position: relative;
+      width: 100%;
+      margin-top: 170px;
+      text-align: center;
+    }
+  }
+  .sub_logo {
+    position: relative;
+    top: 20px;
+    img {
+      width: 220px;
+    }
+  }
+  .tel_num {
+    margin: 30px auto 0 auto;
+    width: 220px;
+    img {
+      width: 100%;
+    }
+  }
+  .progress-bar {
+    position: absolute;
+    width: 100%;
+    top: 127px;
+    text-align: center;
+    .bar_R {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background: url("/resources/images/main/LDpage_R.png") 13px 15px no-repeat;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .bar_L {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 2;
+      overflow: hidden;
+    }
+    .progress-complete & {
+      border-top-color: #fec6e6;
+    }
+  }
+  .bar_box {
+    position: relative;
+    margin: auto;
+    width: 303px;
+    height: 297px;
+  }
+  .bar100 {
+    position: absolute;
+    margin: auto;
+    top: 2px;
+    left: 2px;
+    width: 302px;
+    height: 296px;
+  }
+  .bar0 {
+    position: relative;
+    margin: auto;
+    top: -14px;
+    left: -11px;
+    width: 326px;
+    height: 326px;
+    background: url("/resources/images/main/LDpage_L.png") 14px 15px no-repeat;
+  }
+}

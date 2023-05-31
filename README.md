@@ -1,7 +1,7 @@
 # arshy-gray.github.io
 
 ## [2023년] - 고도화 진행중
-1. Main 페이지 구성 변경(기존 내용 삭제 -> 연락처 정보 추가)
+1. Intro 페이지 구성 변경(기존 내용 삭제 -> 연락처 정보 추가)
 2. Gulp 셋팅
    * 로컬 서버, reload 환경 구축
 3. Project 리스트 'Company' 필터 추가
@@ -16,7 +16,7 @@
    * 기타 디자인 고도화
 
 ## [2020년]
-1. 페이지 구성 변경 (Intro, Main - Project(기존 Portfolio) - History - Contact)
+1. 페이지 구성 변경 (Splash, Intro - Project(기존 Portfolio) - History - Contact)
 2. Github 연동 및 Github Pages 호스팅
 4. Project : 리스트 'LINKED' 필터 추가
 3. Project : 팝업 고도화
@@ -24,12 +24,12 @@
    * 디자인 고도화
 
 ## [2017년]
-1. 신규 구축 (Intro, Main - Project - Portfolio - History - Skill - Contact)
+1. 신규 구축 (Splash, Intro - Project - Portfolio - History - Skill - Contact)
 2. 로컬 내 Apache 환경에서 작업 및 서버 호스팅
 3. 직접 구현
    * fullpage
    * parallax
-   * Intro : 로딩 진행율
+   * Splash : 로딩 진행율
    * Project : 이미지 슬라이더
    * Project, Portfolio : JSON 데이터 Ajax 요청 및 처리
    * Skill : 막대그래프
