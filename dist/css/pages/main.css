@@ -2764,14 +2764,14 @@
     background-position: -280px calc(50% + 20px), calc(100% + 280px) calc(50% + 20px), -300px -500px, calc(100% + 300px) calc(100% + 500px);
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 767px) {
   #history {
     background-position: -350px -webkit-calc(50% + 20px), -webkit-calc(100% + 350px) -webkit-calc(50% + 20px), -300px -500px, -webkit-calc(100% + 300px) -webkit-calc(100% + 500px);
     background-position: -350px -moz-calc(50% + 20px), -moz-calc(100% + 350px) -moz-calc(50% + 20px), -300px -500px, -moz-calc(100% + 300px) -moz-calc(100% + 500px);
     background-position: -350px calc(50% + 20px), calc(100% + 350px) calc(50% + 20px), -300px -500px, calc(100% + 300px) calc(100% + 500px);
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 599px) {
   /* 히스토리 섹션 */
   #history .bg_el {
     display: none;
