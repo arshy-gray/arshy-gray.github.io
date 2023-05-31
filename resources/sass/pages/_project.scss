@@ -78,14 +78,16 @@
 }
 .filter-group {
   @extend %flex-c;
+  flex-wrap: wrap;
   ~ .filter-group {
-    margin-top: 25px;
+    margin-top: 15px;
   }
 }
 .form-item {
   opacity: 0;
   position: relative;
   top: 30px;
+  margin:4px 0;
   text-align: center;
   overflow: hidden;
   animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
