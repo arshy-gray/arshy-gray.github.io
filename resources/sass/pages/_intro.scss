@@ -16,10 +16,8 @@
   }
   .main_ct {
     .contact_group {
-      display: flex;
-      flex-direction: column;
-      width: 480px;
-      height: 100%;
+      @extend %flex-vtc-layout;
+      @include size(480px, 100%);
       margin: 0 auto;
     }
     .sub_logo img {
@@ -40,8 +38,7 @@
     .sub_logo {
       margin-top: 10vh;
       a {
-        display: inline-block;
-        line-height: 0;
+        @extend %imgFix;
         padding: 0 10%;
       }
     }
@@ -51,14 +48,12 @@
       max-width: 480px;
       margin: 20px auto 0;
       padding: 20px 15% 0;
-      line-height: 18px;
-      color: #fff;
+      @include font(null, 18px, color(dft, brightest));
       border-top: 3px solid #ff0090;
       opacity: 0.9;
       box-sizing: border-box;
       a {
-        display: inline-block;
-        line-height: 0;
+        @extend %imgFix;
         img {
           width: 100%;
         }
@@ -70,8 +65,7 @@
     }
     .gitHub {
       flex: 1;
-      display: flex;
-      justify-content: center;
+      @extend %flex-justify-c;
       align-items: flex-end;
       a {
         position: relative;
@@ -86,7 +80,7 @@
         opacity: 0;
         &:hover {
           background: rgba(255, 255, 255, 0.3);
-          color: #fff;
+          color: color(dft, brightest);
           text-shadow: 0 0 white;
         }
       }
@@ -121,7 +115,7 @@
 
 // 반응형 =====
 // tablet
-@media screen and (max-width: 1399px) {
+@include respond(1399px) {
   #intro {
     background-position: calc(100% - 50px) 40px, center;
     background-size: 100px, cover;
@@ -140,9 +134,10 @@
       }
     }
   }
-}
+} // e.1399px
+
 // mobile
-@media screen and (max-width: 1023px) {
+@include respond(1023px) {
   #intro {
     .sub_logo img {
       width: 100%;
@@ -160,7 +155,7 @@
 
         &:before {
           margin-top: 10px;
-          border-top: 8px solid #ff229f;
+          border-top: 8px solid color(theme, main);
           border-left: 7px solid transparent;
           border-right: 7px solid transparent;
         }
@@ -192,12 +187,12 @@
   }
 } // e.1023
 
-@media screen and (max-width: 767px) {
+@include respond(767px) {
   // 메인 섹션
   #intro {
     .main_ct {
       .contact_group {
-        margin: 0 15%;
+        margin: 0 14%;
         width: auto;
         max-width: 100%;
       }
@@ -209,7 +204,8 @@
     }
   }
 } // e.767
-@media screen and (max-width: 599px) {
+
+@include respond(599px) {
   #intro .el01 {
     top: 67px;
     left: calc(100% - 105px);
@@ -227,4 +223,4 @@
     padding: 50px 0 0 0;
     background-size: 40px;
   }
-}
+} // e.599px

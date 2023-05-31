@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html class="no-js" lang="ko">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,width=device-width,height=device-height" />
@@ -20,17 +20,7 @@
     <script src="/resources/js/lib/imagesloaded.pkgd.min.js"></script>
     <script src="/resources/js/lib/masonry.pkgd.min.js"></script>
     <script src="/resources/js/main.js"></script>
-    <script>
-      var agent = navigator.userAgent.toLowerCase(),
-        safari = agent.indexOf("safari"),
-        chrome = agent.indexOf("chrome");
-      if (safari != -1) {
-        $("html").addClass("safari");
-      }
-      if (chrome != -1) {
-        $("html").removeClass("safari");
-      }
-    </script>
+    <script src="/resources/js/lib/modernizr.custom.min.js"></script>
   </head>
   <body>
     <div id="wrapper">
@@ -208,7 +198,7 @@
             <h3 class="hidden">연혁</h3>
             <ul>
               <li class="ht_edu">
-                <div class="ht_ico">학교</div>
+                <div class="ht_ico"><span class="txt">학교</span></div>
                 <div class="ht_point"><span></span></div>
                 <ul class="ht_c">
                   <li class="date">2007-03 ~ 2011-02</li>
@@ -217,7 +207,7 @@
                 </ul>
               </li>
               <li class="ht_license">
-                <div class="ht_ico">자격증</div>
+                <div class="ht_ico"><span class="txt">자격증</span></div>
                 <div class="ht_point"><span></span></div>
                 <ul class="ht_c">
                   <li class="date">2010-05</li>
@@ -225,7 +215,7 @@
                 </ul>
               </li>
               <li class="ht_license">
-                <div class="ht_ico">자격증</div>
+                <div class="ht_ico"><span class="txt">자격증</span></div>
                 <div class="ht_point"><span></span></div>
                 <ul class="ht_c">
                   <li class="date">2011-07</li>
@@ -233,7 +223,7 @@
                 </ul>
               </li>
               <li class="ht_license">
-                <div class="ht_ico">자격증</div>
+                <div class="ht_ico"><span class="txt">자격증</span></div>
                 <div class="ht_point"><span></span></div>
                 <ul class="ht_c">
                   <li class="date">2015-04</li>
@@ -241,7 +231,7 @@
                 </ul>
               </li>
               <li class="ht_company">
-                <div class="ht_ico">직장</div>
+                <div class="ht_ico"><span class="txt">직장</span></div>
                 <div class="ht_point"><span></span></div>
                 <ul class="ht_c">
                   <li class="date">2015-07 ~ 2017-01</li>
@@ -256,7 +246,7 @@
                 </ul>
               </li>
               <li class="ht_company">
-                <div class="ht_ico">직장</div>
+                <div class="ht_ico"><span class="txt">직장</span></div>
                 <div class="ht_point"><span></span></div>
                 <ul class="ht_c">
                   <li class="date">2017-05 ~ 2020-01</li>
@@ -270,7 +260,7 @@
                 </ul>
               </li>
               <li class="ht_company">
-                <div class="ht_ico">직장</div>
+                <div class="ht_ico"><span class="txt">직장</span></div>
                 <div class="ht_point"><span></span></div>
                 <ul class="ht_c">
                   <li class="date">2020-04 ~</li>
@@ -355,8 +345,9 @@
           </div>
         </div>
         <p class="progress-text text1">0%</p>
-        <!--<p class="text2">지원되지 않는 브라우저입니다.<p>-->
-        <!--<p class="text3">자바스크립트(Javascript) 허용 후 이용 가능합니다.<p>-->
+
+        <!-- <p class="text2">지원되지 않는 브라우저입니다.</p> -->
+        <p class="text3">현재 사용 중인 브라우저는 <strong class="theme_sub">자바스크립트(Javascript)</strong>를 지원하지 않거나, 해당 기능이 활성화되어 있지 않습니다. <br /><br /> <strong class="theme_sub">자바스크립트(Javascript)</strong> 허용 후 이용 가능합니다.</p>
       </div>
     </div>
     <!-- // 스플래시 -->

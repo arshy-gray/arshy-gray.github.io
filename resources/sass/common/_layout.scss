@@ -13,18 +13,15 @@ body {
   }
 }
 .wrap_cen {
-  clear: both;
   position: relative;
   margin: 0 auto;
-  width: 1400px;
-  height: 100%;
+  @include size(1400px, 100%);
   @extend %clearfix;
 }
 
 // 헤더
 .page_hd {
-  position: fixed;
-  top: 10px;
+  @include pos-fix-lt(0, 10px);
   padding: 0 15px;
   box-sizing: border-box;
   z-index: 99999;
@@ -60,9 +57,8 @@ body {
   .gnb_menu {
     flex: 1;
     ul {
-      display: flex;
+      @extend %flex-align-c;
       justify-content: flex-end;
-      align-items: center;
       height: 100%;
     }
     li {
@@ -70,11 +66,10 @@ body {
       a {
         display: block;
         padding: 5px;
-        font-size: 13px;
-        color: #eee;
+        @include font(13px, null, #eee);
       }
       &.on a {
-        color: #ffff00;
+        color: color(theme, sub);
       }
     }
   }
@@ -88,11 +83,11 @@ body {
 
     #gnb_pc .gnb_menu {
       a {
-        color: #333;
+        color: color(dft, dark);
       }
       li {
         &.on a {
-          color: #ff229f;
+          color: color(theme, main);
         }
       }
     }
@@ -104,11 +99,11 @@ body {
 
 // 섹션공통
 section {
-  clear: both;
   position: relative;
   padding: 90px 0;
   min-height: 750px;
   box-sizing: border-box;
+  @extend %clearfix;
   &:not(#history):not(#project) {
     height: 100vh;
   }
@@ -117,25 +112,24 @@ section {
   }
   /* 콘텐츠 섹션 공통 - 메뉴 */
   > .sec_t {
-    position: relative;
-    color: #fff;
-    text-align: center;
-    @include font(50px, 42px);
-    animation: toT 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    top: -30px;
-    opacity: 0;
     z-index: 1;
+    position: relative;
+    top: -30px;
+    @include font(50px, 42px, color(dft, brightest));
+    text-align: center;
+    font-weight:bold;
+    opacity: 0;
+    animation: toT 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   }
   h2 + .set_ct {
     position: relative;
-    margin-top: 10px;
-    text-align: center;
-    color: #fff;
-    line-height: 18px;
-    animation: toT 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     top: -30px;
+    margin-top: 10px;
+    @include font(null, 18px, color(dft, brightest));
+    text-align: center;
     opacity: 0;
     transition: 0.3s opacity 0s linear;
+    animation: toT 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &.active {
@@ -162,7 +156,7 @@ section {
 }
 // 반응형 =====
 // tablet
-@media screen and (max-width: 1399px) {
+@include respond(1399px) {
   /* 전체 */
   #wrapper {
     min-width: auto;
@@ -173,7 +167,7 @@ section {
 } // e.1399
 
 // mobile
-@media screen and (max-width: 1023px) {
+@include respond(1023px) {
   /* 전체 */
   body {
     overflow-x: hidden;
@@ -191,11 +185,11 @@ section {
     padding: 0 20px;
     box-sizing: border-box;
   }
-}
+} // e.1023px
 
-@media screen and (max-width: 767px) {
+@include respond(767px) {
   // 전체
   .wrap_cen {
     padding: 0;
   }
-} // e.767px
+}
