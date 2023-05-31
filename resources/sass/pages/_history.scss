@@ -1,6 +1,6 @@
 //= history
 #history {
-  background-color: #ffcc00;
+  background-color: color(theme, history);
   background-repeat: no-repeat;
   background-image: url("/resources/images/main/bgHistory_left.png"), url("/resources/images/main/bgHistory_right.png"),
     url("/resources/images/main/bgHistory_back.png"), url("/resources/images/main/bgHistory_back.png");
@@ -43,9 +43,7 @@
 }
 
 .foot_print_btm {
-  position: absolute;
-  left: calc(50% - 350px);
-  bottom: 250px;
+  @include pos-abs-lb(calc(50% - 350px), 250px);
   [class*="el"] {
     opacity: 0;
   }
@@ -78,14 +76,10 @@
 
 #history {
   .el06 {
-    line-height: 0;
+    top: auto;
     bottom: 0;
     left: calc(50% - 430px);
     opacity: 0;
-    img {
-      position: absolute;
-      bottom: 0;
-    }
   }
 
   &.active {
@@ -131,7 +125,7 @@
 }
 
 .ht_box {
-  clear: both;
+  @extend %clearfix;
   margin-top: 40px;
   > ul > li {
     padding: 35px 0 10px 0;
@@ -141,7 +135,7 @@
 
     &:nth-child(odd) {
       right: calc(50% - 1px);
-      border-right: 1px solid #fff;
+      border-right: 1px solid color(dft, brightest);
       ul li {
         float: right;
       }
@@ -149,7 +143,7 @@
     &:nth-child(even) {
       left: 50%;
       text-align: left;
-      border-left: 1px solid #fff;
+      border-left: 1px solid color(dft, brightest);
       ul li {
         float: left;
       }
@@ -163,25 +157,21 @@
       opacity: 0;
       position: absolute;
       top: 20px;
-      width: 64px;
-      height: 64px;
-      font-size: 0;
-      line-height: 0;
+      @include size(64px);
       text-align: center;
       background-position: center;
       background-repeat: no-repeat;
       backface-visibility: hidden;
-      &:after {
-        display: block;
-        content: "";
-        position: absolute;
-        top: 0;
-        width: 64px;
-        height: 64px;
+      @include pseudo-init(after) {
+        @include pos-abs-lt;
+        @include size(64px);
         background: #fae94e;
         border-radius: 50px;
         transform: rotateY(180deg);
         backface-visibility: hidden;
+      }
+      .txt {
+        @extend %blind;
       }
     }
     &.ht_edu .ht_ico {
@@ -215,13 +205,12 @@
       position: relative;
       margin: 4px 0;
       padding: 2px;
-      border: 1px solid #000;
+      border: 1px solid color(dft, darkest);
       border-radius: 7px;
       span {
         display: block;
-        width: 9px;
-        height: 9px;
-        background: #000;
+        @include size(9px);
+        background: color(dft, darkest);
         border-radius: 9px;
       }
     }
@@ -245,28 +234,24 @@
       }
       .date {
         margin-top: 10px;
-        color: #fff;
-        background: #000;
+        color: color(dft, brightest);
+        background: color(dft, darkest);
         padding: 5px 15px;
         overflow: hidden;
       }
       .content1 {
-        color: #333;
-        font-size: 15px;
+        @include font(15px, null, color(dft, dark));
         overflow: hidden;
         animation-fill-mode: forwards;
       }
       .content1_2 {
-        color: #0066ff;
-        font-size: 13px;
+        @include font(13px, null, color(tit, main));
         font-weight: 300;
         overflow: hidden;
         animation-fill-mode: forwards;
       }
       .content2 {
-        color: #ff4800;
-        font-size: 13px;
-        line-height: 14px;
+        @include font(13px, 14px, color(tit, sub));
         overflow: hidden;
         animation-fill-mode: forwards;
       }
@@ -277,23 +262,24 @@
 .ht_c {
   position: relative;
 }
+
 //= 반응형
 // mobile style
-@media screen and (max-width: 1023px) {
+@include respond(1023px) {
   #history {
     background-position: -280px calc(50% + 20px), calc(100% + 280px) calc(50% + 20px), -300px -500px,
       calc(100% + 300px) calc(100% + 500px);
   }
-}
-/* 반응형 ---------------------------------------------------*/
-@media screen and (max-width: 767px) {
+} // e.1023
+
+@include respond(1023px) {
   #history {
     background-position: -350px calc(50% + 20px), calc(100% + 350px) calc(50% + 20px), -300px -500px,
       calc(100% + 300px) calc(100% + 500px);
   }
-} /* e.767px */
+} // e.767px
 
-@media screen and (max-width: 599px) {
+@include respond(1023px) {
   /* 히스토리 섹션 */
   #history {
     .bg_el {
@@ -322,12 +308,10 @@
         padding: 0;
         &:before,
         &:last-child:after {
-          display: block;
-          content: "";
+          @include pseudo-init-ctt;
+          @include size(1px, 20px);
           margin: 5px auto;
-          width: 1px;
-          height: 20px;
-          background: #fff;
+          background: color(dft, brightest);
         }
 
         &:nth-child(odd) ul li,

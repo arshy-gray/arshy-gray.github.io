@@ -6,6 +6,8 @@ $(document).ready(function () {
     $progress = $splachWrap.find(".progress");
   // 1. 진행률 표시 전체 컨테이너
 
+  $("html").removeClass("no-js");
+
   $progress.css({ height: winHeight });
 
   // 진행률 표시 함수를 호출
@@ -250,17 +252,18 @@ $(window).load(function () {
         itemHTML +=
           "</ul>" +
           '<ul class="type_browser">' +
-          '<li><img src="/resources/images/main/browser_chrome.png" title="Chrome" alt="chrome"></li>';
+          '<li class="chrome"><img src="/resources/images/main/browser_chrome.png" title="Chrome" alt="chrome"></li>';
 
         if (item.browser.ie) {
           itemHTML +=
-            '<li><img src="/resources/images/main/browser_ie.png" title="Internet Explorer" alt="ie"><span class="browser_ver">' +
+            '<li class="ie"><img src="/resources/images/main/browser_ie.png" title="Internet Explorer" alt="ie"><span class="browser_ver">' +
             item.browser.ie +
             "</span></li>";
         }
 
         if (item.browser.safari) {
-          itemHTML += '<li><img src="/resources/images/main/browser_safari.png" title="Safari" alt="safari"></li>';
+          itemHTML +=
+            '<li class="safari"><img src="/resources/images/main/browser_safari.png" title="Safari" alt="safari"></li>';
         }
 
         itemHTML +=
@@ -315,7 +318,7 @@ $(window).load(function () {
             item.link +
             "</a>";
 
-          if (item.linkTitle) itemHTML += ' <br /><em class="c_blue"><b>(' + item.linkTitle + ")</b></em>";
+          if (item.linkTitle) itemHTML += ' <br /><em class="tit_main"><b>(' + item.linkTitle + ")</b></em>";
 
           itemHTML += "</span></li>";
         }

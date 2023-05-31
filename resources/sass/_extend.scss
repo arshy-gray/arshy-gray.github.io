@@ -1,73 +1,79 @@
 //= layout
 %blind {
   position: absolute;
-  @include size(0);
-  opacity: 0;
-  font-size: 0;
+  @include size(1px);
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
   overflow: hidden;
 }
 %clearfix {
-  &:after {
-    content: "";
+  @include pseudo-init(after, table) {
     clear: both;
-    display: table;
   }
 }
-%table-layout {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-}
-%inline-vtc {
-  font-size: 0;
-  > .inline-vtc {
-    display: inline-block;
+%imgFix {
+  display: inline-block;
+  img {
     vertical-align: top;
   }
 }
-%flex-vtc {
+// flex 정렬
+%flex-vtc-layout {
   display: flex;
   flex-direction: column;
 }
-// %center-wrap{
-// 	width:$center-wid;
-// 	margin:0 auto;
-// 	padding-left:$wid-gap;
-// 	padding-right:$wid-gap;
-// 	box-sizing:border-box;
-// }
-//가로 스크롤
-%width-scr {
-  font-size: 0;
+%flex-justify-c {
+  display: flex;
+  justify-content: center;
+}
+%flex-align-c {
+  display: flex;
+  align-items: center;
+}
+%flex-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// 가로 스크롤
+%wid-scr {
   white-space: nowrap;
   overflow-y: hidden;
   overflow-x: auto;
 }
-//= text
-%no-text {
-  color: transparent;
-  font-size: 0;
-  line-height: 0;
+// 세로 스크롤
+%h-scr {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
-//= image
-// ico_spr 스프라이트
-// %img-common{
-// 	background:url(../spr/common.png) no-repeat;
-// }
-%img-replace {
-  font-size: 0;
-  line-height: 0;
-  color: transparent;
+// 스크롤바 숨김
+%scr-hide{
+	&::-webkit-scrollbar{
+		display:none;
+	}
 }
-%img-reset {
-  width: 100%;
-  vertical-align: top;
+//= bugfix
+//아이폰x 제스처 공간
+%safe-area-after{
+	&:after{
+		content:'';
+		display:block;
+		height:env(safe-area-inset-bottom);
+	}
 }
-//= 버그 픽스
-//사파리 border-radius overflow 버그
-%backface{
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-	-webkit-transform: translate3d(0,0,0);
-	-moz-transform: translate3d(0,0,0);
+%safe-area-margin{
+	margin-bottom:env(safe-area-inset-bottom);
+}
+%safe-area-padding{
+	padding-bottom:env(safe-area-inset-bottom);
+}
+//사파리 border-radius overflow 버그 수정
+%backface {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
 }

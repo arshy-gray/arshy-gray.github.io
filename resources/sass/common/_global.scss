@@ -1,111 +1,40 @@
 //= global
 // 전체
 .hidden {
-  position: absolute !important;
-  visibility: hidden !important;
-  font-size: 0 !important;
-  line-height: 0 !important;
-  height: 0 !important;
-  overflow: hidden !important;
+  @extend %blind;
 }
 .clearFix {
-  clear: both;
-  overflow: hidden;
-}
-// 폰트
-.c_blue {
-  color: #2a93e9;
-  font-style: normal;
+  @extend %clearfix;
 }
 // 이미지
 .imgFix {
-  display: inline-block;
-  line-height: 0;
-}
-// 테이블
-.table_c1 {
-  margin: 0 0 20px 0;
-  table {
-    width: 100%;
-    margin-top: 10px;
-    border-top: 2px #6b6b6b solid;
-    border-right: 1px #d8d6d6 solid;
-    border-left: 1px #d8d6d6 solid;
-    border-bottom: 1px #d8d6d6 solid;
-    border-collapse: collapse;
-  }
-  th {
-    background-color: #f4f3f3;
-    border-left: 1px #6b6b6b dotted;
-    border-top: 1px #d5d4d4 dotted;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 3px;
-    padding-right: 3px;
-    line-height: 140%;
-    text-align: center;
-  }
-  td {
-    border-left: 1px #d8d6d6 solid;
-    border-top: 1px #d8d6d6 solid;
-    padding: 5px 2px 5px 2px;
-    line-height: 160%;
-    text-align: center;
-    word-break: break-all;
-    a {
-      color: #555c63;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-  .td {
-    &_left {
-      text-align: left;
-      padding: 5px 10px 5px 10px;
-    }
-    &_right {
-      text-align: right;
-      padding: 5px 10px 5px 10px;
-    }
-  }
-}
-.table_c1 table tfoot th,
-div.table_c1 table tfoot td {
-  background-color: #f4f3f3;
-  font-weight: bold;
-  border-left: 1px #6b6b6b dotted;
-  border-top: 1px #d5d4d4 dotted;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 3px;
-  padding-right: 3px;
-  line-height: 140%;
-  text-align: center;
+  @extend %imgFix;
 }
 .ol_decimal > li {
   list-style: decimal;
   margin-left: 16px;
 }
+// 폰트
+.theme_sub {
+  color: color(theme, sub);
+}
+.tit_main {
+  color: color(tit, main);
+}
 // parallex 요소
 .bg_el {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  @include pos-abs-lt;
+  @include size(100%);
   z-index: 0;
   span {
-    position: absolute;
-    top: 0;
-    left: 0;
+    @include pos-abs-lt;
   }
   img {
     position: relative;
   }
 }
 
-@media screen and (max-width: 479px) {
+@include respond(479px) {
   // 전체
   .m_br {
     display: block;
