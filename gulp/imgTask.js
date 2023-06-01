@@ -8,8 +8,8 @@ const merge = require("merge-stream"),
  * @param $
  * @param config
  */
-module.exports = (gulp, $, config) => {
-  function sassSprite() {
+module.exports = (gulp, $, config) => {  
+  function imgsSprite() {
     const opts = {
       spritesmith: (options, sprite, icons) => {
         //options.imgPath = `../spr/${options.imgName}`;
@@ -39,16 +39,16 @@ module.exports = (gulp, $, config) => {
           })
         )
       )
-      .pipe(gulp.dest("./dist/css/spr/"));
+      .pipe(gulp.dest("./dist/img/spr/"));
 
     const cssStream = spriteData.css.pipe(gulp.dest("./resources/sass/vendors/img"));
 
     return merge(imgStream, cssStream);
   }
-  sassSprite.description =
+  imgsSprite.description =
     "자동 이미지 스프라이트 생성 및 관련 이미지 스프라이트 관련 SCSS파일을 css로 컴파일 및 소스맵 생성";
 
-  gulp.task(sassSprite);
-  gulp.task("imgSprite", gulp.series("imgclean", "sassSprite", "pfsass"));
-  gulp.task("imgSpriteBuild", gulp.series("imgclean", "sassSprite"));
+  gulp.task(imgsSprite);
+  gulp.task("scssSprite", gulp.series("imgSprClean", "imgsSprite"));
+  gulp.task("scssSpriteBuild", gulp.series("imgSprClean", "imgsSprite", "scssTask"));
 };

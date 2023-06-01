@@ -1,7 +1,8 @@
 //= contact
 #contact {
-  background-image: url("/resources/images/main/bgContact_cen.png"), url("/resources/images/main/bgContact_back2.png"),
-    url("/resources/images/main/bgContact_back2.png"), url("/resources/images/main/bgContact_back.jpg");
+  background-image: url("/resources/images/contact/bgContact_cen.png"),
+    url("/resources/images/contact/bgContact_back2.png"), url("/resources/images/contact/bgContact_back2.png"),
+    url("/resources/images/contact/bgContact_back.jpg");
   background-position: center, -300px calc(100% + 300px), calc(100% + 280px) -200px, center;
   background-attachment: scroll, fixed, fixed, fixed;
   background-repeat: no-repeat, no-repeat, no-repeat, repeat;

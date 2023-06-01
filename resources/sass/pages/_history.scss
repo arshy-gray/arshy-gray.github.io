@@ -2,8 +2,9 @@
 #history {
   background-color: color(theme, history);
   background-repeat: no-repeat;
-  background-image: url("/resources/images/main/bgHistory_left.png"), url("/resources/images/main/bgHistory_right.png"),
-    url("/resources/images/main/bgHistory_back.png"), url("/resources/images/main/bgHistory_back.png");
+  background-image: url("/resources/images/history/bgHistory_left.png"),
+    url("/resources/images/history/bgHistory_right.png"), url("/resources/images/history/bgHistory_back.png"),
+    url("/resources/images/history/bgHistory_back.png");
   background-position: left calc(50% + 20px), right calc(50% + 20px), -300px -500px,
     calc(100% + 300px) calc(100% + 500px);
   background-attachment: fixed;
@@ -175,13 +176,13 @@
       }
     }
     &.ht_edu .ht_ico {
-      background-image: url("/resources/images/main/icoHistory_edu.png");
+      background-image: url("/resources/images/history/icoHistory_edu.png");
     }
     &.ht_license .ht_ico {
-      background-image: url("/resources/images/main/icoHistory_license.png");
+      background-image: url("/resources/images/history/icoHistory_license.png");
     }
     &.ht_company .ht_ico {
-      background-image: url("/resources/images/main/icoHistory_company.png");
+      background-image: url("/resources/images/history/icoHistory_company.png");
     }
     &:nth-child(odd) {
       .ht_ico {

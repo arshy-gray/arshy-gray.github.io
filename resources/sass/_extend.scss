@@ -50,25 +50,25 @@
   overflow-y: auto;
 }
 // 스크롤바 숨김
-%scr-hide{
-	&::-webkit-scrollbar{
-		display:none;
-	}
+%scr-hide {
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 //= bugfix
 //아이폰x 제스처 공간
-%safe-area-after{
-	&:after{
-		content:'';
-		display:block;
-		height:env(safe-area-inset-bottom);
-	}
+%safe-area-after {
+  &:after {
+    content: "";
+    display: block;
+    height: env(safe-area-inset-bottom);
+  }
 }
-%safe-area-margin{
-	margin-bottom:env(safe-area-inset-bottom);
+%safe-area-margin {
+  margin-bottom: env(safe-area-inset-bottom);
 }
-%safe-area-padding{
-	padding-bottom:env(safe-area-inset-bottom);
+%safe-area-padding {
+  padding-bottom: env(safe-area-inset-bottom);
 }
 //사파리 border-radius overflow 버그 수정
 %backface {

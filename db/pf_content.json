@@ -14,9 +14,9 @@
     "part": "UI개발 100%",
     "project": "2022.10 ~ 2022.11",
     "images": {
-      "thumb": "../resources/images/main/pfImg030.jpg",
+      "thumb": "../resources/images/project/thumb/pfImg030.jpg",
       "thumb_h": "long",
-      "detail": "../resources/images/sub/pf_detailImg030.jpg"
+      "detail": "../resources/images/project/details/pf_detailImg030.jpg"
     },
     "task_environment": "Gulp, yarn, Git, Jenkins",
     "language": "HTML, CSS(SCSS), JavaScript(jQuery)",
@@ -121,9 +121,9 @@
     "part": "UI개발 100%",
     "project": "2023.02 ~ 2023.04",
     "images": {
-      "thumb": "../resources/images/main/pfImg029.jpg",
+      "thumb": "../resources/images/project/thumb/pfImg029.jpg",
       "thumb_h": "long",
-      "detail": "../resources/images/sub/pf_detailImg029.jpg"
+      "detail": "../resources/images/project/details/pf_detailImg029.jpg"
     },
     "task_environment": "Gulp, yarn, Git, Jenkins",
     "language": "HTML, CSS(SCSS), JavaScript(jQuery)",
@@ -216,9 +216,9 @@
     "part": "UI개발 100%",
     "project": "2022.03 ~ 2022.04",
     "images": {
-      "thumb": "../resources/images/main/pfImg028.jpg",
+      "thumb": "../resources/images/project/thumb/pfImg028.jpg",
       "thumb_h": "long",
-      "detail": "../resources/images/sub/pf_detailImg028.jpg"
+      "detail": "../resources/images/project/details/pf_detailImg028.jpg"
     },
     "task_environment": "Gulp, yarn, Git, Jenkins",
     "language": "HTML, CSS(SCSS), JavaScript(jQuery)",
@@ -289,9 +289,9 @@
     "part": "UI개발 100%",
     "project": "2020.09 ~ 2021.08",
     "images": {
-      "thumb": "../resources/images/main/pfImg027.jpg",
+      "thumb": "../resources/images/project/thumb/pfImg027.jpg",
       "thumb_h": "long",
-      "detail": "../resources/images/sub/pf_detailImg027.jpg"
+      "detail": "../resources/images/project/details/pf_detailImg027.jpg"
     },
     "task_environment": "Gulp, yarn, Git, Jenkins",
     "language": "HTML, CSS(SCSS), JavaScript(jQuery)",
@@ -397,9 +397,9 @@
     "part": "Design & UI개발 100%",
     "project": "2017.03 ~ 2023.05",
     "images": {
-      "thumb": "../resources/images/main/pfImg018.jpg",
+      "thumb": "../resources/images/project/thumb/pfImg018.jpg",
       "thumb_h": "long",
-      "detail": "../resources/images/sub/pf_detailImg018.jpg"
+      "detail": "../resources/images/project/details/pf_detailImg018.jpg"
     },
     "task_environment": "Gulp, yarn, Git",
     "language": "HTML, CSS, Javascript(jQuery), JSON",
@@ -524,9 +524,9 @@
     "part": "UI개발 100%",
     "project": "2019.07 ~ 2019.10",
     "images": {
-      "thumb": "../resources/images/main/pfImg025.jpg",
+      "thumb": "../resources/images/project/thumb/pfImg025.jpg",
       "thumb_h": "long",
-      "detail": "../resources/images/sub/pf_detailImg025.jpg"
+      "detail": "../resources/images/project/details/pf_detailImg025.jpg"
     },
     "task_environment": "Git, PHP(template_), Apache",
     "language": "HTML, SCSS, Javascript(jQuery)",
@@ -586,8 +586,8 @@
     "part": "UI개발 100%",
     "project": "2019.07 ~ 2019.08",
     "images": {
-      "thumb": "../resources/images/main/pfImg024.jpg",
-      "detail": "../resources/images/sub/pf_detailImg024.jpg"
+      "thumb": "../resources/images/project/thumb/pfImg024.jpg",
+      "detail": "../resources/images/project/details/pf_detailImg024.jpg"
     },
     "task_environment": "Apache",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -648,9 +648,9 @@
     "part": "UI개발 100%",
     "project": "2019.02",
     "images": {
-      "thumb": "../resources/images/main/pfImg023.jpg",
+      "thumb": "../resources/images/project/thumb/pfImg023.jpg",
       "thumb_h": "long",
-      "detail": "../resources/images/sub/pf_detailImg023.jpg"
+      "detail": "../resources/images/project/details/pf_detailImg023.jpg"
     },
     "task_environment": "Apache",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -687,8 +687,8 @@
     "part": "UI개발 100%",
     "project": "2018.09 ~ 2019.05",
     "images": {
-      "thumb": "../resources/images/main/pfImg022.jpg",
-      "detail": "../resources/images/sub/pf_detailImg022.jpg"
+      "thumb": "../resources/images/project/thumb/pfImg022.jpg",
+      "detail": "../resources/images/project/details/pf_detailImg022.jpg"
     },
     "task_environment": "Git, ASP.net, Apache",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -758,9 +758,9 @@
     "part": "UI개발 100%",
     "project": "2018.11 ~ 2019.02",
     "images": {
-      "thumb": "../resources/images/main/pfImg021.jpg",
+      "thumb": "../resources/images/project/thumb/pfImg021.jpg",
       "thumb_h": "long",
-      "detail": "../resources/images/sub/pf_detailImg021.jpg"
+      "detail": "../resources/images/project/details/pf_detailImg021.jpg"
     },
     "task_environment": "Apache",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -797,9 +797,9 @@
     "part": "UI개발 100%",
     "project": "2018.11",
     "images": {
-      "thumb": "../resources/images/main/pfImg026.jpg",
+      "thumb": "../resources/images/project/thumb/pfImg026.jpg",
       "thumb_h": "long",
-      "detail": "../resources/images/sub/pf_detailImg026.jpg"
+      "detail": "../resources/images/project/details/pf_detailImg026.jpg"
     },
     "task_environment": "Wordpress, Apache",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -828,8 +828,8 @@
     "part": "UI개발 100%",
     "project": "2017.07 ~ 2017.09",
     "images": {
-      "thumb": "../resources/images/main/pfImg020.jpg",
-      "detail": "../resources/images/sub/pf_detailImg020.jpg"
+      "thumb": "../resources/images/project/thumb/pfImg020.jpg",
+      "detail": "../resources/images/project/details/pf_detailImg020.jpg"
     },
     "task_environment": "Cafe24",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -891,9 +891,9 @@
     "part": "UI개발 100%",
     "project": "2017.05 ~ 2018.01",
     "images": {
-      "thumb": "../resources/images/main/pfImg019.jpg",
+      "thumb": "../resources/images/project/thumb/pfImg019.jpg",
       "thumb_h": "long",
-      "detail": "../resources/images/sub/pf_detailImg019.jpg"
+      "detail": "../resources/images/project/details/pf_detailImg019.jpg"
     },
     "task_environment": "Git, PHP(template_), Apache",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -971,9 +971,9 @@
     "part": "Design & UI개발 90%",
     "project": "2016.08 ~ 2016.12",
     "images": {
-      "thumb": "../resources/images/main/pfImg017.jpg",
+      "thumb": "../resources/images/project/thumb/pfImg017.jpg",
       "thumb_h": "long",
-      "detail": "../resources/images/sub/pf_detailImg017.jpg"
+      "detail": "../resources/images/project/details/pf_detailImg017.jpg"
     },
     "task_environment": "자사 솔루션",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -1017,8 +1017,8 @@
     "part": "Design & UI개발 100%",
     "project": "2016.07 ~ 2016.08",
     "images": {
-      "thumb": "../resources/images/main/pfImg016.jpg",
-      "detail": "../resources/images/sub/pf_detailImg016.jpg"
+      "thumb": "../resources/images/project/thumb/pfImg016.jpg",
+      "detail": "../resources/images/project/details/pf_detailImg016.jpg"
     },
     "task_environment": "자사 솔루션",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -1073,9 +1073,9 @@
     "part": "Design & UI개발 100%",
     "project": "2016.07 ~ 2016.08",
     "images": {
-      "thumb": "../resources/images/main/pfImg015.jpg",
+      "thumb": "../resources/images/project/thumb/pfImg015.jpg",
       "thumb_h": "long",
-      "detail": "../resources/images/sub/pf_detailImg015.jpg"
+      "detail": "../resources/images/project/details/pf_detailImg015.jpg"
     },
     "task_environment": "자사 솔루션",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -1116,9 +1116,9 @@
     "part": "Design & UI개발 100%",
     "project": "2016.07 ~ 2016.07",
     "images": {
-      "thumb": "../resources/images/main/pfImg014.jpg",
+      "thumb": "../resources/images/project/thumb/pfImg014.jpg",
       "thumb_h": "long",
-      "detail": "../resources/images/sub/pf_detailImg014.jpg"
+      "detail": "../resources/images/project/details/pf_detailImg014.jpg"
     },
     "task_environment": "Gnuboard",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -1157,8 +1157,8 @@
     "part": "Design & UI개발 100%",
     "project": "2016.04 ~ 2016.06",
     "images": {
-      "thumb": "../resources/images/main/pfImg013.jpg",
-      "detail": "../resources/images/sub/pf_detailImg013.jpg"
+      "thumb": "../resources/images/project/thumb/pfImg013.jpg",
+      "detail": "../resources/images/project/details/pf_detailImg013.jpg"
     },
     "task_environment": "자사 솔루션",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -1205,8 +1205,8 @@
     "part": "Design & UI개발 100%",
     "project": "2016.04 ~ 2016.06",
     "images": {
-      "thumb": "../resources/images/main/pfImg012.jpg",
-      "detail": "../resources/images/sub/pf_detailImg012.jpg"
+      "thumb": "../resources/images/project/thumb/pfImg012.jpg",
+      "detail": "../resources/images/project/details/pf_detailImg012.jpg"
     },
     "task_environment": "자사 솔루션",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -1243,8 +1243,8 @@
     "part": "Design & UI개발 100%",
     "project": "2016.02 ~ 2016.06",
     "images": {
-      "thumb": "../resources/images/main/pfImg011.jpg",
-      "detail": "../resources/images/sub/pf_detailImg011.jpg"
+      "thumb": "../resources/images/project/thumb/pfImg011.jpg",
+      "detail": "../resources/images/project/details/pf_detailImg011.jpg"
     },
     "task_environment": "자사 솔루션",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -1292,8 +1292,8 @@
     "part": "UI개발 100%",
     "project": "2015.09 ~ 2016.02",
     "images": {
-      "thumb": "../resources/images/main/pfImg010.jpg",
-      "detail": "../resources/images/sub/pf_detailImg010.jpg"
+      "thumb": "../resources/images/project/thumb/pfImg010.jpg",
+      "detail": "../resources/images/project/details/pf_detailImg010.jpg"
     },
     "task_environment": "자사 솔루션",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -1322,8 +1322,8 @@
     "part": "Design & UI개발 100%",
     "project": "2015.09 ~ 2016.02",
     "images": {
-      "thumb": "../resources/images/main/pfImg009.jpg",
-      "detail": "../resources/images/sub/pf_detailImg009.jpg"
+      "thumb": "../resources/images/project/thumb/pfImg009.jpg",
+      "detail": "../resources/images/project/details/pf_detailImg009.jpg"
     },
     "task_environment": "자사 솔루션",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -1362,8 +1362,8 @@
     "part": "Design 50%(Sub Pag5., UI개발 100%",
     "project": "2015.09 ~ 2016.02",
     "images": {
-      "thumb": "../resources/images/main/pfImg008.jpg",
-      "detail": "../resources/images/sub/pf_detailImg008.jpg"
+      "thumb": "../resources/images/project/thumb/pfImg008.jpg",
+      "detail": "../resources/images/project/details/pf_detailImg008.jpg"
     },
     "task_environment": "자사 솔루션",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -1399,8 +1399,8 @@
     "part": "Design 50%(Sub Pag5., UI개발 100%",
     "project": "2015.09 ~ 2016.02",
     "images": {
-      "thumb": "../resources/images/main/pfImg007.jpg",
-      "detail": "../resources/images/sub/pf_detailImg007.jpg"
+      "thumb": "../resources/images/project/thumb/pfImg007.jpg",
+      "detail": "../resources/images/project/details/pf_detailImg007.jpg"
     },
     "task_environment": "자사 솔루션",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -1436,8 +1436,8 @@
     "part": "Design & UI개발 100%",
     "project": "2015.09 ~ 2016.02",
     "images": {
-      "thumb": "../resources/images/main/pfImg006.jpg",
-      "detail": "../resources/images/sub/pf_detailImg006.jpg"
+      "thumb": "../resources/images/project/thumb/pfImg006.jpg",
+      "detail": "../resources/images/project/details/pf_detailImg006.jpg"
     },
     "task_environment": "자사 솔루션",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -1472,8 +1472,8 @@
     "part": "Design & UI개발 100%",
     "project": "2015.09 ~ 2016.02",
     "images": {
-      "thumb": "../resources/images/main/pfImg005.jpg",
-      "detail": "../resources/images/sub/pf_detailImg005.jpg"
+      "thumb": "../resources/images/project/thumb/pfImg005.jpg",
+      "detail": "../resources/images/project/details/pf_detailImg005.jpg"
     },
     "task_environment": "자사 솔루션",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -1509,8 +1509,8 @@
     "part": "Design & UI개발 100%",
     "project": "2015.09 ~ 2016.02",
     "images": {
-      "thumb": "../resources/images/main/pfImg004.jpg",
-      "detail": "../resources/images/sub/pf_detailImg004.jpg"
+      "thumb": "../resources/images/project/thumb/pfImg004.jpg",
+      "detail": "../resources/images/project/details/pf_detailImg004.jpg"
     },
     "task_environment": "자사 솔루션",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -1548,8 +1548,8 @@
     "part": "UI개발 100%",
     "project": "2015.09 ~ 2016.02",
     "images": {
-      "thumb": "../resources/images/main/pfImg003.jpg",
-      "detail": "../resources/images/sub/pf_detailImg003.jpg"
+      "thumb": "../resources/images/project/thumb/pfImg003.jpg",
+      "detail": "../resources/images/project/details/pf_detailImg003.jpg"
     },
     "task_environment": "자사 솔루션",
     "language": "HTML, CSS, Javascript(jQuery)",
@@ -1580,8 +1580,8 @@
     "part": "Design & UI개발 100%",
     "project": "2015.08 ~ 2015.12",
     "images": {
-      "thumb": "../resources/images/main/pfImg001.jpg",
-      "detail": "../resources/images/sub/pf_detailImg001.jpg"
+      "thumb": "../resources/images/project/thumb/pfImg001.jpg",
+      "detail": "../resources/images/project/details/pf_detailImg001.jpg"
     },
     "task_environment": "자사 솔루션",
     "language": "HTML, CSS, Javascript(jQuery)",

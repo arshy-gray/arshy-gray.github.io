@@ -37,9 +37,11 @@ module.exports = (gulp, $, config) => {
 
   function watch() {
     let watcher = {
-      pfScss: gulp.watch(config.pfScss.src, gulp.series(gulp.task("pfsass"), reload)),
-      pfHtml: gulp.watch(config.pfHtml.src, gulp.series(gulp.task("pfhtml"), reload)),
-      imgSprite: gulp.watch(config.imgSprite.src, gulp.series(gulp.task("imgSprite"), reload)),
+      scssTask: gulp.watch(config.scss.src, gulp.series(gulp.task("scssTask"), reload)),
+      htmlTask: gulp.watch(config.html.src, gulp.series(gulp.task("htmlTask"), reload)),
+      jsTask: gulp.watch(config.js.src, gulp.series(gulp.task("jsTask"), reload)),
+      imgDft: gulp.watch(config.imgDft.src, reload),
+      scssSprite: gulp.watch(config.imgSprite.src, gulp.series(gulp.task("scssSprite"), reload)),
     };
 
     for (let key in watcher) {
@@ -52,7 +54,7 @@ module.exports = (gulp, $, config) => {
       );
     }
   }
-  watch.description = "html/SCSS/SVG 파일의 변경점을 감시합니다.";
+  watch.description = "html/js/SCSS/img 파일의 변경점을 감시합니다.";
 
   gulp.task(watch);
   gulp.task(clearCache);

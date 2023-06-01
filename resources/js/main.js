@@ -252,18 +252,18 @@ $(window).load(function () {
         itemHTML +=
           "</ul>" +
           '<ul class="type_browser">' +
-          '<li class="chrome"><img src="/resources/images/main/browser_chrome.png" title="Chrome" alt="chrome"></li>';
+          '<li class="chrome"><img src="/resources/images/common/browser_chrome.png" title="Chrome" alt="chrome"></li>';
 
         if (item.browser.ie) {
           itemHTML +=
-            '<li class="ie"><img src="/resources/images/main/browser_ie.png" title="Internet Explorer" alt="ie"><span class="browser_ver">' +
+            '<li class="ie"><img src="/resources/images/common/browser_ie.png" title="Internet Explorer" alt="ie"><span class="browser_ver">' +
             item.browser.ie +
             "</span></li>";
         }
 
         if (item.browser.safari) {
           itemHTML +=
-            '<li class="safari"><img src="/resources/images/main/browser_safari.png" title="Safari" alt="safari"></li>';
+            '<li class="safari"><img src="/resources/images/common/browser_safari.png" title="Safari" alt="safari"></li>';
         }
 
         itemHTML +=
@@ -416,7 +416,7 @@ $(window).load(function () {
           item.images.detail +
           '" alt="포트폴리오 상세" /></div>' +
           "</div>" +
-          '<a href="javascript:vold(0);" class="btn_close"><img src="/resources/images/main/btn2_close.png" alt="닫기" /></a>' +
+          '<a href="javascript:vold(0);" class="btn_close"><img src="/resources/images/common/btn2_close.png" alt="닫기" /></a>' +
           "</div>" +
           '<div class="close_bg"></div>' +
           "</div>" +

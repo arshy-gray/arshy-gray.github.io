@@ -2,7 +2,8 @@
 #project {
   background-color: #01d3ce;
   background-repeat: no-repeat;
-  background-image: url("/resources/images/main/bgPortfoilo_top.png"), url("/resources/images/main/bgPortfolio_btm.png");
+  background-image: url("/resources/images/project/bgPortfoilo_top.png"),
+    url("/resources/images/common/bgPortfolio_btm.png");
   background-position: calc(50% - 585px) 10px, right bottom;
   background-attachment: scroll, fixed;
   &.is-loading {
@@ -64,7 +65,7 @@
     @include pos-abs-lt;
     @include size(29px, 30px);
     transform: translate(-50%, -50%);
-    background: url("/resources/images/main/loading2.png") center no-repeat;
+    background: url("/resources/images/common/loading2.png") center no-repeat;
     animation: rotate 1.2s infinite;
     animation-play-state: running;
   }
@@ -87,7 +88,7 @@
   opacity: 0;
   position: relative;
   top: 30px;
-  margin:4px 0;
+  margin: 4px 0;
   text-align: center;
   overflow: hidden;
   animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
@@ -620,7 +621,7 @@
     @include pseudo-init(after) {
       @include pos-abs-lt;
       @include size(100%);
-      background: url("/resources/images/main/loading2.png") center no-repeat;
+      background: url("/resources/images/common/loading2.png") center no-repeat;
       animation: rotate 1.2s infinite;
       animation-play-state: running;
     }
