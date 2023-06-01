@@ -1,18 +1,28 @@
 const isProduction = require("./gulp.env");
 const config = {
-  pfHtml: {
+  html: {
     src: "**/*.html",
     dest: "dist/html",
   },
 
-  pfScss: {
+  scss: {
     src: "resources/sass/**/*.s+(a|c)ss",
     dest: "dist/css",
   },
 
+  imgDft: {
+    src: ["resources/images/**/**/*.png", "!resources/images/**/img-sprite/*.png"],
+    dest: "dist/images/img/dft/",
+  },
+
   imgSprite: {
-    src: "resources/images/img-sprite/**/*.png",
-    clean: ["resources/css/spr/*.png", "resources/sass/vendors/img/*"],
+    src: ["resources/images/**/img-sprite/*.png"],
+    clean: ["resources/sass/vendors/img/*.scss", "dist/img/spr/*.png"],
+  },
+
+  js: {
+    src: "resources/js/*.js",
+    dest: "resources/js/",
   },
 
   browsers: [
@@ -27,7 +37,7 @@ const config = {
   ],
 
   scssOpt: {
-    outputStyle: isProduction ? "compressed" : "expanded", // nested, expanded, compact, compressed
+    outputStyle: "compressed", // nested, expanded, compact, compressed
     indentType: "space",
     indentWidth: 2, // maximum:10
     precision: 6,

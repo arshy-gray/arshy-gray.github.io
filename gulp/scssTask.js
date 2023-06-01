@@ -15,9 +15,9 @@ module.exports = (gulp, $, config) => {
     this.emit("end");
   }
 
-  function pfsass() {
+  function scssTask() {
     return gulp
-      .src(config.pfScss.src, { since: gulp.lastRun("pfsass") })
+      .src(config.scss.src, { since: gulp.lastRun("scssTask") })
       .pipe(dependents())
       .pipe($.if(!isProduction, $.sourcemaps.init()))
       .pipe(
@@ -28,9 +28,9 @@ module.exports = (gulp, $, config) => {
       .pipe(sass(config.scssOpt).on("error", onError))
       .pipe($.autoprefixer(config.browsers))
       .pipe($.if(!isProduction, $.sourcemaps.write("./")))
-      .pipe(gulp.dest(config.pfScss.dest));
+      .pipe(gulp.dest(config.scss.dest));
   }
-  pfsass.description = "SCSS compile 후 css로 컴파일 및 소스맵 생성해서 dist로 복사";
+  scssTask.description = "SCSS compile 후 css로 컴파일 및 소스맵 생성해서 dist로 복사";
 
-	gulp.task(pfsass);
+  gulp.task(scssTask);
 };
