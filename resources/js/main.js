@@ -423,16 +423,17 @@ $(window).load(function () {
           "</li>";
         elements.push($(itemHTML).get(0));
       });
-      // DOM 요소의 배열을 컨테이너에 넣고 Masonry 레이아웃을 실행
-      $pfGellery.append(elements).masonry("appended", elements, true).masonry();
 
-      $project.removeClass("is-loading");
-      $(".pf_item").removeClass("is-loading");
-      $loadMoreButton.removeClass("is-loading");
-
+      // ajax 호출 후 ImageLoaded가 정상 적용되지 않는 이슈 -> delay로 해결
       $pfGellery.delay(100).fadeIn(100, function () {
         $pfGellery.imagesLoaded(function () {
-          $pfGellery.masonry("layout");
+          // DOM 요소의 배열을 컨테이너에 넣고 Masonry 레이아웃을 실행
+          $pfGellery.append(elements).masonry("appended", elements).masonry();
+
+          // 로딩 완료 후 로딩 관련 클래스 삭제
+          $project.removeClass("is-loading");
+          $(".pf_item").removeClass("is-loading");
+          $loadMoreButton.removeClass("is-loading");
         });
       });
 
