@@ -619,10 +619,14 @@ $(window).load(function () {
 });
 
 //= 클릭 이벤트
-$(document).on("click", ".tab_tit > li", function () {
-  //== 프로젝트 팝업 내 상세 설명 탭 메뉴
-  var idx = $(this).index();
+$(document)
+  .on("click", ".tab_tit > li", function () {
+    //== 프로젝트 팝업 내 상세 설명 탭 메뉴
+    var idx = $(this).index();
 
-  $(this).addClass("on").siblings("li").removeClass("on");
-  $(this).parent("ul").siblings(".tab_ctt").children("li").eq(idx).addClass("on").siblings("li").removeClass("on");
-});
+    $(this).addClass("on").siblings("li").removeClass("on");
+    $(this).parent("ul").siblings(".tab_ctt").children("li").eq(idx).addClass("on").siblings("li").removeClass("on");
+  })
+  .on("mouseenter mouseleave", "#project", function () {
+    $("#pf_gellery").masonry("layout");
+  });
