@@ -104,6 +104,8 @@ button {
 }
 button {
   touch-action: manipulation;
+  border: 0;
+  background: none;
 }
 a {
   &:link,
@@ -121,7 +123,6 @@ img {
   border: 0;
   border-radius: inherit;
   vertical-align: top;
-  border: 0;
 }
 b {
   font-weight: bold;

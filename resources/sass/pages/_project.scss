@@ -281,32 +281,28 @@
   border-radius: 20px;
   transition: 0.5s opacity 0s ease-in-out;
   .btn_box {
-    display: table;
     @include size(100%);
     ul {
-      display: table-cell;
+      @extend %flex-c;
       @include size(100%);
       padding: 0;
       text-align: center;
       vertical-align: middle;
     }
     li {
-      display: inline-block;
       margin: 0 5px;
-      list-style-type: none;
-      a {
-        display: table;
+      a,
+      button {
+        @extend %flex-c;
         border: 1px solid color(dft, brightest);
         border-radius: 50px;
         @include size(45px);
         text-align: center;
-        vertical-align: middle;
         &:hover {
           background: color(dft, brightest);
         }
       }
       i {
-        display: table-cell;
         @include font(21.5px, 24px, color(dft, brightest));
         vertical-align: middle;
         &:hover {
