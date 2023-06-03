@@ -206,7 +206,7 @@ $(window).load(function () {
           '<div class="pf_hover">' +
           '<div class="btn_box"><ul>' +
           // 썸네일 호버 내 버튼
-          '<li class="detail_btn"><a href="javascript:vold(0);" title="자세히보기"><i class="fa fa-search"></i></a></li>';
+          '<li class="detail_btn"><button type="button" title="자세히보기"><i class="fa fa-search"></i></button></li>';
 
         // 사이트 링크 있을 때
         if (item.link) {
@@ -428,7 +428,7 @@ $(window).load(function () {
           item.images.detail + // 포폴 상세 이미지
           '" alt="포트폴리오 상세" /></div>' +
           "</div>" +
-          '<a href="javascript:vold(0);" class="btn_close"><img src="/resources/images/common/btn2_close.png" alt="닫기" /></a>' +
+          '<button type="button" class="btn_close"><img src="/resources/images/common/btn2_close.png" alt="닫기" /></button>' +
           "</div>" +
           '<div class="close_bg"></div>' +
           "</div>" +
