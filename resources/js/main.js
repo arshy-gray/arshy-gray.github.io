@@ -181,39 +181,44 @@ $(window).load(function () {
       $.each(slicedData, function (i, item) {
         var itemHTML = "";
 
+        // 리스트 썸네일
         itemHTML += '<li class="pf_item ';
 
+        // 썸네일 길이 : long
         if (item.images.thumb_h) itemHTML += "thumb_h_" + item.images.thumb_h + " ";
 
         itemHTML +=
-          'is-loading">' +
+          'is-loading">' + // masonry loding cloass
           '<div class="pf_thumb">' +
           '<div class="img_box"><img src="' +
-          item.images.thumb +
-          '" alt="' +
-          item.title +
-          '" /></div>' +
+          item.images.thumb + // 썸네일 이미지
+          '" alt=""/></div>' +
           '<div class="txt_box">' +
           "<h4>" +
-          item.title +
+          item.title + // 썸네일 타이틀
           "</h4>" +
           "<ul>" +
           '<li><span class="pf_th_li_t"><i class="fas fa-chart-bar" title="참여율"></i></span><span class="pf_th_li_c">' +
-          item.part +
+          item.part + // 썸네일 참여율
           "</span></li>" +
           '<li><span class="pf_th_li_t"><i class="fas fa-calendar-alt" title="프로젝트기간"></i></span><span class="pf_th_li_c">' +
-          item.project +
+          item.period + // 썸네일 프로젝트 기간
           "</span></li>" +
           "</ul>" +
           "</div>" +
           "</div>" +
+          // 썸네일 호버
           '<div class="pf_hover">' +
           '<div class="btn_box"><ul>' +
+          // 썸네일 호버 내 버튼
           '<li class="detail_btn"><a href="javascript:vold(0);" title="자세히보기"><i class="fa fa-search"></i></a></li>';
 
+        // 사이트 링크 있을 때
         if (item.link) {
+          // 사이트 링크 URL
           itemHTML += '<li class="siteLink_btn"><a href="' + item.link + '" title="';
 
+          // 사이트 링크 툴팁
           item.linkTitle ? (itemHTML += item.linkTitle) : (itemHTML += "사이트 바로가기");
 
           itemHTML += '" target="_blank"><i class="fa fa-link"></i></a></li>';
@@ -222,45 +227,51 @@ $(window).load(function () {
         itemHTML +=
           "</ul></div>" +
           "</div>" +
+          // 프로젝트 레이어 팝업
           '<div class="pf_detail">' +
           '<div class="pf_layer">' +
           '<div class="pf_layer_tit">' +
           '<h4 class="pf_main_tit">' +
-          item.title +
+          item.title + // 타이틀
           "</h4>" +
           '<span class="pf_intro">' +
-          item.intro +
+          item.intro + // 사이트 간략 설명 (서브 타이틀)
           "</span>" +
           "</div>" +
           '<div class="pf_layer_ctt">' +
           '<div class="pf_info">' +
           '<div class="pf_info_type">' +
-          '<ul class="type_device">';
+          '<ul class="type_device">'; // 지원 기기
 
+        // PC 버전 지원시 (only pc, responsive, pc&mobile)
         if (item.device !== "MOBILE" || item.device === "RESPONSIVE") {
           itemHTML += '<li><i class="fas fa-desktop" title="PC"></i></li>';
         }
 
+        // 모바일 버전 지원시 (only mobile, responsive, pc&mobile)
         if (item.device !== "PC" || item.device === "RESPONSIVE") {
           itemHTML += '<li><i class="fas fa-mobile-alt" title="Mobile"></i></li>';
         }
 
+        // 반응형 지원시 (responsive)
         if (item.device === "RESPONSIVE") {
           itemHTML += '<li class="responsive"><i class="fas fa-sync-alt" title="반응형"></i></li>';
         }
 
         itemHTML +=
           "</ul>" +
-          '<ul class="type_browser">' +
-          '<li class="chrome"><img src="/resources/images/common/browser_chrome.png" title="Chrome" alt="chrome"></li>';
+          '<ul class="type_browser">' + // 지원 브라우저
+          '<li class="chrome"><img src="/resources/images/common/browser_chrome.png" title="Chrome" alt="chrome"></li>'; // 크롬 지원
 
+        // ie 지원시
         if (item.browser.ie) {
           itemHTML +=
             '<li class="ie"><img src="/resources/images/common/browser_ie.png" title="Internet Explorer" alt="ie"><span class="browser_ver">' +
-            item.browser.ie +
+            item.browser.ie + // ie 버전
             "</span></li>";
         }
 
+        // safari 지원
         if (item.browser.safari) {
           itemHTML +=
             '<li class="safari"><img src="/resources/images/common/browser_safari.png" title="Safari" alt="safari"></li>';
@@ -274,50 +285,52 @@ $(window).load(function () {
           "<li>" +
           '<span class="pf_li_t">프로젝트기간<i class="fas fa-calendar-alt"></i></span>' +
           '<span class="pf_li_c">' +
-          item.project +
+          item.period + // 프로젝트 기간
           "</span>" +
           "</li>" +
           "<li>" +
           '<span class="pf_li_t">구성원<i class="fas fa-users"></i></span>' +
           '<span class="pf_li_c">' +
-          item.member +
+          item.member + // 프로젝트 구성원
           "</span>" +
           "</li>" +
           "<li>" +
           '<span class="pf_li_t">주요역할<i class="fas fa-user-tag"></i></span>' +
           '<span class="pf_li_c">' +
-          item.main_role +
+          item.main_role + // 주요역할
           "</span>" +
           "</li>" +
           "<li>" +
           '<span class="pf_li_t">참여율<i class="fas fa-chart-bar"></i></span>' +
           '<span class="pf_li_c">' +
-          item.part +
+          item.part + // 참여율
           "</span>" +
           "</li>" +
           "<li>" +
           '<span class="pf_li_t">사용언어<i class="fas fa-code"></i></span>' +
           '<span class="pf_li_c">' +
-          item.language +
+          item.language + // 사용언어
           "</span>" +
           "</li>" +
           "<li>" +
           '<span class="pf_li_t">개발환경<i class="fas fa-laptop-code"></i></span>' +
           '<span class="pf_li_c">' +
-          item.task_environment +
+          item.task_environment + // 개발환경
           "</span>" +
           "</li>";
 
+        // 사이트 링크 있을 때
         if (item.link) {
           itemHTML +=
             "<li>" +
             '<span class="pf_li_t">웹사이트<i class="fas fa-external-link-alt"></i></span>' +
             '<span class="pf_li_c"><a href="' +
-            item.link +
+            item.link + // 사이트 링크 URL
             '" title="새창" target="_blank">' +
-            item.link +
+            item.link + // 사이트 링트 텍스트
             "</a>";
 
+          // 사이트 링크 툴팁 있을 때
           if (item.linkTitle) itemHTML += ' <br /><em class="tit_main"><b>(' + item.linkTitle + ")</b></em>";
 
           itemHTML += "</span></li>";
@@ -327,17 +340,21 @@ $(window).load(function () {
           "</ul>" +
           "</div>" +
           "</div>" +
+          // 작업 상세 텝 메뉴
           '<div class="pf_info_detail tab_wrap">' +
           '<ul class="txt_detail_tit tab_tit">';
 
+        // 업무범위 있을 때
         if (item.work.scope) {
           itemHTML += '<li class="on"><i class="fas fa-tasks"></i>업무범위</li>';
         }
 
+        // 주요기여 있을 때
         if (item.work.task) {
           itemHTML += '<li><i class="fas fa-graduation-cap"></i>주요기여</li>';
         }
 
+        // 주요성과 잇을 때
         if (item.work.result) {
           itemHTML += '<li><i class="fas fa-trophy"></i>주요성과</li>';
         }
@@ -413,7 +430,7 @@ $(window).load(function () {
           "</ul>" +
           "</div>" +
           '<div class="pf_img"><img src="' +
-          item.images.detail +
+          item.images.detail + // 포폴 상세 이미지
           '" alt="포트폴리오 상세" /></div>' +
           "</div>" +
           '<a href="javascript:vold(0);" class="btn_close"><img src="/resources/images/common/btn2_close.png" alt="닫기" /></a>' +
@@ -548,12 +565,14 @@ $(window).load(function () {
     var winHeight = $(window).height(),
       $body = $("body");
 
+    // 썸네일 호버 내 상세보기 버튼 클릭시
     $(this).on("click", ".detail_btn", function () {
       $(this).parents(".pf_item").find(".pf_detail").css("display", "block");
       $body.css({ height: winHeight, "overflow-y": "hidden" }); //포트폴리오 섹션에서 전체 스크롤 고정
       $(".page_hd").css("display", "none");
     });
 
+    // 프로젝트 상세 레이어 닫기
     $(this).on("click", ".pf_detail .close_bg, .pf_detail .btn_close", function () {
       $(".pf_detail").removeClass("on").css("display", "none");
       $body.css({ height: "auto", "overflow-y": "auto" });
@@ -561,6 +580,7 @@ $(window).load(function () {
     });
   });
 
+  // 스크롤이벤트
   $(window).on(
     "scroll",
     $.throttle(
