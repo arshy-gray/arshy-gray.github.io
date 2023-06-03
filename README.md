@@ -15,6 +15,7 @@ $ gulp server // 로컬 서버 실행
 1. Intro 페이지 구성 변경(기존 내용 삭제 -> 연락처 정보 추가)
 2. Gulp 셋팅
    * 로컬 서버, reload 환경 구축
+3. css, js 파일 캐싱 방지 : timestamp 추가
 3. css -> SCSS 변환 및 폴더 구조화
 4. Project 리스트 'Company' 필터 추가
 5. Project 팝업 내 탭 콘텐츠 텍스트 출력 방식 변경
