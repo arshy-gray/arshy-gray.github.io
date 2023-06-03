@@ -13,7 +13,7 @@ $ gulp
 $ gulp server 
 ```
 
-## release
+## Release
 ### [2023년] - 고도화 진행중
 1. Intro 페이지 구성 변경(기존 내용 삭제 -> 연락처 정보 추가)
 2. Gulp 셋팅

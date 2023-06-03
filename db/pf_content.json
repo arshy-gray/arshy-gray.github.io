@@ -425,7 +425,7 @@
           "ol": [["로딩 진행율"]]
         },
         {
-          "main_tit": ["period"],
+          "main_tit": ["Project"],
           "sub_tit": [""],
           "ol": [["JSON 데이터 Ajax 요청 및 처리", "오픈소스 활용"]],
           "ul": [
