@@ -96,16 +96,15 @@ $(window).load(function () {
     var $header = $(this);
 
     //스크롤시 헤더 스타일 변화, 초당 15회
-    $window.on(
-      "scroll",
-      $.throttle(1000 / 15, function () {
+    $window.on("scroll", function () {
+      setTimeout(function () {
         if ($window.scrollTop() > 0) {
           $header.addClass("visible");
         } else {
           $header.removeClass("visible");
         }
-      })
-    );
+      }, 1000 / 15);
+    });
 
     // 스크롤 이벤트를 발생하여 처음 로딩할 때의 위치를 결정
     setTimeout(function () {
@@ -581,37 +580,33 @@ $(window).load(function () {
   });
 
   // 스크롤이벤트
-  $(window).on(
-    "scroll",
-    $.throttle(
-      1000 / 3,
+  $(window).on("scroll", function () {
+    var $sect = $("section"),
+      sectLen = $sect.length,
+      htmlHeight = $("html").outerHeight(),
+      $gnbPC = $("#gnb_pc .gnb_menu li");
 
-      function () {
-        var $sect = $("section"),
-          sectLen = $sect.length,
-          htmlHeight = $("html").outerHeight(),
-          winTop = $(window).scrollTop(),
-          winBtm = winTop + htmlHeight,
-          $gnbPC = $("#gnb_pc .gnb_menu li");
+    setTimeout(function () {
+      var winTop = $(window).scrollTop(),
+        winBtm = winTop + htmlHeight;
 
-        for (i = 0; i < sectLen; i++) {
-          var sectPosition = $sect.eq(i).offset().top,
-            comparisonValue = sectPosition + (htmlHeight / 3) * 1; // 뷰포트 높이 의 2/5 지점
+      for (i = 0; i < sectLen; i++) {
+        var sectPosition = $sect.eq(i).offset().top,
+          comparisonValue = sectPosition + (htmlHeight / 3) * 1; // 뷰포트 높이 의 2/5 지점
 
-          //동적효과 실행
-          // 뷰포트 높이 의 2/3 지점 지날때 섹션 활성화
-          if (comparisonValue <= winBtm) {
-            $sect.eq(i).addClass("active").addClass("on").siblings().removeClass("on");
-            //스크롤 위치에 따른 gnb 활성화
-            $gnbPC.eq(i).addClass("on").siblings().removeClass("on");
-          } else {
-            //동적효과 취소
-            $sect.eq(i).removeClass("active");
-          }
+        //동적효과 실행
+        // 뷰포트 높이 의 2/3 지점 지날때 섹션 활성화
+        if (comparisonValue <= winBtm) {
+          $sect.eq(i).addClass("active").addClass("on").siblings().removeClass("on");
+          //스크롤 위치에 따른 gnb 활성화
+          $gnbPC.eq(i).addClass("on").siblings().removeClass("on");
+        } else {
+          //동적효과 취소
+          $sect.eq(i).removeClass("active");
         }
       }
-    )
-  );
+    }, 1000 / 3);
+  });
 });
 
 //= 클릭 이벤트
