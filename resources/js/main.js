@@ -459,6 +459,8 @@ $(window).load(function () {
           $project.removeClass("is-loading");
           $(".pf_item").removeClass("is-loading");
           $loadMoreButton.removeClass("is-loading");
+
+          $pfGellery.masonry("layout");
         });
       });
 
