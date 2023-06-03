@@ -247,7 +247,8 @@
     ul {
       margin-top: 15px;
       > li {
-        @extend %flex-align-c;
+        display: flex;
+        align-items: baseline;
       }
     }
     h4 {
