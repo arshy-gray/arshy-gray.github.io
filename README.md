@@ -3,11 +3,14 @@
 ## 실행방법
 
 ``` 
-$ yarn // 패키지 파일 설치
+# 패키지 파일 설치
+$ yarn
 
-$ gulp // 빌드
+# 빌드
+$ gulp 
 
-$ gulp server // 로컬 서버 실행
+# 로컬 서버 실행
+$ gulp server 
 ```
 
 ## release
