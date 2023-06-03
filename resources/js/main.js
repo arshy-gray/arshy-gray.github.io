@@ -87,6 +87,15 @@ $(document).ready(function () {
 $(window).load(function () {
   var $window = $(window);
 
+  // 캐싱 방지
+  var timestamp = new Date().getTime();
+  $("link[rel=stylesheet]").each(function () {
+    $(this).attr("href", $(this).attr("href") + "?" + timestamp);
+  });
+  $("script").each(function () {
+    $(this).attr("src", $(this).attr("src") + "?" + timestamp);
+  });
+
   // 스크롤 이벤트를 발생하여 처음 로딩할 때의 위치를 결정
   setTimeout(function () {
     $window.trigger("scroll");
@@ -433,6 +442,7 @@ $(window).load(function () {
           '<div class="close_bg"></div>' +
           "</div>" +
           "</li>";
+
         elements.push($(itemHTML).get(0));
       });
 
@@ -446,6 +456,8 @@ $(window).load(function () {
           $project.removeClass("is-loading");
           $(".pf_item").removeClass("is-loading");
           $loadMoreButton.removeClass("is-loading");
+
+          $pfGellery.masonry("layout");
         });
       });
 
