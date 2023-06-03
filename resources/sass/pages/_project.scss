@@ -232,6 +232,7 @@
 }
 .pf_thumb {
   .img_box {
+    width: 100%;
     border-bottom: 3px dashed color(dft, brightest);
     overflow: hidden;
     vertical-align: top;
@@ -789,6 +790,7 @@
   }
 } // e.1023
 
+// mobile
 @include respond(767px) {
   #project .wrap_cen {
     padding: 0 5px 0 10px;
@@ -798,6 +800,18 @@
     width: 48.5%;
   }
 } // e.767
+
+@include respond(599px) {
+  .pf_thumb .txt_box {
+    padding: 15px 12px;
+    h4 {
+      font-size: 16px;
+    }
+    ul {
+      margin-top: 5px;
+    }
+  }
+} // e.599
 
 @include respond(399px) {
   // 프로젝트 상세 레이어 팝업
