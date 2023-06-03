@@ -82,14 +82,15 @@ $(document).ready(function () {
         $wrapper.addClass("on");
       }
     }
-
-    setInterval(function () {
-      $("#main").addClass("active");
-    }, 2000);
   }
 });
 $(window).load(function () {
   var $window = $(window);
+
+  // 스크롤 이벤트를 발생하여 처음 로딩할 때의 위치를 결정
+  setTimeout(function () {
+    $window.trigger("scroll");
+  }, 1500);
 
   /* 고정헤더 -------------------*/
   $(".page_hd").each(function () {
@@ -105,11 +106,6 @@ $(window).load(function () {
         }
       }, 1000 / 15);
     });
-
-    // 스크롤 이벤트를 발생하여 처음 로딩할 때의 위치를 결정
-    setTimeout(function () {
-      $window.trigger("scroll");
-    }, 2000);
   });
 
   /* Portfolio -------------- */
