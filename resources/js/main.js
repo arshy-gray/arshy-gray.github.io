@@ -164,15 +164,18 @@ $(window).load(function () {
       $loadMoreButton.on("click", function () {
         $loadMoreButton.addClass("is-loading");
         addItems();
+        $pfGellery.delay(100).fadeIn(100, function () {
+          $pfGellery.imagesLoaded(function () {
+            $pfGellery.masonry("layout");
+          });
+        });
       });
 
       // 필터 라디오 버튼이 변경되면 필터링을 수행
       $filter.on("change", ".form-item input", filterItems);
 
       // 항목 링크에 호버 효과 처리 등록
-      $pfGellery.on("mouseenter mouseleave", ".pf_item", hoverDirection).on("mouseenter mouseleave", function () {
-        $pfGellery.masonry("layout");
-      });
+      $pfGellery.on("mouseenter mouseleave", ".pf_item", hoverDirection);
     }
 
     // 항목을 생성하고 문서에 삽입
@@ -450,14 +453,12 @@ $(window).load(function () {
       $pfGellery.delay(100).fadeIn(100, function () {
         $pfGellery.imagesLoaded(function () {
           // DOM 요소의 배열을 컨테이너에 넣고 Masonry 레이아웃을 실행
-          $pfGellery.append(elements).masonry("appended", elements);
+          $pfGellery.append(elements).masonry("appended", elements).masonry();
 
           // 로딩 완료 후 로딩 관련 클래스 삭제
           $project.removeClass("is-loading");
           $(".pf_item").removeClass("is-loading");
           $loadMoreButton.removeClass("is-loading");
-
-          $pfGellery.masonry();
         });
       });
 
