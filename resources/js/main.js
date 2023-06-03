@@ -450,14 +450,14 @@ $(window).load(function () {
       $pfGellery.delay(100).fadeIn(100, function () {
         $pfGellery.imagesLoaded(function () {
           // DOM 요소의 배열을 컨테이너에 넣고 Masonry 레이아웃을 실행
-          $pfGellery.append(elements).masonry("appended", elements).masonry();
+          $pfGellery.append(elements).masonry("appended", elements);
 
           // 로딩 완료 후 로딩 관련 클래스 삭제
           $project.removeClass("is-loading");
           $(".pf_item").removeClass("is-loading");
           $loadMoreButton.removeClass("is-loading");
 
-          $pfGellery.masonry("layout");
+          $pfGellery.masonry();
         });
       });
 
