@@ -92,7 +92,7 @@ $(window).load(function () {
   $("link[rel=stylesheet]").each(function () {
     $(this).attr("href", $(this).attr("href") + "?" + timestamp);
   });
-  $("script, img").each(function () {
+  $("script").each(function () {
     $(this).attr("src", $(this).attr("src") + "?" + timestamp);
   });
 
@@ -457,10 +457,7 @@ $(window).load(function () {
           $(".pf_item").removeClass("is-loading");
           $loadMoreButton.removeClass("is-loading");
 
-          // 캐싱 방지
-          $("script, img").each(function () {
-            $(this).attr("src", $(this).attr("src") + "?" + timestamp);
-          });
+          $pfGellery.masonry("layout");
         });
       });
 
