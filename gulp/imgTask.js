@@ -12,7 +12,6 @@ module.exports = (gulp, $, config) => {
   function imgsSprite() {
     const opts = {
       spritesmith: (options, sprite, icons) => {
-        //options.imgPath = `../spr/${options.imgName}`;
         options.imgName = `${sprite}.png`;
         options.cssName = `_${sprite}.scss`;
         options.cssTemplate = `./gulp/helper/sprite.scss.handlebars`;

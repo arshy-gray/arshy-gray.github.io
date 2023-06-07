@@ -271,20 +271,19 @@ $(window).load(function () {
         itemHTML +=
           "</ul>" +
           '<ul class="type_browser">' + // 지원 브라우저
-          '<li class="chrome"><img src="/resources/images/common/browser_chrome.png" title="Chrome" alt="chrome"></li>'; // 크롬 지원
+          '<li class="chrome"><i title="Chrome"></i></li>'; // 크롬 지원
 
         // ie 지원시
         if (item.browser.ie) {
           itemHTML +=
-            '<li class="ie"><img src="/resources/images/common/browser_ie.png" title="Internet Explorer" alt="ie"><span class="browser_ver">' +
+            '<li class="ie"><i title="Internet Explorer"></i><span class="browser_ver">' +
             item.browser.ie + // ie 버전
             "</span></li>";
         }
 
         // safari 지원
         if (item.browser.safari) {
-          itemHTML +=
-            '<li class="safari"><img src="/resources/images/common/browser_safari.png" title="Safari" alt="safari"></li>';
+          itemHTML += '<li class="safari"><i title="Safari"></i></li>';
         }
 
         itemHTML +=

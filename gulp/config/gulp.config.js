@@ -11,12 +11,12 @@ const config = {
   },
 
   imgDft: {
-    src: ["resources/images/**/**/*.png", "!resources/images/**/img-sprite/*.png"],
+    src: ["resources/images/**/**/*.png", "!resources/images/**/*-sprite/*.png"],
     dest: "dist/images/img/dft/",
   },
 
   imgSprite: {
-    src: ["resources/images/**/img-sprite/*.png"],
+    src: ["resources/images/**/*-sprite/*.png"],
     clean: ["resources/sass/vendors/img/*.scss", "dist/img/spr/*.png"],
   },
 

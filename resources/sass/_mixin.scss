@@ -126,39 +126,39 @@
   }
 }
 // image sprite
-@mixin sprite-width($sprite) {
+@mixin sprite-wid($sprite) {
   width: nth($sprite, 5);
 }
-@mixin sprite-height($sprite) {
+@mixin sprite-h($sprite) {
   height: nth($sprite, 6);
 }
 @mixin sprite-size($sprite) {
-  @include sprite-width($sprite);
-  @include sprite-height($sprite);
+    @include sprite-wid($sprite);
+    @include sprite-h($sprite);
 }
-@mixin sprite-position($sprite, $ipt: null) {
+@mixin sprite-pos($sprite) {
   $sprite-offset-x: nth($sprite, 3);
   $sprite-offset-y: nth($sprite, 4);
-  background-position: $sprite-offset-x $sprite-offset-y $ipt;
+  background-position: $sprite-offset-x $sprite-offset-y;
 }
-@mixin sprite-image($sprite) {
-  $sprite-image: nth($sprite, 9);
-  background-image: url(../spr/#{$sprite-image});
+@mixin sprite-img($pages) {
+  background-image: url(../../img/spr/#{$pages}-sprite.png);
   background-repeat: no-repeat;
 }
-@mixin sprite($sprite, $ipt: null) {
-  @include sprite-position($sprite, $ipt);
-  @include sprite-width($sprite);
+@mixin sprite($sprite) {
+  @include sprite-pos($sprite);
   @include sprite-size($sprite);
 }
 @mixin imgsprite($sprite) {
-  @include sprite-image($sprite);
+  $sprite-img: nth($sprite, 9);
+  background-image: url(../../img/spr/#{$sprite-img});
+  background-repeat: no-repeat;
   @include sprite($sprite);
 }
 // 미디어쿼리
 // 반응형
-@mixin respond($wid){
-	@media screen and (max-width: $wid) {
-		@content;
-	}
+@mixin respond($wid) {
+  @media screen and (max-width: $wid) {
+    @content;
+  }
 }

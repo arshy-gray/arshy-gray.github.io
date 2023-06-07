@@ -39,6 +39,8 @@
     top: 20px;
     img {
       width: 220px;
+      pointer-events: none;
+      cursor: default;
     }
   }
   .tel_num {
