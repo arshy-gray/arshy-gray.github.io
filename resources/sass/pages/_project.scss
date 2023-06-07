@@ -1,6 +1,6 @@
 //= project
 #project {
-  background-color: #01d3ce;
+  background-color: color(theme, project);
   background-repeat: no-repeat;
   background-image: url("/resources/images/project/bgPortfoilo_top.png"),
     url("/resources/images/project/bgPortfolio_btm.png");
@@ -78,10 +78,21 @@
   text-align: center;
 }
 .filter-group {
-  @extend %flex-c;
   flex-wrap: wrap;
-  ~ .filter-group {
+  ~ &:nth-of-type(n + 2) {
     margin-top: 15px;
+  }
+  &.filter-group-main {
+    @extend %flex-c;
+  }
+  &.filter-group-sub {
+    @extend %flex-align-c;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 25px;
+    background: rgba(color(theme, project-s), 0.2);
+    border-radius: 20px;
   }
 }
 .form-item {
@@ -92,27 +103,51 @@
   text-align: center;
   overflow: hidden;
   animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  input {
+    @include pos-abs-lt;
+    opacity: 0;
+    &:checked ~ label {
+      color: color(dft, brightest);
+    }
+  }
+  label {
+    display: inline-block;
+    vertical-align: top;
+    color: color(theme, project-s);
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover,
+    &:focus {
+      color: color(dft, brightest);
+    }
+  }
   &.radioItem {
     width: 134px;
-    border: 1px solid #affdfb;
-    border-radius: 12px;
+    margin-left: 4px;
+    margin-right: 4px;
     label {
-      border-top: 3px solid transparent;
-      &:focus {
-        border-top: 3px solid color(dft, brightest);
+      border: 1px solid color(theme, project-s);
+      border-radius: 12px;
+      overflow: hidden;
+      @extend %backface;
+      @include pseudo-init {
+        @include pos-abs(0, 0, null, 0);
+        height: 2px;
+        transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
       }
     }
     input {
       ~ label {
         width: 100%;
-        padding: 5px 0 10px 0;
+        padding: 7px 0 10px 0;
       }
       &:checked ~ label {
-        border-top: 3px solid color(dft, brightest);
+        border-color: color(dft, brightest);
+        &:before {
+          background: color(dft, brightest);
+        }
       }
-    }
-    ~ &.radioItem {
-      margin-left: 8px;
     }
   }
   &.radioItem2,
@@ -148,8 +183,8 @@
         }
       }
     }
-    ~ &:nth-child(n + 2) {
-      margin-left: 30px;
+    ~ &:not(:last-of-type) {
+      margin-right: 25px;
     }
   }
   &.radioItem2 {
@@ -175,24 +210,6 @@
           @extend %backface;
         }
       }
-    }
-  }
-  input {
-    @include pos-abs-lt;
-    opacity: 0;
-    &:checked ~ label {
-      color: color(dft, brightest);
-    }
-  }
-  label {
-    display: inline-block;
-    color: #affdfb;
-    box-sizing: border-box;
-    cursor: pointer;
-    transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
-    &:hover,
-    &:focus {
-      color: color(dft, brightest);
     }
   }
 
@@ -243,37 +260,40 @@
   }
   .txt_box {
     padding: 25px 20px;
+    line-height: 1.3;
     border-top: 3px dashed #00d4cd;
     background: color(dft, brightest);
-    ul {
-      margin-top: 15px;
-      > li {
-        display: flex;
-        align-items: baseline;
+  }
+  ul {
+    margin-top: 15px;
+    @include font(15px, 1.3, color(dft, light));
+    > li {
+      display: flex;
+      align-items: baseline;
+      &:nth-of-type(n + 2) {
+        margin-top: 5px;
       }
     }
-    h4 {
-      @include font(22px, 1.2, #2e2e2e);
-      font-weight: bold;
-    }
-    i {
-      width: 21px;
-      @include font(14px, 1.2);
-      text-align: center;
-    }
+  }
+  h4 {
+    @include font(22px, null, color(dft, dark));
+    font-weight: bold;
+  }
+  .pf_intro {
+    margin-top: 5px;
+    color: color(dft, lighter);
   }
   .pf_th_li_t {
     line-height: 18px;
     overflow: hidden;
     i {
-      color: color(dft, medium);
+      width: 21px;
+      text-align: center;
     }
   }
   .pf_th_li_c {
     display: inline-block;
     width: calc(100% - 21px);
-    @include font(null, 1.7, #909090);
-    font-weight: 300;
   }
 }
 .pf_hover {
@@ -351,7 +371,6 @@
     word-break: keep-all;
   }
   .pf_intro {
-    display: block;
     margin-top: 5px;
     @include font(17px, null, color(dft, medium));
   }
@@ -654,15 +673,18 @@
     .txt_box {
       padding: 20px 15px;
     }
-    H4 {
-      font-size: 16px;
+    h4 {
+      font-size: 18px;
+    }
+    .pf_intro {
+      font-size: 12px;
     }
     ul {
       margin-top: 10px;
-    }
-    .pf_th_li_t,
-    .pf_th_li_c {
-      font-size: 12px;
+      font-size: 13px;
+      > li:nth-of-type(n + 2) {
+        margin-top: 3px;
+      }
     }
   }
   .grid-sizer,
@@ -686,19 +708,33 @@
     @include size(0);
     display: none;
   }
-  .filter-type-company {
-    border: solid #affdfb;
-    border-width: 1px 0;
+  .filter-group {
+    flex-wrap: wrap;
+    ~ &:nth-of-type(n + 2) {
+      margin-top: 15px;
+    }
+    &.filter-group-main {
+      border: solid color(theme, project-s);
+      border-width: 1px 0;
+    }
+    &.filter-group-sub {
+      padding: 8px 15px;
+      border-radius: 15px;
+    }
   }
   .form-item {
     &.radioItem {
       width: auto;
       margin: 0 5px;
-      border: 0;
       input[type="radio"]:checked ~ label {
         color: color(theme, sub);
-        border: 0;
         animation: none;
+        &:before {
+          background: transparent;
+        }
+      }
+      label {
+        border: 0;
       }
     }
     &.chkItem {
@@ -793,7 +829,7 @@
 // mobile
 @include respond(767px) {
   #project .wrap_cen {
-    padding: 0 5px 0 10px;
+    padding: 0 10px;
   }
   .grid-sizer,
   .pf_item {
@@ -802,13 +838,21 @@
 } // e.767
 
 @include respond(599px) {
-  .pf_thumb .txt_box {
-    padding: 15px 12px;
+  .pf_thumb {
+    .txt_box {
+      padding: 15px 12px;
+    }
     h4 {
       font-size: 16px;
     }
+    .pf_intro {
+      font-size: 11px;
+    }
     ul {
-      margin-top: 5px;
+      font-size: 12px;
+      > li:nth-of-type(n + 2) {
+        margin-top: 2px;
+      }
     }
   }
 } // e.599

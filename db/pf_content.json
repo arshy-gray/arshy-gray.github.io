@@ -4,6 +4,7 @@
     "intro": "위메프 서비스 내 딜/상품 상세페이지 하단 추천 상품 테마 14개 영역 신규 개발",
     "company": "WMP",
     "device": "MOBILE",
+    "business": "ECOMMERCE",
     "browser": {
       "chrome": true,
       "ie": "11",
@@ -111,6 +112,7 @@
     "intro": "위메프 서비스 내 주문서 개선(주문서 가격표기 & 결제수단 노출 방식 개선)",
     "company": "WMP",
     "device": "MOBILE",
+    "business": "ECOMMERCE",
     "browser": {
       "chrome": true,
       "ie": "11",
@@ -206,6 +208,7 @@
     "intro": "위메프 서비스 내 최근본·찜 페이지 신규 개발",
     "company": "WMP",
     "device": "MOBILE",
+    "business": "ECOMMERCE",
     "browser": {
       "chrome": true,
       "ie": "11",
@@ -279,6 +282,7 @@
     "intro": "위메프 버티컬 패션/뷰티 서비스 신규 구축 및 개선",
     "company": "WMP",
     "device": "MOBILE",
+    "business": "ECOMMERCE",
     "browser": {
       "chrome": true,
       "ie": "11",
@@ -386,8 +390,9 @@
   {
     "title": "Portfolio",
     "intro": "개인 포트폴리오",
-    "company": "SELF",
+    "company": "TOY",
     "device": "RESPONSIVE",
+    "business": "INFOMATION",
     "browser": {
       "chrome": true,
       "safari": true
@@ -409,7 +414,7 @@
           "main_tit": [""],
           "sub_tit": ["원페이지"],
           "ol": [["Splash", "Intro", "period", "History", "Contact"]],
-          "ul": [[[], [], ["리스트","레이어 팝업"], [], []]]
+          "ul": [[[], [], ["리스트", "레이어 팝업"], [], []]]
         }
       ],
       "task": [
@@ -516,6 +521,7 @@
     "intro": "국내 패션 브랜드 편집숍(일본, 홍콩)",
     "company": "LF",
     "device": "RESPONSIVE",
+    "business": "ECOMMERCE",
     "browser": {
       "chrome": true,
       "ie": "9",
@@ -578,6 +584,7 @@
     "intro": "SHINAND 사업안내",
     "company": "LF",
     "device": "RESPONSIVE",
+    "business": "INFOMATION",
     "browser": {
       "chrome": true,
       "ie": "9",
@@ -640,6 +647,7 @@
     "intro": "KONVINATION 사업안내",
     "company": "LF",
     "device": "RESPONSIVE",
+    "business": "INFOMATION",
     "browser": {
       "chrome": true,
       "ie": "9",
@@ -676,9 +684,10 @@
   },
   {
     "title": "배차반장 웹플랫폼",
-    "intro": "기업화물 주선 웹플랫폼",
+    "intro": "기업화물 주선 운송 ERP",
     "company": "LF",
     "device": "PC",
+    "business": "ERP",
     "browser": {
       "chrome": true,
       "ie": "9",
@@ -750,6 +759,7 @@
     "intro": "배차반장 서비스 안내",
     "company": "LF",
     "device": "RESPONSIVE",
+    "business": "INFOMATION",
     "browser": {
       "chrome": true,
       "ie": "9",
@@ -789,6 +799,7 @@
     "intro": "셔틀콕 서비스 안내",
     "company": "LF",
     "device": "RESPONSIVE",
+    "business": "INFOMATION",
     "browser": {
       "chrome": true,
       "ie": "9",
@@ -820,6 +831,7 @@
     "intro": "개인 브랜드 쇼핑몰",
     "company": "LF",
     "device": "RESPONSIVE",
+    "business": "ECOMMERCE",
     "browser": {
       "chrome": true,
       "ie": "9",
@@ -883,6 +895,7 @@
     "intro": "국내 패션 브랜드 편집숍(일본, 홍콩)",
     "company": "LF",
     "device": "RESPONSIVE",
+    "business": "ECOMMERCE",
     "browser": {
       "chrome": true,
       "ie": "9",
@@ -963,6 +976,7 @@
     "intro": "신안특산물 중개장터",
     "company": "LETSON",
     "device": "RESPONSIVE",
+    "business": "ECOMMERCE",
     "browser": {
       "chrome": true,
       "ie": "8",
@@ -1009,6 +1023,7 @@
     "intro": "강진만 생태공원 안내",
     "company": "LETSON",
     "device": "RESPONSIVE",
+    "business": "GOVERMENT",
     "browser": {
       "chrome": true,
       "ie": "8",
@@ -1065,6 +1080,7 @@
     "intro": "강진만 생태공원 안내",
     "company": "LETSON",
     "device": "RESPONSIVE",
+    "business": "GOVERMENT",
     "browser": {
       "chrome": true,
       "ie": "8",
@@ -1108,6 +1124,7 @@
     "intro": "펜션 안내 및 예약 서비스",
     "company": "LETSON",
     "device": "PC&MOBILE",
+    "business": "TOUR",
     "browser": {
       "chrome": true,
       "ie": "8",
@@ -1149,6 +1166,7 @@
     "intro": "장성군청 안내",
     "company": "LETSON",
     "device": "PC",
+    "business": "GOVERMENT",
     "browser": {
       "chrome": true,
       "ie": "8",
@@ -1197,6 +1215,7 @@
     "intro": "장성군청 의회 안내",
     "company": "LETSON",
     "device": "RESPONSIVE",
+    "business": "GOVERMENT",
     "browser": {
       "chrome": true,
       "ie": "8",
@@ -1235,6 +1254,7 @@
     "intro": "군청 내 종합현황시스템",
     "company": "LETSON",
     "device": "PC",
+    "business": "GOVERMENT",
     "browser": {
       "chrome": true,
       "ie": "8",
@@ -1284,6 +1304,7 @@
     "intro": "강동대학교 안내",
     "company": "LETSON",
     "device": "PC",
+    "business": "GOVERMENT",
     "browser": {
       "chrome": true,
       "ie": "8",
@@ -1314,6 +1335,7 @@
     "intro": "강동대학교 부속기간 안내",
     "company": "LETSON",
     "device": "PC",
+    "business": "GOVERMENT",
     "browser": {
       "chrome": true,
       "ie": "8",
@@ -1354,6 +1376,7 @@
     "intro": "강동대학교 학과 안내",
     "company": "LETSON",
     "device": "PC",
+    "business": "GOVERMENT",
     "browser": {
       "chrome": true,
       "ie": "8",
@@ -1391,6 +1414,7 @@
     "intro": "강동대학교 학과 안내",
     "company": "LETSON",
     "device": "PC",
+    "business": "GOVERMENT",
     "browser": {
       "chrome": true,
       "ie": "8",
@@ -1428,6 +1452,7 @@
     "intro": "강동대학교 학과 안내",
     "company": "LETSON",
     "device": "PC",
+    "business": "GOVERMENT",
     "browser": {
       "chrome": true,
       "ie": "8",
@@ -1464,6 +1489,7 @@
     "title": "강동대학교 학과 St.1",
     "intro": "강동대학교 학과 안내",
     "device": "PC",
+    "business": "GOVERMENT",
     "browser": {
       "chrome": true,
       "ie": "8",
@@ -1501,6 +1527,7 @@
     "intro": "강동대학교 입시 안내",
     "company": "LETSON",
     "device": "PC&MOBILE",
+    "business": "GOVERMENT",
     "browser": {
       "chrome": true,
       "ie": "8",
@@ -1540,6 +1567,7 @@
     "intro": "강동대학교 입시 안내",
     "company": "LETSON",
     "device": "RESPONSIVE",
+    "business": "GOVERMENT",
     "browser": {
       "chrome": true,
       "ie": "8",
@@ -1572,6 +1600,7 @@
     "intro": "신안군청 안내",
     "company": "LETSON",
     "device": "PC",
+    "business": "GOVERMENT",
     "browser": {
       "chrome": true,
       "ie": "8",
