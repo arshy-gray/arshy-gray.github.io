@@ -8,14 +8,67 @@
   background-position: left calc(50% + 20px), right calc(50% + 20px), -300px -500px,
     calc(100% + 300px) calc(100% + 500px);
   background-attachment: fixed;
+
+  .el06 {
+    opacity: 0;
+    top: auto;
+    bottom: 0;
+    left: calc(50% - 430px);
+    @include imgsprite($bg-his-person);
+  }
+
+  // parallex active
+  &.active {
+    // parallex images
+    [class*="foot_print"] {
+      [class*="el"] {
+        animation: show 0.5s ease;
+        animation-fill-mode: forwards;
+      }
+    }
+    .foot_print_top {
+      @for $idx from 1 through 5 {
+        .el0#{$idx} {
+          animation-delay: $idx * 0.5s - 0.5s;
+        }
+      }
+    }
+    .foot_print_btm {
+      @for $idx from 1 through 5 {
+        .el0#{$idx} {
+          animation-delay: $idx * 0.5s + 5s;
+        }
+      }
+    }
+    .el06 {
+      animation: show 2s cubic-bezier(0.4, 0, 0.2, 1) 8s;
+      animation-fill-mode: forwards;
+    }
+
+    li {
+      .ht_ico {
+        animation: rotationY 0.5s ease-in-out;
+        animation-fill-mode: forwards;
+      }
+      @for $idx from 1 through 7 {
+        &:nth-child(#{$idx}) .ht_ico {
+          animation-delay: $idx * 0.5s + 2s;
+        }
+      }
+    }
+  }
 }
 
+// parallex images
+[class*="foot_print"] {
+  [class*="el"] {
+    opacity: 0;
+    @include imgsprite($bg-his-footprint);
+  }
+}
 .foot_print_top {
   position: absolute;
   left: calc(50% + 150px);
-  [class*="el"] {
-    opacity: 0;
-  }
   .el01 {
     top: 20px;
     left: 166px;
@@ -45,9 +98,6 @@
 
 .foot_print_btm {
   @include pos-abs-lb(calc(50% - 350px), 250px);
-  [class*="el"] {
-    opacity: 0;
-  }
   .el01 {
     top: 20px;
     left: 200px;
@@ -72,56 +122,6 @@
     top: 165px;
     left: 15px;
     transform: rotate(30deg);
-  }
-}
-
-#history {
-  .el06 {
-    top: auto;
-    bottom: 0;
-    left: calc(50% - 430px);
-    opacity: 0;
-  }
-
-  &.active {
-    .foot_print_top {
-      [class*="el"] {
-        animation: footPrint 0.5s ease;
-        animation-fill-mode: forwards;
-      }
-      @for $idx from 1 through 5 {
-        .el0#{$idx} {
-          animation-delay: $idx * 0.5s - 0.5s;
-        }
-      }
-    }
-    .foot_print_btm {
-      [class*="el"] {
-        animation: footPrint 0.5s ease;
-        animation-fill-mode: forwards;
-      }
-      @for $idx from 1 through 5 {
-        .el0#{$idx} {
-          animation-delay: $idx * 0.5s + 5s;
-        }
-      }
-    }
-    .el06 {
-      animation: footPrint 2s cubic-bezier(0.4, 0, 0.2, 1) 8s;
-      animation-fill-mode: forwards;
-    }
-
-    li {
-      .ht_ico {
-        animation: rotationY 0.5s ease-in-out;
-        animation-fill-mode: forwards;
-      }
-      @for $idx from 1 through 7 {
-        &:nth-child(#{$idx}) .ht_ico {
-          animation-delay: $idx * 0.5s + 2s;
-        }
-      }
-    }
   }
 }
 
@@ -160,29 +160,19 @@
       top: 20px;
       @include size(64px);
       text-align: center;
-      background-position: center;
-      background-repeat: no-repeat;
       backface-visibility: hidden;
-      @include pseudo-init(after) {
-        @include pos-abs-lt;
-        @include size(64px);
-        background: #fae94e;
-        border-radius: 50px;
-        transform: rotateY(180deg);
-        backface-visibility: hidden;
-      }
       .txt {
         @extend %blind;
       }
     }
     &.ht_edu .ht_ico {
-      background-image: url("/resources/images/history/icoHistory_edu.png");
+      @include imgsprite($ico-his-edu);
     }
     &.ht_license .ht_ico {
-      background-image: url("/resources/images/history/icoHistory_license.png");
+      @include imgsprite($ico-his-license);
     }
     &.ht_company .ht_ico {
-      background-image: url("/resources/images/history/icoHistory_company.png");
+      @include imgsprite($ico-his-company);
     }
     &:nth-child(odd) {
       .ht_ico {
@@ -285,6 +275,9 @@
   #history {
     .bg_el {
       display: none;
+    }
+    .ht_ico{
+      margin: 0 auto;
     }
 
     @for $idx from 1 through 6 {

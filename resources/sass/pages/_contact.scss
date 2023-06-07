@@ -15,17 +15,20 @@
     top: calc(50% - 489px);
     left: calc(50% - 627px);
     animation: shake 3s ease-in-out infinite;
+    @include imgsprite($bg-contact-el01);
   }
   .el02 {
     top: calc(50% - 12px);
     left: calc(50% + 466px);
     animation: shake 3s ease-in-out 1.5s infinite;
+    @include imgsprite($bg-contact-el02);
   }
   .el03 {
     top: calc(50% - 230px);
     left: calc(50% + 50px);
     animation: nabi 4s ease-in-out infinite;
     transform-origin: 38px 107px;
+    @include imgsprite($bg-contact-butterfly);
   }
   .contact_group {
     @include pos-abs-lt(50%);

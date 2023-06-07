@@ -2,10 +2,9 @@
 #project {
   background-color: color(theme, project);
   background-repeat: no-repeat;
-  background-image: url("/resources/images/project/bgPortfoilo_top.png"),
-    url("/resources/images/project/bgPortfolio_btm.png");
-  background-position: calc(50% - 585px) 10px, right bottom;
-  background-attachment: scroll, fixed;
+  background-image: url("/resources/images/project/bgPortfolio_btm.png");
+  background-position: right bottom;
+  background-attachment: fixed;
   &.is-loading {
     height: 100vh;
   }
@@ -14,15 +13,28 @@
     top: 12px;
     left: calc(50% - 342px);
     animation: blink 4s ease-in-out infinite;
+    @include imgsprite($bg-pf-el01);
   }
   .el02 {
     top: 182px;
     left: calc(50% + 669px);
     animation: zoomIn 10s ease-out infinite;
     transform-origin: center;
+    @include imgsprite($bg-pf-el02);
+  }
+  .el03 {
+    top: 10px;
+    left: calc(50% - 830px);
+    @include imgsprite($bg-pf-el03);
   }
 
   &.active {
+    .filter-group {
+      &.filter-group-sub {
+        animation: show 0.5s ease;
+        animation-fill-mode: forwards;
+      }
+    }
     .form-item {
       animation: fromB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
       animation-fill-mode: backwards;
@@ -60,14 +72,14 @@
     position: relative;
     height: calc(100vh - 450px) !important;
   }
-  #project.is-loading &:after {
+  #project.is-loading &:before {
     @include pseudo-init-ctt;
-    @include pos-abs-lt;
+    @include pos-abs-lt(50%, 30%);
     @include size(29px, 30px);
     transform: translate(-50%, -50%);
-    background: url("/resources/images/common/loading2.png") center no-repeat;
     animation: rotate 1.2s infinite;
     animation-play-state: running;
+    @include imgsprite($pf-loading);
   }
 }
 .pf_box {
@@ -93,6 +105,7 @@
     padding: 15px 25px;
     background: rgba(color(theme, project-s), 0.2);
     border-radius: 20px;
+    opacity: 0;
   }
 }
 .form-item {
@@ -424,6 +437,19 @@
     @extend %imgFix;
     &.ie + .safari {
       margin-left: 13px;
+    }
+    i {
+      display: block;
+      @include sprite-img(project);
+    }
+    &.chrome i {
+      @include sprite($browser-chrome);
+    }
+    &.ie i {
+      @include sprite($browser-ie);
+    }
+    &.safari i {
+      @include sprite($browser-safari);
     }
   }
   .browser_ver {
