@@ -204,6 +204,9 @@ $(window).load(function () {
           "<h4>" +
           item.title + // 썸네일 타이틀
           "</h4>" +
+          '<p class="pf_intro">' +
+          item.intro + // 사이트 간략 설명 (서브 타이틀)
+          "</p>" +
           "<ul>" +
           '<li><span class="pf_th_li_t"><i class="fas fa-chart-bar" title="참여율"></i></span><span class="pf_th_li_c">' +
           item.part + // 썸네일 참여율
@@ -241,9 +244,9 @@ $(window).load(function () {
           '<h4 class="pf_main_tit">' +
           item.title + // 타이틀
           "</h4>" +
-          '<span class="pf_intro">' +
+          '<p class="pf_intro">' +
           item.intro + // 사이트 간략 설명 (서브 타이틀)
-          "</span>" +
+          "</p>" +
           "</div>" +
           '<div class="pf_layer_ctt">' +
           '<div class="pf_info">' +
@@ -477,8 +480,9 @@ $(window).load(function () {
 
     // 항목을 필터링한다.
     function filterItems() {
-      var keyCompany = $(".filter-type-company").find('input[type="radio"]:checked').val(), // 오피스 필터
-        keyDevice = $(".filter-type-device").find('input[type="radio"]:checked').val(), // 디바이스 필터
+      var keyCpn = $(".filter-type-cpn").find('input[type="radio"]:checked').val(), // 회사별 필터
+        keyBiz = $(".filter-type-biz").find('input[type="radio"]:checked').val(), // 사업유형별 필터
+        keyDevice = $(".filter-type-device").find('input[type="radio"]:checked').val(), // 지원기기별 필터
         keyLinked = $(".filter-type-linked").find('input[type="checkbox"]').prop("checked"), // 링크 여부 필터
         masonryItems = $pfGellery.masonry("getItemElements"); // 추가 된 Masonry 아이템
 
@@ -492,13 +496,20 @@ $(window).load(function () {
       filteredData = [];
       addadd = 0;
 
-      if (keyCompany === "ALL") {
+      if (keyCpn === "ALL") {
         // 1차필터링 - all이 클릭 된 경우 모든 JSON 데이터를 저장
         filteredData = allData;
       } else {
         // all 이외의 경우, 키와 일치하는 데이터를 추출
         filteredData = $.grep(allData, function (item) {
-          return item.company === keyCompany;
+          return item.company === keyCpn;
+        });
+      }
+
+      if (keyBiz !== "ALL") {
+        // 2차 필터링 - device
+        filteredData = $.grep(filteredData, function (item) {
+          return item.business === keyBiz;
         });
       }
 

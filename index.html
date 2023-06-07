@@ -110,7 +110,7 @@
       <section id="project">
         <h2 class="sec_t">PROJECT</h2>
         <p class="set_ct">
-          e-Commerce, 관공서, 사업 및 서비스 안내 사이트 등<br />
+          E-Commerce, 관공서, 기업 홈페이지 등<br />
           현재까지 참여한 프로젝트 모음입니다.
         </p>
 
@@ -124,32 +124,63 @@
             <h3 class="hidden">분야별 포트폴리오</h3>
             <div class="filter_wrap">
               <form class="filter-form" id="gellery-filter">
-                <ul class="filter-group filter-group-main filter-type-company filter-radio">
+                <!-- 회사별 필터 -->
+                <ul class="filter-group filter-group-main filter-type-cpn filter-radio">
                   <li class="form-item radioItem">
-                    <input type="radio" name="filter-company" id="filter-company-all" value="ALL" checked />
-                    <label for="filter-company-all" title="전체 사이트 모음입니다.">All</label>
+                    <input type="radio" name="filter-cpn" id="filter-cpn-all" value="ALL" checked />
+                    <label for="filter-cpn-all" title="모든 회사별 사이트 모음입니다.">All Company</label>
                   </li>
                   <li class="form-item radioItem">
-                    <input type="radio" name="filter-company" id="filter-company-wmp" value="WMP" />
-                    <label for="filter-company-wmp" title="PC 버전 사이트 모음입니다.">위메프</label>
+                    <input type="radio" name="filter-cpn" id="filter-cpn-wmp" value="WMP" />
+                    <label for="filter-cpn-wmp" title="위메프 사이트 모음입니다.">위메프</label>
                   </li>
                   <li class="form-item radioItem">
-                    <input type="radio" name="filter-company" id="filter-company-lf" value="LF" />
-                    <label for="filter-company-lf" title="반응형 사이트 모음입니다.">로지포커스</label>
+                    <input type="radio" name="filter-cpn" id="filter-cpn-lf" value="LF" />
+                    <label for="filter-cpn-lf" title="로지포커스 사이트 모음입니다.">로지포커스</label>
                   </li>
                   <li class="form-item radioItem">
-                    <input type="radio" name="filter-company" id="filter-company-letson" value="LETSON" />
-                    <label for="filter-company-letson" title="반응형 사이트 모음입니다.">렛츠온</label>
+                    <input type="radio" name="filter-cpn" id="filter-cpn-letson" value="LETSON" />
+                    <label for="filter-cpn-letson" title="렛츠온 사이트 모음입니다.">렛츠온</label>
                   </li>
                   <li class="form-item radioItem">
-                    <input type="radio" name="filter-company" id="filter-company-self" value="SELF" />
-                    <label for="filter-company-self" title="반응형 사이트 모음입니다.">개인</label>
+                    <input type="radio" name="filter-cpn" id="filter-cpn-toy" value="TOY" />
+                    <label for="filter-cpn-toy" title="개인 토이 프로젝트 모음입니다.">개인</label>
                   </li>
                 </ul>
+
+                <!-- 사업별 필터 -->
+                <ul class="filter-group filter-group-sub filter-type-biz filter-radio">
+                  <li class="form-item radioItem2">
+                    <input type="radio" name="filter-biz" id="filter-biz-all" value="ALL" checked />
+                    <label for="filter-biz-all" title="모든 사업별 사이트 모음입니다.">All Business</label>
+                  </li>
+                  <li class="form-item radioItem2">
+                    <input type="radio" name="filter-biz" id="filter-biz-ecommerce" value="ECOMMERCE" />
+                    <label for="filter-biz-ecommerce" title="이커머스 사이트 모음입니다.">E-Commerce</label>
+                  </li>
+                  <li class="form-item radioItem2">
+                    <input type="radio" name="filter-biz" id="filter-biz-erp" value="ERP" />
+                    <label for="filter-biz-erp" title="ERP 사이트 모음입니다.">ERP</label>
+                  </li>
+                  <li class="form-item radioItem2">
+                    <input type="radio" name="filter-biz" id="filter-biz-tour" value="TOUR" />
+                    <label for="filter-biz-tour" title="ERP 사이트 모음입니다.">여행</label>
+                  </li>
+                  <li class="form-item radioItem2">
+                    <input type="radio" name="filter-biz" id="filter-biz-info" value="INFOMATION" />
+                    <label for="filter-biz-info" title="기업 ・ 개인 사이트 모음입니다.">기업 ・ 개인 홈페이지</label>
+                  </li>
+                  <li class="form-item radioItem2">
+                    <input type="radio" name="filter-biz" id="filter-biz-gov" value="GOVERMENT" />
+                    <label for="filter-biz-gov" title="관공서 사이트 모음입니다.">관공서</label>
+                  </li>
+                </ul>
+
+                <!-- 지원 기기별 필터 -->
                 <ul class="filter-group filter-group-sub filter-type-device filter-radio">
                   <li class="form-item radioItem2">
                     <input type="radio" name="filter-device" id="filter-device-all" value="ALL" checked />
-                    <label for="filter-device-all" title="전체 사이트 모음입니다.">All</label>
+                    <label for="filter-device-all" title="모든 기기별 사이트 모음입니다.">All Device</label>
                   </li>
                   <li class="form-item radioItem2">
                     <input type="radio" name="filter-device" id="filter-mobile" value="MOBILE" />
@@ -168,6 +199,8 @@
                     <label for="filter-pc" title="PC 버전 사이트 모음입니다.">ONLY PC</label>
                   </li>
                 </ul>
+
+                <!-- 운영 사이트 링크 필터 -->
                 <ul class="filter-group filter-group-sub filter-type-linked filter-chk">
                   <li class="form-item chkItem">
                     <input type="checkbox" name="filter-linked" id="filter-linked" value="LINKED" />
@@ -190,8 +223,8 @@
       <!-- // #section03 -->
 
       <section id="history">
-        <h2 class="sec_t"><span class="t_str">H</span>IS<span class="t_str">T</span>ORY</h2>
-        <p class="set_ct">웹분야 관련 경력으로<span class="m_br"> </span>꾸준히 신뢰를 쌓아가고 있습니다.</p>
+        <h2 class="sec_t">HISTORY</h2>
+        <p class="set_ct">웹분야 관련 학업 ・ 자격증 ・ 근무 경력입니다.</p>
 
         <div class="bg_el">
           <div class="foot_print_top">
@@ -300,8 +333,8 @@
       <!-- // #section04 -->
 
       <section id="contact" class="fullpage">
-        <h2 class="sec_t"><span class="t_str">C</span>ON<span class="t_str">T</span>ACT</h2>
-        <p class="set_ct">후회없는 선택을 보장하는<span class="m_br"> </span>인재가 되겠습니다.</p>
+        <h2 class="sec_t">CONTACT</h2>
+        <p class="set_ct">연락 가능한 핸드폰 및 이메일과 깃허브 주소입니다.</p>
 
         <div class="bg_el">
           <span class="el01"><img src="/resources/images/contact/bgContact_el01.png" alt="" /></span>
