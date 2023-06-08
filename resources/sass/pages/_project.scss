@@ -246,7 +246,7 @@
   border-radius: 20px;
   overflow: hidden;
   &:hover {
-    box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 50px rgba(color(dft, darkest), 0.3);
   }
   #project.is-loading &,
   &.is-loading {
@@ -312,7 +312,7 @@
 .pf_hover {
   position: absolute;
   @include size(100%);
-  background: rgba(255, 204, 0, 0.9);
+  background: rgba(color(theme, history), 0.9);
   border-radius: 20px;
   transition: 0.5s opacity 0s ease-in-out;
   .btn_box {
@@ -353,7 +353,7 @@
   display: none;
   @include pos-fix-lt;
   @include size(100%);
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(color(dft, darkest), 0.7);
   box-sizing: border-box;
   z-index: 999;
 }
@@ -363,7 +363,7 @@
   width: 90%;
   max-width: 1300px;
   transform: translateX(-50%);
-  background-color: #f1f1f1;
+  background-color: color(bg, base);
   z-index: 1;
   border-radius: 30px;
   overflow: hidden;
@@ -402,8 +402,8 @@
   box-sizing: border-box;
   border-radius: 30px 30px 0 0;
   font-size: 15px;
-  background: #fcfcfc;
-  border: 1px solid #fafafa;
+  background: color(dft, light);
+  border: 1px solid color(bd, base);
 }
 .pf_info_type {
   display: flex;
@@ -620,7 +620,7 @@
     line-height: 1;
     padding: 7px 20px;
     background-color: color(dft, dark);
-    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 0 rgba(color(dft, darkest), 0.2);
     z-index: 9;
     border-radius: 0 0 10px 10px;
     img {
@@ -673,8 +673,8 @@
     }
   }
   &:hover {
-    background: rgba(255, 255, 255, 0.9);
-    color: #00d4cd;
+    background: rgba(color(dft, brightest), 0.9);
+    color: color(theme, project);
     background: color(dft, brightest);
   }
   #project.active & {
@@ -820,7 +820,7 @@
   }
 
   .pf_layer {
-    background-color: #f1f1f1;
+    background-color: color(bg, base);
     z-index: 1;
   }
 

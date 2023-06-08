@@ -49,7 +49,7 @@
     margin: 20px auto 0;
     padding: 20px 15% 0;
     @include font(null, 18px, color(dft, brightest));
-    border-top: 3px solid #ff0090;
+    border-top: 3px solid color(theme, main);
     opacity: 0.9;
     box-sizing: border-box;
     a {
@@ -61,7 +61,7 @@
   }
   .mail a {
     display: inline-block;
-    color: #ffa6c6;
+    color: color(theme, intro-s);
   }
   .gitHub {
     flex: 1;
@@ -71,15 +71,15 @@
       position: relative;
       display: inline-block;
       padding: 20px 50px;
-      color: #ededed;
-      background: rgba(2555, 255, 255, 0.2);
+      color: rgba(color(dft, brightest), 0.8);
+      background: rgba(color(dft, brightest), 0.2);
       border-radius: 31px;
       transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
       animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
       top: 30px;
       opacity: 0;
       &:hover {
-        background: rgba(255, 255, 255, 0.3);
+        background: rgba(color(dft, brightest), 0.3);
         color: color(dft, brightest);
         text-shadow: 0 0 white;
       }

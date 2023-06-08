@@ -134,9 +134,9 @@
   position: absolute;
   padding: 5px 0;
   bottom: 30px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(color(dft, brightest), 0.1);
   p {
-    color: #797979;
+    color: color(dft, light);
     text-align: center;
   }
 }

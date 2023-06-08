@@ -2,37 +2,48 @@
 //color-pallettes
 $palettes: (
   // 기본 컬러
-  dft: (
-    base: #666,
-    brightest: #fff,
-    lighter: #999,
-    light: #777,
-    medium: #555,
-    dark: #333,
-    darkest: #000,
+  dft:
+    (
+      base: #666,
+      brightest: #fff,
+      lighter: #999,
+      light: #777,
+      medium: #555,
+      dark: #333,
+      darkest: #000,
+    ),
+  bg: (
+    base: #f1f1f1,
+    light: #fcfcfc,
+  ),
+  bd: (
+    base: #fafafa,
   ),
   // 테마 컬러
-  theme: (
-    // 공통
-    main: #ff229f,
-    sub: #ff0,
-    // section별
-    project: #01d3ce,
-    project-s: #affdfb,
-    history: #fc0,
-  ),
+  theme:
+    (
+      // 공통
+      main: #ff229f,
+      sub: #ff0,
+      // section별
+      intro-s: #ffa6c6,
+      project: #01d3ce,
+      project-s: #affdfb,
+      history: #fc0
+    ),
   // 타이틀 컬러
-  tit: (
-    main: #06f,
-    sub: #ff4800,
-  ),
+  tit:
+    (
+      main: #06f,
+      sub: #ff4800,
+    )
 );
 
 //= font
 $font-family-base: "Noto Sans KR", sans-serif;
 
 //= img url
-$img-url: '/resources/images';
+$img-url: "/resources/images";
 
 //= section
 //== project
