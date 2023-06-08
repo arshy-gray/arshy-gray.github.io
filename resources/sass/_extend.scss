@@ -77,3 +77,12 @@
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
 }
+// parallex
+%ani-direction-init {
+  position: relative;
+  animation: 0.7s $ani-timing both;
+}
+// 트랜지션
+%natural-effect {
+  transition: 0.3s 0s $ani-timing;
+}

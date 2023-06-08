@@ -1,12 +1,9 @@
 @keyframes arrowStr2 {
-  0% {
+  0%, 100% {
     top: 3px;
   }
   50% {
     top: -2px;
-  }
-  100% {
-    top: 3px;
   }
 }
 
@@ -166,20 +163,14 @@
 }
 
 @keyframes shake {
-  0% {
+  0%, 50%, 100% {
     transform: rotate3D(10, 10, 10, 0deg);
   }
   25% {
     transform: rotate3D(10, 10, 10, 10deg);
   }
-  50% {
-    transform: rotate3D(10, 10, 10, 0deg);
-  }
   75% {
     transform: rotate3D(50, 10, 30, 35deg);
-  }
-  100% {
-    transform: rotate3D(10, 10, 10, 0deg);
   }
 }
 @keyframes nabi {
@@ -194,15 +185,5 @@
   100% {
     top: calc(50% - 230px);
     transform: rotateX(0deg);
-  }
-}
-
-// bugfix
-@-webkit-keyframes bugfix {
-  from {
-    padding: 0;
-  }
-  to {
-    padding: 0;
   }
 }

@@ -1,14 +1,15 @@
 //= history
 #history {
-  background-color: color(theme, history);
-  background-repeat: no-repeat;
-  background-image: url("/resources/images/history/bgHistory_left.png"),
-    url("/resources/images/history/bgHistory_right.png"), url("/resources/images/history/bgHistory_back.png"),
-    url("/resources/images/history/bgHistory_back.png");
+  background-image: url("#{$img-url}/history/bgHistory_left.png"), url("#{$img-url}/history/bgHistory_right.png"),
+    url("#{$img-url}/history/bgHistory_back.png"), url("#{$img-url}/history/bgHistory_back.png");
   background-position: left calc(50% + 20px), right calc(50% + 20px), -300px -500px,
     calc(100% + 300px) calc(100% + 500px);
+  background-color: color(theme, history);
+  background-repeat: no-repeat;
   background-attachment: fixed;
 
+  // 배경요소
+  // 사람
   .el06 {
     opacity: 0;
     top: auto;
@@ -17,44 +18,12 @@
     @include imgsprite($bg-his-person);
   }
 
-  // parallex active
+  // 섹션 활성화
   &.active {
-    // parallex images
-    [class*="foot_print"] {
-      [class*="el"] {
-        animation: show 0.5s ease;
-        animation-fill-mode: forwards;
-      }
-    }
-    .foot_print_top {
-      @for $idx from 1 through 5 {
-        .el0#{$idx} {
-          animation-delay: $idx * 0.5s - 0.5s;
-        }
-      }
-    }
-    .foot_print_btm {
-      @for $idx from 1 through 5 {
-        .el0#{$idx} {
-          animation-delay: $idx * 0.5s + 5s;
-        }
-      }
-    }
+    // 배경요소
+    // 사람
     .el06 {
-      animation: show 2s cubic-bezier(0.4, 0, 0.2, 1) 8s;
-      animation-fill-mode: forwards;
-    }
-
-    li {
-      .ht_ico {
-        animation: rotationY 0.5s ease-in-out;
-        animation-fill-mode: forwards;
-      }
-      @for $idx from 1 through 7 {
-        &:nth-child(#{$idx}) .ht_ico {
-          animation-delay: $idx * 0.5s + 2s;
-        }
-      }
+      animation: show 2s $ani-timing 8s forwards;
     }
   }
 }
@@ -64,8 +33,13 @@
   [class*="el"] {
     opacity: 0;
     @include imgsprite($bg-his-footprint);
+
+    #history.active & {
+      animation: show 0.7s $ani-timing forwards;
+    }
   }
 }
+// 상단 발자국 요소
 .foot_print_top {
   position: absolute;
   left: calc(50% + 150px);
@@ -94,8 +68,17 @@
     left: 20px;
     transform: rotate(60deg);
   }
-}
 
+  // 섹션 활성화
+  #history.active & {
+    @for $idx from 1 through 5 {
+      .el0#{$idx} {
+        animation-delay: $idx * 0.5s - 0.5s;
+      }
+    }
+  }
+}
+// 하단 발자국 요소
 .foot_print_btm {
   @include pos-abs-lb(calc(50% - 350px), 250px);
   .el01 {
@@ -123,17 +106,29 @@
     left: 15px;
     transform: rotate(30deg);
   }
-}
 
+  // 섹션 활성화
+  #history.active & {
+    @for $idx from 1 through 5 {
+      .el0#{$idx} {
+        animation-delay: $idx * 0.5s + 5.5s;
+      }
+    }
+  }
+}
+// 히스토리 리스트 영역
 .ht_box {
   @extend %clearfix;
   margin-top: 40px;
+  li {
+    clear: both;
+    position: relative;
+  }
   > ul > li {
     padding: 35px 0 10px 0;
     > ul {
       overflow: hidden;
     }
-
     &:nth-child(odd) {
       right: calc(50% - 1px);
       border-right: 1px solid color(dft, brightest);
@@ -149,11 +144,6 @@
         float: left;
       }
     }
-  }
-  li {
-    clear: both;
-    position: relative;
-
     .ht_ico {
       opacity: 0;
       position: absolute;
@@ -165,33 +155,30 @@
         @extend %blind;
       }
     }
+    // 섹션 활성화
+    #history.active & {
+      .ht_ico {
+        animation: rotationY 0.5s ease-in-out forwards;
+      }
+      @for $idx from 1 through 7 {
+        &:nth-child(#{$idx}) .ht_ico {
+          animation-delay: $idx * 0.5s + 2s;
+        }
+      }
+    }
+    // 학업
     &.ht_edu .ht_ico {
       @include imgsprite($ico-his-edu);
     }
+    // 자격증
     &.ht_license .ht_ico {
       @include imgsprite($ico-his-license);
     }
+    // 근무경력
     &.ht_company .ht_ico {
       @include imgsprite($ico-his-company);
     }
-    &:nth-child(odd) {
-      .ht_ico {
-        float: left;
-        left: calc(100% + 20px);
-      }
-      .ht_c .date {
-        border-radius: 20px 0 20px 20px;
-      }
-    }
-    &:nth-child(even) {
-      .ht_ico {
-        float: right;
-        left: -82px;
-      }
-      .ht_c .date {
-        border-radius: 0 20px 20px 20px;
-      }
-    }
+    // 리스트 포인트 요소
     .ht_point {
       position: relative;
       margin: 4px 0;
@@ -205,21 +192,9 @@
         border-radius: 9px;
       }
     }
-    &:nth-child(odd) {
-      .ht_point {
-        float: right;
-        left: 7.5px;
-      }
-      .ht_c {
-        right: 5px;
-      }
-    }
-    &:nth-child(even) .ht_point {
-      float: left;
-      right: 8.5px;
-    }
-
+    // 리스트 콘텐츠
     .ht_c {
+      position: relative;
       > li {
         margin-bottom: 1px;
       }
@@ -230,28 +205,58 @@
         padding: 5px 15px;
         overflow: hidden;
       }
+      // 히스토리 설명 1
       .content1 {
         @include font(15px, null, color(dft, dark));
         overflow: hidden;
         animation-fill-mode: forwards;
       }
+      // 히스토리 설명 1 부설명
       .content1_2 {
         @include font(13px, null, color(tit, main));
         font-weight: 300;
         overflow: hidden;
         animation-fill-mode: forwards;
       }
+      // 히스토리 설명 2
       .content2 {
         @include font(13px, 14px, color(tit, sub));
         overflow: hidden;
         animation-fill-mode: forwards;
       }
     }
+    // 홀수 아이템
+    &:nth-child(odd) {
+      .ht_ico {
+        float: left;
+        left: calc(100% + 20px);
+      }
+      .ht_c .date {
+        border-radius: 20px 0 20px 20px;
+      }
+      .ht_point {
+        float: right;
+        left: 7.5px;
+      }
+      .ht_c {
+        right: 5px;
+      }
+    }
+    // 짝수 아이템
+    &:nth-child(even) {
+      .ht_ico {
+        float: right;
+        left: -82px;
+      }
+      .ht_c .date {
+        border-radius: 0 20px 20px 20px;
+      }
+      .ht_point {
+        float: left;
+        right: 8.5px;
+      }
+    }
   }
-}
-
-.ht_c {
-  position: relative;
 }
 
 //= 반응형
@@ -273,30 +278,13 @@
 @include respond(599px) {
   /* 히스토리 섹션 */
   #history {
+    // 배경 요소
     .bg_el {
       display: none;
-    }
-    .ht_ico{
-      margin: 0 auto;
-    }
-
-    @for $idx from 1 through 6 {
-      &.active li:nth-child(#{$idx}) .ht_ico {
-        animation: rotationY 0.5s ease-in-out #{$idx * 0.5s + 0.5s};
-        animation-fill-mode: forwards;
-      }
     }
   }
 
   .ht_box {
-    > ul > li:nth-child(odd),
-    li:nth-child(odd) .ht_c {
-      right: auto;
-    }
-    > ul > li:nth-child(even),
-    li:nth-child(even) .ht_c {
-      left: auto;
-    }
     > ul {
       > li {
         padding: 0;
@@ -307,26 +295,19 @@
           margin: 5px auto;
           background: color(dft, brightest);
         }
-
+        // 홀짝 요소 리셋
         &:nth-child(odd) ul li,
         &:nth-child(even) ul li {
           float: none;
           display: block;
         }
-      }
-
-      li {
-        .ht_ico {
-          position: relative;
-          width: 100%;
+        &:nth-child(odd),
+        &:nth-child(odd) .ht_c {
+          right: auto;
         }
-
-        .ht_c {
-          text-align: center;
-
-          .date {
-            display: inline-block;
-          }
+        &:nth-child(even),
+        &:nth-child(even) .ht_c {
+          left: auto;
         }
         &:nth-child(odd),
         &:nth-child(even) {
@@ -353,6 +334,26 @@
           right: auto;
           width: 9px;
           margin: 0 auto;
+        }
+        // 히스토리 리스트 아이콘
+        .ht_ico {
+          position: relative;
+          width: 100%;
+          margin: 0 auto;
+        }
+        // 히스토리 아이콘
+        @for $idx from 1 through 7 {
+          #history.active &:nth-child(#{$idx}) .ht_ico {
+            animation-delay: #{$idx * 0.6s};
+          }
+        }
+        // 리스트 콘텐츠
+        .ht_c {
+          text-align: center;
+
+          .date {
+            display: inline-block;
+          }
         }
       }
     }
