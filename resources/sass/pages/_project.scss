@@ -393,14 +393,11 @@
     display: block;
     @include pos-abs-rt(30px, 0);
     line-height: 1;
-    padding: 7px 20px;
+    padding: 7px 20px 9px;
     background-color: color(dft, dark);
     box-shadow: 3px 3px 0 rgba(color(dft, darkest), 0.2);
     border-radius: 0 0 10px 10px;
     z-index: 9;
-    img {
-      vertical-align: top;
-    }
   }
   // 딤드
   .close_bg {
