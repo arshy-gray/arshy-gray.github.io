@@ -21,7 +21,7 @@
 .tit_main {
   color: color(tit, main);
 }
-// parallex 요소
+// 배경 요소
 .bg_el {
   @include pos-abs-lt;
   @include size(100%);
@@ -36,7 +36,7 @@
 }
 
 @include respond(479px) {
-  // 전체
+  // 모바일 줄바꿈
   .m_br {
     display: block;
   }

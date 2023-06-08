@@ -1,20 +1,20 @@
 //= project
 #project {
-  background-color: color(theme, project);
-  background-repeat: no-repeat;
   background-image: url("#{$img-url}/project/bgPortfolio_btm.png");
+  background-color: color(theme, project);
   background-position: right bottom;
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  &.is-loading {
-    height: 100vh;
-  }
 
+  // 배경 요소
+  // 전구
   .el01 {
     top: 12px;
     left: calc(50% - 342px);
     animation: blink 4s ease-in-out infinite;
     @include imgsprite($bg-pf-el01);
   }
+  // 돋보기
   .el02 {
     top: 182px;
     left: calc(50% + 669px);
@@ -22,56 +22,224 @@
     transform-origin: center;
     @include imgsprite($bg-pf-el02);
   }
+  // 낙서
   .el03 {
     top: 10px;
     left: calc(50% - 830px);
     @include imgsprite($bg-pf-el03);
   }
 
-  &.active {
-    .filter-group {
-      &.filter-group-sub {
-        animation: show 0.5s ease;
-        animation-fill-mode: forwards;
+  // 필터 영역
+  .filter_wrap {
+    margin: 20px auto 40px;
+    text-align: center;
+  }
+  // 필터 그룹
+  .filter-group {
+    flex-wrap: wrap;
+    ~ &:nth-of-type(n + 2) {
+      margin-top: 15px;
+    }
+    // 1차 필터
+    &.filter-group-main {
+      @extend %flex-c;
+    }
+    // 1차 필터 외
+    &.filter-group-sub {
+      @extend %flex-align-c;
+      max-width: 1024px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 15px 25px;
+      background: rgba(color(theme, project-s), 0.2);
+      border-radius: 20px;
+      @extend %ani-direction-init;
+      animation-name: toB;
+    }
+  }
+  // 필터 아이템
+  .form-item {
+    margin: 4px 0;
+    text-align: center;
+    overflow: hidden;
+    @extend %ani-direction-init;
+    animation-name: toB;
+    input {
+      @include pos-abs-lt;
+      opacity: 0;
+      &:checked ~ label {
+        color: color(dft, brightest);
       }
     }
-    .form-item {
-      animation: fromB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-      animation-fill-mode: backwards;
-      top: 0;
-      opacity: 1;
-
-      @for $idx from 1 through 6 {
-        &:nth-child(#{$idx}) {
-          animation-delay: $idx * 0.1s - 0.1s;
+    label {
+      display: inline-block;
+      vertical-align: top;
+      color: color(theme, project-s);
+      box-sizing: border-box;
+      cursor: pointer;
+      @extend %natural-effect;
+      transition-property: color, border-color;
+      &:hover,
+      &:focus {
+        color: color(dft, brightest);
+      }
+    }
+    &.radioItem {
+      width: 134px;
+      margin-left: 4px;
+      margin-right: 4px;
+      label {
+        border: 1px solid color(theme, project-s);
+        border-radius: 12px;
+        overflow: hidden;
+        @extend %backface;
+        @include pseudo-init {
+          @include pos-abs(0, 0, null, 0);
+          height: 2px;
+          @extend %natural-effect;
+          transition-property: background-color;
+        }
+      }
+      input {
+        ~ label {
+          width: 100%;
+          padding: 7px 0 10px 0;
+        }
+        &:checked ~ label {
+          border-color: color(dft, brightest);
+          &:before {
+            background: color(dft, brightest);
+          }
+        }
+      }
+    }
+    &.radioItem2,
+    &.chkItem {
+      input {
+        ~ label {
+          position: relative;
+          line-height: 1;
+          @include pseudo-init(before, inline-block) {
+            margin-right: 8px;
+            @include size(22px);
+            vertical-align: middle;
+            border: 1px solid #affdfb;
+          }
+          @include pseudo-init(after) {
+            opacity: 0;
+            @include pos-abs-lt(4px);
+            @include size(16px);
+            transform: scale(0);
+            @extend %natural-effect;
+            transition-property: border-color;
+          }
+        }
+        &:checked ~ label {
+          &:before {
+            border-color: color(dft, brightest);
+          }
+          &:after {
+            background-color: color(dft, brightest);
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      }
+      ~ &:not(:last-of-type) {
+        margin-right: 25px;
+      }
+    }
+    &.radioItem2 {
+      label:focus {
+        border-top: 3px solid color(dft, brightest);
+      }
+      input {
+        ~ label {
+          &:before,
+          &:after {
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+    &.chkItem {
+      display: block;
+      input {
+        ~ label {
+          &:before,
+          &:after {
+            border-radius: 5px;
+            @extend %backface;
+          }
         }
       }
     }
 
+    @for $idx from 1 through 6 {
+      &:nth-child(#{$idx}) {
+        animation-delay: $idx * 0.1s - 0.1s;
+      }
+    }
+  }
+
+  // 리스트 더보기
+  #load-more {
+    display: block;
+    margin: 30px auto 0 auto;
+    padding: 20px 100px 25px;
+    @include font(40px, null, color(dft, brightest));
+    text-align: center;
+    border: 2px solid color(dft, brightest);
+    border-radius: 25px;
+    @extend %ani-direction-init;
+    animation-name: toB;
+    @extend %natural-effect;
+    transition-property: background-color;
+    cursor: pointer;
+    overflow: hidden;
+    // 마우스 오버
+    &:hover {
+      color: color(theme, project);
+      background: rgba(color(dft, brightest), 0.9);
+    }
+    // 이미지 로딩 중
+    &.is-loading {
+      display: none;
+      cursor: default;
+      pointer-events: none;
+      &:hover {
+        background: none;
+      }
+    }
+  }
+
+  // parallex 활성화
+  &.active {
+    // 필터그룹
+    // 1차 필터 외
+    .filter-group.filter-group-sub, 
+    .form-item,
+    // 이미지 로딩 끝난 후 더보기 버튼
     &:not(.is-loading) #load-more {
-      animation: fromB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-      top: 0;
-      opacity: 1;
+      animation-name: fromB;
     }
   }
 }
 // 프로젝트 갤러리
 #pf_gellery {
-  transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  top: 30px;
-  opacity: 0;
+  @extend %ani-direction-init;
+  animation-name: toB;
   @extend %clearfix;
+  // 섹션 활성화시
   #project.active & {
-    animation: fromB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    animation-fill-mode: backwards;
-    top: 0;
-    opacity: 1;
+    animation-name: fromB;
   }
+  // 이미지 로딩중
   #project.is-loading & {
     position: relative;
     height: calc(100vh - 450px) !important;
   }
+  // 갤러리 로딩 아이콘
   #project.is-loading &:before {
     @include pseudo-init-ctt;
     @include pos-abs-lt(50%, 30%);
@@ -85,154 +253,6 @@
 .pf_box {
   padding-bottom: 30px;
 }
-.filter_wrap {
-  margin: 20px auto 40px;
-  text-align: center;
-}
-.filter-group {
-  flex-wrap: wrap;
-  ~ &:nth-of-type(n + 2) {
-    margin-top: 15px;
-  }
-  &.filter-group-main {
-    @extend %flex-c;
-  }
-  &.filter-group-sub {
-    @extend %flex-align-c;
-    max-width: 1024px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px 25px;
-    background: rgba(color(theme, project-s), 0.2);
-    border-radius: 20px;
-    opacity: 0;
-  }
-}
-.form-item {
-  opacity: 0;
-  position: relative;
-  top: 30px;
-  margin: 4px 0;
-  text-align: center;
-  overflow: hidden;
-  animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  input {
-    @include pos-abs-lt;
-    opacity: 0;
-    &:checked ~ label {
-      color: color(dft, brightest);
-    }
-  }
-  label {
-    display: inline-block;
-    vertical-align: top;
-    color: color(theme, project-s);
-    box-sizing: border-box;
-    cursor: pointer;
-    transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
-    &:hover,
-    &:focus {
-      color: color(dft, brightest);
-    }
-  }
-  &.radioItem {
-    width: 134px;
-    margin-left: 4px;
-    margin-right: 4px;
-    label {
-      border: 1px solid color(theme, project-s);
-      border-radius: 12px;
-      overflow: hidden;
-      @extend %backface;
-      @include pseudo-init {
-        @include pos-abs(0, 0, null, 0);
-        height: 2px;
-        transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-    }
-    input {
-      ~ label {
-        width: 100%;
-        padding: 7px 0 10px 0;
-      }
-      &:checked ~ label {
-        border-color: color(dft, brightest);
-        &:before {
-          background: color(dft, brightest);
-        }
-      }
-    }
-  }
-  &.radioItem2,
-  &.chkItem {
-    input {
-      ~ label {
-        position: relative;
-        line-height: 1;
-        @include pseudo-init(before, inline-block) {
-          margin-right: 8px;
-          @include size(22px);
-          vertical-align: middle;
-          border: 1px solid #affdfb;
-        }
-        @include pseudo-init(after) {
-          opacity: 0;
-          @include pos-abs-lt(4px);
-          @include size(16px);
-          transform: scale(0);
-          transition-property: transform, opacity;
-          transition: 0.08s cubic-bezier(0.51, -0.19, 0.17, 0.82);
-        }
-      }
-      &:checked ~ label {
-        color: color(dft, brightest);
-        &:before {
-          border-color: color(dft, brightest);
-        }
-        &:after {
-          background-color: color(dft, brightest);
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-    }
-    ~ &:not(:last-of-type) {
-      margin-right: 25px;
-    }
-  }
-  &.radioItem2 {
-    label:focus {
-      border-top: 3px solid color(dft, brightest);
-    }
-    input {
-      ~ label {
-        &:before,
-        &:after {
-          border-radius: 50%;
-        }
-      }
-    }
-  }
-  &.chkItem {
-    display: block;
-    input {
-      ~ label {
-        &:before,
-        &:after {
-          border-radius: 5px;
-          @extend %backface;
-        }
-      }
-    }
-  }
-
-  @for $idx from 1 through 6 {
-    &:nth-child(#{$idx}) {
-      animation-delay: $idx * -0.1s + 0.6s;
-    }
-  }
-}
-
 .grid-sizer,
 .pf_item {
   width: calc((100% - 1% * 4) / 5);
@@ -240,6 +260,7 @@
 .gutter-sizer {
   width: 1%;
 }
+// 프로젝트 리스트 아이템
 .pf_item {
   float: left;
   margin-bottom: 15px;
@@ -248,11 +269,12 @@
   &:hover {
     box-shadow: 5px 5px 50px rgba(color(dft, darkest), 0.3);
   }
+  // 이미지 로딩중
   #project.is-loading &,
   &.is-loading {
     opacity: 0;
   }
-  // 썸네일 높이
+  // 썸네일 길이 길때
   &.thumb_h_long {
     .pf_thumb .img_box {
       height: 0;
@@ -260,7 +282,9 @@
     }
   }
 }
+// 프로젝트 리스트 썸네일
 .pf_thumb {
+  // 썸네일 이미지
   .img_box {
     width: 100%;
     border-bottom: 3px dashed color(dft, brightest);
@@ -271,10 +295,11 @@
       width: 100%;
     }
   }
+  // 리스트 간략 정보
   .txt_box {
     padding: 25px 20px;
     line-height: 1.3;
-    border-top: 3px dashed #00d4cd;
+    border-top: 3px dashed color(theme, project);
     background: color(dft, brightest);
   }
   ul {
@@ -288,14 +313,17 @@
       }
     }
   }
+  // 타이틀
   h4 {
     @include font(22px, null, color(dft, dark));
     font-weight: bold;
   }
+  // 프로젝트 요약 설명
   .pf_intro {
     margin-top: 5px;
     color: color(dft, lighter);
   }
+  // 참요율, 기간 아이콘
   .pf_th_li_t {
     line-height: 18px;
     overflow: hidden;
@@ -304,11 +332,13 @@
       text-align: center;
     }
   }
+  // 참요율, 기간 텍스트
   .pf_th_li_c {
     display: inline-block;
     width: calc(100% - 21px);
   }
 }
+// 썸네일 호버효과
 .pf_hover {
   position: absolute;
   @include size(100%);
@@ -356,7 +386,31 @@
   background: rgba(color(dft, darkest), 0.7);
   box-sizing: border-box;
   z-index: 999;
+
+  // 팝업 닫기 버튼
+  .btn_close {
+    display: block;
+    @include pos-abs-rt(30px, 0);
+    line-height: 1;
+    padding: 7px 20px;
+    background-color: color(dft, dark);
+    box-shadow: 3px 3px 0 rgba(color(dft, darkest), 0.2);
+    border-radius: 0 0 10px 10px;
+    z-index: 9;
+    img {
+      vertical-align: top;
+    }
+  }
+  // 딤드
+  .close_bg {
+    @include pos-fix(0, null, null, 0);
+    width: calc(100% - 17px);
+    height: 100%;
+    box-sizing: border-box;
+    z-index: 0;
+  }
 }
+// 프로젝트 팝업 레이어
 .pf_layer {
   @include pos-abs(5vh, 0, 5vh, 50%);
   @extend %flex-vtc-layout;
@@ -368,6 +422,7 @@
   border-radius: 30px;
   overflow: hidden;
 }
+// 프조젝트 상단 타이틀 영역
 .pf_layer_tit {
   @extend %flex-vtc-layout;
   padding: $pf-pop-info-tb-gap 0 $pf-pop-info-ctt-tb-gap;
@@ -388,6 +443,7 @@
     @include font(17px, null, color(dft, medium));
   }
 }
+// 프조젝트 콘텐츠
 .pf_layer_ctt {
   flex: 1;
   @extend %flex-vtc-layout;
@@ -396,6 +452,7 @@
   padding-bottom: 40px;
   @extend %h-scr;
 }
+// 프로젝트 정보 영역
 .pf_info {
   width: $pf-pop-info-wid;
   padding: $pf-pop-info-ctt-tb-gap $pf-pop-info-lr-gap;
@@ -405,9 +462,11 @@
   background: color(bg, light);
   border: 1px solid color(bd, base);
 }
+// 프로젝트 지원 기기 & 브라우저
 .pf_info_type {
   display: flex;
 }
+// 프로젝트 지원 기기
 .type_device {
   position: relative;
   @extend %flex-align-c;
@@ -427,7 +486,7 @@
     }
   }
 }
-
+// 프로젝트 지원 브라우저
 .type_browser {
   @extend %flex-align-c;
   border-left: 1px solid #ccc;
@@ -452,6 +511,7 @@
       @include sprite($browser-safari);
     }
   }
+  // 브라우저 버전
   .browser_ver {
     @include pos-abs-rt(-6px, -5px);
     display: block;
@@ -461,7 +521,7 @@
     text-align: center;
   }
 }
-
+// 프로젝트 정보 리스트
 .txt_basic_sub {
   margin-top: $pf-pop-info-ctt-tb-gap;
   line-height: 1.5;
@@ -480,12 +540,14 @@
       margin-top: 8px;
     }
   }
+  // 타이틀
   .pf_li_t {
     width: 115px;
     font-weight: bold;
     text-align: right;
     margin-right: 10px;
   }
+  // 콘텐츠
   .pf_li_c {
     flex: 1;
     a {
@@ -497,6 +559,7 @@
     }
   }
 }
+// 프로젝트 상세 정보
 .pf_info_detail {
   @extend %flex-vtc-layout;
   width: $pf-pop-info-wid;
@@ -509,7 +572,7 @@
   border: solid #e7e7e7;
   border-width: 0 1px 1px 1px;
 }
-
+// 탭 타이틀
 .txt_detail_tit {
   display: flex;
   gap: 6px;
@@ -547,7 +610,7 @@
     }
   }
 }
-
+// 탭 콘텐츠
 .txt_detail_ctt {
   padding: 10px $pf-pop-info-lr-gap $pf-pop-info-tb-gap;
   > li {
@@ -601,84 +664,14 @@
     }
   }
 }
-
+// 프로젝트 상세 이미지
 .pf_img {
   @include pos-abs-lt;
   @include size(calc(100% - $pf-pop-info-wid), 100%);
   background-color: color(dft, brightest);
-  overflow-y: auto;
-  overflow-x: hidden;
+  @extend %h-scr;
   img {
     width: 100%;
-  }
-}
-
-.pf_detail {
-  .btn_close {
-    display: block;
-    @include pos-abs-rt(30px, 0);
-    line-height: 1;
-    padding: 7px 20px;
-    background-color: color(dft, dark);
-    box-shadow: 3px 3px 0 rgba(color(dft, darkest), 0.2);
-    z-index: 9;
-    border-radius: 0 0 10px 10px;
-    img {
-      vertical-align: top;
-    }
-  }
-  .close_bg {
-    @include pos-fix(0, null, null, 0);
-    width: calc(100% - 17px);
-    height: 100%;
-    z-index: 0;
-    box-sizing: border-box;
-  }
-}
-// 리스트 더보기
-#load-more {
-  display: block;
-  position: relative;
-  top: 30px;
-  margin: 30px auto 0 auto;
-  background: transparent;
-  border-radius: 25px;
-  animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0;
-  overflow: hidden;
-  &:not(.is-loading) {
-    padding: 8px 10px 10px 10px;
-    text-align: center;
-    @include font(40px, null, color(dft, brightest));
-    border: 2px solid color(dft, brightest);
-    cursor: pointer;
-  }
-  &.is-loading {
-    font-size: 0;
-    @include size(29px, 30px);
-    transform: translate(-50%, -50%);
-    border: 0;
-    pointer-events: none;
-    cursor: default;
-    outline: 0;
-    @include pseudo-init(after) {
-      @include pos-abs-lt;
-      @include size(100%);
-      background: url("#{$img-url}/common/loading2.png") center no-repeat;
-      animation: rotate 1.2s infinite;
-      animation-play-state: running;
-    }
-    &:hover {
-      background: none;
-    }
-  }
-  &:hover {
-    background: rgba(color(dft, brightest), 0.9);
-    color: color(theme, project);
-    background: color(dft, brightest);
-  }
-  #project.active & {
-    padding: 20px 100px 25px;
   }
 }
 
@@ -721,58 +714,63 @@
 
 // mobile
 @include respond(1023px) {
-  #project .el02 {
-    top: 105px;
-    left: calc(100% - 66px);
-  }
-
-  .filtr_wrap {
-    overflow-x: scroll;
-    -webkit-overflow-style: none;
-  }
-  .filtr_wrap::-webkit-scrollbar {
-    @include size(0);
-    display: none;
-  }
-  .filter-group {
-    flex-wrap: wrap;
-    ~ &:nth-of-type(n + 2) {
-      margin-top: 15px;
+  #project {
+    // 배경요소
+    // 돋보기
+    .el02 {
+      top: 105px;
+      left: calc(100% - 66px);
     }
-    &.filter-group-main {
-      border: solid color(theme, project-s);
-      border-width: 1px 0;
+    // 필터 영역
+    .filtr_wrap {
+      overflow-x: scroll;
+      -webkit-overflow-style: none;
     }
-    &.filter-group-sub {
-      padding: 8px 15px;
-      border-radius: 15px;
+    .filtr_wrap::-webkit-scrollbar {
+      @include size(0);
+      display: none;
     }
-  }
-  .form-item {
-    &.radioItem {
-      width: auto;
-      margin: 0 5px;
-      input[type="radio"]:checked ~ label {
-        color: color(theme, sub);
-        animation: none;
-        &:before {
-          background: transparent;
+    .filter-group {
+      flex-wrap: wrap;
+      ~ &:nth-of-type(n + 2) {
+        margin-top: 15px;
+      }
+      &.filter-group-main {
+        border: solid color(theme, project-s);
+        border-width: 1px 0;
+      }
+      &.filter-group-sub {
+        padding: 8px 15px;
+        border-radius: 15px;
+      }
+    }
+    .form-item {
+      &.radioItem {
+        width: auto;
+        margin: 0 5px;
+        input[type="radio"]:checked ~ label {
+          color: color(theme, sub);
+          animation: none;
+          &:before {
+            background: transparent;
+          }
+        }
+        label {
+          border: 0;
         }
       }
+      &.chkItem {
+        margin-top: 10px;
+      }
+
       label {
+        color: color(dft, brightest);
         border: 0;
       }
     }
-    &.chkItem {
-      margin-top: 10px;
-    }
-
-    label {
-      color: color(dft, brightest);
-      border: 0;
-    }
   }
 
+  // 프로젝트 리스트 영역
   .grid-sizer,
   .pf_item {
     width: 32.3%;
@@ -780,7 +778,16 @@
   .pf_item {
     margin-bottom: 1%;
   }
-
+  // 레이어 팝업
+  .pf_layer {
+    background-color: color(bg, base);
+    z-index: 1;
+  }
+  .pf_layer_ctt {
+    display: block;
+    overflow: hidden;
+    overflow-y: auto;
+  }
   .pf_layer_tit {
     .pf_main_tit,
     .pf_intro {
@@ -794,42 +801,7 @@
       font-size: 15px;
     }
   }
-  .type_device > li {
-    &:not(:last-child) {
-      margin-right: 9px;
-      font-size: 18px;
-    }
-    &.responsive {
-      font-size: 16px;
-    }
-  }
-  .type_browser > li {
-    margin-left: 7px;
-    img {
-      width: 19px;
-    }
-  }
-
-  .txt_basic_sub {
-    margin-top: 15px;
-    .pf_c > li {
-      ~ li {
-        margin-top: 5px;
-      }
-    }
-  }
-
-  .pf_layer {
-    background-color: color(bg, base);
-    z-index: 1;
-  }
-
-  .pf_layer_ctt {
-    display: block;
-    overflow: hidden;
-    overflow-y: auto;
-  }
-
+  // 프로젝트 정보 영역
   .pf_info {
     width: $m-pf-pop-info-wid;
     font-size: 13px;
@@ -839,7 +811,33 @@
     width: $m-pf-pop-info-wid;
     @include font(14px, 1.5);
   }
-
+  // 지원기기
+  .type_device > li {
+    &:not(:last-child) {
+      margin-right: 9px;
+      font-size: 18px;
+    }
+    &.responsive {
+      font-size: 16px;
+    }
+  }
+  // 지원 브라우저
+  .type_browser > li {
+    margin-left: 7px;
+    img {
+      width: 19px;
+    }
+  }
+  // 프로젝트 정보
+  .txt_basic_sub {
+    margin-top: 15px;
+    .pf_c > li {
+      ~ li {
+        margin-top: 5px;
+      }
+    }
+  }
+  // 프로젝트 상세 이미지
   .pf_img {
     position: static;
     overflow: hidden;
@@ -864,6 +862,7 @@
 } // e.767
 
 @include respond(599px) {
+  // 프로젝트 리스트 썸네일
   .pf_thumb {
     .txt_box {
       padding: 15px 12px;

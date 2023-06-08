@@ -3,25 +3,29 @@
   background-image: url("#{$img-url}/contact/bgContact_cen.png"), url("#{$img-url}/contact/bgContact_back2.png"),
     url("#{$img-url}/contact/bgContact_back2.png"), url("#{$img-url}/contact/bgContact_back.jpg");
   background-position: center, -300px calc(100% + 300px), calc(100% + 280px) -200px, center;
-  background-attachment: scroll, fixed, fixed, fixed;
-  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
   background-size: auto, auto, auto, cover;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+  background-attachment: scroll, fixed, fixed, fixed;
   overflow: hidden;
   .wrap_cen {
     display: table;
   }
+  // 배경요소
+  // 상단 꽃
   .el01 {
     top: calc(50% - 489px);
     left: calc(50% - 627px);
     animation: shake 3s ease-in-out infinite;
     @include imgsprite($bg-contact-el01);
   }
+  // 하단 꽃
   .el02 {
     top: calc(50% - 12px);
     left: calc(50% + 466px);
     animation: shake 3s ease-in-out 1.5s infinite;
     @include imgsprite($bg-contact-el02);
   }
+  // 나비
   .el03 {
     top: calc(50% - 230px);
     left: calc(50% + 50px);
@@ -29,6 +33,7 @@
     transform-origin: 38px 107px;
     @include imgsprite($bg-contact-butterfly);
   }
+  // 연락처 그룹
   .contact_group {
     @include pos-abs-lt(50%);
     margin-top: -69px;
@@ -43,93 +48,72 @@
   .gitHub {
     a {
       display: inline-block;
-      position: relative;
     }
   }
-
+  // 이름로고
   .sub_logo {
+    a {
+      @extend %ani-direction-init;
+      animation-name: toL;
+    }
     img {
       width: 220px;
     }
   }
-  .tel_num img {
-    width: 100%;
-    max-width: 285px;
+  // 전화번호, 메일
+  .tel_num,
+  .mail {
+    a {
+      @extend %ani-direction-init;
+      animation-name: toR;
+    }
+  }
+  .tel_num {
+    img {
+      width: 100%;
+      max-width: 285px;
+    }
+    a {
+      animation-delay: 0.3s;
+    }
   }
   .mail a {
     color: color(dft, lighter);
+    animation-delay: 0.4s;
   }
-  .gitHub {
-    margin-top: 30px;
-    a {
-      color: color(dft, brightest);
-    }
-  }
+  // 메일, 깃허브
   .mail,
   .gitHub {
     &:hover a {
       text-decoration: underline;
     }
   }
-  .sub_logo a {
-    transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: toL 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    right: 30px;
-    opacity: 0;
-  }
-  .tel_num,
-  .mail {
+  .gitHub {
+    margin-top: 30px;
     a {
-      transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
-      animation: toR 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-      left: 30px;
-      opacity: 0;
+      color: color(dft, brightest);
+      @extend %ani-direction-init;
+      animation-name: toB;
+      animation-delay: 0.5s;
     }
   }
-  .gitHub a {
-    transition: 0.3s all 0s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: toB 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    top: 30px;
-    opacity: 0;
-  }
+  // 섹선 활성화
   &.active {
     .sub_logo a {
-      position: relative;
-      animation: fromL 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
-      animation-fill-mode: backwards;
-      opacity: 1;
-      right: 0;
+      animation-name: fromL;
     }
     .tel_num,
     .mail {
       a {
-        position: relative;
-        animation: fromR 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-        animation-fill-mode: backwards;
-        opacity: 1;
-        left: 0;
-      }
-    }
-    .tel_num {
-      a {
-        animation-delay: 0.3s;
-      }
-    }
-    .mail {
-      a {
-        animation-delay: 0.4s;
+        animation-name: fromR;
       }
     }
     .gitHub a {
-      animation: fromB 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
-      animation-fill-mode: backwards;
-      animation-fill-mode: backwards;
-      top: 0;
-      opacity: 1;
+      animation-name: fromB;
     }
   }
 }
-
+// 푸터
 .main_footer {
   position: absolute;
   padding: 5px 0;
@@ -150,12 +134,6 @@
 } // e.1023
 
 @include respond(479px) {
-  /* 전체 */
-  .m_br {
-    display: block;
-  }
-
-  /* 컨택 섹션 */
   #contact .sub_txt {
     margin: 40px auto;
   }
