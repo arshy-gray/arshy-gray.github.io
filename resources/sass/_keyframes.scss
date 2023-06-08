@@ -196,13 +196,3 @@
     transform: rotateX(0deg);
   }
 }
-
-// bugfix
-@-webkit-keyframes bugfix {
-  from {
-    padding: 0;
-  }
-  to {
-    padding: 0;
-  }
-}
