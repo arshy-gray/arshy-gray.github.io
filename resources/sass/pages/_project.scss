@@ -1,5 +1,6 @@
 //= project
 #project {
+  z-index: 1;
   background-image: url("#{$img-url}/project/bgPortfolio_btm.png");
   background-color: color(theme, project);
   background-position: right bottom;
@@ -185,6 +186,8 @@
 
   // 리스트 더보기
   #load-more {
+    position: relative;
+    z-index:0;
     display: block;
     margin: 30px auto 0 auto;
     padding: 20px 100px 25px;
@@ -229,6 +232,7 @@
 // 프로젝트 갤러리
 #pf_gellery {
   @extend %ani-direction-init;
+  z-index:1;
   animation-name: toB;
   @extend %clearfix;
   // 섹션 활성화시
