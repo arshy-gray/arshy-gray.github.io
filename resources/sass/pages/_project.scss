@@ -2,7 +2,7 @@
 #project {
   background-color: color(theme, project);
   background-repeat: no-repeat;
-  background-image: url("/resources/images/project/bgPortfolio_btm.png");
+  background-image: url("#{$img-url}/project/bgPortfolio_btm.png");
   background-position: right bottom;
   background-attachment: fixed;
   &.is-loading {
@@ -664,7 +664,7 @@
     @include pseudo-init(after) {
       @include pos-abs-lt;
       @include size(100%);
-      background: url("/resources/images/common/loading2.png") center no-repeat;
+      background: url("#{$img-url}/common/loading2.png") center no-repeat;
       animation: rotate 1.2s infinite;
       animation-play-state: running;
     }

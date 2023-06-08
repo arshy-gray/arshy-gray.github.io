@@ -6,8 +6,8 @@
   background-repeat: no-repeat;
   background-position: calc(50% - 15px) -50px, center top, center bottom;
   background-size: auto, auto, cover;
-  background-image: url("/resources/images/splash/LDpage_moon.png"), url("/resources/images/splash/LDpage_cloud.png"),
-    url("/resources/images/splash/LDpage_bg.jpg");
+  background-image: url("#{$img-url}/splash/LDpage_moon.png"), url("#{$img-url}/splash/LDpage_cloud.png"),
+    url("#{$img-url}/splash/LDpage_bg.jpg");
   color: color(dft, brightest);
   z-index: 9999999;
   overflow: hidden;
@@ -57,7 +57,7 @@
     .bar_R {
       @include pos-abs-lt;
       @include size(100%, 0);
-      background: url("/resources/images/splash/LDpage_R.png") 13px 15px no-repeat;
+      background: url("#{$img-url}/splash/LDpage_R.png") 13px 15px no-repeat;
       z-index: 1;
       overflow: hidden;
     }
@@ -88,7 +88,7 @@
     @include pos-rel-lt(-11px, -14px);
     @include size(326px);
     margin: auto;
-    background: url("/resources/images/splash/LDpage_L.png") 14px 15px no-repeat;
+    background: url("#{$img-url}/splash/LDpage_L.png") 14px 15px no-repeat;
   }
 
   // no-js

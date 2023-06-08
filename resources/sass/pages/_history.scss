@@ -2,9 +2,8 @@
 #history {
   background-color: color(theme, history);
   background-repeat: no-repeat;
-  background-image: url("/resources/images/history/bgHistory_left.png"),
-    url("/resources/images/history/bgHistory_right.png"), url("/resources/images/history/bgHistory_back.png"),
-    url("/resources/images/history/bgHistory_back.png");
+  background-image: url("#{$img-url}/history/bgHistory_left.png"), url("#{$img-url}/history/bgHistory_right.png"),
+    url("#{$img-url}/history/bgHistory_back.png"), url("#{$img-url}/history/bgHistory_back.png");
   background-position: left calc(50% + 20px), right calc(50% + 20px), -300px -500px,
     calc(100% + 300px) calc(100% + 500px);
   background-attachment: fixed;
@@ -276,7 +275,7 @@
     .bg_el {
       display: none;
     }
-    .ht_ico{
+    .ht_ico {
       margin: 0 auto;
     }
 

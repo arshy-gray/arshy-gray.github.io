@@ -1,7 +1,7 @@
 //= Intro
 #intro {
   background-repeat: no-repeat;
-  background-image: url("/resources/images/intro/bgMain_moon.png"), url("/resources/images/intro/bgMain_back.jpg");
+  background-image: url("#{$img-url}/intro/bgMain_moon.png"), url("#{$img-url}/intro/bgMain_back.jpg");
   background-position: calc(50% + 600px) 65px, center;
   background-size: auto, cover;
   background-attachment: fixed;
