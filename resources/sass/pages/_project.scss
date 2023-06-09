@@ -1,4 +1,18 @@
 //= project
+$pf-pop-info-wid: 430px;
+$pf-pop-info-tb-gap: 35px;
+$pf-pop-info-ctt-tb-gap: 20px;
+$pf-pop-info-lr-gap: 25px;
+$pf-pop-info-space: $pf-pop-info-ctt-tb-gap $pf-pop-info-lr-gap 0;
+$m-pf-pop-info-wid: 100%;
+
+// 로딩 아이콘 애니메이션
+%loading-ani {
+  animation: rotate 1.2s infinite;
+  animation-play-state: running;
+  @include imgsprite($pf-loading);
+}
+
 #project {
   z-index: 1;
   background-image: url("#{$img-url}/project/bgPortfolio_btm.png");
@@ -187,7 +201,7 @@
   // 리스트 더보기
   #load-more {
     position: relative;
-    z-index:0;
+    z-index: 0;
     display: block;
     margin: 30px auto 0 auto;
     padding: 20px 100px 25px;
@@ -208,9 +222,17 @@
     }
     // 이미지 로딩 중
     &.is-loading {
-      display: none;
       cursor: default;
       pointer-events: none;
+      padding: 0;
+      color: transparent;
+      border: 0;
+      animation-play-state: paused;
+
+      @include pseudo-init {
+        @extend %loading-ani;
+      }
+
       &:hover {
         background: none;
       }
@@ -232,7 +254,7 @@
 // 프로젝트 갤러리
 #pf_gellery {
   @extend %ani-direction-init;
-  z-index:1;
+  z-index: 1;
   animation-name: toB;
   @extend %clearfix;
   // 섹션 활성화시
@@ -248,11 +270,8 @@
   #project.is-loading &:before {
     @include pseudo-init-ctt;
     @include pos-abs-lt(50%, 30%);
-    @include size(29px, 30px);
     transform: translate(-50%, -50%);
-    animation: rotate 1.2s infinite;
-    animation-play-state: running;
-    @include imgsprite($pf-loading);
+    @extend %loading-ani;
   }
 }
 .pf_box {

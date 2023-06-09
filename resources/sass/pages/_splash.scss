@@ -1,32 +1,47 @@
 //= intro
+$progress-bar-wid: 303px;
+$progress-bar-h: 297px;
+
 #splash {
   // 진행률 표시
-  @include pos-fix-lt;
-  @include size(100%);
+  @include pos-fix(0, 0, 0, 0);
   color: color(dft, brightest);
+  text-align: center;
   background-image: url("#{$img-url}/splash/LDpage_moon.png"), url("#{$img-url}/splash/LDpage_cloud.png"),
     url("#{$img-url}/splash/LDpage_bg.jpg");
   background-position: calc(50% - 15px) -50px, center top, center bottom;
   background-size: auto, auto, cover;
   background-repeat: no-repeat;
-  z-index: 9999999;
+  z-index: 1;
   overflow: hidden;
   // 진행률 박스
   .progress {
-    position: fixed;
+    position: relative;
     display: inline-block;
-    @include size(100%);
-    overflow: hidden;
-    .txt_box {
+    @include size($progress-bar-wid, $progress-bar-h);
+    margin-top: 128px;
+    .contact_group {
       position: relative;
-      width: 100%;
-      margin-top: 170px;
-      text-align: center;
+      z-index: 1;
+      @extend %flex-vtc-layout;
+      justify-content: center;
+      height: 100%;
+    }
+    .mail a {
+      color: color(theme, intro-s);
+    }
+    .gitHub {
+      margin-top: 13px;
+      a {
+        display: inline-block;
+        opacity: 0.75;
+      }
     }
   }
   .sub_logo {
-    position: relative;
-    top: 20px;
+    a {
+      @extend %imgFix;
+    }
     img {
       width: 220px;
       pointer-events: none;
@@ -34,58 +49,49 @@
     }
   }
   .tel_num {
-    margin: 30px auto 0 auto;
-    width: 220px;
-    img {
-      width: 100%;
+    margin-top: 5px;
+    a {
+      width: 260px;
+      display: inline-block;
     }
   }
+  // 진행율 막대 표시
   .progress-bar {
-    @include pos-abs-lt(0, 127px);
-    width: 100%;
-    text-align: center;
+    @include pos-abs(0, 0, 0, 0);
+    .bar_L,
     .bar_R {
-      @include pos-abs-lt;
-      @include size(100%, 0);
-      background: url("#{$img-url}/splash/LDpage_R.png") 13px 15px no-repeat;
-      z-index: 1;
+      @include size(50%, 0);
+      padding-bottom: 2px;
       overflow: hidden;
+      .bar {
+        @include size($progress-bar-wid, $progress-bar-h);
+        border: 1px solid color(theme, main);
+        border-radius: 50%;
+      }
     }
     .bar_L {
-      @include pos-abs-lt;
-      @include size(50%, 100%);
-      z-index: 2;
-      overflow: hidden;
-      img {
-        width: auto;
-      }
+      transform: translateY(2px);
+    }
+    .bar_L,
+    .bar_L .bar {
+      @include pos-abs-lb;
+    }
+    .bar_R,
+    .bar_R .bar {
+      @include pos-abs-rt;
     }
   }
   .bar_box {
-    position: relative;
-    margin: auto;
-    @include size(303px, 297px);
-  }
-  .bar100 {
-    margin: auto;
-    @include pos-abs-lt(2px);
-    @include size(302px, 296px);
-  }
-  .bar0 {
-    @include pos-rel-lt(-11px, -14px);
-    @include size(326px);
-    margin: auto;
-    background: url("#{$img-url}/splash/LDpage_L.png") 14px 15px no-repeat;
+    @include size(100%);
   }
   // 미지원 환경 안내 텍스트
-  .text2,
-  .text3 {
+  .no-browser-txt,
+  .no-js-txt {
     display: none;
   }
   // 로딩 진행율 텍스트
-  .text1 {
-    position: relative;
-    top: 70px;
+  .progress-txt {
+    margin-top: 10px;
     width: 100%;
     font-size: 12px;
     text-align: center;
@@ -94,20 +100,23 @@
   // no-js
   .no-js & {
     .bar_box,
-    .text1,
-    .text2 {
+    .progress-txt,
+    .no-browser-txt {
       display: none;
     }
 
     // 자바스크립트 비활성화 안내 문구
-    .text3 {
+    .no-js-txt {
       position: relative;
       display: block;
-      margin-top: 80px;
+      margin-top: 25px;
       padding: 0 20px;
       text-align: center;
       a {
         color: color(theme, sub);
+      }
+      strong {
+        color: color(theme, history);
       }
     }
   }

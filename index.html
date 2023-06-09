@@ -29,16 +29,20 @@
 
     <title>Song Aeri | Portfolio</title>
 
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" />
-    <link rel="stylesheet" type="text/css" href="/dist/css/common/common.css" />
-    <link rel="stylesheet" type="text/css" href="/dist/css/pages/main.css" />
+    <link
+      rel="stylesheet preload"
+      as="style"
+      href="https://fonts.googleapis.com/earlyaccess/notosanskr.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/dist/css/common/common.css" />
+    <link rel="stylesheet" href="/dist/css/pages/main.css" />
 
-    <script src="/resources/js/lib/jquery-1.12.4.min.js"></script>
-    <script src="/resources/js/lib/jquery-ui.min.js"></script>
-    <script src="https://kit.fontawesome.com/83054eb756.js" crossorigin="anonymous"></script>
-    <script src="/resources/js/lib/imagesloaded.pkgd.min.js"></script>
-    <script src="/resources/js/lib/masonry.pkgd.min.js"></script>
-    <script src="/resources/js/main.js"></script>
+    <script async src="https://kit.fontawesome.com/83054eb756.js" crossorigin="anonymous"></script>
+    <script defer src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+    <script defer src="/resources/js/lib/jquery-ui.min.js"></script>
+    <script defer src="/resources/js/lib/imagesloaded.pkgd.min.js"></script>
+    <script defer src="/resources/js/lib/masonry.pkgd.min.js"></script>
   </head>
   <body>
     <div id="wrapper">
@@ -377,31 +381,43 @@
 
     <!-- 스플래시 -->
     <div class="progress_box" id="splash">
+      <!-- 로딩 진행율 -->
       <div class="progress">
-        <ul class="txt_box">
-          <li class="sub_logo"><img src="/resources/images/common/name.png" alt="Song Aeri" /></li>
-          <li class="tel_num"><img src="/resources/images/common/tel_num.png" alt="010-6631-0512" /></li>
-          <li class="mail">arshy.gray@gmail.com</li>
+        <ul class="contact_group">
+          <li class="sub_logo">
+            <a href="#intro"><img src="/resources/images/common/name.png" alt="Song Aeri, Intro 페이지로 가기" /></a>
+          </li>
+          <li class="tel_num">
+            <a href="tel:010-6331-0512"><img src="/resources/images/common/tel_num.png" alt="전화걸기" /></a>
+          </li>
+          <li class="mail">
+            <a href="mailto:arshy.gray@gmail.com" title="메일 보내기">arshy.gray@gmail.com</a>
+          </li>
+          <li class="gitHub">
+            <a href="https://github.com/arshy-gray" target="_blank" title="깃허브 바로가기"
+              >https://github.com/arshy-gray</a
+            >
+          </li>
         </ul>
         <div class="progress-bar">
           <div class="bar_box">
-            <div class="bar100"></div>
-            <div class="bar0">
-              <span class="bar_R"></span>
-              <span class="bar_L"><img src="/resources/images/splash/LDpage_0.png" alt="" /></span>
-            </div>
+            <span class="bar_L"><span class="bar"></span></span>
+            <span class="bar_R"><span class="bar"></span></span>
           </div>
         </div>
-        <p class="progress-text text1">0%</p>
-
-        <!-- <p class="text2">지원되지 않는 브라우저입니다.</p> -->
-        <p class="text3">
-          현재 사용 중인 브라우저는 <strong class="theme_sub">자바스크립트(Javascript)</strong>를 지원하지 않거나, 해당
-          기능이 활성화되어 있지 않습니다. <br /><br />
-          <strong class="theme_sub">자바스크립트(Javascript)</strong> 허용 후 이용 가능합니다.
-        </p>
+        <p class="progress-txt">0%</p>
       </div>
+      <!-- //로딩 진행율 -->
+
+      <!-- <p class="no-browser-txt">지원되지 않는 브라우저입니다.</p> -->
+      <p class="no-js-txt">
+        현재 사용 중인 브라우저는 <strong>자바스크립트(Javascript)</strong>를 지원하지 않거나, 해당
+        기능이 활성화되어 있지 않습니다. <br />
+        <strong>자바스크립트(Javascript)</strong> 허용 후 이용 가능합니다.
+      </p>
     </div>
     <!-- // 스플래시 -->
   </body>
+  <script defer src="/resources/js/init.js" class="production"></script>
+  <script defer src="/resources/js/project_gallery.js" class="production"></script>
 </html>

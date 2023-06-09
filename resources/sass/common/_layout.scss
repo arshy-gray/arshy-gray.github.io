@@ -1,9 +1,8 @@
 //= Layout
 // 전체
-body {
-  position: relative;
-}
 #wrapper {
+  position: relative;
+  z-index: 0;
   width: 100%;
   min-width: 1400px;
   overflow: hidden;
