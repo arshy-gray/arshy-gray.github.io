@@ -7,20 +7,6 @@ const gulp = require("gulp"),
   gulpConfig = require("./gulp/config/gulp.config"),
   deploy = require("gulp-gh-pages");
 
-/**
- * @param gulp
- * @param $
- * @param config
- */
-module.exports = (gulp, $, config) => {
-  /**
-   * Push build to gh-pages
-   */
-  gulp.task("deploy", function () {
-    return gulp.src("./dist/**/*").pipe(deploy());
-  });
-};
-
 require("./gulp/cleanTask.js")(gulp, $, gulpConfig);
 require("./gulp/htmlTask.js")(gulp, $, gulpConfig);
 require("./gulp/jsTask.js")(gulp, $, gulpConfig);
@@ -31,3 +17,7 @@ require("./gulp/purifyTask.js")(gulp, $, gulpConfig);
 require("./gulp/buildTask.js")(gulp, $, gulpConfig);
 
 gulp.task("default", gulp.series("cssClean", "scssSprite", "scssTask"));
+
+gulp.task("deploy", function () {
+  return gulp.src("./dist/**/*").pipe(deploy());
+});
