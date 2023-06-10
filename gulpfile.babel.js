@@ -4,17 +4,18 @@ const gulp = require("gulp"),
     scope: ["devDependencies"],
   }),
   isProduction = require("./gulp/config/gulp.env"),
-  gulpConfig = require("./gulp/config/gulp.config");
-
-const deploy = require("gulp-gh-pages");
+  gulpConfig = require("./gulp/config/gulp.config"),
+  deploy = require("gulp-gh-pages");
 
 /**
  * Push build to gh-pages
  */
-gulp.task('deploy', function () {
-  return gulp.src("./dist/**/*")
-    .pipe(deploy())
-});
+module.exports = (gulp, $, config) => {
+  function deploy() {
+    return gulp.src("./dist/**/*").pipe(deploy());
+  }
+  gulp.task(deploy);
+};
 
 require("./gulp/cleanTask.js")(gulp, $, gulpConfig);
 require("./gulp/htmlTask.js")(gulp, $, gulpConfig);
