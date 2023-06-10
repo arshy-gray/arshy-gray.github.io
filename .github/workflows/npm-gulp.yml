@@ -40,9 +40,9 @@ jobs:
         run: |
           git config --global user.email "arshy.gray@gmail.com"
           git config --global user.name "arshy-gray"
-        env:
-          MY_TOKEN: ${{ secrets.MY_TOKEN }}
 
       - name: Publish
         run: |
           gulp deploy
+        env:
+          MY_TOKEN: ${{ secrets.MY_TOKEN }}
