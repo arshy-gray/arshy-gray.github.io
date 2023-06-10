@@ -49,10 +49,7 @@ jobs:
           git config --global user.name "arshy-gray"
 
       - name: Deploy
-        uses: Cecilapp/GitHub-Pages-deploy@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          email: arshy.gray@gmail.com
-          build_dir: dist
-          branch: master
+          repo-token: ${{ secrets.MY_TOKEN }}
+        run: |
+          gulp deploy
