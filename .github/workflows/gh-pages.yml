@@ -26,7 +26,6 @@ jobs:
       - run: |
           echo The PR was merged
       - uses: actions/checkout@v3
-
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -49,7 +48,7 @@ jobs:
           git config --global user.name "arshy-gray"
 
       - name: Deploy
-        with:
-          repo-token: ${{ secrets.MY_TOKEN }}
         run: |
           gulp deploy
+        with:
+          repo-token: ${{ secrets.MY_TOKEN }}
