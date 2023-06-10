@@ -3,6 +3,7 @@
 
 # compile file
 dist
+.publish/
 
 # Dependency directory
 node_modules
