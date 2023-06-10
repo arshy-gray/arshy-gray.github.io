@@ -50,5 +50,3 @@ jobs:
       - name: Deploy
         run: |
           gulp deploy
-        with:
-          repo-token: ${{ secrets.MY_TOKEN }}
