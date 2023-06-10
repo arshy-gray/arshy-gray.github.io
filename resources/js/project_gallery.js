@@ -46,16 +46,16 @@ $("#pf_gellery")
 // 필터 라디오 버튼이 변경되면 필터링을 수행
 $("#gellery-filter").on("change", ".form-item input", filterItems);
 
-// 추가 버튼을 클릭하면 추가로 표시
-// $loadMoreButton.on("click", function () {
-//   $loadMoreButton.addClass("is-loading");
-//   addItems();
-//   $pfGellery.delay(100).fadeIn(100, function () {
-//     $pfGellery.imagesLoaded(function () {
-//       $pfGellery.masonry("layout");
-//     });
-//   });
-// });
+// 리스트 더보기 버튼
+$loadMoreButton.on("click", function () {
+  $loadMoreButton.addClass("is-loading");
+  addItems();
+  $pfGellery.delay(100).fadeIn(100, function () {
+    $pfGellery.imagesLoaded(function () {
+      $pfGellery.masonry("layout");
+    });
+  });
+});
 
 // 스크롤 이벤트
 $(window).on("scroll", function () {

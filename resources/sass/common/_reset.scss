@@ -18,7 +18,7 @@ body {
   font-family: $font-family-base;
   @include font(14px, 22px, color(dft, base));
   letter-spacing: -0.5px;
-  word-break: break-all;
+  word-break: keep-all;
   -webkit-animation: bugfix infinite 1s; // 안드로이드 라디오 checked 안되는 버그
 }
 body,
@@ -140,9 +140,9 @@ input,
 textarea,
 optgroup,
 select {
-	color:inherit;
-	line-height:inherit;
-	box-sizing:border-box;
+  color: inherit;
+  line-height: inherit;
+  box-sizing: border-box;
 }
 /*
  * Show the overflow in IE.

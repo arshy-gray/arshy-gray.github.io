@@ -11,18 +11,19 @@ const config = {
   },
 
   imgDft: {
-    src: ["resources/images/**/**/*.png", "!resources/images/**/*-sprite/*.png"],
-    dest: "dist/images/img/dft/",
+    src: ["resources/images/**/*.(png|jpg)", "!resources/images/**/*-sprite/*.png"],
+    dest: "dist/img/dft/",
   },
 
   imgSprite: {
     src: ["resources/images/**/*-sprite/*.png"],
     clean: ["resources/sass/vendors/img/*.scss", "dist/img/spr/*.png"],
+    dest: "dist/img/spr/",
   },
 
   js: {
     src: "resources/js/*.js",
-    dest: "resources/js/",
+    dest: "dist/js/",
   },
 
   browsers: [
