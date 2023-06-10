@@ -8,7 +8,8 @@ const merge = require("merge-stream"),
  * @param $
  * @param config
  */
-module.exports = (gulp, $, config) => {  
+module.exports = (gulp, $, config) => {
+  // 이미지 스프라이트
   function imgsSprite() {
     const opts = {
       spritesmith: (options, sprite, icons) => {
@@ -38,7 +39,7 @@ module.exports = (gulp, $, config) => {
           })
         )
       )
-      .pipe(gulp.dest("./dist/img/spr/"));
+      .pipe(gulp.dest(config.imgSprite.dest));
 
     const cssStream = spriteData.css.pipe(gulp.dest("./resources/sass/vendors/img"));
 
