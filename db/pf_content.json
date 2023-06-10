@@ -395,6 +395,7 @@
     "business": "INFOMATION",
     "browser": {
       "chrome": true,
+      "Ie": 11,
       "safari": true
     },
     "member": "1명",
