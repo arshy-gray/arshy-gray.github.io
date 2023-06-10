@@ -6,7 +6,8 @@
   "scripts": {
     "build-dev": "gulp build",
     "clean": "gulp clean",
-    "server": "gulp server"
+    "server": "gulp server",
+    "deploy": "gulp deploy"
   },
   "repository": {
     "type": "git",

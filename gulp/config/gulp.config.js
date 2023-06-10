@@ -26,6 +26,20 @@ const config = {
     dest: "dist/js/",
   },
 
+  deploy: {
+    src: [
+      "dist",
+      "db",
+      "**/*.html",
+      "resources/js",
+      "resources/images/**/*.(png|jpg)",
+      "!resources/images/**/*-sprite/*.png",
+      "manifest.json",
+      "browserconfig.xml",
+      "!node_modules",
+    ],
+  },
+
   browsers: [
     "last 3 versions",
     "Android >= 4",
