@@ -47,8 +47,6 @@ jobs:
           git config --global user.email "arshy.gray@gmail.com"
           git config --global user.name "arshy-gray"
           git config remote.origin.url 'https://${{ secrets.My_TOKEN }}@github.com/arshy-gray.github.io'
-        with:
-          repo-token: ${{ secrets.My_TOKEN }}
 
       - name: Deploy
         run: |
