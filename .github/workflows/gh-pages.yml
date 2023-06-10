@@ -42,12 +42,6 @@ jobs:
           npm install --save gift@0.10.2
           cd ../../
 
-      - name: Author Registration
-        run: |
-          git config --global user.email "arshy.gray@gmail.com"
-          git config --global user.name "arshy-gray"
-          git config remote.origin.url 'https://${{ secrets.My_TOKEN }}@github.com/arshy-gray.github.io'
-
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
