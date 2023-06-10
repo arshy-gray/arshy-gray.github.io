@@ -19,18 +19,30 @@ jobs:
       - run: |
           echo The PR was merged
       - uses: actions/checkout@v3
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Publish
+      - name: Bulid
         run: |
           yarn
           gulp
-          cd node_modules/gulp-gh-pages/
+
+      - name: Modify gift of gulp-gh-pages
+        run: |
+          cd node_modules/gulp-gh-pages/x
           npm install --save gift@0.10.2
-          cd ../../ 
+          cd ../../
+
+      - name: Author Registration
+        run: |
+          git config --global user.email "arshy.gray@gmail.com"
+          git config --global user.name "arshy-gray"
+        env:
+          MY_TOKEN: ${{ secrets.MY_TOKEN }}
+
+      - name: Publish
+        run: |
           gulp deploy
