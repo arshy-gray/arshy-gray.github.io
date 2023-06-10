@@ -39,8 +39,10 @@ module.exports = (gulp, $, config) => {
     let watcher = {
       scssTask: gulp.watch(config.scss.src, gulp.series(gulp.task("scssTask"), reload)),
       htmlTask: gulp.watch(config.html.src, gulp.series(gulp.task("htmlTask"), reload)),
-      jsTask: gulp.watch(config.js.src, gulp.series(gulp.task("jsTask"), reload)),
-      imgDft: gulp.watch(config.imgDft.src, reload),
+      jsPrdTask: gulp.watch(config.jsPrd.src, gulp.series(gulp.task("jsPrdTask"), reload)),
+      jsLibTask: gulp.watch(config.jsLib.src, gulp.series(gulp.task("jsLibTask"), reload)),
+      dbTask: gulp.watch(config.db.src, gulp.series(gulp.task("dbTask"), reload)),
+      imgDftTask: gulp.watch(config.imgDft.src, gulp.series(gulp.task("imgDftTask"), reload)),
       scssSprite: gulp.watch(config.imgSprite.src, gulp.series(gulp.task("scssSprite"), reload)),
     };
 

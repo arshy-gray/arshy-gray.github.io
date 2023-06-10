@@ -7,11 +7,6 @@ const log = require("fancy-log"),
  * @param config
  */
 module.exports = (gulp, $, config) => {
-  function onError(err) {
-    console.log(colors.red("[ERROR]"), err.message, colors.red("line:"), err.line, colors.red("column:"), err.column);
-    this.emit("end");
-  }
-
   function deployTask() {
     return gulp.src(config.deploy.src).pipe(deploy());
   }
