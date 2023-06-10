@@ -32,7 +32,7 @@ jobs:
 
       - name: Modify gift of gulp-gh-pages
         run: |
-          cd node_modules/gulp-gh-pages/x
+          cd node_modules/gulp-gh-pages/
           npm install --save gift@0.10.2
           cd ../../
 
