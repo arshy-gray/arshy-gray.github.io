@@ -1,6 +1,3 @@
-const log = require("fancy-log"),
-  colors = require("ansi-colors"),
-  deploy = require("gulp-gh-pages");
 /**
  * @param gulp
  * @param $
@@ -8,9 +5,14 @@ const log = require("fancy-log"),
  */
 module.exports = (gulp, $, config) => {
   function deployTask() {
-    return gulp.src(config.deploy.src).pipe(deploy());
+    return gulp
+      .src(config.deploy.src, { since: gulp.lastRun("deployTask") })
+      .on("error", (err) => {
+        console.log(err);
+      })
+      .pipe(gulp.dest(config.deploy.dest));
   }
-  deployTask.description = "dist, resource, html 등 gh-pages branch 배포";
+  deployTask.description = "파비콘 관련 파일 (manifest.json, browserconfig.xml) dist로 복사합니다.";
 
   gulp.task(deployTask);
   gulp.task("deploy", gulp.series("deployTask"));
