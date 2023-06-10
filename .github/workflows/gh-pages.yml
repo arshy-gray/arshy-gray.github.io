@@ -1,10 +1,17 @@
-name: Publish
+name: gh-pages Deploy
 
 on:
   pull_request:
     types:
       - closed
     branches: ["master"]
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   if_merged:
@@ -41,8 +48,11 @@ jobs:
           git config --global user.email "arshy.gray@gmail.com"
           git config --global user.name "arshy-gray"
 
-      - name: Publish
-        run: |
-          gulp deploy
+      - name: Deploy
+        uses: Cecilapp/GitHub-Pages-deploy@v3
         env:
-          MY_TOKEN: ${{ secrets.MY_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          email: arshy.gray@gmail.com
+          build_dir: dist
+          branch: master
