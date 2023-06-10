@@ -37,7 +37,8 @@ const config = {
   },
 
   deploy: {
-    src: ["dist/**/*", "manifest.json", "browserconfig.xml", ".gitignore"],
+    src: ["manifest.json", "browserconfig.xml"],
+    dest: "dist",
   },
 
   browsers: [
