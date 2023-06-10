@@ -20,7 +20,6 @@ module.exports = (gulp, $, config) => {
   function jsPrdTask() {
     return gulp
       .src(config.jsPrd.src, { since: gulp.lastRun("jsPrdTask") })
-      .pipe($.replace("/dist/", ""))
       .on("error", (err) => {
         console.log(err);
       })
