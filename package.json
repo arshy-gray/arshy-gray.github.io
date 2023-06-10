@@ -1,13 +1,12 @@
 {
+  "homepage": "https://arshy-gray.github.io/arshy-gray",
   "name": "arshy-gray.github.io",
   "version": "2.0.0",
   "description": "arshy-gray portfolio",
   "main": "gulpfile.babel.js",
   "scripts": {
     "build-dev": "gulp build",
-    "clean": "gulp clean",
-    "server": "gulp server",
-    "deploy": "gulp deploy"
+    "clean": "gulp clean"
   },
   "repository": {
     "type": "git",
