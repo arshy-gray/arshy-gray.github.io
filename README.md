@@ -3,32 +3,51 @@
 ## 실행방법
 
 ``` 
-# 패키지 파일 설치
+# node version : v16.15.1
+
+## 패키지 파일 설치
 $ yarn
 
-# 빌드
+## 빌드
 $ gulp 
 
-# 로컬 서버 실행
+## 로컬 서버 실행
 $ gulp server 
 ```
 
 ## Release
 ### [2023년] - 고도화 진행중
-1. Intro 페이지 구성 변경(기존 내용 삭제 -> 연락처 정보 추가)
-2. Gulp 셋팅
+1. Gulp 셋팅 및 SCSS 변환
    * 로컬 서버, reload 환경 구축
-3. css, js 파일 캐싱 방지 : timestamp 추가
-4. css -> SCSS 변환 및 폴더 구조화
-5. Project 리스트 'Company' 필터 추가
-6. Project 팝업 내 탭 콘텐츠 텍스트 출력 방식 변경
-   * 일반 텍스트 -> 멀티 리스트
-7. 불필요한 js 삭제 -> css 구현
-   * fullpage
-   * smooth-scroll
-8. UI/UX 최적화
+   * css -> SCSS 변환 및 파일&폴더 구조 변경
+   * css 압축 및 소스맵 적용
+   * 이미지 스프라이트 생성 및 적용
+2. 소스코드 최적화 및 고도화
+   * 캐싱 방지
+      + timestamp 추가
+   * 불필요한 js 삭제 -> css 구현
+      + fullpage
+      + smooth-scroll
+   * SCSS, js 레거시 제거 및 코드 클렌징
+     + SCSS 모듈화
+        - 기본 mixin, extend, variables, function 등 적용
+        - 페럴렉스 모션 및 레이아웃 관련 모듈화
+        - 웹폰트 깜박임 현상 수정
+     + js 최적화
+        - script 태그 async, defre 속성 적용
+        - 함수 및 이벤트 호출 위치 변경
+        - setTimeout 함수 debouncing 및 throttling 적용
+3. [Project] 고도화
+   * 필터 추가
+        - Company(회사별)
+        - Business(사업별)
+   * 팝업 내 탭 콘텐츠 텍스트 출력 방식 변경
+        - 일반 텍스트 -> 멀티 리스트
+   * 리스트 무한 스크롤링 구현
+4. UI/UX 최적화 및 고도화
    * Project 팝업
       + 모바일 레이아웃 변경(상세 내용 하단 -> 상단)
+      + 사이즈 및 스크롤 방식 변경(전체 스크롤 -> 콘텐츠 내 스크롤)
    * 기타 디자인 고도화
 
 ### [2020년]
