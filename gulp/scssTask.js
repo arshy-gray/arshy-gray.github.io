@@ -30,7 +30,7 @@ module.exports = (gulp, $, config) => {
       .pipe($.if(!isProduction, $.sourcemaps.write("./")))
       .pipe(gulp.dest(config.scss.dest));
   }
-  scssTask.description = "SCSS compile 후 css로 컴파일 및 소스맵 생성해서 dist로 복사";
+  scssTask.description = "SCSS compile 후 css로 컴파일 및 소스맵 생성해서 dist로 복사합니다";
 
   gulp.task(scssTask);
 };

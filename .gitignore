@@ -1,6 +1,9 @@
 
-**/.sass-cache/**
-# *.css.map
+._*
+
+# compile file
+dist
+.publish/
 
 # Dependency directory
 node_modules
@@ -9,3 +12,12 @@ node_modules
 
 # Garbage files
 .DS_Store
+
+# debug log
+*.log
+
+# cashe file
+**/.sass-cache/**
+
+# imgSprite
+/resources/sass/vendors/*

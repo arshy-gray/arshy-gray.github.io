@@ -421,6 +421,12 @@ $m-pf-pop-info-wid: 100%;
     box-shadow: 3px 3px 0 rgba(color(dft, darkest), 0.2);
     border-radius: 0 0 10px 10px;
     z-index: 9;
+    span {
+      @extend %blind;
+    }
+    @include pseudo-init {
+      @include imgsprite($btn2_close);
+    }
   }
   // 딤드
   .close_bg {

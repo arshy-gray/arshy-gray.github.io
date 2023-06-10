@@ -380,7 +380,7 @@ function addItems() {
       item.images.detail + // 포폴 상세 이미지
       '" alt="포트폴리오 상세" /></div>' +
       "</div>" +
-      '<button type="button" class="btn_close"><img src="/resources/images/common/btn2_close.png" alt="닫기" /></button>' +
+      '<button type="button" class="btn_close"><span>닫기</span></button>' +
       "</div>" +
       '<div class="close_bg"></div>' +
       "</div>" +

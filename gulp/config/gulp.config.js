@@ -1,8 +1,8 @@
 const isProduction = require("./gulp.env");
 const config = {
   html: {
-    src: "**/*.html",
-    dest: "dist/html",
+    src: "index.html",
+    dest: "dist",
   },
 
   scss: {
@@ -11,7 +11,7 @@ const config = {
   },
 
   imgDft: {
-    src: ["resources/images/**/*.(png|jpg)", "!resources/images/**/*-sprite/*.png"],
+    src: ["resources/images/**/*", "!resources/images/**/*-sprite/*"],
     dest: "dist/img/dft/",
   },
 
@@ -21,9 +21,23 @@ const config = {
     dest: "dist/img/spr/",
   },
 
-  js: {
+  jsPrd: {
     src: "resources/js/*.js",
     dest: "dist/js/",
+  },
+
+  jsLib: {
+    src: "resources/js/lib/*.js",
+    dest: "dist/js/lib/",
+  },
+
+  db: {
+    src: "db/*.json",
+    dest: "dist/db/",
+  },
+
+  deploy: {
+    src: ["dist/**/*", "manifest.json", "browserconfig.xml", ".gitignore"],
   },
 
   browsers: [
