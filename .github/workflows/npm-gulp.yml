@@ -4,7 +4,7 @@ on:
   pull_request:
     types:
       - closed
-    branches: [ "master" ]
+    branches: ["master"]
 
 jobs:
   if_merged:
@@ -16,22 +16,21 @@ jobs:
         node-version: ["16.x"]
 
     steps:
-    - run: |
-        echo The PR was merged
-    - uses: actions/checkout@v3
+      - run: |
+          echo The PR was merged
+      - uses: actions/checkout@v3
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-
-    - name: Publish
-      run: |
-        yarn
-        gulp
-        cd node_modules/gulp-gh-pages/
-        npm install --save gift@0.10.2
-        cd ../../ 
-        git config --global user.email "arshy.gray@gmail.com"
-        git config --global user.name "arshy-gray"
-        gulp deploy
+      - name: Publish
+        run: |
+          yarn
+          gulp
+          cd node_modules/gulp-gh-pages/
+          npm install --save gift@0.10.2
+          cd ../../ 
+          gulp deploy
