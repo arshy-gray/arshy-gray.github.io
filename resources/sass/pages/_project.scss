@@ -65,9 +65,9 @@ $m-pf-pop-info-wid: 100%;
       max-width: 1024px;
       margin-left: auto;
       margin-right: auto;
-      padding: 15px 25px;
+      padding: 5px 15px;
       background: rgba(color(theme, project-s), 0.2);
-      border-radius: 20px;
+      border-radius: 10px;
       @extend %ani-direction-init;
       animation-name: toB;
     }
@@ -759,10 +759,6 @@ $m-pf-pop-info-wid: 100%;
       &.filter-group-main {
         border: solid color(theme, project-s);
         border-width: 1px 0;
-      }
-      &.filter-group-sub {
-        padding: 8px 15px;
-        border-radius: 15px;
       }
     }
     .form-item {
