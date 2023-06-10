@@ -10,10 +10,6 @@ jobs:
   if_merged:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-      actions: read
 
     strategy:
       matrix:
@@ -36,4 +32,6 @@ jobs:
         cd node_modules/gulp-gh-pages/
         npm install --save gift@0.10.2
         cd ../../ 
+        git config --global user.email "arshy.gray@gmail.com"
+        git config --global user.name "arshy-gray"
         gulp deploy
