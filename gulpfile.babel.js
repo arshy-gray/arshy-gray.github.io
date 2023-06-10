@@ -6,6 +6,16 @@ const gulp = require("gulp"),
   isProduction = require("./gulp/config/gulp.env"),
   gulpConfig = require("./gulp/config/gulp.config");
 
+const deploy = require("gulp-gh-pages");
+
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', function () {
+  return gulp.src("./dist/**/*")
+    .pipe(deploy())
+});
+
 require("./gulp/cleanTask.js")(gulp, $, gulpConfig);
 require("./gulp/htmlTask.js")(gulp, $, gulpConfig);
 require("./gulp/jsTask.js")(gulp, $, gulpConfig);
