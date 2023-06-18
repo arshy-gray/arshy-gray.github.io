@@ -4,8 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,width=device-width,height=device-height" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-    
+
     <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="/img/dft/favicon/favicon.ico" />
     <link rel="apple-touch-icon-precomposed" href="/img/dft/favicon/favicon-152.png" />
     <meta name="msapplication-TileImage" content="/img/dft/favicon/ms-icon-144x144.png" />
@@ -39,6 +38,9 @@
     <link rel="stylesheet" href="/css/pages/main.css" />
   </head>
   <body>
+    <nav id="skip_nav">
+      <a href="#intro"><span>본문 바로가기</span></a>
+    </nav>
     <div id="wrapper">
       <!-- 메인헤더 -->
       <header class="page_hd">
@@ -46,7 +48,7 @@
           <!-- logo wrap -->
           <div class="logo_wrap">
             <h1 class="logo">
-              <a href="#main"><img src="/img/dft/common/logo.png" alt="Song Aeri" /></a>
+              <a href="#intro"><img src="/img/dft/common/logo.png" alt="Song Aeri, Intro 페이지로 가기" /></a>
             </h1>
           </div>
           <!-- // logo wrap -->
@@ -80,7 +82,7 @@
             <div class="main_ct">
               <ul class="contact_group">
                 <li class="sub_logo">
-                  <a href="#intro"
+                  <a href="#intro" tabindex="0"
                     ><img src="/img/dft/common/name.png" alt="Song Aeri, Intro 페이지로 가기"
                   /></a>
                 </li>
@@ -346,9 +348,7 @@
 
             <ul class="contact_group">
               <li class="sub_logo">
-                <a href="#intro"
-                  ><img src="/img/dft/common/name.png" alt="Song Aeri, Intro 페이지로 가기"
-                /></a>
+                <a href="#intro"><img src="/img/dft/common/name.png" alt="Song Aeri, Intro 페이지로 가기" /></a>
               </li>
               <li class="tel_num">
                 <a href="tel:010-6331-0512"><img src="/img/dft/common/tel_num.png" alt="전화걸기" /></a>
@@ -417,6 +417,8 @@
     <script defer src="/js/lib/jquery-ui.min.js"></script>
     <script defer src="/js/lib/imagesloaded.pkgd.min.js"></script>
     <script defer src="/js/lib/masonry.pkgd.min.js"></script>
-    <script defer src="/js/arshy.js" class="production"></script>
+    <!-- <script defer src="/js/arshy.js" class="production"></script> -->
+    <script defer src="/js/init.js" class="production"></script>
+    <script defer src="/js/project_gallery.js" class="production"></script>
   </body>
 </html>
