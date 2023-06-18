@@ -23,8 +23,8 @@ module.exports = (gulp, $, config) => {
       .on("error", (err) => {
         console.log(err);
       })
+      // .pipe(concat("arshy.js"))
       .pipe(uglify())
-      .pipe(concat("arshy.js"))
       .pipe(gulp.dest(config.jsPrd.dest));
   }
   jsPrdTask.description = "js 자체 제작 파일을 압축 후 한 개의 파일로 합쳐 dist로 복사합니다";
