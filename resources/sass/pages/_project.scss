@@ -76,7 +76,6 @@ $m-pf-pop-info-wid: 100%;
   .form-item {
     margin: 4px 0;
     text-align: center;
-    overflow: hidden;
     @extend %ani-direction-init;
     animation-name: toB;
     input {
@@ -390,6 +389,9 @@ $m-pf-pop-info-wid: 100%;
         &:hover {
           background: color(dft, brightest);
         }
+      }
+      a span{
+        @extend %blind;
       }
       i {
         @include font(21.5px, 24px, color(dft, brightest));

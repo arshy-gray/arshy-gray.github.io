@@ -164,12 +164,12 @@ function addItems() {
     // 사이트 링크 있을 때
     if (item.link) {
       // 사이트 링크 URL
-      itemHTML += '<li class="siteLink_btn"><a href="' + item.link + '" title="';
+      itemHTML += '<li class="siteLink_btn"><a href="' + item.link + '" title="새창';
 
       // 사이트 링크 툴팁
-      item.linkTitle ? (itemHTML += item.linkTitle) : (itemHTML += "사이트 바로가기");
+      if(item.linkTitle) (itemHTML += " : " + item.linkTitle);
 
-      itemHTML += '" target="_blank"><i class="fa fa-link"></i></a></li>';
+      itemHTML += '" target="_blank"><i class="fa fa-link"></i><span>사이트 바로가기</span></a></li>';
     }
 
     itemHTML +=
