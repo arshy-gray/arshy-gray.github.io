@@ -48,7 +48,7 @@ $(window).on("scroll", function () {
         const comparisonValue = sectPosition + (winH / 3) * 1; // 뷰포트 높이의 2/3 지점
 
         // 동적효과 실행
-        // 뷰포트 높이 의 2/3 지점 지날때 섹션 활성화
+        // 뷰포트 높이의 2/3 지점 지날때 섹션 활성화
         if (comparisonValue <= winBtm) {
           $sect.eq(i).addClass("active on").siblings().removeClass("on");
           //스크롤 위치에 따른 gnb 활성화
