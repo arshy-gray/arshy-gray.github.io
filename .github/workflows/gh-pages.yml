@@ -33,13 +33,15 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Set environment variables
+        env:
+          NODE_ENV: ${{ secrets.NODE_ENV }}
+
       - name: Bulid
         run: |
           yarn
           gulp
           gulp deploy
-        env:
-          NODE_ENV: ${{ secrets.NODE_ENV }}
           
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
