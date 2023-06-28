@@ -314,7 +314,7 @@ function addItems() {
       if (item && item.length > 0) {
         itemHTML += '<li class="' + className + '">';
 
-        // 각 아이템별 빈값, 빈문자열일 경우 비노출
+        // 각 아이템별 빈 값, 빈 문자열일 경우 비노출
         item.forEach(function (workItem) {
           // 메인 타이틀
           if (workItem.main_tit && workItem.main_tit.length > 0) {
