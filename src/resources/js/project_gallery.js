@@ -301,7 +301,7 @@ function addItems() {
       itemHTML += '<li><i class="fas fa-graduation-cap"></i>주요기여</li>';
     }
 
-    // 주요성과 잇을 때
+    // 주요성과 있을 때
     if (item.work.result) {
       itemHTML += '<li><i class="fas fa-trophy"></i>주요성과</li>';
     }
