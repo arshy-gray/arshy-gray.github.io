@@ -251,7 +251,7 @@ $m-pf-pop-info-wid: 100%;
   }
 }
 // 프로젝트 갤러리
-#pf_gellery {
+#pjt_gellery {
   @extend %ani-direction-init;
   z-index: 1;
   animation-name: toB;
@@ -273,18 +273,18 @@ $m-pf-pop-info-wid: 100%;
     @extend %loading-ani;
   }
 }
-.pf_box {
+.pjt_atc {
   padding-bottom: 30px;
 }
 .grid-sizer,
-.pf_item {
+.pjt_item {
   width: calc((100% - 1% * 4) / 5);
 }
 .gutter-sizer {
   width: 1%;
 }
 // 프로젝트 리스트 아이템
-.pf_item {
+.pjt_item {
   float: left;
   margin-bottom: 15px;
   border-radius: 20px;
@@ -299,14 +299,14 @@ $m-pf-pop-info-wid: 100%;
   }
   // 썸네일 길이 길때
   &.thumb_h_long {
-    .pf_thumb .img_box {
+    .pjt_thumb .img_box {
       height: 0;
       padding-bottom: 130%;
     }
   }
 }
 // 프로젝트 리스트 썸네일
-.pf_thumb {
+.pjt_thumb {
   // 썸네일 이미지
   .img_box {
     width: 100%;
@@ -342,12 +342,12 @@ $m-pf-pop-info-wid: 100%;
     font-weight: bold;
   }
   // 프로젝트 요약 설명
-  .pf_intro {
+  .pjt_intro {
     margin-top: 5px;
     color: color(dft, lighter);
   }
   // 참요율, 기간 아이콘
-  .pf_th_li_t {
+  .pjt_item_tit {
     line-height: 18px;
     overflow: hidden;
     i {
@@ -356,13 +356,13 @@ $m-pf-pop-info-wid: 100%;
     }
   }
   // 참요율, 기간 텍스트
-  .pf_th_li_c {
+  .pf_item_ctt {
     display: inline-block;
     width: calc(100% - 21px);
   }
 }
 // 썸네일 호버효과
-.pf_hover {
+.pjt_hover {
   position: absolute;
   @include size(100%);
   background: rgba(color(theme, history), 0.9);
@@ -390,7 +390,7 @@ $m-pf-pop-info-wid: 100%;
           background: color(dft, brightest);
         }
       }
-      a span{
+      a span {
         @extend %blind;
       }
       i {
@@ -405,7 +405,7 @@ $m-pf-pop-info-wid: 100%;
 }
 
 // 프로젝트 상세 레이어팝업
-.pf_detail {
+.pjt_detail {
   display: none;
   @include pos-fix-lt;
   @include size(100%);
@@ -440,7 +440,7 @@ $m-pf-pop-info-wid: 100%;
   }
 }
 // 프로젝트 팝업 레이어
-.pf_layer {
+.pjt_layer {
   @include pos-abs(5vh, 0, 5vh, 50%);
   @extend %flex-vtc-layout;
   width: 90%;
@@ -452,28 +452,28 @@ $m-pf-pop-info-wid: 100%;
   overflow: hidden;
 }
 // 프조젝트 상단 타이틀 영역
-.pf_layer_tit {
+.pjt_layer_tit {
   @extend %flex-vtc-layout;
   padding: $pf-pop-info-tb-gap 0 $pf-pop-info-ctt-tb-gap;
   align-items: flex-end;
-  .pf_main_tit,
-  .pf_intro {
+  .pjt_main_tit,
+  .pjt_intro {
     width: $pf-pop-info-wid;
     padding: 0 $pf-pop-info-lr-gap;
     box-sizing: border-box;
   }
-  .pf_main_tit {
+  .pjt_main_tit {
     font-weight: 700;
     @include font(35px, 1.2, color(dft, dark));
     word-break: keep-all;
   }
-  .pf_intro {
+  .pjt_intro {
     margin-top: 5px;
     @include font(17px, null, color(dft, medium));
   }
 }
 // 프조젝트 콘텐츠
-.pf_layer_ctt {
+.pjt_layer_ctt {
   flex: 1;
   @extend %flex-vtc-layout;
   align-items: flex-end;
@@ -482,7 +482,7 @@ $m-pf-pop-info-wid: 100%;
   @extend %h-scr;
 }
 // 프로젝트 정보 영역
-.pf_info {
+.pjt_info {
   width: $pf-pop-info-wid;
   padding: $pf-pop-info-ctt-tb-gap $pf-pop-info-lr-gap;
   box-sizing: border-box;
@@ -492,7 +492,7 @@ $m-pf-pop-info-wid: 100%;
   border: 1px solid color(bd, base);
 }
 // 프로젝트 지원 기기 & 브라우저
-.pf_info_type {
+.pjt_info_type {
   display: flex;
 }
 // 프로젝트 지원 기기
@@ -554,7 +554,7 @@ $m-pf-pop-info-wid: 100%;
 .txt_basic_sub {
   margin-top: $pf-pop-info-ctt-tb-gap;
   line-height: 1.5;
-  .pf_c > li {
+  .pjt_ctt > li {
     display: flex;
     i {
       display: inline-block;
@@ -570,14 +570,14 @@ $m-pf-pop-info-wid: 100%;
     }
   }
   // 타이틀
-  .pf_li_t {
+  .pjt_item_tit {
     width: 115px;
     font-weight: bold;
     text-align: right;
     margin-right: 10px;
   }
   // 콘텐츠
-  .pf_li_c {
+  .pjt_item_ctt {
     flex: 1;
     a {
       color: color(dft, light);
@@ -589,7 +589,7 @@ $m-pf-pop-info-wid: 100%;
   }
 }
 // 프로젝트 상세 정보
-.pf_info_detail {
+.pjt_info_detail {
   @extend %flex-vtc-layout;
   width: $pf-pop-info-wid;
   padding-top: $pf-pop-info-ctt-tb-gap;
@@ -694,7 +694,7 @@ $m-pf-pop-info-wid: 100%;
   }
 }
 // 프로젝트 상세 이미지
-.pf_img {
+.pjt_detail_img {
   @include pos-abs-lt;
   @include size(calc(100% - $pf-pop-info-wid), 100%);
   background-color: color(dft, brightest);
@@ -707,7 +707,7 @@ $m-pf-pop-info-wid: 100%;
 // 반응형 =====
 // pc
 @include respond(1619px) {
-  .pf_detail .wrap_cen {
+  .pjt_detail .wrap_cen {
     width: 80%;
   }
 } // e.1620
@@ -717,14 +717,14 @@ $m-pf-pop-info-wid: 100%;
     left: calc(50% + 469px);
   }
 
-  .pf_thumb {
+  .pjt_thumb {
     .txt_box {
       padding: 20px 15px;
     }
     h4 {
       font-size: 18px;
     }
-    .pf_intro {
+    .pjt_intro {
       font-size: 12px;
     }
     ul {
@@ -736,7 +736,7 @@ $m-pf-pop-info-wid: 100%;
     }
   }
   .grid-sizer,
-  .pf_item {
+  .pjt_item {
     width: calc((100% - 1% * 3) / 4);
   }
 } //e.1399
@@ -797,42 +797,42 @@ $m-pf-pop-info-wid: 100%;
 
   // 프로젝트 리스트 영역
   .grid-sizer,
-  .pf_item {
+  .pjt_item {
     width: 32.3%;
   }
-  .pf_item {
+  .pjt_item {
     margin-bottom: 1%;
   }
   // 레이어 팝업
-  .pf_layer {
+  .pjt_layer {
     background-color: color(bg, base);
     z-index: 1;
   }
-  .pf_layer_ctt {
+  .pjt_layer_ctt {
     display: block;
     overflow: hidden;
     overflow-y: auto;
   }
-  .pf_layer_tit {
-    .pf_main_tit,
-    .pf_intro {
+  .pjt_layer_tit {
+    .pjt_main_tit,
+    .pjt_intro {
       width: $m-pf-pop-info-wid;
       box-sizing: border-box;
     }
-    .pf_main_tit {
+    .pjt_main_tit {
       font-size: 30px;
     }
-    .pf_intro {
+    .pjt_intro {
       font-size: 15px;
     }
   }
   // 프로젝트 정보 영역
-  .pf_info {
+  .pjt_info {
     width: $m-pf-pop-info-wid;
     font-size: 13px;
   }
 
-  .pf_info_detail {
+  .pjt_info_detail {
     width: $m-pf-pop-info-wid;
     @include font(14px, 1.5);
   }
@@ -856,14 +856,14 @@ $m-pf-pop-info-wid: 100%;
   // 프로젝트 정보
   .txt_basic_sub {
     margin-top: 15px;
-    .pf_c > li {
+    .pjt_ctt > li {
       ~ li {
         margin-top: 5px;
       }
     }
   }
   // 프로젝트 상세 이미지
-  .pf_img {
+  .pjt_detail_img {
     position: static;
     overflow: hidden;
     @include size($m-pf-pop-info-wid, auto);
@@ -881,21 +881,21 @@ $m-pf-pop-info-wid: 100%;
     padding: 0 10px;
   }
   .grid-sizer,
-  .pf_item {
+  .pjt_item {
     width: 48.5%;
   }
 } // e.767
 
 @include respond(599px) {
   // 프로젝트 리스트 썸네일
-  .pf_thumb {
+  .pjt_thumb {
     .txt_box {
       padding: 15px 12px;
     }
     h4 {
       font-size: 16px;
     }
-    .pf_intro {
+    .pjt_intro {
       font-size: 11px;
     }
     ul {
@@ -909,12 +909,12 @@ $m-pf-pop-info-wid: 100%;
 
 @include respond(399px) {
   // 프로젝트 상세 레이어 팝업
-  .pf_detail {
-    .pf_c1,
-    .pf_c2,
-    .pf_c3,
-    .pf_c4,
-    .pf_c5 {
+  .pjt_detail {
+    .pjt_ctt1,
+    .pjt_ctt2,
+    .pjt_ctt3,
+    .pjt_ctt4,
+    .pjt_ctt5 {
       background-position: left top;
     }
   }

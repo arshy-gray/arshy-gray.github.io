@@ -7,11 +7,11 @@
   background-attachment: fixed;
 
   // 메인카피
-  .main_txt,
-  .main_ct {
+  .intro_atc,
+  .intro_ctt {
     height: 100%;
   }
-  .main_txt {
+  .intro_atc {
     text-align: center;
   }
   // 연락처 그룹
@@ -22,7 +22,7 @@
     margin: 0 auto;
   }
   // Intro 로고
-  .sub_logo {
+  .name {
     margin-top: 10vh;
     a {
       @extend %imgFix;
@@ -75,6 +75,7 @@
       background: rgba(color(dft, brightest), 0.2);
       border-radius: 31px;
       @extend %ani-direction-init;
+      @extend %natural-effect;
       animation-name: toB;
       &:hover {
         background: rgba(color(dft, brightest), 0.3);
@@ -85,7 +86,7 @@
   }
   // 섹션 활성화
   &.active {
-    .sub_logo img {
+    .name img {
       animation-name: fromL;
     }
     .tel_num,
@@ -129,7 +130,7 @@
 
 @include respond(599px) {
   // 메인 카피
-  .main_ct {
+  .intro_ctt {
     width: 100%;
     box-sizing: border-box;
     padding: 10px;

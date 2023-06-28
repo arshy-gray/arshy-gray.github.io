@@ -117,7 +117,7 @@
   }
 }
 // 히스토리 리스트 영역
-.ht_box {
+.hist_atc {
   @extend %clearfix;
   margin-top: 40px;
   li {
@@ -144,7 +144,7 @@
         float: left;
       }
     }
-    .ht_ico {
+    .hist_ico {
       opacity: 0;
       position: absolute;
       top: 20px;
@@ -157,29 +157,29 @@
     }
     // 섹션 활성화
     #history.active & {
-      .ht_ico {
+      .hist_ico {
         animation: rotationY 0.5s ease-in-out forwards;
       }
       @for $idx from 1 through 7 {
-        &:nth-child(#{$idx}) .ht_ico {
+        &:nth-child(#{$idx}) .hist_ico {
           animation-delay: $idx * 0.5s + 2s;
         }
       }
     }
     // 학업
-    &.ht_edu .ht_ico {
+    &.hist_edu .hist_ico {
       @include imgsprite($ico-his-edu);
     }
     // 자격증
-    &.ht_license .ht_ico {
+    &.hist_license .hist_ico {
       @include imgsprite($ico-his-license);
     }
     // 근무경력
-    &.ht_company .ht_ico {
+    &.hist_cpn .hist_ico {
       @include imgsprite($ico-his-company);
     }
     // 리스트 포인트 요소
-    .ht_point {
+    .hist_point {
       position: relative;
       margin: 4px 0;
       padding: 2px;
@@ -193,7 +193,7 @@
       }
     }
     // 리스트 콘텐츠
-    .ht_c {
+    .hist_ctt {
       position: relative;
       > li {
         margin-bottom: 1px;
@@ -206,20 +206,20 @@
         overflow: hidden;
       }
       // 히스토리 설명 1
-      .content1 {
+      .desc_1 {
         @include font(15px, null, color(dft, dark));
         overflow: hidden;
         animation-fill-mode: forwards;
       }
       // 히스토리 설명 1 부설명
-      .content1_2 {
+      .desc_1_2 {
         @include font(13px, null, color(tit, main));
         font-weight: 300;
         overflow: hidden;
         animation-fill-mode: forwards;
       }
       // 히스토리 설명 2
-      .content2 {
+      .desc_2 {
         @include font(13px, 14px, color(tit, sub));
         overflow: hidden;
         animation-fill-mode: forwards;
@@ -227,31 +227,31 @@
     }
     // 홀수 아이템
     &:nth-child(odd) {
-      .ht_ico {
+      .hist_ico {
         float: left;
         left: calc(100% + 20px);
       }
-      .ht_c .date {
+      .hist_ctt .date {
         border-radius: 20px 0 20px 20px;
       }
-      .ht_point {
+      .hist_point {
         float: right;
         left: 7.5px;
       }
-      .ht_c {
+      .hist_ctt {
         right: 5px;
       }
     }
     // 짝수 아이템
     &:nth-child(even) {
-      .ht_ico {
+      .hist_ico {
         float: right;
         left: -82px;
       }
-      .ht_c .date {
+      .hist_ctt .date {
         border-radius: 0 20px 20px 20px;
       }
-      .ht_point {
+      .hist_point {
         float: left;
         right: 8.5px;
       }
@@ -284,7 +284,7 @@
     }
   }
 
-  .ht_box {
+  .hist_atc {
     > ul {
       > li {
         padding: 0;
@@ -302,24 +302,24 @@
           display: block;
         }
         &:nth-child(odd),
-        &:nth-child(odd) .ht_c {
+        &:nth-child(odd) .hist_ctt {
           right: auto;
         }
         &:nth-child(even),
-        &:nth-child(even) .ht_c {
+        &:nth-child(even) .hist_ctt {
           left: auto;
         }
         &:nth-child(odd),
         &:nth-child(even) {
-          .ht_ico {
+          .hist_ico {
             float: none;
             left: auto;
           }
-          .ht_c .date {
+          .hist_ctt .date {
             border-radius: 20px;
           }
         }
-        &:nth-child(odd) .ht_point {
+        &:nth-child(odd) .hist_point {
           clear: both;
           float: none;
           top: -64px;
@@ -327,7 +327,7 @@
           width: 9px;
           margin: 0 auto;
         }
-        &:nth-child(even) .ht_point {
+        &:nth-child(even) .hist_point {
           clear: both;
           float: none;
           top: -64px;
@@ -336,19 +336,19 @@
           margin: 0 auto;
         }
         // 히스토리 리스트 아이콘
-        .ht_ico {
+        .hist_ico {
           position: relative;
           width: 100%;
           margin: 0 auto;
         }
         // 히스토리 아이콘
         @for $idx from 1 through 7 {
-          #history.active &:nth-child(#{$idx}) .ht_ico {
+          #history.active &:nth-child(#{$idx}) .hist_ico {
             animation-delay: #{$idx * 0.6s};
           }
         }
         // 리스트 콘텐츠
-        .ht_c {
+        .hist_ctt {
           text-align: center;
 
           .date {

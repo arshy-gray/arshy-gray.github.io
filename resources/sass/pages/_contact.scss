@@ -42,7 +42,7 @@
     overflow: hidden;
     transform: translate(-50%, -50%);
   }
-  .sub_logo,
+  .name,
   .tel_num,
   .mail,
   .gitHub {
@@ -51,7 +51,7 @@
     }
   }
   // 이름로고
-  .sub_logo {
+  .name {
     a {
       @extend %ani-direction-init;
       animation-name: toL;
@@ -99,7 +99,7 @@
   }
   // 섹선 활성화
   &.active {
-    .sub_logo a {
+    .name a {
       animation-name: fromL;
     }
     .tel_num,
@@ -127,14 +127,14 @@
 // 반응형 =====
 // mobile
 @include respond(1023px) {
-  #contact .sub_txt {
+  #contact .contact_atc {
     width: 100%;
     box-sizing: border-box;
   }
 } // e.1023
 
 @include respond(479px) {
-  #contact .sub_txt {
+  #contact .contact_atc {
     margin: 40px auto;
   }
 } // e.479

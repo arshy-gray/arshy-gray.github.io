@@ -1,5 +1,5 @@
 /* Portfolio -------------- */
-const $pfGellery = $("#pf_gellery"), // 갤러리 컨테이너
+const $pfGellery = $("#pjt_gellery"), // 갤러리 컨테이너
   $project = $("#project"),
   $loadMoreButton = $("#load-more"); // 리스트 더보기 버튼
 
@@ -16,21 +16,21 @@ if ($(window).width() < 780) {
 }
 
 // 프로젝트 갤러리 이벤트 핸들러
-$("#pf_gellery")
+$("#pjt_gellery")
   // 썸네일 호버 내 상세보기 버튼 클릭시
   .on("click", ".detail_btn", function () {
-    $(this).parents(".pf_item").find(".pf_detail").show();
+    $(this).parents(".pjt_item").find(".pjt_detail").show();
     $body.css({ "overflow-y": "hidden" }); // 스크롤 고정
     $header.hide();
   })
   // 프로젝트 상세 레이어 닫기
-  .on("click", ".pf_detail .close_bg, .pf_detail .btn_close", function () {
-    $(this).parents(".pf_item").find(".pf_detail").removeClass("on").hide();
+  .on("click", ".pjt_detail .close_bg, .pjt_detail .btn_close", function () {
+    $(this).parents(".pjt_item").find(".pjt_detail").removeClass("on").hide();
     $body.css({ "overflow-y": "auto" });
     $header.show();
   })
   // 항목 링크에 호버 효과 처리 등록
-  .on("mouseenter mouseleave", ".pf_item", hoverDirection)
+  .on("mouseenter mouseleave", ".pjt_item", hoverDirection)
   //== 프로젝트 팝업 내 상세 설명 탭 메뉴 온오프
   .on("click", ".tab_tit > li", function () {
     const idx = $(this).index();
@@ -40,7 +40,7 @@ $("#pf_gellery")
   })
   // 갤러리 네 마우스 오버시 masonry 재정렬 (ajax 호풀시 imageloaded 오작동 이슈)
   .on("mouseenter mouseleave", "#project", function () {
-    $("#pf_gellery").masonry("layout");
+    $("#pjt_gellery").masonry("layout");
   });
 
 // 필터 라디오 버튼이 변경되면 필터링을 수행
@@ -95,12 +95,12 @@ $(window).on("scroll", function () {
 $pfGellery.masonry({
   columnWidth: ".grid-sizer",
   gutter: ".gutter-sizer",
-  itemSelector: ".pf_item",
+  itemSelector: ".pjt_item",
   percentPosition: true,
 });
 
 // JSON을 검색하고 initGallery 함수를 실행
-$.getJSON("/db/pf_content.json", initGallery);
+$.getJSON("/json/project_detail.json", initGallery);
 
 // 갤러리 초기화
 function initGallery(data) {
@@ -127,14 +127,14 @@ function addItems() {
     let itemHTML = "";
 
     // 리스트 썸네일
-    itemHTML += '<li class="pf_item ';
+    itemHTML += '<li class="pjt_item ';
 
     // 썸네일 길이 : long
     if (item.images.thumb_h) itemHTML += "thumb_h_" + item.images.thumb_h + " ";
 
     itemHTML +=
       'is-loading">' + // masonry loding cloass
-      '<div class="pf_thumb">' +
+      '<div class="pjt_thumb">' +
       '<div class="img_box"><img src="' +
       item.images.thumb + // 썸네일 이미지
       '" alt=""/></div>' +
@@ -142,21 +142,21 @@ function addItems() {
       "<h4>" +
       item.title + // 썸네일 타이틀
       "</h4>" +
-      '<p class="pf_intro">' +
+      '<p class="pjt_intro">' +
       item.intro + // 사이트 간략 설명 (서브 타이틀)
       "</p>" +
       "<ul>" +
-      '<li><span class="pf_th_li_t"><i class="fas fa-chart-bar" title="참여율"></i></span><span class="pf_th_li_c">' +
+      '<li><span class="pjt_item_tit"><i class="fas fa-chart-bar" title="참여율"></i></span><span class="pf_item_ctt">' +
       item.part + // 썸네일 참여율
       "</span></li>" +
-      '<li><span class="pf_th_li_t"><i class="fas fa-calendar-alt" title="프로젝트기간"></i></span><span class="pf_th_li_c">' +
+      '<li><span class="pjt_item_tit"><i class="fas fa-calendar-alt" title="프로젝트기간"></i></span><span class="pf_item_ctt">' +
       item.period + // 썸네일 프로젝트 기간
       "</span></li>" +
       "</ul>" +
       "</div>" +
       "</div>" +
       // 썸네일 호버
-      '<div class="pf_hover">' +
+      '<div class="pjt_hover">' +
       '<div class="btn_box"><ul>' +
       // 썸네일 호버 내 버튼
       '<li class="detail_btn"><button type="button" title="자세히보기"><i class="fa fa-search"></i></button></li>';
@@ -167,7 +167,7 @@ function addItems() {
       itemHTML += '<li class="siteLink_btn"><a href="' + item.link + '" title="새창';
 
       // 사이트 링크 툴팁
-      if(item.linkTitle) (itemHTML += " : " + item.linkTitle);
+      if (item.linkTitle) itemHTML += " : " + item.linkTitle;
 
       itemHTML += '" target="_blank"><i class="fa fa-link"></i><span>사이트 바로가기</span></a></li>';
     }
@@ -176,19 +176,19 @@ function addItems() {
       "</ul></div>" +
       "</div>" +
       // 프로젝트 레이어 팝업
-      '<div class="pf_detail">' +
-      '<div class="pf_layer">' +
-      '<div class="pf_layer_tit">' +
-      '<h4 class="pf_main_tit">' +
+      '<div class="pjt_detail">' +
+      '<div class="pjt_layer">' +
+      '<div class="pjt_layer_tit">' +
+      '<h4 class="pjt_main_tit">' +
       item.title + // 타이틀
       "</h4>" +
-      '<p class="pf_intro">' +
+      '<p class="pjt_intro">' +
       item.intro + // 사이트 간략 설명 (서브 타이틀)
       "</p>" +
       "</div>" +
-      '<div class="pf_layer_ctt">' +
-      '<div class="pf_info">' +
-      '<div class="pf_info_type">' +
+      '<div class="pjt_layer_ctt">' +
+      '<div class="pjt_info">' +
+      '<div class="pjt_info_type">' +
       '<ul class="type_device">'; // 지원 기기
 
     // PC 버전 지원시 (only pc, responsive, pc&mobile)
@@ -228,40 +228,40 @@ function addItems() {
       "</ul>" +
       "</div>" +
       '<div class="txt_basic_sub">' +
-      '<ul class="pf_c">' +
+      '<ul class="pjt_ctt">' +
       "<li>" +
-      '<span class="pf_li_t">프로젝트기간<i class="fas fa-calendar-alt"></i></span>' +
-      '<span class="pf_li_c">' +
+      '<span class="pjt_item_tit">프로젝트기간<i class="fas fa-calendar-alt"></i></span>' +
+      '<span class="pjt_item_ctt">' +
       item.period + // 프로젝트 기간
       "</span>" +
       "</li>" +
       "<li>" +
-      '<span class="pf_li_t">구성원<i class="fas fa-users"></i></span>' +
-      '<span class="pf_li_c">' +
+      '<span class="pjt_item_tit">구성원<i class="fas fa-users"></i></span>' +
+      '<span class="pjt_item_ctt">' +
       item.member + // 프로젝트 구성원
       "</span>" +
       "</li>" +
       "<li>" +
-      '<span class="pf_li_t">주요역할<i class="fas fa-user-tag"></i></span>' +
-      '<span class="pf_li_c">' +
+      '<span class="pjt_item_tit">주요역할<i class="fas fa-user-tag"></i></span>' +
+      '<span class="pjt_item_ctt">' +
       item.main_role + // 주요역할
       "</span>" +
       "</li>" +
       "<li>" +
-      '<span class="pf_li_t">참여율<i class="fas fa-chart-bar"></i></span>' +
-      '<span class="pf_li_c">' +
+      '<span class="pjt_item_tit">참여율<i class="fas fa-chart-bar"></i></span>' +
+      '<span class="pjt_item_ctt">' +
       item.part + // 참여율
       "</span>" +
       "</li>" +
       "<li>" +
-      '<span class="pf_li_t">사용언어<i class="fas fa-code"></i></span>' +
-      '<span class="pf_li_c">' +
+      '<span class="pjt_item_tit">사용언어<i class="fas fa-code"></i></span>' +
+      '<span class="pjt_item_ctt">' +
       item.language + // 사용언어
       "</span>" +
       "</li>" +
       "<li>" +
-      '<span class="pf_li_t">개발환경<i class="fas fa-laptop-code"></i></span>' +
-      '<span class="pf_li_c">' +
+      '<span class="pjt_item_tit">개발환경<i class="fas fa-laptop-code"></i></span>' +
+      '<span class="pjt_item_ctt">' +
       item.task_environment + // 개발환경
       "</span>" +
       "</li>";
@@ -270,15 +270,15 @@ function addItems() {
     if (item.link) {
       itemHTML +=
         "<li>" +
-        '<span class="pf_li_t">웹사이트<i class="fas fa-external-link-alt"></i></span>' +
-        '<span class="pf_li_c"><a href="' +
+        '<span class="pjt_item_tit">웹사이트<i class="fas fa-external-link-alt"></i></span>' +
+        '<span class="pjt_item_ctt"><a href="' +
         item.link + // 사이트 링크 URL
         '" title="새창" target="_blank">' +
         item.link + // 사이트 링트 텍스트
         "</a>";
 
       // 사이트 링크 툴팁 있을 때
-      if (item.linkTitle) itemHTML += ' <br /><em class="tit_main"><b>(' + item.linkTitle + ")</b></em>";
+      if (item.linkTitle) itemHTML += ' <br /><em class="lint_desc"><b>(' + item.linkTitle + ")</b></em>";
 
       itemHTML += "</span></li>";
     }
@@ -288,7 +288,7 @@ function addItems() {
       "</div>" +
       "</div>" +
       // 작업 상세 텝 메뉴
-      '<div class="pf_info_detail tab_wrap">' +
+      '<div class="pjt_info_detail tab_wrap">' +
       '<ul class="txt_detail_tit tab_tit">';
 
     // 업무범위 있을 때
@@ -376,7 +376,7 @@ function addItems() {
     itemHTML +=
       "</ul>" +
       "</div>" +
-      '<div class="pf_img"><img src="' +
+      '<div class="pjt_detail_img"><img src="' +
       item.images.detail + // 포폴 상세 이미지
       '" alt="포트폴리오 상세" /></div>' +
       "</div>" +
@@ -397,7 +397,7 @@ function addItems() {
 
       // 로딩 완료 후 로딩 관련 클래스 삭제
       $project.removeClass("is-loading");
-      $(".pf_item").removeClass("is-loading");
+      $(".pjt_item").removeClass("is-loading");
       $loadMoreButton.removeClass("is-loading");
 
       $pfGellery.masonry("layout");
@@ -473,7 +473,7 @@ function filterItems() {
 
 // 호버 효과
 function hoverDirection(event) {
-  const $overlay = $(this).find(".pf_hover"),
+  const $overlay = $(this).find(".pjt_hover"),
     side = getMouseDirection(event);
 
   let animateTo,
