@@ -9,8 +9,8 @@ module.exports = (gulp, $, config) => {
   function htmlTask() {
     return gulp
       .src(config.html.src, { since: gulp.lastRun("htmlTask") })
+      .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
       .pipe($.replace("/dist/", "/"))
-      .pipe(htmlmin({ collapseWhitespace: true }))
       .on("error", (err) => {
         console.log(err);
       })
