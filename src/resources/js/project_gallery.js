@@ -415,7 +415,7 @@ function addItems() {
   }
 }
 
-// 항목을 필터링한다.
+// 리스트 필터링
 function filterItems() {
   const keyCpn = $(".filter-type-cpn").find('input[type="radio"]:checked').val(), // 회사별 필터
     keyBiz = $(".filter-type-biz").find('input[type="radio"]:checked').val(), // 사업유형별 필터
