@@ -31,9 +31,9 @@ const config = {
     dest: "dist/js/lib/",
   },
 
-  db: {
-    src: "db/*.json",
-    dest: "dist/db/",
+  json: {
+    src: "json/*.json",
+    dest: "dist/json/",
   },
 
   deploy: {

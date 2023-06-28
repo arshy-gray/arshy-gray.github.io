@@ -7,7 +7,7 @@ const gulp = require("gulp"),
   gulpConfig = require("./gulp/config/gulp.config");
 
 require("./gulp/cleanTask.js")(gulp, $, gulpConfig);
-require("./gulp/dbTask.js")(gulp, $, gulpConfig);
+require("./gulp/jsonTask.js")(gulp, $, gulpConfig);
 require("./gulp/htmlTask.js")(gulp, $, gulpConfig);
 require("./gulp/jsTask.js")(gulp, $, gulpConfig);
 require("./gulp/scssTask.js")(gulp, $, gulpConfig);
@@ -21,6 +21,6 @@ gulp.task(
   "default",
   gulp.series(
     "clean",
-    gulp.parallel("dbTask", "htmlTask", "jsLibTask", "jsPrdTask", "imgDftTask", gulp.series("scssSprite", "scssTask"))
+    gulp.parallel("jsonTask", "htmlTask", "jsLibTask", "jsPrdTask", "imgDftTask", gulp.series("scssSprite", "scssTask"))
   )
 );

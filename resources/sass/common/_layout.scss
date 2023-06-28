@@ -60,8 +60,7 @@
     }
   }
   // gnb
-  .gnb_wrap,
-  #gnb_pc {
+  .gnb_wrap {
     display: flex;
     flex: 1;
   }
@@ -92,7 +91,7 @@
     .logo {
       visibility: visible;
     }
-    #gnb_pc .gnb_menu {
+    .gnb_menu {
       a {
         color: color(dft, dark);
       }
@@ -122,19 +121,21 @@ section {
     min-height: 100vh;
   }
   // 섹션 공통
-  > .sec_t,
-  h2 + .set_ct {
+  > .sect_tit,
+  h2 + .sect_desc {
+    position: relative;
+    z-index: 1;
     @extend %ani-direction-init;
     animation-name: toT;
   }
   // 섹션 타이틀
-  > .sec_t {
+  > .sect_tit {
     @include font(50px, 42px, color(dft, brightest));
     text-align: center;
     font-weight: bold;
   }
   // 섹션 설명
-  h2 + .set_ct {
+  h2 + .sect_desc {
     margin-top: 10px;
     @include font(null, 18px, color(dft, brightest));
     text-align: center;
@@ -143,12 +144,12 @@ section {
   // 섹션 활성화시
   &.active {
     // 섹션 타이틀
-    > .sec_t,
-    h2 + .set_ct {
+    > .sect_tit,
+    h2 + .sect_desc {
       animation-name: fromT;
     }
     // 섹션 설명
-    h2 + .set_ct {
+    h2 + .sect_desc {
       opacity: 0.9;
     }
   }

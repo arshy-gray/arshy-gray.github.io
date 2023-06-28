@@ -41,6 +41,48 @@
     <nav id="skip_nav">
       <a href="#intro"><span>본문 바로가기</span></a>
     </nav>
+
+    <!-- 스플래시 -->
+    <div class="progress_box" id="splash">
+      <!-- 로딩 진행율 -->
+      <div class="progress">
+        <ul class="contact_group">
+          <li class="name">
+            <a href="#intro"><img src="/dist/img/dft/common/name.png" alt="Song Aeri, Intro 페이지로 가기" /></a>
+          </li>
+          <li class="tel_num">
+            <a href="tel:010-6331-0512"><img src="/dist/img/dft/common/tel_num.png" alt="전화걸기" /></a>
+          </li>
+          <li class="mail">
+            <a href="mailto:arshy.gray@gmail.com" title="메일 보내기">arshy.gray@gmail.com</a>
+          </li>
+          <li class="gitHub">
+            <a href="https://github.com/arshy-gray" target="_blank" title="github 바로가기"
+              >https://github.com/arshy-gray</a
+            >
+          </li>
+        </ul>
+        <div class="progress-bar">
+          <div class="bar_box">
+            <span class="bar_L"><span class="bar"></span></span>
+            <span class="bar_R"><span class="bar"></span></span>
+          </div>
+        </div>
+        <p class="progress-txt">0%</p>
+      </div>
+      <!-- //로딩 진행율 -->
+
+      <!-- <p class="no-browser-txt">지원되지 않는 브라우저입니다.</p> -->
+      <noscript>
+        <p class="no-js-txt">
+          현재 사용 중인 브라우저는 <strong>자바스크립트(Javascript)</strong>를 지원하지 않거나, 해당 기능이 활성화되어
+          있지 않습니다. <br />
+          <strong>자바스크립트(Javascript)</strong> 허용 후 이용 가능합니다.
+        </p>
+      </noscript>
+    </div>
+    <!-- // 스플래시 -->
+
     <div id="wrapper">
       <!-- 메인헤더 -->
       <header class="page_hd">
@@ -55,16 +97,14 @@
 
           <!-- gnb wrap -->
           <div class="gnb_wrap">
-            <div id="gnb_pc">
-              <nav class="gnb_menu">
-                <ul>
-                  <li class="menu1 on"><a href="#intro">INTRO</a></li>
-                  <li class="menu2"><a href="#project">PROJECT</a></li>
-                  <li class="menu4"><a href="#history">HISTORY</a></li>
-                  <li class="menu6"><a href="#contact">CONTACT</a></li>
-                </ul>
-              </nav>
-            </div>
+            <nav class="gnb_menu">
+              <ul>
+                <li class="menu1 on"><a href="#intro">INTRO</a></li>
+                <li class="menu2"><a href="#project">PROJECT</a></li>
+                <li class="menu4"><a href="#history">HISTORY</a></li>
+                <li class="menu6"><a href="#contact">CONTACT</a></li>
+              </ul>
+            </nav>
           </div>
           <!-- // gnb wrap -->
         </div>
@@ -76,12 +116,12 @@
         <h2 class="hidden">Main</h2>
 
         <div class="wrap_cen">
-          <article class="main_txt txtBox_st1">
+          <article class="intro_atc">
             <h3 class="hidden">slogan</h3>
 
-            <div class="main_ct">
+            <div class="intro_ctt">
               <ul class="contact_group">
-                <li class="sub_logo">
+                <li class="name">
                   <a href="#intro" tabindex="0"
                     ><img src="/dist/img/dft/common/name.png" alt="Song Aeri, Intro 페이지로 가기"
                   /></a>
@@ -100,15 +140,15 @@
               </ul>
             </div>
           </article>
-          <!-- // .main_txt -->
+          <!-- // .intro_atc -->
         </div>
         <!-- // #section01 .wrap_cen -->
       </section>
       <!-- // #section01 -->
 
       <section id="project">
-        <h2 class="sec_t">PROJECT</h2>
-        <p class="set_ct">
+        <h2 class="sect_tit">PROJECT</h2>
+        <p class="sect_desc">
           E-Commerce, 관공서, 기업 홈페이지 등<br />
           현재까지 참여한 프로젝트 모음입니다.
         </p>
@@ -120,7 +160,7 @@
         </div>
 
         <div class="wrap_cen">
-          <article class="pf_box">
+          <article class="pjt_atc">
             <h3 class="hidden">분야별 포트폴리오</h3>
             <div class="filter_wrap">
               <form class="filter-form" id="gellery-filter">
@@ -210,7 +250,7 @@
               </form>
             </div>
 
-            <ul class="pf_items" id="pf_gellery">
+            <ul class="pjt_items" id="pjt_gellery">
               <li class="grid-sizer"></li>
               <li class="gutter-sizer"></li>
             </ul>
@@ -223,8 +263,8 @@
       <!-- // #section03 -->
 
       <section id="history">
-        <h2 class="sec_t">HISTORY</h2>
-        <p class="set_ct">웹분야 관련 학업 ・ 자격증 ・ 근무 경력입니다.</p>
+        <h2 class="sect_tit">HISTORY</h2>
+        <p class="sect_desc">웹분야 관련 학업 ・ 자격증 ・ 근무 경력입니다.</p>
 
         <div class="bg_el">
           <div class="foot_print_top">
@@ -245,50 +285,50 @@
         </div>
 
         <div class="wrap_cen">
-          <article class="ht_box">
+          <article class="hist_atc">
             <h3 class="hidden">연혁</h3>
             <ul>
-              <li class="ht_edu">
-                <div class="ht_ico"><span class="txt">학교</span></div>
-                <div class="ht_point"><span></span></div>
-                <ul class="ht_c">
+              <li class="hist_edu">
+                <div class="hist_ico"><span class="txt">학교</span></div>
+                <div class="hist_point"><span></span></div>
+                <ul class="hist_ctt">
                   <li class="date">2007-03 ~ 2011-02</li>
-                  <li class="content1">조선대학교 졸업</li>
-                  <li class="content2">컴퓨터공학과</li>
+                  <li class="desc_1">조선대학교 졸업</li>
+                  <li class="desc_2">컴퓨터공학과</li>
                 </ul>
               </li>
-              <li class="ht_license">
-                <div class="ht_ico"><span class="txt">자격증</span></div>
-                <div class="ht_point"><span></span></div>
-                <ul class="ht_c">
+              <li class="hist_license">
+                <div class="hist_ico"><span class="txt">자격증</span></div>
+                <div class="hist_point"><span></span></div>
+                <ul class="hist_ctt">
                   <li class="date">2010-05</li>
-                  <li class="content1">정보처리기사 취득</li>
+                  <li class="desc_1">정보처리기사 취득</li>
                 </ul>
               </li>
-              <li class="ht_license">
-                <div class="ht_ico"><span class="txt">자격증</span></div>
-                <div class="ht_point"><span></span></div>
-                <ul class="ht_c">
+              <li class="hist_license">
+                <div class="hist_ico"><span class="txt">자격증</span></div>
+                <div class="hist_point"><span></span></div>
+                <ul class="hist_ctt">
                   <li class="date">2011-07</li>
-                  <li class="content1">컴퓨터그래픽스운용기능사 취득</li>
+                  <li class="desc_1">컴퓨터그래픽스운용기능사 취득</li>
                 </ul>
               </li>
-              <li class="ht_license">
-                <div class="ht_ico"><span class="txt">자격증</span></div>
-                <div class="ht_point"><span></span></div>
-                <ul class="ht_c">
+              <li class="hist_license">
+                <div class="hist_ico"><span class="txt">자격증</span></div>
+                <div class="hist_point"><span></span></div>
+                <ul class="hist_ctt">
                   <li class="date">2015-04</li>
-                  <li class="content1">웹디자인기능사 취득</li>
+                  <li class="desc_1">웹디자인기능사 취득</li>
                 </ul>
               </li>
-              <li class="ht_company">
-                <div class="ht_ico"><span class="txt">직장</span></div>
-                <div class="ht_point"><span></span></div>
-                <ul class="ht_c">
+              <li class="hist_cpn">
+                <div class="hist_ico"><span class="txt">직장</span></div>
+                <div class="hist_point"><span></span></div>
+                <ul class="hist_ctt">
                   <li class="date">2015-07 ~ 2017-01</li>
-                  <li class="content1">(주)렛츠온 근무</li>
-                  <li class="content1_2">웹에이젼시</li>
-                  <li class="content2">
+                  <li class="desc_1">(주)렛츠온 근무</li>
+                  <li class="desc_1_2">웹에이젼시</li>
+                  <li class="desc_2">
                     <ul>
                       <li>Designer</li>
                       <li>UI Deviloper</li>
@@ -296,28 +336,28 @@
                   </li>
                 </ul>
               </li>
-              <li class="ht_company">
-                <div class="ht_ico"><span class="txt">직장</span></div>
-                <div class="ht_point"><span></span></div>
-                <ul class="ht_c">
+              <li class="hist_cpn">
+                <div class="hist_ico"><span class="txt">직장</span></div>
+                <div class="hist_point"><span></span></div>
+                <ul class="hist_ctt">
                   <li class="date">2017-05 ~ 2020-01</li>
-                  <li class="content1">(주)로지포커스 근무</li>
-                  <li class="content1_2">IoT 물류사</li>
-                  <li class="content2">
+                  <li class="desc_1">(주)로지포커스 근무</li>
+                  <li class="desc_1_2">IoT 물류사</li>
+                  <li class="desc_2">
                     <ul>
                       <li>UI Developer</li>
                     </ul>
                   </li>
                 </ul>
               </li>
-              <li class="ht_company">
-                <div class="ht_ico"><span class="txt">직장</span></div>
-                <div class="ht_point"><span></span></div>
-                <ul class="ht_c">
+              <li class="hist_cpn">
+                <div class="hist_ico"><span class="txt">직장</span></div>
+                <div class="hist_point"><span></span></div>
+                <ul class="hist_ctt">
                   <li class="date">2020-04 ~ 2020-06</li>
-                  <li class="content1">(주)위메프 근무</li>
-                  <li class="content1_2">e-Commerce</li>
-                  <li class="content2">
+                  <li class="desc_1">(주)위메프 근무</li>
+                  <li class="desc_1_2">e-Commerce</li>
+                  <li class="desc_2">
                     <ul>
                       <li>UI Developer</li>
                     </ul>
@@ -326,15 +366,15 @@
               </li>
             </ul>
           </article>
-          <!-- // .ht_box -->
+          <!-- // .hist_atc -->
         </div>
         <!-- // #section04 .wrap_cen -->
       </section>
       <!-- // #section04 -->
 
       <section id="contact" class="fullpage">
-        <h2 class="sec_t">CONTACT</h2>
-        <p class="set_ct">연락 가능한 핸드폰 및 이메일과 깃허브 주소입니다.</p>
+        <h2 class="sect_tit">CONTACT</h2>
+        <p class="sect_desc">연락 가능한 핸드폰 및 이메일과 깃허브 주소입니다.</p>
 
         <div class="bg_el">
           <span class="el01"></span>
@@ -343,11 +383,11 @@
         </div>
 
         <div class="wrap_cen">
-          <article class="sub_txt">
+          <article class="contact_atc">
             <h2 class="hidden">연락처</h2>
 
             <ul class="contact_group">
-              <li class="sub_logo">
+              <li class="name">
                 <a href="#intro"><img src="/dist/img/dft/common/name.png" alt="Song Aeri, Intro 페이지로 가기" /></a>
               </li>
               <li class="tel_num">
@@ -372,45 +412,6 @@
       <!-- // #section06 -->
     </div>
     <!-- // #wrapper -->
-
-    <!-- 스플래시 -->
-    <div class="progress_box" id="splash">
-      <!-- 로딩 진행율 -->
-      <div class="progress">
-        <ul class="contact_group">
-          <li class="sub_logo">
-            <a href="#intro"><img src="/dist/img/dft/common/name.png" alt="Song Aeri, Intro 페이지로 가기" /></a>
-          </li>
-          <li class="tel_num">
-            <a href="tel:010-6331-0512"><img src="/dist/img/dft/common/tel_num.png" alt="전화걸기" /></a>
-          </li>
-          <li class="mail">
-            <a href="mailto:arshy.gray@gmail.com" title="메일 보내기">arshy.gray@gmail.com</a>
-          </li>
-          <li class="gitHub">
-            <a href="https://github.com/arshy-gray" target="_blank" title="github 바로가기"
-              >https://github.com/arshy-gray</a
-            >
-          </li>
-        </ul>
-        <div class="progress-bar">
-          <div class="bar_box">
-            <span class="bar_L"><span class="bar"></span></span>
-            <span class="bar_R"><span class="bar"></span></span>
-          </div>
-        </div>
-        <p class="progress-txt">0%</p>
-      </div>
-      <!-- //로딩 진행율 -->
-
-      <!-- <p class="no-browser-txt">지원되지 않는 브라우저입니다.</p> -->
-      <p class="no-js-txt">
-        현재 사용 중인 브라우저는 <strong>자바스크립트(Javascript)</strong>를 지원하지 않거나, 해당 기능이 활성화되어
-        있지 않습니다. <br />
-        <strong>자바스크립트(Javascript)</strong> 허용 후 이용 가능합니다.
-      </p>
-    </div>
-    <!-- // 스플래시 -->
 
     <script async src="https://kit.fontawesome.com/83054eb756.js" crossorigin="anonymous"></script>
     <script defer src="/dist/js/lib/jquery-1.12.4.min.js"></script>

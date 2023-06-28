@@ -2,7 +2,7 @@ const $body = $("body"),
   $header = $(".page_hd"),
   $sect = $("section"),
   sectLen = $sect.length,
-  $gnbPC = $("#gnb_pc .gnb_menu li"),
+  $gnb = $(".gnb_menu li"),
   timestamp = new Date().getTime();
 
 let lastScrTop = $(window).scrollTop();
@@ -52,7 +52,7 @@ $(window).on("scroll", function () {
         if (comparisonValue <= winBtm) {
           $sect.eq(i).addClass("active on").siblings().removeClass("on");
           //스크롤 위치에 따른 gnb 활성화
-          $gnbPC.eq(i).addClass("on").siblings().removeClass("on");
+          $gnb.eq(i).addClass("on").siblings().removeClass("on");
         } else {
           //동적효과 취소
           $sect.eq(i).removeClass("active");
