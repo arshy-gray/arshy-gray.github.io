@@ -17,6 +17,7 @@ jobs:
   Deploy:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    environment: production
     permissions:
       contents: write
 
@@ -36,7 +37,7 @@ jobs:
       - name: Bulid
         run: |
           yarn
-          gulp --env="${{ secrets.NODE_ENV }}"
+          gulp
           gulp deploy
           
       - name: Deploy
