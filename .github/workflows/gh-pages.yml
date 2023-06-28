@@ -35,10 +35,11 @@ jobs:
 
       - name: Bulid
         run: |
-          touch .env.production
           yarn
           gulp
-          gulp deploy
+          gulp deployenv
+        env:
+          NODE_ENV: production
           
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
