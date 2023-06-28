@@ -1,5 +1,6 @@
 const concat = require("gulp-concat"),
 uglify = require("gulp-uglify"),
+mode = require("gulp-mode")(),
 isProduction = require("./config/gulp.env");
 
 /**
@@ -22,7 +23,8 @@ module.exports = (gulp, $, config) => {
     return (
       gulp
         .src(config.jsPrd.src, { since: gulp.lastRun("jsPrdTask") })
-        .pipe($.if(isProduction, $.replace("/src/", "")))
+        // .pipe($.if(isProduction, $.replace("/src/", "")))
+        .pipe(mode.production($.replace("/src/", "../")))
         .on("error", (err) => {
           console.log(err);
         })
