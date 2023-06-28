@@ -37,13 +37,10 @@ jobs:
         run: |
           yarn
           gulp
+          gulp deploy
         env:
           NODE_ENV: ${{ secrets.NODE_ENV }}
-
-      - name: Publish
-        run: |
-          gulp deploy
-
+          
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
