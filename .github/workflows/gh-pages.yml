@@ -38,6 +38,8 @@ jobs:
           yarn
           gulp
           gulp deploy
+        env:
+          NODE_ENV: ${{ secrets.NODE_ENV }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
