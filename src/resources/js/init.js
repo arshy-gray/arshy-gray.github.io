@@ -45,7 +45,7 @@ $(window).on("scroll", function () {
       // 섹션 활성화 여부
       for (i = 0; i < sectLen; i++) {
         let sectPosition = $sect.eq(i).offset().top;
-        const comparisonValue = sectPosition + (winH / 3) * 1; // 뷰포트 높이 의 2/3 지점
+        const comparisonValue = sectPosition + (winH / 3) * 1; // 뷰포트 높이의 2/3 지점
 
         // 동적효과 실행
         // 뷰포트 높이 의 2/3 지점 지날때 섹션 활성화
