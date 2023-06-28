@@ -1,7 +1,6 @@
 const merge = require("merge-stream"),
   vinyl = require("vinyl-buffer"),
-  imagemin = require("gulp-imagemin"),
-  isProduction = require("./config/gulp.env");
+  imagemin = require("gulp-imagemin");
 
 /**
  * @param gulp
@@ -43,16 +42,13 @@ module.exports = (gulp, $, config) => {
     const imgStream = spriteData.img
       .pipe(vinyl())
       .pipe(
-        $.if(
-          isProduction,
-          imagemin({
-            optimizationLevel: 7,
-          })
-        )
+        imagemin({
+          optimizationLevel: 7,
+        })
       )
       .pipe(gulp.dest(config.imgSprite.dest));
 
-    const cssStream = spriteData.css.pipe(gulp.dest("./resources/sass/vendors/img"));
+    const cssStream = spriteData.css.pipe(gulp.dest("./src/resources/sass/vendors/img"));
 
     return merge(imgStream, cssStream);
   }

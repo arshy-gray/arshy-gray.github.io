@@ -6,33 +6,33 @@ const config = {
   },
 
   scss: {
-    src: "resources/sass/**/*.s+(a|c)ss",
+    src: "src/resources/sass/**/*.s+(a|c)ss",
     dest: "dist/css",
   },
 
   imgDft: {
-    src: ["resources/images/**/*", "!resources/images/**/*-sprite/*"],
+    src: ["src/resources/images/**/*", "!src/resources/images/**/*-sprite/*"],
     dest: "dist/img/dft/",
   },
 
   imgSprite: {
-    src: ["resources/images/**/*-sprite/*.png"],
-    clean: ["resources/sass/vendors/img/*.scss", "dist/img/spr/*.png"],
+    src: ["src/resources/images/**/*-sprite/*.png"],
+    clean: ["src/resources/sass/vendors/img/*.scss", "dist/img/spr/*.png"],
     dest: "dist/img/spr/",
   },
 
   jsPrd: {
-    src: "resources/js/*.js",
+    src: "src/resources/js/*.js",
     dest: "dist/js/",
   },
 
   jsLib: {
-    src: "resources/js/lib/*.js",
+    src: "src/resources/js/lib/*.js",
     dest: "dist/js/lib/",
   },
 
   json: {
-    src: "json/*.json",
+    src: "src/json/*.json",
     dest: "dist/json/",
   },
 
@@ -43,13 +43,6 @@ const config = {
 
   browsers: [
     "last 3 versions",
-    "Android >= 4",
-    "Chrome >= 20",
-    "Firefox >= 15",
-    "Explorer >= 8",
-    "iOS >= 6",
-    "Opera >= 12",
-    "Safari >= 6",
   ],
 
   scssOpt: {

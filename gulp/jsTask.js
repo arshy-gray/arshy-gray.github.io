@@ -10,6 +10,7 @@ module.exports = (gulp, $, config) => {
   function jsLibTask() {
     return gulp
       .src(config.jsLib.src, { since: gulp.lastRun("jsLibTask") })
+      .pipe($.replace("/src/", "/"))
       .on("error", (err) => {
         console.log(err);
       })
