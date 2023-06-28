@@ -32,8 +32,6 @@ jobs:
           yarn
           gulp
           gulp deployenv
-        env:
-          NODE_ENV: production
           
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
