@@ -1,0 +1,16 @@
+$btn2-close-name: 'btn2_close';
+$btn2-close-x: 0px;
+$btn2-close-y: 0px;
+$btn2-close-offset-x: 0px;
+$btn2-close-offset-y: 0px;
+$btn2-close-width: 15px;
+$btn2-close-height: 15px;
+$btn2-close-total-width: 15px;
+$btn2-close-total-height: 15px;
+$btn2-close-image: 'common-sprite.png';
+$btn2-close: (0px, 0px, 0px, 0px, 15px, 15px, 15px, 15px, 'common-sprite.png', 'btn2_close', );
+$sp-common-sprite-width: 15px;
+$sp-common-sprite-height: 15px;
+$sp-common-sprite-image: 'common-sprite.png';
+$sp-common-sprite-sprites: ($btn2-close, );
+$sp-common-sprite: (15px, 15px, 'common-sprite.png', $sp-common-sprite-sprites, );

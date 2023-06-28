@@ -3,7 +3,6 @@ const gulp = require("gulp"),
     pattern: ["gulp-*", "gulp.*"],
     scope: ["devDependencies"],
   }),
-  isProduction = require("./gulp/config/gulp.env"),
   gulpConfig = require("./gulp/config/gulp.config");
 
 require("./gulp/cleanTask.js")(gulp, $, gulpConfig);

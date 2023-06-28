@@ -100,7 +100,7 @@ $pfGellery.masonry({
 });
 
 // JSON을 검색하고 initGallery 함수를 실행
-$.getJSON("/json/project_detail.json", initGallery);
+$.getJSON("/src/json/project_detail.json", initGallery);
 
 // 갤러리 초기화
 function initGallery(data) {
