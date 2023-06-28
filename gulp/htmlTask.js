@@ -1,3 +1,5 @@
+const htmlmin = require("gulp-htmlmin");
+
 /**
  * @param gulp
  * @param $
@@ -8,6 +10,7 @@ module.exports = (gulp, $, config) => {
     return gulp
       .src(config.html.src, { since: gulp.lastRun("htmlTask") })
       .pipe($.replace("/dist/", "/"))
+      .pipe(htmlmin({ collapseWhitespace: true }))
       .on("error", (err) => {
         console.log(err);
       })
