@@ -36,7 +36,14 @@ $("#pjt_gellery")
     const idx = $(this).index();
 
     $(this).addClass("on").siblings("li").removeClass("on");
-    $(this).parent("ul").siblings(".tab_ctt").children("li").eq(idx).addClass("on").siblings("li").removeClass("on");
+    $(this)
+      .parent("ul")
+      .siblings(".tab_ctt")
+      .children("li")
+      .eq(idx)
+      .addClass("on")
+      .siblings("li")
+      .removeClass("on");
   })
   // 갤러리 네 마우스 오버시 masonry 재정렬 (ajax 호풀시 imageloaded 오작동 이슈)
   .on("mouseenter mouseleave", "#project", function () {
@@ -169,7 +176,8 @@ function addItems() {
       // 사이트 링크 툴팁
       if (item.linkTitle) itemHTML += " : " + item.linkTitle;
 
-      itemHTML += '" target="_blank"><i class="fa fa-link"></i><span>사이트 바로가기</span></a></li>';
+      itemHTML +=
+        '" target="_blank"><i class="fa fa-link"></i><span>사이트 바로가기</span></a></li>';
     }
 
     itemHTML +=
@@ -278,7 +286,8 @@ function addItems() {
         "</a>";
 
       // 사이트 링크 툴팁 있을 때
-      if (item.linkTitle) itemHTML += ' <br /><em class="lint_desc"><b>(' + item.linkTitle + ")</b></em>";
+      if (item.linkTitle)
+        itemHTML += ' <br /><em class="lint_desc"><b>(' + item.linkTitle + ")</b></em>";
 
       itemHTML += "</span></li>";
     }
@@ -337,7 +346,11 @@ function addItems() {
                   if (isOl) itemHTML += "<li><span>" + olItem + "</span>";
 
                   // 블릿 리스트
-                  if (workItem.ul && workItem.ul.length > sTitIdx && workItem.ul[sTitIdx][olIdx].length !== 0) {
+                  if (
+                    workItem.ul &&
+                    workItem.ul.length > sTitIdx &&
+                    workItem.ul[sTitIdx][olIdx].length !== 0
+                  ) {
                     itemHTML += '<ul class="work_ul">';
                     workItem.ul[sTitIdx][olIdx].forEach(function (ulItem) {
                       itemHTML += "<li>" + ulItem + "</li>";

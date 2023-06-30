@@ -41,9 +41,7 @@ const config = {
     dest: "dist",
   },
 
-  browsers: [
-    "last 3 versions",
-  ],
+  browsers: ["last 3 versions"],
 
   scssOpt: {
     outputStyle: "compressed", // nested, expanded, compact, compressed
