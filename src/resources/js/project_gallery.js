@@ -1,5 +1,5 @@
 /* Portfolio -------------- */
-const $pfGellery = $("#pjt_gellery"), // 갤러리 컨테이너
+const $pjtGellery = $("#pjt_gellery"), // 갤러리 컨테이너
   $project = $("#project"),
   $loadMoreButton = $("#load-more"); // 리스트 더보기 버튼
 
@@ -16,7 +16,7 @@ if ($(window).width() < 780) {
 }
 
 // 프로젝트 갤러리 이벤트 핸들러
-$("#pjt_gellery")
+$pjtGellery
   // 썸네일 호버 내 상세보기 버튼 클릭시
   .on("click", ".detail_btn", function () {
     $(this).parents(".pjt_item").find(".pjt_detail").show();
@@ -57,9 +57,9 @@ $("#gellery-filter").on("change", ".form-item input", filterItems);
 $loadMoreButton.on("click", function () {
   $loadMoreButton.addClass("is-loading");
   addItems();
-  $pfGellery.delay(100).fadeIn(100, function () {
-    $pfGellery.imagesLoaded(function () {
-      $pfGellery.masonry("layout");
+  $pjtGellery.delay(100).fadeIn(100, function () {
+    $pjtGellery.imagesLoaded(function () {
+      $pjtGellery.masonry("layout");
     });
   });
 });
@@ -87,9 +87,9 @@ $(window).on("scroll", function () {
       if (infinitStart && infinitEnd && cntScrTop > lastScrTop && winBtm >= galleryBtm) {
         $loadMoreButton.addClass("is-loading");
         addItems();
-        $pfGellery.delay(100).fadeIn(100, function () {
-          $pfGellery.imagesLoaded(function () {
-            $pfGellery.masonry("layout");
+        $pjtGellery.delay(100).fadeIn(100, function () {
+          $pjtGellery.imagesLoaded(function () {
+            $pjtGellery.masonry("layout");
           });
         });
       }
@@ -99,7 +99,7 @@ $(window).on("scroll", function () {
 });
 
 //옵션을 설정 Masonry를 준비
-$pfGellery.masonry({
+$pjtGellery.masonry({
   columnWidth: ".grid-sizer",
   gutter: ".gutter-sizer",
   itemSelector: ".pjt_item",
@@ -403,17 +403,17 @@ function addItems() {
   });
 
   // ajax 호출 후 ImageLoaded가 정상 적용되지 않는 이슈 -> delay로 해결
-  $pfGellery.delay(100).fadeIn(100, function () {
-    $pfGellery.imagesLoaded(function () {
+  $pjtGellery.delay(100).fadeIn(100, function () {
+    $pjtGellery.imagesLoaded(function () {
       // DOM 요소의 배열을 컨테이너에 넣고 Masonry 레이아웃을 실행
-      $pfGellery.append(elements).masonry("appended", elements).masonry();
+      $pjtGellery.append(elements).masonry("appended", elements).masonry();
 
       // 로딩 완료 후 로딩 관련 클래스 삭제
       $project.removeClass("is-loading");
       $(".pjt_item").removeClass("is-loading");
       $loadMoreButton.removeClass("is-loading");
 
-      $pfGellery.masonry("layout");
+      $pjtGellery.masonry("layout");
     });
   });
 
@@ -434,12 +434,12 @@ function filterItems() {
     keyBiz = $(".filter-type-biz").find('input[type="radio"]:checked').val(), // 사업유형별 필터
     keyDevice = $(".filter-type-device").find('input[type="radio"]:checked').val(), // 지원기기별 필터
     keyLinked = $(".filter-type-linked").find('input[type="checkbox"]').prop("checked"), // 링크 여부 필터
-    masonryItems = $pfGellery.masonry("getItemElements"); // 추가 된 Masonry 아이템
+    masonryItems = $pjtGellery.masonry("getItemElements"); // 추가 된 Masonry 아이템
 
   $project.addClass("is-loading");
 
   // Masonry 항목을 삭제
-  $pfGellery.masonry("remove", masonryItems);
+  $pjtGellery.masonry("remove", masonryItems);
 
   // 필터링 된 항목의 데이터를 재설정과
   // 추가 된 항목 수를 재설정
