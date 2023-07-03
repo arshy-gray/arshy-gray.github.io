@@ -367,7 +367,6 @@ $m-pf-pop-info-wid: 100%;
   @include size(100%);
   background: rgba(color(theme, history), 0.9);
   border-radius: 20px;
-  transition: 0.5s opacity 0s ease-in-out;
   .btn_box {
     @include size(100%);
     ul {
@@ -388,6 +387,9 @@ $m-pf-pop-info-wid: 100%;
         text-align: center;
         &:hover {
           background: color(dft, brightest);
+          i {
+            color: color(theme, history);
+          }
         }
       }
       a span {
@@ -396,11 +398,12 @@ $m-pf-pop-info-wid: 100%;
       i {
         @include font(21.5px, 24px, color(dft, brightest));
         vertical-align: middle;
-        &:hover {
-          color: color(theme, history);
-        }
       }
     }
+  }
+  &.hover_effect {
+    transition: 0.15s cubic-bezier(0.27, 0.71, 0.27, 0.72);
+    transition-property: top, left;
   }
 }
 
