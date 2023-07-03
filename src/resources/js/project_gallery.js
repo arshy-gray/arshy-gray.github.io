@@ -1,136 +1,57 @@
 /* Portfolio -------------- */
-const $pjtGellery = $("#pjt_gellery"), // 갤러리 컨테이너
-  $project = $("#project"),
-  $loadMoreButton = $("#load-more"); // 리스트 더보기 버튼
+const projectElement = document.querySelector("#project"), // ㅍ프로젝트 섹션
+  pjtGelleryElement = document.querySelector("#pjt_gellery"), // 갤러리 컨테이너
+  loadMoreBtnElement = projectElement.querySelector("#load-more"); // 리스트 더보기 버튼
 
-let addItemCount = 10, // 표시 된 항목 수
-  addadd = 0,
-  allData = [], // 모든 JSON 데이터
-  filteredData = []; // 필터링 된 JSON 데이터;
-
-let infinitSrcTimer; // 갤러리 무한 스크롤링 setTimeout Throttle에 사용
-
-// 한 번에 표시 할 항목 수
-if ($(window).width() < 780) {
-  addItemCount = 6;
-}
-
-// 프로젝트 갤러리 이벤트 핸들러
-$pjtGellery
-  // 썸네일 호버 내 상세보기 버튼 클릭시
-  .on("click", ".detail_btn", function () {
-    $(this).parents(".pjt_item").find(".pjt_detail").show();
-    $body.css({ "overflow-y": "hidden" }); // 스크롤 고정
-    $header.hide();
-  })
-  // 프로젝트 상세 레이어 닫기
-  .on("click", ".pjt_detail .close_bg, .pjt_detail .btn_close", function () {
-    $(this).parents(".pjt_item").find(".pjt_detail").removeClass("on").hide();
-    $body.css({ "overflow-y": "auto" });
-    $header.show();
-  })
-  // 항목 링크에 호버 효과 처리 등록
-  .on("mouseenter mouseleave", ".pjt_item", hoverDirection)
-  //== 프로젝트 팝업 내 상세 설명 탭 메뉴 온오프
-  .on("click", ".tab_tit > li", function () {
-    const idx = $(this).index();
-
-    $(this).addClass("on").siblings("li").removeClass("on");
-    $(this)
-      .parent("ul")
-      .siblings(".tab_ctt")
-      .children("li")
-      .eq(idx)
-      .addClass("on")
-      .siblings("li")
-      .removeClass("on");
-  })
-  // 갤러리 네 마우스 오버시 masonry 재정렬 (ajax 호풀시 imageloaded 오작동 이슈)
-  .on("mouseenter mouseleave", "#project", function () {
-    $("#pjt_gellery").masonry("layout");
-  });
-
-// 필터 라디오 버튼이 변경되면 필터링을 수행
-$("#gellery-filter").on("change", ".form-item input", filterItems);
-
-// 리스트 더보기 버튼
-$loadMoreButton.on("click", function () {
-  $loadMoreButton.addClass("is-loading");
-  addItems();
-  $pjtGellery.delay(100).fadeIn(100, function () {
-    $pjtGellery.imagesLoaded(function () {
-      $pjtGellery.masonry("layout");
-    });
-  });
-});
-
-// 스크롤 이벤트
-$(window).on("scroll", function () {
-  // 스플래시 완료 후 && infinitSrcTimer Throttling
-  if (start > 0 && !infinitSrcTimer) {
-    const winH = $(window).height(), // 뷰포트 높이
-      galleryTop = $project.offset().top, // 갤러리 상단 스크롤값
-      galleryBtm = $project.offset().top + $project.outerHeight(); // 갤러리 하단 스크롤값
-
-    let infinitStart = galleryTop < lastScrTop, // 무한스크롤 시작되는 스크롤값
-      infinitEnd = galleryBtm > lastScrTop; // 무한스크롤 끝나는 스크롤값
-
-    // 300ms 마다 스크롤 체크
-    infinitSrcTimer = setTimeout(function () {
-      const cntScrTop = $(window).scrollTop(); // 현재 상단 스크롤값
-      const winBtm = cntScrTop + winH; // 현재 하단 스크롤값
-
-      infinitSrcTimer = null;
-
-      // 최초 로드시 갤러리 하단에서 시작할때 미리 무한 스크롤링 되는 현상 방지
-      // 무한 스크롤 범위 안에 있을때 && 아래로 스크롤 할때 && 현재 하단 스크롤값이 갤러리 하단보다 클 때
-      if (infinitStart && infinitEnd && cntScrTop > lastScrTop && winBtm >= galleryBtm) {
-        $loadMoreButton.addClass("is-loading");
-        addItems();
-        $pjtGellery.delay(100).fadeIn(100, function () {
-          $pjtGellery.imagesLoaded(function () {
-            $pjtGellery.masonry("layout");
-          });
-        });
-      }
-      lastScrTop = cntScrTop; // 마지막 스크롤값 갱신
-    }, 500);
-  }
-});
-
-//옵션을 설정 Masonry를 준비
-$pjtGellery.masonry({
+//Masonry 준비 및 옵션 설정
+const msnry = new Masonry(pjtGelleryElement, {
   columnWidth: ".grid-sizer",
   gutter: ".gutter-sizer",
   itemSelector: ".pjt_item",
   percentPosition: true,
 });
 
+let pjtItemLen = 0, // 표시 된 전체 항목 수
+  addItemLen = 10, // 한 번에 표시될 항목 수
+  allData = [], // 모든 JSON 데이터
+  filteredData = [], // 필터링 된 JSON 데이터;
+  infinitSrcTimer; // 갤러리 무한 스크롤링 setTimeout Throttle에 사용
+
+// 780이하 해상도 : 한 번에 표시 할 항목 수
+if (window.innerWidth < 780) {
+  addItemLen = 6;
+}
+
 // JSON을 검색하고 initGallery 함수를 실행
-$.getJSON("/src/json/project_detail.json", initGallery);
+fetch("/src/json/project_detail.json")
+  .then((response) => response.json())
+  .then((data) => initGallery(data))
+  .catch((error) => console.error(error));
 
 // 갤러리 초기화
-function initGallery(data) {
+const initGallery = (data) => {
   // 취득한 JSON 데이터를 저장
   allData = data;
 
   // 초기 상태에서는 필터링하지 않고 그대로 전체 데이터를 전달
   filteredData = allData;
 
-  $project.addClass("is-loading");
+  projectElement.classList.add("is-loading");
 
   // 첫 번째 항목을 표시
-  addItems();
-}
+  setTimeout(() => {
+    addItems();
+  }, 300);
+};
 
 // 항목을 생성하고 문서에 삽입
-function addItems() {
-  let elements = [];
+const addItems = async () => {
+  let pjtCtt = [];
   // 추가 데이터의 배열
-  const slicedData = filteredData.slice(addadd, addadd + addItemCount);
+  const slicedData = filteredData.slice(pjtItemLen, pjtItemLen + addItemLen);
 
   // slicedData의 요소마다 DOM 요소를 생성
-  $.each(slicedData, function (i, item) {
+  for (const item of slicedData) {
     let itemHTML = "";
 
     // 리스트 썸네일
@@ -318,13 +239,13 @@ function addItems() {
     itemHTML += "</ul>" + '<ul class="txt_detail_ctt tab_ctt">';
 
     // 프로젝트 상세 설명 리스트 출력 함수
-    function generateHTML(item, className) {
+    const generateHTML = (item, className) => {
       let itemHTML = "";
       if (item && item.length > 0) {
         itemHTML += '<li class="' + className + '">';
 
         // 각 아이템별 빈 값, 빈 문자열일 경우 비노출
-        item.forEach(function (workItem) {
+        item.forEach((workItem) => {
           // 메인 타이틀
           if (workItem.main_tit && workItem.main_tit.length > 0) {
             if (workItem.main_tit.Length !== 1 && workItem.main_tit[0] !== "")
@@ -369,7 +290,7 @@ function addItems() {
       }
 
       return itemHTML;
-    }
+    };
 
     // 프로젝트 업무범위
     if (item.work.scope) {
@@ -399,102 +320,202 @@ function addItems() {
       "</div>" +
       "</li>";
 
-    elements.push($(itemHTML).get(0));
+    // 생선된 html을 Dom으로 변환 후 저장
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(itemHTML, "text/html");
+    pjtCtt.push(doc.body.firstChild);
+  }
+
+  // DOM 요소의 배열을 컨테이너에 삽입
+  pjtCtt.forEach((pjtCttElement) => {
+    pjtGelleryElement.appendChild(pjtCttElement);
   });
 
-  // ajax 호출 후 ImageLoaded가 정상 적용되지 않는 이슈 -> delay로 해결
-  $pjtGellery.delay(100).fadeIn(100, function () {
-    $pjtGellery.imagesLoaded(function () {
-      // DOM 요소의 배열을 컨테이너에 넣고 Masonry 레이아웃을 실행
-      $pjtGellery.append(elements).masonry("appended", elements).masonry();
+  // Masonry에 데이터를 추가후 재정렬
+  msnry.appended(pjtCtt);
 
+  // ImageLoaded 완료 후 노출
+  imagesLoaded(pjtGelleryElement).on("progress", () => {
+    setTimeout(() => {
       // 로딩 완료 후 로딩 관련 클래스 삭제
-      $project.removeClass("is-loading");
-      $(".pjt_item").removeClass("is-loading");
-      $loadMoreButton.removeClass("is-loading");
+      loadMoreBtnElement.classList.remove("is-loading");
+      document.querySelectorAll(".pjt_item").forEach((item) => item.classList.remove("is-loading"));
+    }, 300);
 
-      $pjtGellery.masonry("layout");
-    });
+    setTimeout(() => {
+      projectElement.classList.remove("is-loading");
+    }, 100);
+
+    setTimeout(() => {
+      // masonry 재정렬
+      msnry.layout();
+    }, 150);
   });
 
   // 추가 된 항목 수량 갱신
-  addadd += slicedData.length;
+  pjtItemLen += slicedData.length;
 
-  // JSON 데이터가 추가 된 후에 있으면 추가 버튼을 지운다
-  if (addadd < filteredData.length) {
-    $loadMoreButton.css("display", "block");
+  // JSON 데이터가 전부 추가 된 경우 버튼 삭제
+  if (pjtItemLen < filteredData.length) {
+    loadMoreBtnElement.style.display = "block";
   } else {
-    $loadMoreButton.hide();
+    loadMoreBtnElement.style.display = "none";
   }
-}
+};
 
 // 리스트 필터링
-function filterItems() {
-  const keyCpn = $(".filter-type-cpn").find('input[type="radio"]:checked').val(), // 회사별 필터
-    keyBiz = $(".filter-type-biz").find('input[type="radio"]:checked').val(), // 사업유형별 필터
-    keyDevice = $(".filter-type-device").find('input[type="radio"]:checked').val(), // 지원기기별 필터
-    keyLinked = $(".filter-type-linked").find('input[type="checkbox"]').prop("checked"), // 링크 여부 필터
-    masonryItems = $pjtGellery.masonry("getItemElements"); // 추가 된 Masonry 아이템
-
-  $project.addClass("is-loading");
+const filterItems = () => {
+  const keyCpn = document
+      .querySelector(".filter-type-cpn")
+      .querySelector('input[type="radio"]:checked').value, // 회사별 필터
+    keyBiz = document
+      .querySelector(".filter-type-biz")
+      .querySelector('input[type="radio"]:checked').value, // 사업유형별 필터
+    keyDevice = document
+      .querySelector(".filter-type-device")
+      .querySelector('input[type="radio"]:checked').value, // 지원기기별 필터
+    keyLinked = document
+      .querySelector(".filter-type-linked")
+      .querySelector('input[type="checkbox"]').checked, // 링크 여부 필터
+    masonryItems = Array.from(pjtGelleryElement.querySelectorAll(".pjt_item")); // 추가 된 Masonry 아이템
 
   // Masonry 항목을 삭제
-  $pjtGellery.masonry("remove", masonryItems);
+  msnry.remove(masonryItems);
+  projectElement.classList.add("is-loading");
 
   // 필터링 된 항목의 데이터를 재설정과
   // 추가 된 항목 수를 재설정
   filteredData = [];
-  addadd = 0;
+  pjtItemLen = 0;
 
   if (keyCpn === "ALL") {
     // 1차필터링 - all이 클릭 된 경우 모든 JSON 데이터를 저장
     filteredData = allData;
   } else {
     // all 이외의 경우, 키와 일치하는 데이터를 추출
-    filteredData = $.grep(allData, function (item) {
-      return item.company === keyCpn;
-    });
+    filteredData = allData.filter((item) => item.company === keyCpn);
   }
 
   if (keyBiz !== "ALL") {
     // 2차 필터링 - device
-    filteredData = $.grep(filteredData, function (item) {
-      return item.business === keyBiz;
-    });
+    filteredData = filteredData.filter((item) => item.business === keyBiz);
   }
 
   if (keyDevice !== "ALL") {
     // 2차 필터링 - device
-    filteredData = $.grep(filteredData, function (item) {
-      return item.device === keyDevice;
-    });
+    filteredData = filteredData.filter((item) => item.device === keyDevice);
   }
 
   if (keyLinked) {
     // 3차 필터링 - linked
-    filteredData = $.grep(filteredData, function (item) {
+    filteredData = filteredData.filter((item) => {
       // link 값이 있을 때 필터링
-      item.link ? (linkFt = true) : (linkFt = false);
-
+      let linkFt = item.link ? true : false;
       return linkFt === keyLinked;
     });
   }
 
+  // 필터된 내용이 없을 경우 로딩바 제거
+  if (filteredData.length === 0) {
+    setTimeout(() => {
+      projectElement.classList.remove("is-loading");
+    }, 100);
+  }
+
   // 항목을 추가
-  addItems();
-}
+  setTimeout(() => {
+    addItems();
+  }, 100);
+};
+
+// 필터 라디오 버튼이 변경되면 필터링을 수행
+document.querySelector("#gellery-filter").addEventListener("change", (e) => {
+  if (e.target.matches(".form-item input")) {
+    filterItems();
+  }
+});
+
+// 프로젝트 리스트별 클릭 이벤트
+pjtGelleryElement.addEventListener("click", (e) => {
+  const target = e.target,
+    pjtItemElement = target.closest(".pjt_item"),
+    isDetailBtn = target.classList.contains("detail_btn"),
+    isDetailCloseBtn = target.matches(".close_bg, .btn_close"),
+    isTabBtn = target.matches(".tab_tit > li");
+
+  if (isDetailBtn || target.closest(".detail_btn")) {
+    // 썸네일 호버 내 상세보기 버튼 클릭시
+    const pjtDetailElements = pjtItemElement.querySelectorAll(".pjt_detail");
+
+    body.style.overflowY = "hidden"; // 바닥페이지 스크롤 고정
+    headerElement.style.display = "none"; // 헤더 숨김
+    Array.from(pjtDetailElements).forEach((pjtDatail) => {
+      pjtDatail.style.display = "block"; // 프로젝트 상세 팝업 오픈
+    });
+  } else if (isDetailCloseBtn || target.closest(".btn_close")) {
+    // 프로젝트 상세 레이어 닫기
+    const pjtDetailElements = pjtItemElement.querySelectorAll(".pjt_detail");
+
+    body.style.overflowY = "auto";
+    headerElement.style.display = "block";
+
+    // 썸네일 호버 내 상세보기 버튼 클릭시
+    Array.from(pjtDetailElements).forEach((pjtDatail) => {
+      pjtDatail.classList.remove("on"); // 프로젝트 상세 팝업 오픈
+      pjtDatail.style.display = "none";
+    });
+  } else if (isTabBtn || target.closest(".tab_tit > li")) {
+    //== 프로젝트 팝업 내 상세 설명 탭 메뉴 온오프
+    const tabTitItemElements = pjtItemElement.querySelectorAll(".tab_tit > li"),
+      tabCtttemElements = pjtItemElement.querySelectorAll(".tab_ctt > li");
+
+    Array.from(tabTitItemElements).forEach((tabTititem, tabTitIdx) => {
+      // 클락한 탭 탭 타이틀 활성화
+      if (tabTititem === target || tabTititem.contains(target)) {
+        tabTititem.classList.add("on");
+
+        // 탭 콘텐츠 활성화
+        Array.from(tabCtttemElements).forEach((tabCttItem, tabCttIdx) => {
+          if (tabCttIdx === tabTitIdx) {
+            tabCttItem.classList.add("on");
+          } else {
+            tabCttItem.classList.remove("on");
+          }
+        });
+      } else {
+        // 클릭한 탭이 아닐 경우 비활성화
+        tabTititem.classList.remove("on");
+      }
+    });
+  }
+});
+
+//= 리스트에 마우스 오버시 호버 효과
+// 마우스의 방향을 감지하는 함수
+// http://stackoverflow.com/a/3647634
+const getMouseDirection = (e) => {
+  let crntTarget = e.currentTarget,
+    offset = crntTarget.getBoundingClientRect(),
+    w = crntTarget.offsetWidth,
+    h = crntTarget.offsetHeight,
+    x = e.pageX - (offset.left + window.scrollX) - w / 2,
+    y = e.pageY - (offset.top + window.scrollY) - h / 2,
+    direction = Math.round((Math.atan2(y, x) * (180 / Math.PI) + 180) / 90 + 3) % 4;
+
+  return direction;
+};
 
 // 호버 효과
-function hoverDirection(event) {
-  const $overlay = $(this).find(".pjt_hover"),
-    side = getMouseDirection(event);
+const hoverDirection = (e) => {
+  const hoverElement = e.currentTarget.querySelector(".pjt_hover"),
+    side = getMouseDirection(e);
 
   let animateTo,
     positionIn = {
       top: "0%",
       left: "0%",
     },
-    positionOut = (function () {
+    positionOut = (() => {
       switch (side) {
         // case 0: top, case 1: right, case 2: bottom, default: left
         case 0:
@@ -507,24 +528,99 @@ function hoverDirection(event) {
           return { top: "0%", left: "-100%" };
       }
     })();
-  if (event.type === "mouseenter") {
+
+  if (e.type === "mouseenter") {
     animateTo = positionIn;
-    $overlay.css(positionOut);
+    hoverElement.style.top = positionOut.top;
+    hoverElement.style.left = positionOut.left;
   } else {
     animateTo = positionOut;
   }
-  $overlay.stop(true).animate(animateTo, 250, "easeOutExpo");
-}
 
-// 마우스의 방향을 감지하는 함수
-// http://stackoverflow.com/a/3647634
-function getMouseDirection(event) {
-  let $el = $(event.currentTarget),
-    offset = $el.offset(),
-    w = $el.outerWidth(),
-    h = $el.outerHeight(),
-    x = (event.pageX - offset.left - w / 2) * (w > h ? h / w : 1),
-    y = (event.pageY - offset.top - h / 2) * (h > w ? w / h : 1),
-    direction = Math.round((Math.atan2(y, x) * (180 / Math.PI) + 180) / 90 + 3) % 4;
-  return direction;
-}
+  hoverElement.classList.remove("hover_effect");
+  setTimeout(() => {
+    hoverElement.classList.add("hover_effect");
+    hoverElement.style.top = animateTo.top;
+    hoverElement.style.left = animateTo.left;
+  }, 10);
+};
+// 호벼 이벤트
+const pjtItemnHoverEvents = (el) => {
+  ["mouseenter", "mouseleave"].forEach((eventType) => {
+    el.addEventListener(eventType, hoverDirection);
+  });
+};
+// 초기 상세 리스트별 호벼 효과 등록
+const pjtItemElements = document.querySelectorAll(".pjt_item");
+Array.from(pjtItemElements).forEach((pjtItemElement) => {
+  pjtItemnHoverEvents(pjtItemElement);
+});
+// 동적 생성 상세 리스트별 호벼 효과 추가 등록
+const dynamicPjtItemHoverEvents = (mutationsList) => {
+  for (let mutation of mutationsList) {
+    if (mutation.type === "childList") {
+      const addedNodes = mutation.addedNodes;
+      Array.from(addedNodes).forEach((addedNode) => {
+        if (addedNode.nodeType === Node.ELEMENT_NODE && addedNode.classList.contains("pjt_item")) {
+          pjtItemnHoverEvents(addedNode);
+        }
+      });
+    }
+  }
+};
+// 동적 생성여부 관철 후 이벤트 등록
+const pjtItemHoverObserver = new MutationObserver(dynamicPjtItemHoverEvents);
+pjtItemHoverObserver.observe(pjtGelleryElement, { childList: true, subtree: true });
+
+// 리스트 더보기 버튼 클릭시 리스트 추가
+loadMoreBtnElement.addEventListener("click", (e) => {
+  e.target.classList.add("is-loading"); // 로딩중
+
+  setTimeout(() => {
+    addItems(); // 리스트 추가
+  }, 300);
+
+  setTimeout(() => {
+    imagesLoaded(pjtGelleryElement).on("progress", () => {
+      msnry.layout();
+    });
+  }, 450);
+});
+
+// 스크롤 이벤트
+window.addEventListener("scroll", () => {
+  // 스플래시 완료 후 && infinitSrcTimer Throttling
+  if (start > 0 && !infinitSrcTimer) {
+    const winH = window.innerHeight, // 뷰포트 높이
+      galleryTop = projectElement.offsetTop, // 갤러리 상단 스크롤값
+      galleryBtm = projectElement.offsetTop + projectElement.offsetHeight; // 갤러리 하단 스크롤값
+
+    let infinitStart = galleryTop < lastScrTop, // 무한스크롤 시작되는 스크롤값
+      infinitEnd = galleryBtm > lastScrTop; // 무한스크롤 끝나는 스크롤값
+
+    // 500ms 마다 스크롤 체크
+    infinitSrcTimer = setTimeout(() => {
+      const cntScrTop = window.scrollY, // 현재 상단 스크롤값
+        winBtm = cntScrTop + winH; // 현재 하단 스크롤값
+
+      infinitSrcTimer = null;
+
+      // 최초 로드시 갤러리 하단에서 시작할 때 미리 무한 스크롤링 되는 현상 방지
+      // 무한 스크롤 범위 안에 있을때 && 아래로 스크롤 할때 && 현재 하단 스크롤값이 갤러리 하단보다 클 때
+      if (infinitStart && infinitEnd && cntScrTop > lastScrTop && winBtm >= galleryBtm) {
+        loadMoreBtnElement.classList.add("is-loading");
+
+        setTimeout(() => {
+          addItems();
+        }, 500);
+
+        setTimeout(() => {
+          imagesLoaded(pjtGelleryElement).on("progress", () => {
+            msnry.layout();
+          });
+        }, 650);
+      }
+      lastScrTop = cntScrTop; // 마지막 스크롤값 갱신
+    }, 350);
+  }
+});
