@@ -482,8 +482,11 @@ document.addEventListener("click", (e) => {
       pJtEmptyWrapElement.remove();
     }, 100);
 
+    // 필터 초기 데이터 추가
     filteredData = allData;
-    addItems();
+    setTimeout(() => {
+      addItems();
+    }, 300);
 
     // 필터 초기화
     Array.from(document.querySelectorAll(".form-item:first-child:not(.chkItem) input")).forEach(
