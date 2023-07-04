@@ -267,9 +267,10 @@ $m-pf-pop-info-wid: 100%;
   }
   // 갤러리 로딩 아이콘
   #project.is-loading &:before {
+    display:inline-block;
     @include pseudo-init-ctt;
-    @include pos-abs-lt(50%, 30%);
-    transform: translate(-50%, -50%);
+    @include pos-abs-lt(50%, 0);
+    margin:calc(15vh - 15px) 0 0 -15px;
     @extend %loading-ani;
   }
 }
@@ -404,6 +405,37 @@ $m-pf-pop-info-wid: 100%;
   &.hover_effect {
     transition: 0.15s cubic-bezier(0.27, 0.71, 0.27, 0.72);
     transition-property: top, left;
+  }
+}
+
+// 프로젝트 리스트 빈 화면
+.project_empty_wrap {
+  @extend %flex-vtc-layout;
+  justify-content: center;
+  padding-top: 10vh;
+  font-size: 16px;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.3s ease;
+  // 안내 문구
+  .guide_txt {
+    margin-bottom: 20px;
+    color: color(dft, brightest);
+  }
+  // 필터 초기화 버튼
+  .reset_filter_btn {
+    display: inline-block;
+    padding: 15px 25px;
+    background: color(dft, brightest);
+    border-radius: 15px;
+    .btn_txt {
+      margin-left: 5px;
+    }
+  }
+  &.active {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
