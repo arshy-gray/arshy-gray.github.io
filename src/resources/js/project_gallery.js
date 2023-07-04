@@ -132,7 +132,8 @@ const addItems = async () => {
 
     // 반응형 지원시 (responsive)
     if (item.device === "RESPONSIVE") {
-      itemHTML += '<li class="responsive"><i class="fas fa-sync-alt" title="반응형"></i></li>';
+      itemHTML +=
+        '<li class="responsive"><i class="fas fa-sync-alt fa-sync" title="반응형"></i></li>';
     }
 
     itemHTML +=
@@ -415,11 +416,43 @@ const filterItems = () => {
     });
   }
 
-  // 필터된 내용이 없을 경우 로딩바 제거
-  if (filteredData.length === 0) {
+  const pJtEmptyWrapElement = document.querySelector(".project_empty_wrap");
+  // 이전 필터링 결과가 없을 때
+  if (pJtEmptyWrapElement) {
+    // 필터 초기화 화면 삭제
+    pJtEmptyWrapElement.classList.remove("active");
+
+    // 버튼 삭제
     setTimeout(() => {
+      pJtEmptyWrapElement.remove();
+    }, 100);
+  }
+
+  // 필터된 내용이 없을 경우
+  if (filteredData.length === 0) {
+    const emptyElement = document.createElement("div"),
+      emptyHTML =
+        '<p class="guide_txt">조건과 일치하는 프로젝트가 업습니다.</p>' +
+        '<span class="reset_btn_wrap">' +
+        '<button type="button" class="reset_filter_btn"></span>' +
+        '<i class="fas fa-sync-alt"></i>' +
+        '<span class="btn_txt">필터 초기화</span>' +
+        "</button>";
+
+    emptyElement.classList.add("project_empty_wrap");
+    emptyElement.style.display = "block";
+    emptyElement.innerHTML = emptyHTML;
+
+    setTimeout(() => {
+      // 로딩바 제거
       projectElement.classList.remove("is-loading");
     }, 100);
+
+    setTimeout(() => {
+      // 필터 초기화 화면 노출
+      pjtGelleryElement.insertAdjacentElement("afterend", emptyElement);
+      emptyElement.classList.add("active");
+    }, 400);
   }
 
   // 항목을 추가
@@ -432,6 +465,32 @@ const filterItems = () => {
 document.querySelector("#gellery-filter").addEventListener("change", (e) => {
   if (e.target.matches(".form-item input")) {
     filterItems();
+  }
+});
+
+// 필터 초기화 버튼 클릭 이벤트
+document.addEventListener("click", (e) => {
+  const target = e.target,
+    pJtEmptyWrapElement = document.querySelector(".project_empty_wrap"),
+    isReseFiltertBtn = target.classList.contains("reset_filter_btn");
+
+  if (isReseFiltertBtn || target.closest(".reset_filter_btn")) {
+    pJtEmptyWrapElement.classList.remove("active");
+
+    // 버튼 삭제
+    setTimeout(() => {
+      pJtEmptyWrapElement.remove();
+    }, 100);
+
+    filteredData = allData;
+    addItems();
+
+    // 필터 초기화
+    Array.from(document.querySelectorAll(".form-item:first-child:not(.chkItem) input")).forEach(
+      (filterItem) => {
+        filterItem.checked = true;
+      }
+    );
   }
 });
 
