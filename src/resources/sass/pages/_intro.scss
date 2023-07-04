@@ -1,0 +1,138 @@
+//= Intro
+#intro {
+  background-repeat: no-repeat;
+  background-image: url("#{$img-url}/intro/bgMain_moon.png"), url("#{$img-url}/intro/bgMain_back.jpg"); // 달, 야경
+  background-position: calc(50% + 600px) 65px, center;
+  background-size: auto, cover;
+  background-attachment: fixed;
+
+  // 메인카피
+  .intro_atc,
+  .intro_ctt {
+    height: 100%;
+  }
+  .intro_atc {
+    text-align: center;
+  }
+  // 연락처 그룹
+  .contact_group {
+    @extend %flex-vtc-layout;
+    max-width: 480px;
+    height: 100%;
+    margin: 0 auto;
+  }
+  // Intro 로고
+  .name {
+    margin-top: 10vh;
+    a {
+      @extend %imgFix;
+      padding: 0 10%;
+    }
+    img {
+      @extend %ani-direction-init;
+      animation-name: toL;
+    }
+  }
+  // 헨드폰번호
+  .tel_num {
+    display: inline-block;
+    width: 100%;
+    max-width: 480px;
+    margin: 20px auto 0;
+    padding: 20px 15% 0;
+    @include font(null, 18px, color(dft, brightest));
+    border-top: 3px solid color(theme, main);
+    box-sizing: border-box;
+    a {
+      @extend %imgFix;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .tel_num,
+  .mail {
+    a {
+      @extend %ani-direction-init;
+      animation-name: toR;
+    }
+  }
+  // 메일 주소
+  .mail a {
+    display: inline-block;
+    color: color(theme, intro-s);
+    animation-delay: 0.2s;
+  }
+  // 깃허브
+  .gitHub {
+    flex: 1;
+    @extend %flex-justify-c;
+    align-items: flex-end;
+    a {
+      display: inline-block;
+      padding: 20px 50px;
+      color: rgba(color(dft, brightest), 0.8);
+      background: rgba(color(dft, brightest), 0.2);
+      border-radius: 31px;
+      @extend %ani-direction-init;
+      @extend %natural-effect;
+      animation-name: toB;
+      &:hover {
+        background: rgba(color(dft, brightest), 0.3);
+        color: color(dft, brightest);
+        text-shadow: 0 0 white;
+      }
+    }
+  }
+  // 섹션 활성화
+  &.active {
+    .name img {
+      animation-name: fromL;
+    }
+    .tel_num,
+    .mail {
+      a {
+        animation-name: fromR;
+      }
+    }
+    .gitHub a {
+      animation-name: fromB;
+    }
+  }
+}
+
+// 반응형 =====
+// tablet
+@include respond(1399px) {
+  #intro {
+    background-position: calc(100% - 50px) 40px, center;
+    background-size: 100px, cover;
+  }
+} // e.1399px
+
+// mobile
+@include respond(767px) {
+  #intro {
+    // 연락처 그룹
+    .contact_group {
+      margin: 0 14%;
+      width: auto;
+      max-width: 100%;
+    }
+    // 깃허브
+    .gitHub {
+      a {
+        padding: 15px 30px;
+      }
+    }
+  }
+} // e.767
+
+@include respond(599px) {
+  // 메인 카피
+  .intro_ctt {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+} // e.599px

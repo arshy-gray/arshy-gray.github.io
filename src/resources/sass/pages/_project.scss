@@ -1,0 +1,924 @@
+//= project
+$pf-pop-info-wid: 430px;
+$pf-pop-info-tb-gap: 35px;
+$pf-pop-info-ctt-tb-gap: 20px;
+$pf-pop-info-lr-gap: 25px;
+$pf-pop-info-space: $pf-pop-info-ctt-tb-gap $pf-pop-info-lr-gap 0;
+$m-pf-pop-info-wid: 100%;
+
+// 로딩 아이콘 애니메이션
+%loading-ani {
+  animation: rotate 1.2s infinite;
+  animation-play-state: running;
+  @include imgsprite($pf-loading);
+}
+
+#project {
+  z-index: 1;
+  background-image: url("#{$img-url}/project/bgPortfolio_btm.png");
+  background-color: color(theme, project);
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  // 배경 요소
+  // 전구
+  .el01 {
+    top: 12px;
+    left: calc(50% - 342px);
+    animation: blink 4s ease-in-out infinite;
+    @include imgsprite($bg-pf-el01);
+  }
+  // 돋보기
+  .el02 {
+    top: 182px;
+    left: calc(50% + 669px);
+    animation: zoomIn 10s ease-out infinite;
+    transform-origin: center;
+    @include imgsprite($bg-pf-el02);
+  }
+  // 낙서
+  .el03 {
+    top: 10px;
+    left: calc(50% - 830px);
+    @include imgsprite($bg-pf-el03);
+  }
+
+  // 필터 영역
+  .filter_wrap {
+    margin: 20px auto 40px;
+    text-align: center;
+  }
+  // 필터 그룹
+  .filter-group {
+    flex-wrap: wrap;
+    ~ &:nth-of-type(n + 2) {
+      margin-top: 15px;
+    }
+    // 1차 필터
+    &.filter-group-main {
+      @extend %flex-c;
+    }
+    // 1차 필터 외
+    &.filter-group-sub {
+      @extend %flex-align-c;
+      max-width: 1024px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 5px 15px;
+      background: rgba(color(theme, project-s), 0.2);
+      border-radius: 10px;
+      @extend %ani-direction-init;
+      animation-name: toB;
+    }
+  }
+  // 필터 아이템
+  .form-item {
+    margin: 4px 0;
+    text-align: center;
+    @extend %ani-direction-init;
+    animation-name: toB;
+    input {
+      @include pos-abs-lt;
+      opacity: 0;
+      &:checked ~ label {
+        color: color(dft, brightest);
+      }
+    }
+    label {
+      display: inline-block;
+      vertical-align: top;
+      color: color(theme, project-s);
+      box-sizing: border-box;
+      cursor: pointer;
+      @extend %natural-effect;
+      transition-property: color, border-color;
+      &:hover,
+      &:focus {
+        color: color(dft, brightest);
+      }
+    }
+    &.radioItem {
+      width: 134px;
+      margin-left: 4px;
+      margin-right: 4px;
+      label {
+        border: 1px solid color(theme, project-s);
+        border-radius: 12px;
+        overflow: hidden;
+        @extend %backface;
+        @include pseudo-init {
+          @include pos-abs(0, 0, null, 0);
+          height: 2px;
+          @extend %natural-effect;
+          transition-property: background-color;
+        }
+      }
+      input {
+        ~ label {
+          width: 100%;
+          padding: 7px 0 10px 0;
+        }
+        &:checked ~ label {
+          border-color: color(dft, brightest);
+          &:before {
+            background: color(dft, brightest);
+          }
+        }
+      }
+    }
+    &.radioItem2,
+    &.chkItem {
+      input {
+        ~ label {
+          position: relative;
+          line-height: 1;
+          @include pseudo-init(before, inline-block) {
+            margin-right: 8px;
+            @include size(22px);
+            vertical-align: middle;
+            border: 1px solid #affdfb;
+          }
+          @include pseudo-init(after) {
+            opacity: 0;
+            @include pos-abs-lt(4px);
+            @include size(16px);
+            transform: scale(0);
+            @extend %natural-effect;
+            transition: 0.08s cubic-bezier(0.51, -0.19, 0.17, 0.82);
+            transition-property: opacity, transform;
+          }
+        }
+        &:checked ~ label {
+          &:before {
+            border-color: color(dft, brightest);
+          }
+          &:after {
+            background-color: color(dft, brightest);
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      }
+      ~ &:not(:last-of-type) {
+        margin-right: 25px;
+      }
+    }
+    &.radioItem2 {
+      label:focus {
+        border-top: 3px solid color(dft, brightest);
+      }
+      input {
+        ~ label {
+          &:before,
+          &:after {
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+    &.chkItem {
+      display: block;
+      input {
+        ~ label {
+          &:before,
+          &:after {
+            border-radius: 5px;
+            @extend %backface;
+          }
+        }
+      }
+    }
+
+    @for $idx from 1 through 6 {
+      &:nth-child(#{$idx}) {
+        animation-delay: $idx * 0.1s - 0.1s;
+      }
+    }
+  }
+
+  // 리스트 더보기
+  #load-more {
+    position: relative;
+    z-index: 0;
+    display: block;
+    margin: 30px auto 0 auto;
+    padding: 20px 100px 25px;
+    @include font(40px, null, color(dft, brightest));
+    text-align: center;
+    border: 2px solid color(dft, brightest);
+    border-radius: 25px;
+    @extend %ani-direction-init;
+    animation-name: toB;
+    @extend %natural-effect;
+    transition-property: background-color;
+    cursor: pointer;
+    overflow: hidden;
+    // 마우스 오버
+    &:hover {
+      color: color(theme, project);
+      background: rgba(color(dft, brightest), 0.9);
+    }
+    // 이미지 로딩 중
+    &.is-loading {
+      cursor: default;
+      pointer-events: none;
+      padding: 0;
+      color: transparent;
+      border: 0;
+      animation-play-state: paused;
+
+      @include pseudo-init {
+        @extend %loading-ani;
+      }
+
+      &:hover {
+        background: none;
+      }
+    }
+  }
+
+  // parallex 활성화
+  &.active {
+    // 필터그룹
+    // 1차 필터 외
+    .filter-group.filter-group-sub, 
+    .form-item,
+    // 이미지 로딩 끝난 후 더보기 버튼
+    &:not(.is-loading) #load-more {
+      animation-name: fromB;
+    }
+  }
+}
+// 프로젝트 갤러리
+#pjt_gellery {
+  @extend %ani-direction-init;
+  z-index: 1;
+  animation-name: toB;
+  @extend %clearfix;
+  // 섹션 활성화시
+  #project.active & {
+    animation-name: fromB;
+  }
+  // 이미지 로딩중
+  #project.is-loading & {
+    position: relative;
+    height: calc(100vh - 450px) !important;
+  }
+  // 갤러리 로딩 아이콘
+  #project.is-loading &:before {
+    @include pseudo-init-ctt;
+    @include pos-abs-lt(50%, 30%);
+    transform: translate(-50%, -50%);
+    @extend %loading-ani;
+  }
+}
+.pjt_atc {
+  padding-bottom: 30px;
+}
+.grid-sizer,
+.pjt_item {
+  width: calc((100% - 1% * 4) / 5);
+}
+.gutter-sizer {
+  width: 1%;
+}
+// 프로젝트 리스트 아이템
+.pjt_item {
+  float: left;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  overflow: hidden;
+  &:hover {
+    box-shadow: 5px 5px 50px rgba(color(dft, darkest), 0.3);
+  }
+  // 이미지 로딩중
+  #project.is-loading &,
+  &.is-loading {
+    opacity: 0;
+  }
+  // 썸네일 길이 길때
+  &.thumb_h_long {
+    .pjt_thumb .img_box {
+      height: 0;
+      padding-bottom: 130%;
+    }
+  }
+}
+// 프로젝트 리스트 썸네일
+.pjt_thumb {
+  // 썸네일 이미지
+  .img_box {
+    width: 100%;
+    border-bottom: 3px dashed color(dft, brightest);
+    overflow: hidden;
+    vertical-align: top;
+    @extend %imgFix;
+    img {
+      width: 100%;
+    }
+  }
+  // 리스트 간략 정보
+  .txt_box {
+    padding: 25px 20px;
+    line-height: 1.3;
+    border-top: 3px dashed color(theme, project);
+    background: color(dft, brightest);
+  }
+  ul {
+    margin-top: 15px;
+    @include font(15px, 1.3, color(dft, light));
+    > li {
+      display: flex;
+      align-items: baseline;
+      &:nth-of-type(n + 2) {
+        margin-top: 5px;
+      }
+    }
+  }
+  // 타이틀
+  h4 {
+    @include font(22px, null, color(dft, dark));
+    font-weight: bold;
+  }
+  // 프로젝트 요약 설명
+  .pjt_intro {
+    margin-top: 5px;
+    color: color(dft, lighter);
+  }
+  // 참요율, 기간 아이콘
+  .pjt_item_tit {
+    line-height: 18px;
+    overflow: hidden;
+    i {
+      width: 21px;
+      text-align: center;
+    }
+  }
+  // 참요율, 기간 텍스트
+  .pf_item_ctt {
+    display: inline-block;
+    width: calc(100% - 21px);
+  }
+}
+// 썸네일 호버효과
+.pjt_hover {
+  position: absolute;
+  @include size(100%);
+  background: rgba(color(theme, history), 0.9);
+  border-radius: 20px;
+  .btn_box {
+    @include size(100%);
+    ul {
+      @extend %flex-c;
+      @include size(100%);
+      padding: 0;
+      text-align: center;
+      vertical-align: middle;
+    }
+    li {
+      margin: 0 5px;
+      a,
+      button {
+        @extend %flex-c;
+        border: 1px solid color(dft, brightest);
+        border-radius: 50px;
+        @include size(45px);
+        text-align: center;
+        &:hover {
+          background: color(dft, brightest);
+          i {
+            color: color(theme, history);
+          }
+        }
+      }
+      a span {
+        @extend %blind;
+      }
+      i {
+        @include font(21.5px, 24px, color(dft, brightest));
+        vertical-align: middle;
+      }
+    }
+  }
+  &.hover_effect {
+    transition: 0.15s cubic-bezier(0.27, 0.71, 0.27, 0.72);
+    transition-property: top, left;
+  }
+}
+
+// 프로젝트 상세 레이어팝업
+.pjt_detail {
+  display: none;
+  @include pos-fix-lt;
+  @include size(100%);
+  background: rgba(color(dft, darkest), 0.7);
+  box-sizing: border-box;
+  z-index: 999;
+
+  // 팝업 닫기 버튼
+  .btn_close {
+    display: block;
+    @include pos-abs-rt(30px, 0);
+    line-height: 1;
+    padding: 7px 20px 9px;
+    background-color: color(dft, dark);
+    box-shadow: 3px 3px 0 rgba(color(dft, darkest), 0.2);
+    border-radius: 0 0 10px 10px;
+    z-index: 9;
+    span {
+      @extend %blind;
+    }
+    @include pseudo-init {
+      @include imgsprite($btn2_close);
+    }
+  }
+  // 딤드
+  .close_bg {
+    @include pos-fix(0, null, null, 0);
+    width: calc(100% - 17px);
+    height: 100%;
+    box-sizing: border-box;
+    z-index: 0;
+  }
+}
+// 프로젝트 팝업 레이어
+.pjt_layer {
+  @include pos-abs(5vh, 0, 5vh, 50%);
+  @extend %flex-vtc-layout;
+  width: 90%;
+  max-width: 1300px;
+  transform: translateX(-50%);
+  background-color: color(bg, base);
+  z-index: 1;
+  border-radius: 30px;
+  overflow: hidden;
+}
+// 프조젝트 상단 타이틀 영역
+.pjt_layer_tit {
+  @extend %flex-vtc-layout;
+  padding: $pf-pop-info-tb-gap 0 $pf-pop-info-ctt-tb-gap;
+  align-items: flex-end;
+  .pjt_main_tit,
+  .pjt_intro {
+    width: $pf-pop-info-wid;
+    padding: 0 $pf-pop-info-lr-gap;
+    box-sizing: border-box;
+  }
+  .pjt_main_tit {
+    font-weight: 700;
+    @include font(35px, 1.2, color(dft, dark));
+    word-break: keep-all;
+  }
+  .pjt_intro {
+    margin-top: 5px;
+    @include font(17px, null, color(dft, medium));
+  }
+}
+// 프조젝트 콘텐츠
+.pjt_layer_ctt {
+  flex: 1;
+  @extend %flex-vtc-layout;
+  align-items: flex-end;
+  height: 100%;
+  padding-bottom: 40px;
+  @extend %h-scr;
+}
+// 프로젝트 정보 영역
+.pjt_info {
+  width: $pf-pop-info-wid;
+  padding: $pf-pop-info-ctt-tb-gap $pf-pop-info-lr-gap;
+  box-sizing: border-box;
+  border-radius: 30px 30px 0 0;
+  font-size: 15px;
+  background: color(bg, light);
+  border: 1px solid color(bd, base);
+}
+// 프로젝트 지원 기기 & 브라우저
+.pjt_info_type {
+  display: flex;
+}
+// 프로젝트 지원 기기
+.type_device {
+  position: relative;
+  @extend %flex-align-c;
+  justify-content: flex-end;
+  width: 120px;
+  text-align: right;
+  > li {
+    &:not(.responsived) {
+      margin-right: 10px;
+      @include font(23px, 1, color(dft, dark));
+    }
+    &.responsive {
+      @include pos-abs-rt(8px, 50%);
+      @include font(19px, null, color(theme, main));
+      text-shadow: 0 0 3px color(dft, brightest);
+      transform: translateY(-50%);
+    }
+  }
+}
+// 프로젝트 지원 브라우저
+.type_browser {
+  @extend %flex-align-c;
+  border-left: 1px solid #ccc;
+  > li {
+    position: relative;
+    margin-left: 10px;
+    @extend %imgFix;
+    &.ie + .safari {
+      margin-left: 13px;
+    }
+    i {
+      display: block;
+      @include sprite-img(project);
+    }
+    &.chrome i {
+      @include sprite($browser-chrome);
+    }
+    &.ie i {
+      @include sprite($browser-ie);
+    }
+    &.safari i {
+      @include sprite($browser-safari);
+    }
+  }
+  // 브라우저 버전
+  .browser_ver {
+    @include pos-abs-rt(-6px, -5px);
+    display: block;
+    @include font(11px, 1, #096dbb);
+    font-weight: bold;
+    text-shadow: -3px -3px 3px #f1f1f1;
+    text-align: center;
+  }
+}
+// 프로젝트 정보 리스트
+.txt_basic_sub {
+  margin-top: $pf-pop-info-ctt-tb-gap;
+  line-height: 1.5;
+  .pjt_ctt > li {
+    display: flex;
+    i {
+      display: inline-block;
+      width: 22px;
+      margin-left: 4px;
+      text-align: center;
+    }
+    span {
+      display: inline-block;
+    }
+    ~ li {
+      margin-top: 8px;
+    }
+  }
+  // 타이틀
+  .pjt_item_tit {
+    width: 115px;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 10px;
+  }
+  // 콘텐츠
+  .pjt_item_ctt {
+    flex: 1;
+    a {
+      color: color(dft, light);
+      word-break: break-all;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+// 프로젝트 상세 정보
+.pjt_info_detail {
+  @extend %flex-vtc-layout;
+  width: $pf-pop-info-wid;
+  padding-top: $pf-pop-info-ctt-tb-gap;
+  @include font(16px, 1.8);
+  box-sizing: border-box;
+  border-left: 1px solid #fafafa;
+  background: #fcfcfc;
+  border-radius: 0 0 30px 30px;
+  border: solid #e7e7e7;
+  border-width: 0 1px 1px 1px;
+}
+// 탭 타이틀
+.txt_detail_tit {
+  display: flex;
+  gap: 6px;
+  padding: 0 $pf-pop-info-lr-gap;
+  @extend %clearfix;
+  > li {
+    flex: 1;
+    position: relative;
+    padding: 10px 5px;
+    @include font(null, 1, color(dft, dark));
+    text-align: center;
+    border: 1px solid color(dft, light);
+    box-sizing: border-box;
+    border-radius: 12px;
+    opacity: 0.5;
+    z-index: 0;
+    &:hover {
+      cursor: pointer;
+    }
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+    &:not(.on):hover {
+      opacity: 1;
+      z-index: 1;
+    }
+    &.on {
+      color: color(dft, brightest);
+      background-color: color(dft, dark);
+      opacity: 1;
+      z-index: 1;
+    }
+    i {
+      margin-right: 5px;
+    }
+  }
+}
+// 탭 콘텐츠
+.txt_detail_ctt {
+  padding: 10px $pf-pop-info-lr-gap $pf-pop-info-tb-gap;
+  > li {
+    display: none;
+    &.on {
+      display: block;
+    }
+  }
+  .work_main_tit,
+  .work_sub_tit {
+    display: block;
+  }
+  .work_main_tit {
+    color: color(dft, dark);
+    font-weight: bold;
+    &:before {
+      content: "[";
+    }
+    &:after {
+      content: "]";
+    }
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+  .work_sub_tit {
+    color: color(tit, main);
+    font-style: normal;
+    &:before {
+      content: "<";
+    }
+    &:after {
+      content: ">";
+    }
+  }
+  .work_ol,
+  .work_ul {
+    padding-left: 15px;
+    + .work_sub_tit {
+      margin-top: 10px;
+    }
+  }
+  .work_ol {
+    > li {
+      list-style: decimal;
+    }
+  }
+  .work_ul {
+    > li {
+      list-style: disc;
+    }
+  }
+}
+// 프로젝트 상세 이미지
+.pjt_detail_img {
+  @include pos-abs-lt;
+  @include size(calc(100% - $pf-pop-info-wid), 100%);
+  background-color: color(dft, brightest);
+  @extend %h-scr;
+  img {
+    width: 100%;
+  }
+}
+
+// 반응형 =====
+// pc
+@include respond(1619px) {
+  .pjt_detail .wrap_cen {
+    width: 80%;
+  }
+} // e.1620
+
+@include respond(1399px) {
+  #project .el02 {
+    left: calc(50% + 469px);
+  }
+
+  .pjt_thumb {
+    .txt_box {
+      padding: 20px 15px;
+    }
+    h4 {
+      font-size: 18px;
+    }
+    .pjt_intro {
+      font-size: 12px;
+    }
+    ul {
+      margin-top: 10px;
+      font-size: 13px;
+      > li:nth-of-type(n + 2) {
+        margin-top: 3px;
+      }
+    }
+  }
+  .grid-sizer,
+  .pjt_item {
+    width: calc((100% - 1% * 3) / 4);
+  }
+} //e.1399
+
+// mobile
+@include respond(1023px) {
+  #project {
+    // 배경요소
+    // 돋보기
+    .el02 {
+      top: 105px;
+      left: calc(100% - 66px);
+    }
+    // 필터 영역
+    .filtr_wrap {
+      overflow-x: scroll;
+      -webkit-overflow-style: none;
+    }
+    .filtr_wrap::-webkit-scrollbar {
+      @include size(0);
+      display: none;
+    }
+    .filter-group {
+      flex-wrap: wrap;
+      ~ &:nth-of-type(n + 2) {
+        margin-top: 15px;
+      }
+      &.filter-group-main {
+        border: solid color(theme, project-s);
+        border-width: 1px 0;
+      }
+    }
+    .form-item {
+      &.radioItem {
+        width: auto;
+        margin: 0 5px;
+        input[type="radio"]:checked ~ label {
+          color: color(theme, sub);
+          animation: none;
+          &:before {
+            background: transparent;
+          }
+        }
+        label {
+          border: 0;
+        }
+      }
+      &.chkItem {
+        margin-top: 10px;
+      }
+
+      label {
+        color: color(dft, brightest);
+        border: 0;
+      }
+    }
+  }
+
+  // 프로젝트 리스트 영역
+  .grid-sizer,
+  .pjt_item {
+    width: 32.3%;
+  }
+  .pjt_item {
+    margin-bottom: 1%;
+  }
+  // 레이어 팝업
+  .pjt_layer {
+    background-color: color(bg, base);
+    z-index: 1;
+  }
+  .pjt_layer_ctt {
+    display: block;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+  .pjt_layer_tit {
+    .pjt_main_tit,
+    .pjt_intro {
+      width: $m-pf-pop-info-wid;
+      box-sizing: border-box;
+    }
+    .pjt_main_tit {
+      font-size: 30px;
+    }
+    .pjt_intro {
+      font-size: 15px;
+    }
+  }
+  // 프로젝트 정보 영역
+  .pjt_info {
+    width: $m-pf-pop-info-wid;
+    font-size: 13px;
+  }
+
+  .pjt_info_detail {
+    width: $m-pf-pop-info-wid;
+    @include font(14px, 1.5);
+  }
+  // 지원기기
+  .type_device > li {
+    &:not(:last-child) {
+      margin-right: 9px;
+      font-size: 18px;
+    }
+    &.responsive {
+      font-size: 16px;
+    }
+  }
+  // 지원 브라우저
+  .type_browser > li {
+    margin-left: 7px;
+    img {
+      width: 19px;
+    }
+  }
+  // 프로젝트 정보
+  .txt_basic_sub {
+    margin-top: 15px;
+    .pjt_ctt > li {
+      ~ li {
+        margin-top: 5px;
+      }
+    }
+  }
+  // 프로젝트 상세 이미지
+  .pjt_detail_img {
+    position: static;
+    overflow: hidden;
+    @include size($m-pf-pop-info-wid, auto);
+    margin-top: 40px;
+    text-align: center;
+    img {
+      max-width: 1004px;
+    }
+  }
+} // e.1023
+
+// mobile
+@include respond(767px) {
+  #project .wrap_cen {
+    padding: 0 10px;
+  }
+  .grid-sizer,
+  .pjt_item {
+    width: 48.5%;
+  }
+} // e.767
+
+@include respond(599px) {
+  // 프로젝트 리스트 썸네일
+  .pjt_thumb {
+    .txt_box {
+      padding: 15px 12px;
+    }
+    h4 {
+      font-size: 16px;
+    }
+    .pjt_intro {
+      font-size: 11px;
+    }
+    ul {
+      font-size: 12px;
+      > li:nth-of-type(n + 2) {
+        margin-top: 2px;
+      }
+    }
+  }
+} // e.599
+
+@include respond(399px) {
+  // 프로젝트 상세 레이어 팝업
+  .pjt_detail {
+    .pjt_ctt1,
+    .pjt_ctt2,
+    .pjt_ctt3,
+    .pjt_ctt4,
+    .pjt_ctt5 {
+      background-position: left top;
+    }
+  }
+} // e.399

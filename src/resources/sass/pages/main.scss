@@ -1,0 +1,9 @@
+//= main
+@import "../common/_common";
+
+// strite
+@import "../vendors/img/project-sprite", "../vendors/img/history-sprite",
+  "../vendors/img/contact-sprite";
+
+// 섹션
+@import "splash", "intro", "project", "history", "contact";

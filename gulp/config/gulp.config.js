@@ -1,33 +1,50 @@
 const isProduction = require("./gulp.env");
 const config = {
-  pfHtml: {
-    src: "**/*.html",
-    dest: "dist/html",
+  html: {
+    src: "index.html",
+    dest: "dist",
   },
 
-  pfScss: {
-    src: "resources/sass/**/*.s+(a|c)ss",
+  scss: {
+    src: "src/resources/sass/**/*.s+(a|c)ss",
     dest: "dist/css",
   },
 
-  imgSprite: {
-    src: "resources/images/img-sprite/**/*.png",
-    clean: ["resources/css/spr/*.png", "resources/sass/vendors/img/*"],
+  imgDft: {
+    src: ["src/resources/images/**/*", "!src/resources/images/**/*-sprite/*"],
+    dest: "dist/img/dft/",
   },
 
-  browsers: [
-    "last 3 versions",
-    "Android >= 4",
-    "Chrome >= 20",
-    "Firefox >= 15",
-    "Explorer >= 8",
-    "iOS >= 6",
-    "Opera >= 12",
-    "Safari >= 6",
-  ],
+  imgSprite: {
+    src: ["src/resources/images/**/*-sprite/*.png"],
+    clean: ["src/resources/sass/vendors/img/*.scss", "dist/img/spr/*.png"],
+    dest: "dist/img/spr/",
+  },
+
+  jsPrd: {
+    src: "src/resources/js/*.js",
+    dest: "dist/js/",
+  },
+
+  jsLib: {
+    src: "src/resources/js/lib/*.js",
+    dest: "dist/js/lib/",
+  },
+
+  json: {
+    src: "src/json/*.json",
+    dest: "dist/json/",
+  },
+
+  deploy: {
+    src: ["manifest.json", "browserconfig.xml"],
+    dest: "dist",
+  },
+
+  browsers: ["last 3 versions"],
 
   scssOpt: {
-    outputStyle: isProduction ? "compressed" : "expanded", // nested, expanded, compact, compressed
+    outputStyle: "compressed", // nested, expanded, compact, compressed
     indentType: "space",
     indentWidth: 2, // maximum:10
     precision: 6,

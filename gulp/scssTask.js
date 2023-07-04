@@ -1,9 +1,7 @@
 const log = require("fancy-log"),
   colors = require("ansi-colors"),
-  isProduction = require("./config/gulp.env"),
   sass = require("gulp-sass")(require("sass")),
-  dependents = require("gulp-dependents"),
-  changed = require("gulp-changed");
+  dependents = require("gulp-dependents");
 /**
  * @param gulp
  * @param $
@@ -15,22 +13,22 @@ module.exports = (gulp, $, config) => {
     this.emit("end");
   }
 
-  function pfsass() {
+  function scssTask() {
     return gulp
-      .src(config.pfScss.src, { since: gulp.lastRun("pfsass") })
+      .src(config.scss.src, { since: gulp.lastRun("scssTask") })
       .pipe(dependents())
-      .pipe($.if(!isProduction, $.sourcemaps.init()))
+      .pipe($.sourcemaps.init())
       .pipe(
         $.plumber({
-          errorHandler: isProduction ? false : true,
+          errorHandler: true,
         })
       )
       .pipe(sass(config.scssOpt).on("error", onError))
       .pipe($.autoprefixer(config.browsers))
-      .pipe($.if(!isProduction, $.sourcemaps.write("./")))
-      .pipe(gulp.dest(config.pfScss.dest));
+      .pipe($.sourcemaps.write("./"))
+      .pipe(gulp.dest(config.scss.dest));
   }
-  pfsass.description = "SCSS compile 후 css로 컴파일 및 소스맵 생성해서 dist로 복사";
+  scssTask.description = "SCSS compile 후 css로 컴파일 및 소스맵 생성해서 dist로 복사합니다";
 
-	gulp.task(pfsass);
+  gulp.task(scssTask);
 };

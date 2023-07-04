@@ -1,0 +1,40 @@
+//= global
+// 전체
+.hidden {
+  @extend %blind;
+}
+.clearFix {
+  @extend %clearfix;
+}
+// 이미지
+.imgFix {
+  @extend %imgFix;
+}
+.ol_decimal > li {
+  list-style: decimal;
+  margin-left: 16px;
+}
+// 폰트
+.lint_desc {
+  color: color(tit, main);
+}
+// 배경 요소
+.bg_el {
+  @include pos-abs-lt;
+  @include size(100%);
+  z-index: 0;
+  span {
+    @include pos-abs-lt;
+  }
+  img {
+    position: relative;
+    width: auto;
+  }
+}
+
+@include respond(479px) {
+  // 모바일 줄바꿈
+  .m_br {
+    display: block;
+  }
+} // e.479px
