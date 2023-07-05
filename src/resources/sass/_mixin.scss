@@ -1,0 +1,164 @@
+//= extend
+// box size
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+// 글꼴
+// font
+@mixin font($font-size, $line-height, $color: null) {
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+}
+// 높이 고정 문자 수직 중앙 정렬
+@mixin vt-m($height, $line-height: $height) {
+  height: $height;
+  line-height: $line-height;
+}
+//ellipsis 말줄임시 사용, 기본 1줄(1줄이면서 webkit-box로 사용할경우 boxline:1)
+@mixin ellipsis($count: 1, $boxline: null) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if $count == 1 {
+    @if $boxline {
+      display: -webkit-box;
+      -webkit-line-clamp: $boxline;
+      -webkit-box-orient: vertical;
+    } @else {
+      white-space: nowrap;
+    }
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $count;
+    -webkit-box-orient: vertical;
+  }
+}
+// position center
+@mixin positon-c($width, $height: $width) {
+  position: absolute;
+  width: $width;
+  height: $height;
+  top: 50%;
+  left: 50%;
+  margin-top: -half($height);
+  margin-left: -half($width);
+}
+//position property
+@mixin pos($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+// position absolute
+@mixin pos-abs($args...) {
+  @include pos(absolute, $args...);
+}
+@mixin pos-abs-rt($right: 0, $top: $right) {
+  @include pos-abs($right: $right, $top: $top);
+}
+@mixin pos-abs-lt($left: 0, $top: $left) {
+  @include pos-abs($left: $left, $top: $top);
+}
+@mixin pos-abs-rb($right: 0, $bottom: $right) {
+  @include pos-abs($right: $right, $bottom: $bottom);
+}
+@mixin pos-abs-lb($left: 0, $bottom: $left) {
+  @include pos-abs($left: $left, $bottom: $bottom);
+}
+// position fixed
+@mixin pos-fix($args...) {
+  @include pos(fixed, $args...);
+}
+@mixin pos-fix-rt($right: 0, $top: $right) {
+  @include pos-fix($right: $right, $top: $top);
+}
+@mixin pos-fix-lt($left: 0, $top: $left) {
+  @include pos-fix($left: $left, $top: $top);
+}
+@mixin pos-fix-rb($right: 0, $bottom: $right) {
+  @include pos-fix($right: $right, $bottom: $bottom);
+}
+@mixin pos-fix-lb($left: 0, $bottom: $left) {
+  @include pos-fix($left: $left, $bottom: $bottom);
+}
+// position sticky
+@mixin pos-stk($args...) {
+  @include pos(sticky, $args...);
+}
+// position relative
+@mixin pos-rel($args...) {
+  @include pos(relative, $args...);
+}
+@mixin pos-rel-rt($right: 0, $top: $right) {
+  @include pos-rel($right: $right, $top: $top);
+}
+@mixin pos-rel-lt($left: 0, $top: $left) {
+  @include pos-rel($left: $left, $top: $top);
+}
+@mixin pos-rel-rb($right: 0, $bottom: $right) {
+  @include pos-rel($right: $right, $bottom: $bottom);
+}
+@mixin pos-rel-lb($left: 0, $bottom: $left) {
+  @include pos-rel($left: $left, $bottom: $bottom);
+}
+
+// 가상클래스
+@mixin pseudo-init-ctt($display: block, $content: "") {
+  content: $content;
+  display: $display;
+}
+// $pseudo : before, after 함께 사용시 'both' 값 사용
+@mixin pseudo-init($pseudo: before, $display: block, $content: "") {
+  @if $pseudo == "both" {
+    &:before,
+    &.after {
+      @include pseudo-init-ctt($display: $display, $content: $content);
+      @content;
+    }
+  } @else {
+    &:#{$pseudo} {
+      @include pseudo-init-ctt($display: $display, $content: $content);
+      @content;
+    }
+  }
+}
+// image sprite
+@mixin sprite-wid($sprite) {
+  width: nth($sprite, 5);
+}
+@mixin sprite-h($sprite) {
+  height: nth($sprite, 6);
+}
+@mixin sprite-size($sprite) {
+    @include sprite-wid($sprite);
+    @include sprite-h($sprite);
+}
+@mixin sprite-pos($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x $sprite-offset-y;
+}
+@mixin sprite-img($pages) {
+  background-image: url(../../img/spr/#{$pages}-sprite.png);
+  background-repeat: no-repeat;
+}
+@mixin sprite($sprite) {
+  @include sprite-pos($sprite);
+  @include sprite-size($sprite);
+}
+@mixin imgsprite($sprite) {
+  $sprite-img: nth($sprite, 9);
+  background-image: url(../../img/spr/#{$sprite-img});
+  background-repeat: no-repeat;
+  @include sprite($sprite);
+}
+// 미디어쿼리
+// 반응형
+@mixin respond($wid) {
+  @media screen and (max-width: $wid) {
+    @content;
+  }
+}

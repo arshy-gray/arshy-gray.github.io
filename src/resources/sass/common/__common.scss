@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+// base
+@import '../_base';
+
+// reset
+@import "reset";
+
+// strite
+@import  "../vendors/img/common-sprite";
+
+// global
+@import "global", "layout";
+

@@ -5,16 +5,35 @@ const del = require("del");
  * @param config
  */
 module.exports = (gulp, $, config) => {
-  function clean() {
-    return del("dist/*/css");
+  function jsLibClean() {
+    return del(config.jsLib.dest);
   }
-  clean.description = "css 폴더를 삭제합니다.";
+  jsLibClean.description = "js 라이브러리 폴더를 삭제합니다.";
+  function jsPrdClean() {
+    return del(config.jsPrd.dest);
+  }
+  jsPrdClean.description = "js 자체제작 폴더를 삭제합니다.";
 
-  function imgclean() {
+  function cssClean() {
+    return del(config.scss.dest);
+  }
+  cssClean.description = "css 폴더를 삭제합니다.";
+
+  function imgDftClean() {
+    return del(config.imgDft.dest);
+  }
+  imgDftClean.description = "일반 img 폴더를 삭제합니다.";
+
+  function imgSprClean() {
     return del(config.imgSprite.clean);
   }
-  imgclean.description = "img sprite 이미지파일과 관련SCSS 파일을 제거합니다.";
+  imgSprClean.description = "sprite img 폴더와 관련 SCSS 파일을 제거합니다.";
 
-  gulp.task(imgclean);
-  gulp.task(clean);
+  gulp.task(jsPrdClean);
+  gulp.task(jsLibClean);
+  gulp.task(cssClean);
+  gulp.task(imgDftClean);
+  gulp.task(imgSprClean);
+
+  gulp.task("clean", gulp.parallel("jsPrdClean", "jsLibClean", "cssClean", "imgDftClean", "imgSprClean"));
 };

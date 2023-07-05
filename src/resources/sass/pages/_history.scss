@@ -1,0 +1,361 @@
+//= history
+#history {
+  background-image: url("#{$img-url}/history/bgHistory_left.png"), url("#{$img-url}/history/bgHistory_right.png"),
+    url("#{$img-url}/history/bgHistory_back.png"), url("#{$img-url}/history/bgHistory_back.png");
+  background-position: left calc(50% + 20px), right calc(50% + 20px), -300px -500px,
+    calc(100% + 300px) calc(100% + 500px);
+  background-color: color(theme, history);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  // 배경요소
+  // 사람
+  .el06 {
+    opacity: 0;
+    top: auto;
+    bottom: 0;
+    left: calc(50% - 430px);
+    @include imgsprite($bg-his-person);
+  }
+
+  // 섹션 활성화
+  &.active {
+    // 배경요소
+    // 사람
+    .el06 {
+      animation: show 2s $ani-timing 8s forwards;
+    }
+  }
+}
+
+// parallex images
+[class*="foot_print"] {
+  [class*="el"] {
+    opacity: 0;
+    @include imgsprite($bg-his-footprint);
+
+    #history.active & {
+      animation: show 0.7s $ani-timing forwards;
+    }
+  }
+}
+// 상단 발자국 요소
+.foot_print_top {
+  position: absolute;
+  left: calc(50% + 150px);
+  .el01 {
+    top: 20px;
+    left: 166px;
+    transform: rotate(25deg);
+  }
+  .el02 {
+    top: 90px;
+    left: 170px;
+    transform: rotate(35deg);
+  }
+  .el03 {
+    top: 120px;
+    left: 100px;
+    transform: rotate(45deg);
+  }
+  .el04 {
+    top: 185px;
+    left: 110px;
+    transform: rotate(55deg);
+  }
+  .el05 {
+    top: 190px;
+    left: 20px;
+    transform: rotate(60deg);
+  }
+
+  // 섹션 활성화
+  #history.active & {
+    @for $idx from 1 through 5 {
+      .el0#{$idx} {
+        animation-delay: $idx * 0.5s - 0.5s;
+      }
+    }
+  }
+}
+// 하단 발자국 요소
+.foot_print_btm {
+  @include pos-abs-lb(calc(50% - 350px), 250px);
+  .el01 {
+    top: 20px;
+    left: 200px;
+    transform: rotate(60deg);
+  }
+  .el02 {
+    top: 90px;
+    left: 170px;
+    transform: rotate(55deg);
+  }
+  .el03 {
+    top: 95px;
+    left: 90px;
+    transform: rotate(45deg);
+  }
+  .el04 {
+    top: 165px;
+    left: 90px;
+    transform: rotate(35deg);
+  }
+  .el05 {
+    top: 165px;
+    left: 15px;
+    transform: rotate(30deg);
+  }
+
+  // 섹션 활성화
+  #history.active & {
+    @for $idx from 1 through 5 {
+      .el0#{$idx} {
+        animation-delay: $idx * 0.5s + 5.5s;
+      }
+    }
+  }
+}
+// 히스토리 리스트 영역
+.hist_atc {
+  @extend %clearfix;
+  margin-top: 40px;
+  li {
+    clear: both;
+    position: relative;
+  }
+  > ul > li {
+    padding: 35px 0 10px 0;
+    > ul {
+      overflow: hidden;
+    }
+    &:nth-child(odd) {
+      right: calc(50% - 1px);
+      border-right: 1px solid color(dft, brightest);
+      ul li {
+        float: right;
+      }
+    }
+    &:nth-child(even) {
+      left: 50%;
+      text-align: left;
+      border-left: 1px solid color(dft, brightest);
+      ul li {
+        float: left;
+      }
+    }
+    .hist_ico {
+      opacity: 0;
+      position: absolute;
+      top: 20px;
+      @include size(64px);
+      text-align: center;
+      backface-visibility: hidden;
+      .txt {
+        @extend %blind;
+      }
+    }
+    // 섹션 활성화
+    #history.active & {
+      .hist_ico {
+        animation: rotationY 0.5s ease-in-out forwards;
+      }
+      @for $idx from 1 through 7 {
+        &:nth-child(#{$idx}) .hist_ico {
+          animation-delay: $idx * 0.5s + 2s;
+        }
+      }
+    }
+    // 학업
+    &.hist_edu .hist_ico {
+      @include imgsprite($ico-his-edu);
+    }
+    // 자격증
+    &.hist_license .hist_ico {
+      @include imgsprite($ico-his-license);
+    }
+    // 근무경력
+    &.hist_cpn .hist_ico {
+      @include imgsprite($ico-his-company);
+    }
+    // 리스트 포인트 요소
+    .hist_point {
+      position: relative;
+      margin: 4px 0;
+      padding: 2px;
+      border: 1px solid color(dft, darkest);
+      border-radius: 7px;
+      span {
+        display: block;
+        @include size(9px);
+        background: color(dft, darkest);
+        border-radius: 9px;
+      }
+    }
+    // 리스트 콘텐츠
+    .hist_ctt {
+      position: relative;
+      > li {
+        margin-bottom: 1px;
+      }
+      .date {
+        margin-top: 10px;
+        color: color(dft, brightest);
+        background: color(dft, darkest);
+        padding: 5px 15px;
+        overflow: hidden;
+      }
+      // 히스토리 설명 1
+      .desc_1 {
+        @include font(15px, null, color(dft, dark));
+        overflow: hidden;
+        animation-fill-mode: forwards;
+      }
+      // 히스토리 설명 1 부설명
+      .desc_1_2 {
+        @include font(13px, null, color(tit, main));
+        font-weight: 300;
+        overflow: hidden;
+        animation-fill-mode: forwards;
+      }
+      // 히스토리 설명 2
+      .desc_2 {
+        @include font(13px, 14px, color(tit, sub));
+        overflow: hidden;
+        animation-fill-mode: forwards;
+      }
+    }
+    // 홀수 아이템
+    &:nth-child(odd) {
+      .hist_ico {
+        float: left;
+        left: calc(100% + 20px);
+      }
+      .hist_ctt .date {
+        border-radius: 20px 0 20px 20px;
+      }
+      .hist_point {
+        float: right;
+        left: 7.5px;
+      }
+      .hist_ctt {
+        right: 5px;
+      }
+    }
+    // 짝수 아이템
+    &:nth-child(even) {
+      .hist_ico {
+        float: right;
+        left: -82px;
+      }
+      .hist_ctt .date {
+        border-radius: 0 20px 20px 20px;
+      }
+      .hist_point {
+        float: left;
+        right: 8.5px;
+      }
+    }
+  }
+}
+
+//= 반응형
+// mobile style
+@include respond(1023px) {
+  #history {
+    background-position: -280px calc(50% + 20px), calc(100% + 280px) calc(50% + 20px), -300px -500px,
+      calc(100% + 300px) calc(100% + 500px);
+  }
+} // e.1023
+
+@include respond(767px) {
+  #history {
+    background-position: -350px calc(50% + 20px), calc(100% + 350px) calc(50% + 20px), -300px -500px,
+      calc(100% + 300px) calc(100% + 500px);
+  }
+} // e.767px
+
+@include respond(599px) {
+  /* 히스토리 섹션 */
+  #history {
+    // 배경 요소
+    .bg_el {
+      display: none;
+    }
+  }
+
+  .hist_atc {
+    > ul {
+      > li {
+        padding: 0;
+        &:before,
+        &:last-child:after {
+          @include pseudo-init-ctt;
+          @include size(1px, 20px);
+          margin: 5px auto;
+          background: color(dft, brightest);
+        }
+        // 홀짝 요소 리셋
+        &:nth-child(odd) ul li,
+        &:nth-child(even) ul li {
+          float: none;
+          display: block;
+        }
+        &:nth-child(odd),
+        &:nth-child(odd) .hist_ctt {
+          right: auto;
+        }
+        &:nth-child(even),
+        &:nth-child(even) .hist_ctt {
+          left: auto;
+        }
+        &:nth-child(odd),
+        &:nth-child(even) {
+          .hist_ico {
+            float: none;
+            left: auto;
+          }
+          .hist_ctt .date {
+            border-radius: 20px;
+          }
+        }
+        &:nth-child(odd) .hist_point {
+          clear: both;
+          float: none;
+          top: -64px;
+          left: auto;
+          width: 9px;
+          margin: 0 auto;
+        }
+        &:nth-child(even) .hist_point {
+          clear: both;
+          float: none;
+          top: -64px;
+          right: auto;
+          width: 9px;
+          margin: 0 auto;
+        }
+        // 히스토리 리스트 아이콘
+        .hist_ico {
+          position: relative;
+          width: 100%;
+          margin: 0 auto;
+        }
+        // 히스토리 아이콘
+        @for $idx from 1 through 7 {
+          #history.active &:nth-child(#{$idx}) .hist_ico {
+            animation-delay: #{$idx * 0.6s};
+          }
+        }
+        // 리스트 콘텐츠
+        .hist_ctt {
+          text-align: center;
+
+          .date {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+} // e.#599
