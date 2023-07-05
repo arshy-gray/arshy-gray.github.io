@@ -50,18 +50,20 @@ const addItems = async () => {
   // 추가 데이터의 배열
   const slicedData = filteredData.slice(pjtItemLen, pjtItemLen + addItemLen);
 
+  projectElement.classList.add("is-loading");
+
   // slicedData의 요소마다 DOM 요소를 생성
   for (const item of slicedData) {
     let itemHTML = "";
 
     // 리스트 썸네일
-    itemHTML += '<li class="pjt_item ';
+    itemHTML += '<li class="pjt_item';
 
     // 썸네일 길이 : long
-    if (item.images.thumb_h) itemHTML += "thumb_h_" + item.images.thumb_h + " ";
+    if (item.images.thumb_h) itemHTML += " thumb_h_" + item.images.thumb_h + " ";
 
     itemHTML +=
-      'is-loading">' + // masonry loding cloass
+      '">' +
       '<div class="pjt_thumb">' +
       '<div class="img_box"><img src="' +
       item.images.thumb + // 썸네일 이미지
@@ -335,6 +337,15 @@ const addItems = async () => {
   // Masonry에 데이터를 추가후 재정렬
   msnry.appended(pjtCtt);
 
+  const pJtEmptyWrapElement = document.querySelector(".project_empty_wrap");
+  // 이전 필터링 결과가 없을 때
+  if (pJtEmptyWrapElement) {
+    // 필터 초기화 화면 삭제
+    pJtEmptyWrapElement.classList.remove("active");
+    // 버튼 삭제
+    pJtEmptyWrapElement.remove();
+  }
+
   // ImageLoaded 완료 후 노출
   imagesLoaded(pjtGelleryElement).on("progress", () => {
     const removeLoading = () => {
@@ -342,26 +353,27 @@ const addItems = async () => {
         setTimeout(() => {
           // 로딩 완료 후 로딩 관련 클래스 삭제
           loadMoreBtnElement.classList.remove("is-loading");
-          document
-            .querySelectorAll(".pjt_item")
-            .forEach((item) => item.classList.remove("is-loading"));
           projectElement.classList.remove("is-loading");
-
-          resolve();
         }, 100);
+
+        resolve();
       });
     };
 
     const msnryLaout = () => {
-      // masonry 재정렬
-      setTimeout(() => {
-        msnry.layout();
-      }, 200);
+      return new Promise((resolve) => {
+        // masonry 재정렬
+        setTimeout(() => {
+          msnry.layout();
+        }, 200);
+
+        resolve();
+      });
     };
 
     removeLoading().then(() => {
       return msnryLaout();
-    })
+    });
   });
 
   // 추가 된 항목 수량 갱신
@@ -393,7 +405,6 @@ const filterItems = () => {
 
   // Masonry 항목을 삭제
   msnry.remove(masonryItems);
-  projectElement.classList.add("is-loading");
 
   // 필터링 된 항목의 데이터를 재설정과
   // 추가 된 항목 수를 재설정
@@ -427,15 +438,6 @@ const filterItems = () => {
     });
   }
 
-  const pJtEmptyWrapElement = document.querySelector(".project_empty_wrap");
-  // 이전 필터링 결과가 없을 때
-  if (pJtEmptyWrapElement) {
-    // 필터 초기화 화면 삭제
-    pJtEmptyWrapElement.classList.remove("active");
-    // 버튼 삭제
-    pJtEmptyWrapElement.remove();
-  }
-
   // 필터링 내용이 없을 경우
   if (filteredData.length === 0) {
     const emptyElement = document.createElement("li"),
@@ -457,17 +459,6 @@ const filterItems = () => {
         resolve();
       });
     };
-
-    // 로딩바 제거
-    const removeLoading = () => {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          projectElement.classList.remove("is-loading");
-        }, 100);
-        resolve();
-      });
-    };
-
     // 빈화면 출력
     const pirntLoading = () => {
       return new Promise((resolve) => {
@@ -480,13 +471,9 @@ const filterItems = () => {
       });
     };
 
-    insertEmpty()
-      .then(() => {
-        return removeLoading();
-      })
-      .then(() => {
-        return pirntLoading();
-      });
+    insertEmpty().then(() => {
+      return pirntLoading();
+    });
   }
 
   // 항목을 추가
