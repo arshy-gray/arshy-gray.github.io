@@ -346,12 +346,32 @@ const addItems = async () => {
 
   // ImageLoaded 완료 후 노출
   imagesLoaded(pjtGelleryElement).on("progress", () => {
-    setTimeout(() => {
-      // 로딩 완료 후 로딩 관련 클래스 삭제
-      loadMoreBtnElement.classList.remove("is-loading");
-      projectElement.classList.remove("is-loading");
-      msnry.layout();
-    }, 100);
+    const removeLoading = () => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          // 로딩 완료 후 로딩 관련 클래스 삭제
+          loadMoreBtnElement.classList.remove("is-loading");
+          projectElement.classList.remove("is-loading");
+        }, 100);
+
+        resolve();
+      });
+    };
+
+    const msnryLaout = () => {
+      return new Promise((resolve) => {
+        // masonry 재정렬
+        setTimeout(() => {
+          msnry.layout();
+        }, 100);
+
+        resolve();
+      });
+    };
+
+    removeLoading().then(() => {
+      return msnryLaout();
+    });
   });
 
   // 추가 된 항목 수량 갱신
