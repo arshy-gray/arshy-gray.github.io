@@ -50,8 +50,6 @@ const addItems = async () => {
   // 추가 데이터의 배열
   const slicedData = filteredData.slice(pjtItemLen, pjtItemLen + addItemLen);
 
-  projectElement.classList.add("is-loading");
-
   // slicedData의 요소마다 DOM 요소를 생성
   for (const item of slicedData) {
     let itemHTML = "";
@@ -348,32 +346,12 @@ const addItems = async () => {
 
   // ImageLoaded 완료 후 노출
   imagesLoaded(pjtGelleryElement).on("progress", () => {
-    const removeLoading = () => {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          // 로딩 완료 후 로딩 관련 클래스 삭제
-          loadMoreBtnElement.classList.remove("is-loading");
-          projectElement.classList.remove("is-loading");
-        }, 100);
-
-        resolve();
-      });
-    };
-
-    const msnryLaout = () => {
-      return new Promise((resolve) => {
-        // masonry 재정렬
-        setTimeout(() => {
-          msnry.layout();
-        }, 200);
-
-        resolve();
-      });
-    };
-
-    removeLoading().then(() => {
-      return msnryLaout();
-    });
+    setTimeout(() => {
+      // 로딩 완료 후 로딩 관련 클래스 삭제
+      loadMoreBtnElement.classList.remove("is-loading");
+      projectElement.classList.remove("is-loading");
+      msnry.layout();
+    }, 100);
   });
 
   // 추가 된 항목 수량 갱신
@@ -402,6 +380,8 @@ const filterItems = () => {
       .querySelector(".filter-type-linked")
       .querySelector('input[type="checkbox"]').checked, // 링크 여부 필터
     masonryItems = Array.from(pjtGelleryElement.querySelectorAll(".pjt_item")); // 추가 된 Masonry 아이템
+
+  projectElement.classList.add("is-loading");
 
   // Masonry 항목을 삭제
   msnry.remove(masonryItems);
@@ -684,17 +664,21 @@ window.addEventListener("scroll", () => {
       // 최초 로드시 갤러리 하단에서 시작할 때 미리 무한 스크롤링 되는 현상 방지
       // 무한 스크롤 범위 안에 있을때 && 아래로 스크롤 할때 && 현재 하단 스크롤값이 갤러리 하단보다 클 때
       if (infinitStart && infinitEnd && cntScrTop > lastScrTop && winBtm >= galleryBtm) {
-        loadMoreBtnElement.classList.add("is-loading");
+        const pJtEmptyWrapElement = document.querySelector(".project_empty_wrap");
+        // 갤러리 빈 리스트가 아닐때
+        if (!pJtEmptyWrapElement) {
+          loadMoreBtnElement.classList.add("is-loading");
 
-        setTimeout(() => {
-          addItems();
-        }, 500);
+          setTimeout(() => {
+            addItems();
+          }, 500);
 
-        setTimeout(() => {
-          imagesLoaded(pjtGelleryElement).on("progress", () => {
-            msnry.layout();
-          });
-        }, 650);
+          setTimeout(() => {
+            imagesLoaded(pjtGelleryElement).on("progress", () => {
+              msnry.layout();
+            });
+          }, 650);
+        }
       }
       lastScrTop = cntScrTop; // 마지막 스크롤값 갱신
     }, 350);
