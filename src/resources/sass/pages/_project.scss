@@ -267,14 +267,15 @@ $m-pf-pop-info-wid: 100%;
   }
   // 갤러리 로딩 아이콘
   #project.is-loading &:before {
-    display:inline-block;
+    display: inline-block;
     @include pseudo-init-ctt;
     @include pos-abs-lt(50%, 0);
-    margin:calc(15vh - 15px) 0 0 -15px;
+    margin: calc(15vh - 15px) 0 0 -15px;
     @extend %loading-ani;
   }
 }
 .pjt_atc {
+  position: relative;
   padding-bottom: 30px;
 }
 .grid-sizer,
@@ -425,15 +426,25 @@ $m-pf-pop-info-wid: 100%;
   }
   // 필터 초기화 버튼
   .reset_filter_btn {
+    position: relative;
     display: inline-block;
     padding: 15px 25px;
     background: color(dft, brightest);
     border-radius: 15px;
+    @extend %natural-effect;
     .btn_txt {
       margin-left: 5px;
     }
+    &:hover {
+      background: color(theme, sub);
+      transform: scale(0.9);
+    }
+    &:active {
+      top: 4px;
+    }
   }
   &.active {
+    @include pos-abs(0, 0, null, 0);
     opacity: 1;
     transform: scale(1);
   }

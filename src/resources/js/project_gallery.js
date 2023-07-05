@@ -321,7 +321,7 @@ const addItems = async () => {
       "</div>" +
       "</li>";
 
-    // 생선된 html을 Dom으로 변환 후 저장
+    // 생성된 html을 Dom으로 변환 후 저장
     const parser = new DOMParser();
     const doc = parser.parseFromString(itemHTML, "text/html");
     pjtCtt.push(doc.body.firstChild);
@@ -337,20 +337,31 @@ const addItems = async () => {
 
   // ImageLoaded 완료 후 노출
   imagesLoaded(pjtGelleryElement).on("progress", () => {
-    setTimeout(() => {
-      // 로딩 완료 후 로딩 관련 클래스 삭제
-      loadMoreBtnElement.classList.remove("is-loading");
-      document.querySelectorAll(".pjt_item").forEach((item) => item.classList.remove("is-loading"));
-    }, 300);
+    const removeLoading = () => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          // 로딩 완료 후 로딩 관련 클래스 삭제
+          loadMoreBtnElement.classList.remove("is-loading");
+          document
+            .querySelectorAll(".pjt_item")
+            .forEach((item) => item.classList.remove("is-loading"));
+          projectElement.classList.remove("is-loading");
 
-    setTimeout(() => {
-      projectElement.classList.remove("is-loading");
-    }, 100);
+          resolve();
+        }, 100);
+      });
+    };
 
-    setTimeout(() => {
+    const msnryLaout = () => {
       // masonry 재정렬
-      msnry.layout();
-    }, 150);
+      setTimeout(() => {
+        msnry.layout();
+      }, 200);
+    };
+
+    removeLoading().then(() => {
+      return msnryLaout();
+    })
   });
 
   // 추가 된 항목 수량 갱신
@@ -421,16 +432,13 @@ const filterItems = () => {
   if (pJtEmptyWrapElement) {
     // 필터 초기화 화면 삭제
     pJtEmptyWrapElement.classList.remove("active");
-
     // 버튼 삭제
-    setTimeout(() => {
-      pJtEmptyWrapElement.remove();
-    }, 100);
+    pJtEmptyWrapElement.remove();
   }
 
-  // 필터된 내용이 없을 경우
+  // 필터링 내용이 없을 경우
   if (filteredData.length === 0) {
-    const emptyElement = document.createElement("div"),
+    const emptyElement = document.createElement("li"),
       emptyHTML =
         '<p class="guide_txt">조건과 일치하는 프로젝트가 업습니다.</p>' +
         '<span class="reset_btn_wrap">' +
@@ -439,26 +447,50 @@ const filterItems = () => {
         '<span class="btn_txt">필터 초기화</span>' +
         "</button>";
 
-    emptyElement.classList.add("project_empty_wrap");
-    emptyElement.style.display = "block";
-    emptyElement.innerHTML = emptyHTML;
+    // 빈 화면 삽입
+    const insertEmpty = () => {
+      return new Promise((resolve) => {
+        emptyElement.classList.add("project_empty_wrap");
+        emptyElement.style.display = "block";
+        emptyElement.innerHTML = emptyHTML;
 
-    setTimeout(() => {
-      // 로딩바 제거
-      projectElement.classList.remove("is-loading");
-    }, 100);
+        resolve();
+      });
+    };
 
-    setTimeout(() => {
-      // 필터 초기화 화면 노출
-      pjtGelleryElement.insertAdjacentElement("afterend", emptyElement);
-      emptyElement.classList.add("active");
-    }, 400);
+    // 로딩바 제거
+    const removeLoading = () => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          projectElement.classList.remove("is-loading");
+        }, 100);
+        resolve();
+      });
+    };
+
+    // 빈화면 출력
+    const pirntLoading = () => {
+      return new Promise((resolve) => {
+        // 필터 초기화 화면 노출
+        setTimeout(() => {
+          pjtGelleryElement.insertAdjacentElement("beforeend", emptyElement);
+          emptyElement.classList.add("active");
+        }, 300);
+        resolve();
+      });
+    };
+
+    insertEmpty()
+      .then(() => {
+        return removeLoading();
+      })
+      .then(() => {
+        return pirntLoading();
+      });
   }
 
   // 항목을 추가
-  setTimeout(() => {
-    addItems();
-  }, 100);
+  addItems();
 };
 
 // 필터 라디오 버튼이 변경되면 필터링을 수행
@@ -478,15 +510,10 @@ document.addEventListener("click", (e) => {
     pJtEmptyWrapElement.classList.remove("active");
 
     // 버튼 삭제
-    setTimeout(() => {
-      pJtEmptyWrapElement.remove();
-    }, 100);
-
+    pJtEmptyWrapElement.remove();
     // 필터 초기 데이터 추가
     filteredData = allData;
-    setTimeout(() => {
-      addItems();
-    }, 300);
+    addItems();
 
     // 필터 초기화
     Array.from(document.querySelectorAll(".form-item:first-child:not(.chkItem) input")).forEach(
