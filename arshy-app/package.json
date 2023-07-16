@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -47,7 +48,6 @@
     "@storybook/addon-essentials": "^7.0.26",
     "@storybook/addon-interactions": "^7.0.26",
     "@storybook/addon-links": "^7.0.26",
-    "@storybook/addon-notes": "^5.3.21",
     "@storybook/blocks": "^7.0.26",
     "@storybook/preset-create-react-app": "^7.0.26",
     "@storybook/react": "^7.0.26",
@@ -59,12 +59,8 @@
     "@whitespace/storybook-addon-html": "^5.1.6",
     "babel-plugin-named-exports-order": "^0.0.2",
     "eslint-plugin-storybook": "^0.6.12",
-    "prettier": "^3.0.0",
     "prop-types": "^15.8.1",
-    "raw-loader": "^4.0.2",
-    "react-syntax-highlighter": "^15.5.0",
-    "storybook": "^7.0.26",
-    "storybook-code-panel": "^0.2.1",
+    "storybook": "^7.0.27",
     "webpack": "^5.88.1"
   }
 }
