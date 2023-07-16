@@ -10,12 +10,8 @@
 .imgFix {
   @extend %imgFix;
 }
-.ol_decimal > li {
-  list-style: decimal;
-  margin-left: 16px;
-}
 // 폰트
-.lint_desc {
+.link_desc {
   color: color(tit, main);
 }
 // 배경 요소
@@ -31,10 +27,3 @@
     width: auto;
   }
 }
-
-@include respond(479px) {
-  // 모바일 줄바꿈
-  .m_br {
-    display: block;
-  }
-} // e.479px
