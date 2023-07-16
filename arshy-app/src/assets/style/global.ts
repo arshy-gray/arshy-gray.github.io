@@ -168,7 +168,7 @@ export const flex = (
 
   return `
     display: flex;
-    flex-derection: ${direction};
+    flex-direction: ${direction};
     ${align_st}
   `;
 };
