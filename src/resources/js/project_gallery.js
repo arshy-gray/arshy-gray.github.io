@@ -209,7 +209,7 @@ const addItems = async () => {
 
       // 사이트 링크 툴팁 있을 때
       if (item.linkTitle)
-        itemHTML += ' <br /><em class="lint_desc"><b>(' + item.linkTitle + ")</b></em>";
+        itemHTML += ' <br /><em class="link_desc"><b>(' + item.linkTitle + ")</b></em>";
 
       itemHTML += "</span></li>";
     }
