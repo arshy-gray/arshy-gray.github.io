@@ -114,7 +114,7 @@
 @mixin pseudo-init($pseudo: before, $display: block, $content: "") {
   @if $pseudo == "both" {
     &:before,
-    &.after {
+    &:after {
       @include pseudo-init-ctt($display: $display, $content: $content);
       @content;
     }

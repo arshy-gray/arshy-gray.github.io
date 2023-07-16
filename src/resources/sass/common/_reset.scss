@@ -134,7 +134,6 @@ button {
   border-radius: 0;
   background: none;
   appearance: none;
-  outline: none;
 }
 input,
 textarea,
@@ -194,8 +193,8 @@ a {
   &:hover {
     text-decoration: none;
   }
-  a:active,
-  a:hover {
+  &:active,
+  &:hover {
     color: inherit;
     outline-width: 0;
   }
