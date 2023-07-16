@@ -1,0 +1,319 @@
+@charset "utf-8";
+
+/* Reset */
+*::selection {
+  background: #ffeaf6;
+  color: #6b007d;
+}
+html {
+  scroll-behavior: smooth;
+  padding-bottom: env(safe-area-inset-bottom);
+  /* mobile viewport bug fix */
+  height: -webkit-fill-available;
+  -webkit-tap-highlight-color: transparent;
+  /* 뷰표트 변환시 폰트크기 자동확대 방지 */
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  height: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  line-height: 1.3;
+  color: #666;
+  letter-spacing: -0.5px;
+  word-break: keep-all;
+  -webkit-animation: bugfix infinite 1s; /* 안드로이드 라디오 checked 안되는 버그 */
+}
+body,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+form,
+table,
+th,
+td,
+fieldset,
+figure,
+input,
+textarea,
+select,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre {
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+  width: 100%;
+}
+dl,
+ul,
+ol,
+menu,
+li {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+hr {
+  display: none;
+}
+legend,
+caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+iframe,
+fieldset {
+  border: 0;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+figcaption,
+figure,
+main,
+details,
+menu {
+  display: block;
+}
+address,
+cite,
+code,
+dfn,
+em,
+var,
+pre {
+  font-style: inherit;
+  font-weight: inherit;
+}
+pre {
+  font-size: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+a,
+button {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  appearance: none;
+  outline: none;
+}
+input,
+textarea,
+optgroup,
+select {
+  color: inherit;
+  line-height: inherit;
+  box-sizing: border-box;
+}
+/*
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+/*
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+button {
+  touch-action: manipulation;
+  border: 0;
+  background: none;
+}
+/*
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"], /* 1 */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+}
+/*
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+a:link,
+a:active,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+a:active,
+a:hover {
+  color: inherit;
+  outline-width: 0;
+}
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: top;
+}
+strong,
+em {
+  font-weight: inherit;
+}
+textarea {
+  box-shadow: none;
+  /*
+ * Remove the default vertical scrollbar in IE.
+ */
+  overflow: auto;
+}
+textarea::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+button[disabled] {
+  cursor: default;
+}
+/*
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+/*
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type='search']::-webkit-search-cancel-button,
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+/*
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+  height: auto;
+}
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+/*
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+/*
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+summary {
+  display: list-item;
+}
+/*
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+/*
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* bugfix */
+@-webkit-keyframes bugfix {
+  from {
+    padding: 0;
+  }
+  to {
+    padding: 0;
+  }
+}
