@@ -11,6 +11,12 @@ const config: StorybookConfig = {
     name: '@storybook/react-webpack5',
     options: {},
   },
+  previewHead: (head) => `
+    ${head}
+    <style>
+      .docs-story .innerZoomElementWrapper {position: relative;}
+    </style>
+  `,
   docs: {
     autodocs: 'tag',
   },
