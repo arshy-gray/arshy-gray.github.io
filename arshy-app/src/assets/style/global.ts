@@ -1,4 +1,7 @@
 import { IStyle } from './style';
+import { break_points } from './layout';
+import { color } from './colors';
+import { rgba } from 'polished';
 
 //= function
 export const half = (number: number): number => {
@@ -29,11 +32,7 @@ export const size = (width: string = '', height: string = width): string => {
 
 //== 글꼴
 // font style
-export const font = (
-  font_size?: string,
-  line_height?: string,
-  color?: string,
-): string => {
+export const font = (font_size?: string, line_height?: string, color?: string): string => {
   return `
     ${font_size && `font-size:` + font_size};
     ${line_height && `line-height:` + line_height};
@@ -118,10 +117,7 @@ export const position = (
 };
 
 // absolute 중앙 정렬
-export const absolute_center = (
-  width: string = '',
-  height: string = width,
-): string => {
+export const absolute_center = (width: string = '', height: string = width): string => {
   const wid_num: number = Number(width.slice(0, -2));
   const wid_unit: string = width.slice(-2);
   const h_num: number = Number(height.slice(0, -2));
@@ -148,11 +144,7 @@ export const absolute_center = (
  * | vtc_align(string) || direction 맞춤 속성 - row : align-items, comumn : justify-content |
  * | direction (string) | row, column, row-reverse, column-reverse | flex-derection |
  */
-export const flex = (
-  hrzt_align?: string,
-  vtc_align?: string,
-  direction?: string,
-): string => {
+export const flex = (hrzt_align?: string, vtc_align?: string, direction?: string): string => {
   let align_st: string = ``;
 
   if (direction === 'column' || direction === 'column-reverse')
@@ -182,10 +174,7 @@ export const flex = (
  * | direction (string) | x, y | x: 가로방향, y: 세로방향 |
  * | hide(boolean) || 스크롤바 숨김 여부 |
  */
-export const scroll = (
-  direction: string = 'x',
-  hide: boolean = false,
-): string => {
+export const scroll = (direction: string = 'x', hide: boolean = false): string => {
   let scroll_st: string = ``;
 
   // 스크롤 방향에 따른 스타일
@@ -254,10 +243,24 @@ export const pseudo_init = (
 
 //== 미디어쿼리
 // 반응형
-export const respond = (width: string, style?: string): string => {
+/**
+ * # respond
+ * ### 반응형 미디어쿼리 width : ui.break_points
+ * ---------------------
+ * | key | value |
+ * | :--- | :--- |
+ * | pc_wide(string) | 1619px |
+ * | pc_dft(string) | 1399px |
+ * | tablet(string) | 1023px |
+ * | mobile_high(string) | 767px |
+ * | mobile_mid(string) | 599px |
+ * | mobile_low(string) | 399px |
+ * | minimum(string) | 320px |
+ */
+export const respond = (width: string, style: string): string => {
   return `
     @media screen and (max-width: ${width}) {
-      ${style && style}
+      ${style}
     }
   `;
 };
@@ -289,13 +292,78 @@ export const backface: string = `
 `;
 
 //== global
+// 전체
+export const globalStyle: string = `
+  .hidden {
+    ${blind}
+  }
+  .clearFix {
+    ${clearfix}
+  }
+  .imgFix {
+    ${imgfix}
+  }
+  #skip_nav {
+    @include pos-abs-lt;
+    z-index: 1;
+    a {
+      display: inline-block;
+      padding: 5px 15px;
+      color: ${color.dft.brightest};
+      background: ${rgba(color.dft.darkest, 0.8)};
+      transform: translateY(-32px);
+      &:focus {
+        transform: translateY(0);
+      }
+    }
+  }
+  #wrapper {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    min-width: 1400px;
+    overflow: hidden;
+    opacity: 0;
+    ${natural_effect}
+    transition-property: opacity;
+    &.on {
+      opacity: 1;
+    }
+  }
+  .wrap_cen {
+    position: relative;
+    margin: 0 auto;
+    ${size('1400px', '100%')}
+    ${clearfix}
+  }
+  ${respond(
+    break_points.pc_dft,
+    `
+    #wrapper {
+      min-width: auto;
+    }
+    .wrap_cen {
+      width: 1000px;
+    }
+  `,
+  )}
+  ${respond(
+    break_points.mobile_high,
+    `
+    .wrap_cen {
+      padding: 0;
+    }
+  `,
+  )}
+`;
+
 // background element style
 export const bg_el: string = `
-  ${position('absolute', '0', '', '', '0')};
+  ${position('absolute', '0', '', '', '0')}
   ${size('100%')};
   z-index: 0;
   span {
-    ${position('absolute', '0', '', '', '0')};
+    ${position('absolute', '0', '', '', '0')}
   }
   img {
     position: relative;

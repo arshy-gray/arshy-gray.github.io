@@ -22,7 +22,7 @@ export const StyledSplash = styled.div`
   .progress {
     position: relative;
     display: inline-block;
-    ${ui.size(progressBarWid, progressBarH)};
+    ${ui.size(progressBarWid, progressBarH)}
     margin-top: 128px;
   }
   .contact_group {
@@ -55,14 +55,14 @@ export const StyledSplash = styled.div`
   }
   // 진행율 막대 표시
   .progress-bar {
-    ${ui.position('abssolute','0','0','0','0')};
+    ${ui.position('abssolute','0','0','0','0')}
     .bar_L,
     .bar_R {
-      ${ui.size('50%','0')};
+      ${ui.size('50%','0')}
       padding-bottom: 2px;
       overflow: hidden;
       .bar {
-        ${ui.size(progressBarWid, progressBarH)};
+        ${ui.size(progressBarWid, progressBarH)}
         border: 1px solid ${ui.color.theme.main};
         border-radius: 50%;
       }
@@ -72,11 +72,11 @@ export const StyledSplash = styled.div`
     }
     .bar_L,
     .bar_L .bar {
-      ${ui.position('absolute','','','0','0')};
+      ${ui.position('absolute','','','0','0')}
     }
     .bar_R,
     .bar_R .bar {
-      ${ui.position('absolute','0','0','','')};
+      ${ui.position('absolute','0','0','','')}
     }
   }
   .bar_box {
