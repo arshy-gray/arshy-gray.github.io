@@ -13,15 +13,14 @@ const meta = {
   },
   argTypes: {
     isTabIndex: { control: 'boolean' },
-  },
-  args: {
-    isTabIndex: false,
-  },
+  }
 } satisfies Meta<typeof ContactGroup>;
 
 export default meta;
 type Story = StoryObj<typeof ContactGroup>;
 
 export const ContactGroup_: Story = {
-  render: (args) => <ContactGroup {...args} />,
+  args: {
+    isTabIndex: false,
+  },
 };
