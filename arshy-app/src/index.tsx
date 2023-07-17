@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
-import ContactGroup from './components/contents/contactGroup/ContactGroup';
+import './index.css';
+import Splash from './templates/splash/Splash';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <ContactGroup></ContactGroup>
+    <Splash></Splash>
   </React.StrictMode>,
 );
 
