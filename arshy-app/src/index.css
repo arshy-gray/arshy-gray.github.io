@@ -317,3 +317,74 @@ svg:not(:root) {
     padding: 0;
   }
 }
+
+/* global */
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+.clearFix:before,
+.clearFix:after {
+  content: '';
+  display: table;
+}
+.clearFix:after {
+  clear: both;
+}
+.imgFix {
+  display: inline-block;
+}
+.imgFix img {
+  vertical-align: top;
+}
+#wrapper {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  min-width: 1400px;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.3s 0s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: opacity;
+}
+#wrapper.on {
+  opacity: 1;
+}
+.wrap_cen {
+  position: relative;
+  margin: 0 auto;
+  width: 1400px;
+  height: 100%;
+}
+.wrap_cen:before,
+.wrap_cen::after {
+  content: '';
+  display: table;
+}
+.wrap_cen:after {
+  clear: both;
+}
+
+@media screen and (max-width: 1023px) {
+  #wrapper {
+    min-width: 360px;
+  }
+  .wrap_cen {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .wrap_cen {
+    padding: 0;
+  }
+}
