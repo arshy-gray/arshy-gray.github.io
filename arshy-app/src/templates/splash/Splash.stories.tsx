@@ -28,21 +28,17 @@ export default metaSplash;
 type Story = StoryObj<typeof Splash>;
 
 export const Progress0: Story = {
-  render: (args) => <Splash {...args} />
+  args: {
+    progressBarLeftH : 0,
+    progressBarRightH : 0,
+    progressTxt : 0,
+  },
 };
-
-Progress0.args = {
-  progressBarLeftH : 0,
-  progressBarRightH : 0,
-  progressTxt : 0,
-}
 
 export const Progress100: Story = {
-  render: (args) => <Splash {...args} />,
+  args: {
+    progressBarLeftH : 100,
+    progressBarRightH : 100,
+    progressTxt : 100,
+  },
 };
-
-Progress100.args = {
-  progressBarLeftH : 100,
-  progressBarRightH : 100,
-  progressTxt : 100,
-}
