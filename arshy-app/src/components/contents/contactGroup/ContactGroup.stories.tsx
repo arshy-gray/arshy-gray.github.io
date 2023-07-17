@@ -4,7 +4,7 @@ import '../../../index.css';
 
 import ContactGroup from './ContactGroup';
 
-const meta = {
+const metaContactGroup = {
   title: 'Components/Contents/ContactGroup',
   component: ContactGroup,
   tags: ['autodocs'],
@@ -19,7 +19,7 @@ const meta = {
   },
 } satisfies Meta<typeof ContactGroup>;
 
-export default meta;
+export default metaContactGroup;
 type Story = StoryObj<typeof ContactGroup>;
 
 export const ContactGroup_: Story = {
