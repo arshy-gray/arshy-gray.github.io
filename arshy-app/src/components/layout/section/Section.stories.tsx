@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import '../../../index.css';
 
@@ -12,8 +11,13 @@ const metaSection = {
     layout: 'fullscreen',
   },
   argTypes: {
-    // isTabIndex: { control: 'boolean' },
-  }
+    pageName: { control: 'select', options: ['intro', 'project', 'history', 'contact'] },
+    isFullpage: { control: 'boolean' },
+    isPageOn: { control: 'boolean' },
+    isAniActive: { control: 'boolean' },
+    isSectionTitle: { control: 'boolean' },
+    isFooter: { control: 'boolean' },
+  },
 } satisfies Meta<typeof Section>;
 
 export default metaSection;
@@ -21,6 +25,15 @@ type Story = StoryObj<typeof Section>;
 
 export const Section_: Story = {
   args: {
-    // isTabIndex: false,
+    pageName: 'contact',
+    isFullpage: true,
+    isPageOn: false,
+    isAniActive: true,
+    isSectionTitle: true,
+    SectionDesc: '연락처 정보입니다.',
+    bgElement: '',
+    articleTitle: '연락처',
+    isFooter: true,
+    children: '본문',
   },
 };
