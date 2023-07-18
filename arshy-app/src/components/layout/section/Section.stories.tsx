@@ -3,7 +3,7 @@ import '../../../index.css';
 
 import Section from './Section';
 
-const metaSection = {
+const meta = {
   title: 'Components/Layout/Section',
   component: Section,
   tags: ['autodocs'],
@@ -23,7 +23,7 @@ const metaSection = {
   },
 } satisfies Meta<typeof Section>;
 
-export default metaSection;
+export default meta;
 type Story = StoryObj<typeof Section>;
 
 export const Section_: Story = {
