@@ -1,21 +1,26 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ui } from '../../assets/style';
 
-const progressBarWid: string = '303px'; 
-const progressBarH: string = '297px'; 
+interface SyledSplashProps {
+  $isHide?: boolean;
+  $isProgressDone?: boolean;
+}
 
-export const StyledSplash = styled.div`
+const progressBarWid: string = '303px';
+const progressBarH: string = '297px';
+
+export const StyledSplash = styled.div<SyledSplashProps>`
   // 진행률 표시
   @include pos-fix(0, 0, 0, 0);
-  ${ui.position('fixed','0','0','0','0')};
+  ${ui.position('fixed', '0', '0', '0', '0')};
   color: ${ui.color.dft.brightest};
   text-align: center;
-  background-image: url("assets/images/splash/bg_splash_moon.png"),
-    url("assets/images/splash/bg_splash_cloud.png"), url("assets/images/splash/bg_splash.jpg");
+  background-image: url('assets/images/splash/bg_splash_moon.png'),
+    url('assets/images/splash/bg_splash_cloud.png'), url('assets/images/splash/bg_splash.jpg');
   background-position: calc(50% - 15px) -50px, center top, center bottom;
   background-size: auto, auto, cover;
   background-repeat: no-repeat;
-  transition: .5s opacity .5s ease-in-out;
+  transition: 0.5s opacity 0.5s ease-in-out;
   z-index: 1;
   overflow: hidden;
   // 진행률 박스
@@ -55,10 +60,10 @@ export const StyledSplash = styled.div`
   }
   // 진행율 막대 표시
   .progress-bar {
-    ${ui.position('abssolute','0','0','0','0')};
+    ${ui.position('abssolute', '0', '0', '0', '0')};
     .bar_L,
     .bar_R {
-      ${ui.size('50%','0')};
+      ${ui.size('50%', '0')};
       padding-bottom: 2px;
       overflow: hidden;
       .bar {
@@ -72,15 +77,15 @@ export const StyledSplash = styled.div`
     }
     .bar_L,
     .bar_L .bar {
-      ${ui.position('absolute','','','0','0')};
+      ${ui.position('absolute', '', '', '0', '0')};
     }
     .bar_R,
     .bar_R .bar {
-      ${ui.position('absolute','0','0','','')};
+      ${ui.position('absolute', '0', '0', '', '')};
     }
   }
   .bar_box {
-      ${ui.size('100%')};
+    ${ui.size('100%')};
   }
   // 미지원 환경 안내 텍스트
   .no-browser-txt,
@@ -119,11 +124,15 @@ export const StyledSplash = styled.div`
     }
   }
   // 로딩 완료
-  &.progress-complete {
-    opacity: 0;
-  }
+  ${(props) =>
+    props.$isProgressDone &&
+    css`
+      opacity: 0;
+    `}
   // 숨김
-  &.off {
-    display: none;
-  }
+  ${(props) =>
+    props.$isHide &&
+    css`
+      display: none;
+    `}
 `;
