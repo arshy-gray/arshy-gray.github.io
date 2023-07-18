@@ -35,9 +35,9 @@ const Splash = forwardRef<HTMLDivElement, SplashProps>(
     return (
       <StyledSplash
         id="#splash"
-        className={['progress_box', isHide && 'off', isProgressDone && 'progress-complete'].join(
-          ' ',
-        )}
+        className="progress_box"
+        $isHide={isHide || false}
+        $isProgressDone={isProgressDone || false}
         ref={ref}
         {...rest}
       >
