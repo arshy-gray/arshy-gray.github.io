@@ -3,7 +3,7 @@ import '../../index.css';
 
 import Splash from './Splash';
 
-const metaSplash = {
+const meta = {
   title: 'Templates/Splash',
   component: Splash,
   tags: ['autodocs'],
@@ -19,7 +19,7 @@ const metaSplash = {
   },
 } satisfies Meta<typeof Splash>;
 
-export default metaSplash;
+export default meta;
 type Story = StoryObj<typeof Splash>;
 
 export const Progress0: Story = {
