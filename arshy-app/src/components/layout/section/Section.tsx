@@ -51,7 +51,7 @@ const Section = forwardRef<HTMLElement, SectionProps>(
   ) => {
     return (
       <StyledSection
-        id={'#' + pageName}
+        id={pageName}
         $isFullpage={isFullpage || false}
         $isAniActive={isAniActive || false}
         $isSectionTitle={isSectionTitle || false}
