@@ -15,6 +15,8 @@ root.render(
       <Section
         pageName="contact"
         isFullpage
+        isSectionTitle
+        isAniActive
         SectionDesc="연락 가능한 핸드폰 및 이메일과 깃허브 주소입니다."
         bgElement={
           <>

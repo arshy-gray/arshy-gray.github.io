@@ -16,7 +16,6 @@ const meta = {
   argTypes: {
     pageName: { control: 'select', options: ['intro', 'project', 'history', 'contact'] },
     isFullpage: { control: 'boolean' },
-    isPageOn: { control: 'boolean' },
     isAniActive: { control: 'boolean' },
     isSectionTitle: { control: 'boolean' },
     isFooter: { control: 'boolean' },
@@ -30,7 +29,6 @@ export const Section_: Story = {
   args: {
     pageName: 'contact',
     isFullpage: true,
-    isPageOn: false,
     isAniActive: true,
     isSectionTitle: true,
     SectionDesc: '연락처 정보입니다.',
