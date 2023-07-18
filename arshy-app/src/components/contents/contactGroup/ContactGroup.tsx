@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { StyledContactGroup } from './StyledContactGroup';
 
-interface ContactGroupProps {
+export interface ContactGroupProps {
   isTabIndex?: boolean;
 }
 
