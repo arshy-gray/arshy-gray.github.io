@@ -1,10 +1,9 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import '../../../index.css';
 
 import ContactGroup from './ContactGroup';
 
-const metaContactGroup = {
+const meta = {
   title: 'Components/Contents/ContactGroup',
   component: ContactGroup,
   tags: ['autodocs'],
@@ -16,7 +15,7 @@ const metaContactGroup = {
   }
 } satisfies Meta<typeof ContactGroup>;
 
-export default metaContactGroup;
+export default meta;
 type Story = StoryObj<typeof ContactGroup>;
 
 export const ContactGroup_: Story = {
