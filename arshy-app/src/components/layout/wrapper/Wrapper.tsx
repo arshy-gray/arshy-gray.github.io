@@ -33,7 +33,7 @@ const Wrapper = forwardRef<HTMLDivElement, WrapperProps>(
           </a>
         </StyledSkipNav>
         {outerWrapperTopChildren}
-        <StyledWrapper id="wrapper" isVisible={isVisible || false} ref={ref} {...rest}>
+        <StyledWrapper id="wrapper" $isVisible={isVisible || false} ref={ref} {...rest}>
           {children}
         </StyledWrapper>
       </>
