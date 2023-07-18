@@ -1,27 +1,20 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import '../../index.css';
 
 import Splash from './Splash';
 
-const styles = {
-  transform: 'scale(1)',
-  height: '100vh',
-};
-
 const metaSplash = {
   title: 'Templates/Splash',
-  decorators: [storyFn => <div style={styles}>{storyFn()}</div>],
   component: Splash,
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
   argTypes: {
-    progressBarLeftH: { control: 'number' },
-    progressBarRightH: { control: 'number' },
-    progressTxt: { control: 'number' },
-  }
+    progressBarLeftH: { control: { type: 'range', min: 0, max: 100, step: 1 } },
+    progressBarRightH: { control: { type: 'range', min: 0, max: 100, step: 1 } },
+    progressTxt: { control: { type: 'range', min: 0, max: 100, step: 1 } },
+  },
 } satisfies Meta<typeof Splash>;
 
 export default metaSplash;
