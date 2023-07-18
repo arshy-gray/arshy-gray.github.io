@@ -1,12 +1,12 @@
 import React, { forwardRef } from 'react';
 import { StyledContactGroup } from './StyledContactGroup';
 
-interface ContactGroupProps {
+export interface ContactGroupProps {
   isTabIndex?: boolean;
 }
 
 /**
- * ## [Storybook]()
+ * ## [Storybook](http://localhost:6006/?path=/story/components-contents-contactgroup--contact-group)
  *
  * ## Props
  *
