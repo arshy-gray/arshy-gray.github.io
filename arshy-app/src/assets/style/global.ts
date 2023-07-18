@@ -257,7 +257,7 @@ export const pseudo_init = (
  * | mobile_low(string) | 399px |
  * | minimum(string) | 320px |
  */
-export const respond = (width: string, style: string): string => {
+export const respond = (width: string, style: string ): string => {
   return `
     @media screen and (max-width: ${width}) {
       ${style}

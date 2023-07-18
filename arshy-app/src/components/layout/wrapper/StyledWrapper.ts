@@ -27,18 +27,49 @@ export const StyledWrapper = styled.div<WrapperProps>`
   width: 100%;
   min-width: 1400px;
   overflow: hidden;
-  opacity: 0;
   ${ui.natural_effect}
   transition-property: opacity;
   ${(props) =>
-    props.$isVisible &&
-    css`
-      opacity: 1;
-    `}
+    props.$isVisible
+      ? css`
+          opacity: 1;
+        `
+      : css`
+          opacity: 0;
+        `}
   .wrap_cen {
     position: relative;
     margin: 0 auto;
     ${ui.size('1400px', '100%')}
     ${ui.clearfix}
   }
+
+  ${ui.respond(
+    ui.break_points.pc_dft,
+    `
+    min-width: auto;
+    .wrap_cen {
+      width: 1000px;
+    }
+  `,
+  )}
+  ${ui.respond(
+    ui.break_points.tablet,
+    `
+    min-width: 360px;
+    .wrap_cen {
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+  `,
+  )}
+  ${ui.respond(
+    ui.break_points.mobile_high,
+    `
+    .wrap_cen {
+      padding: 0;
+    }
+  `,
+  )}
 `;
