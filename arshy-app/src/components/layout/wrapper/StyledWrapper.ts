@@ -3,7 +3,7 @@ import { ui } from '../../../assets/style';
 import { rgba } from 'polished';
 
 export interface WrapperProps {
-  isVisible?: boolean;
+  $isVisible?: boolean;
 }
 
 export const StyledSkipNav = styled.nav`
@@ -31,7 +31,7 @@ export const StyledWrapper = styled.div<WrapperProps>`
   ${ui.natural_effect}
   transition-property: opacity;
   ${(props) =>
-    props.isVisible &&
+    props.$isVisible &&
     css`
       opacity: 1;
     `}
