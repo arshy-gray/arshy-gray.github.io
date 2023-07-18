@@ -9,6 +9,9 @@ const metaSection = {
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
+    backgrounds: {
+      default: 'dark'
+    }
   },
   argTypes: {
     pageName: { control: 'select', options: ['intro', 'project', 'history', 'contact'] },
