@@ -2,13 +2,13 @@ import styled, { css } from 'styled-components';
 import { ui } from '../../../assets/style';
 import { rgba } from 'polished';
 
-export interface SectionProps {
-  isFullpage?: boolean;
-  isAniActive?: boolean;
-  isSectionTitle?: boolean;
+interface SyledSectionProps {
+  $isFullpage?: boolean;
+  $isAniActive?: boolean;
+  $isSectionTitle?: boolean;
 }
 
-export const StyledSection = styled.section<SectionProps>`
+export const StyledSection = styled.section<SyledSectionProps>`
   position: relative;
   padding: 90px 0;
   min-height: 750px;
@@ -16,7 +16,7 @@ export const StyledSection = styled.section<SectionProps>`
   ${ui.clearfix}
   // fullpage 
   ${(props) =>
-    props.isFullpage &&
+    props.$isFullpage &&
     css`
       height: 100vh;
     `}
@@ -24,35 +24,37 @@ export const StyledSection = styled.section<SectionProps>`
   &#project {
     min-height: 100vh;
   }
-  ${(props) =>
-    props.isSectionTitle
-      ? css`
-          // 섹션 공통
-          > .sect_tit,
-          h2 + .sect_desc {
-            position: relative;
-            z-index: 1;
-            ${ui.ani_direction_init}
-            animation-name: ${ui.toT};
-          }
-          // 섹션 타이틀
-          > .sect_tit {
+  // 섹션 공통
+  > .sect_tit,
+  h2 + .sect_desc {
+    position: relative;
+    z-index: 1;
+    ${ui.ani_direction_init}
+    animation-name: ${ui.toT};
+  }
+  // 섹션 설명
+  h2 + .sect_desc {
+    margin-top: 10px;
+    ${ui.font('', '18px', ui.color.dft.brightest)}
+    text-align: center;
+    animation-delay: 0.2s;
+  }
+  // 섹션 타이틀
+  > .sect_tit {
+    ${(props) =>
+      props.$isSectionTitle
+        ? css`
             ${ui.font('50px', '42px', ui.color.dft.brightest)}
             text-align: center;
             font-weight: bold;
-          }
-          // 섹션 설명
-          h2 + .sect_desc {
-            margin-top: 10px;
-            ${ui.font('', '18px', ui.color.dft.brightest)}
-            text-align: center;
-            animation-delay: 0.2s;
-          }
-        `
-      : ui.blind}
+          `
+        : css`
+            ${ui.blind}
+          `}
+  }
   // 섹션 활성화시
   ${(props) =>
-    props.isAniActive &&
+    props.$isAniActive &&
     css`
       // 섹션 타이틀
       > .sect_tit,
@@ -64,15 +66,14 @@ export const StyledSection = styled.section<SectionProps>`
         opacity: 0.9;
       }
     `}
-    // article
-    .atc_tit{
-      ${ui.blind}
-    }
+  // article
+    .atc_tit {
+    ${ui.blind}
+  }
   // 푸터
   .main_footer {
-    position: absolute;
+    ${ui.position('absolute', '', '0', '30px', '0')}
     padding: 5px 0;
-    bottom: 30px;
     background: ${rgba(ui.color.dft.brightest, 0.1)};
     p {
       color: color(dft, light);

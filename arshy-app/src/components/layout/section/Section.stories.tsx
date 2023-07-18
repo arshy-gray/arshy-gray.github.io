@@ -15,9 +15,9 @@ const meta = {
   },
   argTypes: {
     pageName: { control: 'select', options: ['intro', 'project', 'history', 'contact'] },
-    isFullpage: { control: 'boolean' },
-    isAniActive: { control: 'boolean' },
-    isSectionTitle: { control: 'boolean' },
+    // isFullpage: { control: 'boolean' },
+    // isAniActive: { control: 'boolean' },
+    // isSectionTitle: { control: 'boolean' },
     isFooter: { control: 'boolean' },
   },
 } satisfies Meta<typeof Section>;
