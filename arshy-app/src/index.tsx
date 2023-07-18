@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
-// import Splash from './templates/splash/Splash';
+import Splash from './templates/splash/Splash';
 import Wrapper from './components/layout/wrapper/Wrapper';
 import Section from './components/layout/section/Section';
 import ContactGroup from './components/contents/contactGroup/ContactGroup';
@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <React.StrictMode>
-    <Wrapper isVisible>
+    <Wrapper isVisible outerWrapperTopChildren={<Splash />}>
       <Section
         pageName="contact"
         isFullpage

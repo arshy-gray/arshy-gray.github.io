@@ -1,6 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ui } from '../../../assets/style';
 import { rgba } from 'polished';
+
+export interface WrapperProps {
+  isVisible?: boolean;
+}
 
 export const StyledSkipNav = styled.nav`
   ${ui.position('absolute', '0', '', '', '0')}
@@ -17,7 +21,7 @@ export const StyledSkipNav = styled.nav`
   }
 `;
 
-export const StyledWrapper = styled.div`
+export const StyledWrapper = styled.div<WrapperProps>`
   position: relative;
   z-index: 0;
   width: 100%;
@@ -26,9 +30,11 @@ export const StyledWrapper = styled.div`
   opacity: 0;
   ${ui.natural_effect}
   transition-property: opacity;
-  &.on {
-    opacity: 1;
-  }
+  ${(props) =>
+    props.isVisible &&
+    css`
+      opacity: 1;
+    `}
   .wrap_cen {
     position: relative;
     margin: 0 auto;
