@@ -24,6 +24,19 @@ export const StyledSection = styled.section<SyledSectionProps>`
   &#project {
     min-height: 100vh;
   }
+  // 배경 요소
+  .bg_el {
+    ${ui.position('absolute', '0', '', '', '0')}
+    ${ui.size('100%')};
+    z-index: 0;
+    span {
+      ${ui.position('absolute', '0', '', '', '0')}
+    }
+    img {
+      position: relative;
+      width: auto;
+    }
+  }
   // 섹션 공통
   > .sect_tit,
   h2 + .sect_desc {

@@ -356,17 +356,3 @@ export const globalStyle: string = `
   `,
   )}
 `;
-
-// background element style
-export const bg_el: string = `
-  ${position('absolute', '0', '', '', '0')}
-  ${size('100%')};
-  z-index: 0;
-  span {
-    ${position('absolute', '0', '', '', '0')}
-  }
-  img {
-    position: relative;
-    width: auto;
-  }
-`;
