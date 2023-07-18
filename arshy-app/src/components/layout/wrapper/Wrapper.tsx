@@ -27,7 +27,7 @@ const Wrapper = forwardRef<HTMLDivElement, WrapperProps>(
   ({ isVisible, skipNavHerf = 'intro', outerWrapperTopChildren, children, ...rest }, ref) => {
     return (
       <>
-        <StyledSkipNav id="#skip_nav">
+        <StyledSkipNav id="skip_nav">
           <a href={'#' + skipNavHerf}>
             <span>본문 바로가기</span>
           </a>
