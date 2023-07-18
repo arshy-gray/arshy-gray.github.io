@@ -27,7 +27,7 @@ export const StyledSplash = styled.div<SyledSplashProps>`
   .progress {
     position: relative;
     display: inline-block;
-    ${ui.size(progressBarWid, progressBarH)};
+    ${ui.size(progressBarWid, progressBarH)}
     margin-top: 128px;
   }
   .contact_group {
@@ -67,7 +67,7 @@ export const StyledSplash = styled.div<SyledSplashProps>`
       padding-bottom: 2px;
       overflow: hidden;
       .bar {
-        ${ui.size(progressBarWid, progressBarH)};
+        ${ui.size(progressBarWid, progressBarH)}
         border: 1px solid ${ui.color.theme.main};
         border-radius: 50%;
       }
