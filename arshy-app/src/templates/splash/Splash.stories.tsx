@@ -11,6 +11,8 @@ const metaSplash = {
     layout: 'fullscreen',
   },
   argTypes: {
+    isHide: { control: 'boolean' },
+    isProgressDone: { control: 'boolean' },
     progressBarLeftH: { control: { type: 'range', min: 0, max: 100, step: 1 } },
     progressBarRightH: { control: { type: 'range', min: 0, max: 100, step: 1 } },
     progressTxt: { control: { type: 'range', min: 0, max: 100, step: 1 } },
@@ -30,8 +32,10 @@ export const Progress0: Story = {
 
 export const Progress100: Story = {
   args: {
-    progressBarLeftH : 100,
-    progressBarRightH : 100,
-    progressTxt : 100,
+    isHide: true,
+    isProgressDone: true,
+    progressBarLeftH: 100,
+    progressBarRightH: 100,
+    progressTxt: 100,
   },
 };
