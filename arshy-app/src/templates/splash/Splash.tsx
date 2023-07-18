@@ -3,13 +3,15 @@ import { StyledSplash } from './StyledSplash';
 import ContactGroup from '../../components/contents/contactGroup/ContactGroup';
 
 interface SplashProps {
+  isHide?: boolean;
+  isProgressDone?: boolean;
   progressBarLeftH?: number;
   progressBarRightH?: number;
   progressTxt?: number;
 }
 
 /**
- * ## [Storybook]()
+ * ## [Storybook](http://localhost:6006/?path=/story/templates-splash--progress-0)
  *
  * ## Props
  *
@@ -23,22 +25,33 @@ interface SplashProps {
  */
 
 const Splash = forwardRef<HTMLDivElement, SplashProps>(
-  ({ progressBarLeftH, progressBarRightH, progressTxt, ...rest }, ref) => {
+  ({ isHide, isProgressDone, progressBarLeftH, progressBarRightH, progressTxt, ...rest }, ref) => {
     // %로 표현
     const leftHeight = `${progressBarLeftH}%`;
     const rightHeight = `${progressBarRightH}%`;
 
     return (
-      <StyledSplash id="#splash" className="progress_box" ref={ref} {...rest}>
+      <StyledSplash
+        id="#splash"
+        className={['progress_box', isHide && 'off', isProgressDone && 'progress-complete'].join(
+          ' ',
+        )}
+        ref={ref}
+        {...rest}
+      >
         <div className="progress">
           <ContactGroup />
           <div className="progress-bar">
             <div className="bar_box">
-              <span className="bar_L" style={{ height: leftHeight }}><span className="bar"></span></span>
-              <span className="bar_R" style={{ height: rightHeight }}><span className="bar"></span></span>
+              <span className="bar_L" style={{ height: leftHeight }}>
+                <span className="bar"></span>
+              </span>
+              <span className="bar_R" style={{ height: rightHeight }}>
+                <span className="bar"></span>
+              </span>
             </div>
           </div>
-          <p className="progress-txt">{ progressTxt }%</p>
+          <p className="progress-txt">{progressTxt}%</p>
         </div>
       </StyledSplash>
     );
