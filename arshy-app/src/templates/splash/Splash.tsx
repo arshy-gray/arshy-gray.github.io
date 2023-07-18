@@ -19,6 +19,8 @@ interface SplashProps {
  *
  * | props | value | description |
  * | :--- | :--- | :--- |
+ * | isHide (boolean) | true, false | 컴포넌트 숨김처리 여부 |
+ * | isProgressDone (boolean) | true, false | 본문 이미리 로딩 완료 여부 |
  * | progressBarLeftH (number) | 0 ~ 100 | 로딩 진행율 왼쪽 원형 라인 ( 51% - 100% ) |
  * | progressBarRightH (number) | 0 ~ 100 | 로딩 진행율 오른족 원형 라인 ( 0% - 50% ) |
  * | progressTxt (number) | 0 ~ 100 | 로딩 진행율 텍스트 ( 51% - 100% ) |
