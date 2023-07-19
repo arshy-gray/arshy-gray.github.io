@@ -6,7 +6,6 @@ import Splash from './Splash';
 const meta = {
   title: 'Templates/Splash',
   component: Splash,
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

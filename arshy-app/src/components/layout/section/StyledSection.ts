@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import { ui } from '../../../assets/style';
 import { rgba } from 'polished';
 import { CssIntro } from '../../../templates/intro/StyledIntro';
+import { CssContact } from '../../../templates/contact//StyledContact';
 
 interface SyledSectionProps {
   $pageName: string;
@@ -14,14 +15,17 @@ const StyleBySection = (sectionName: string, isAniActive?: boolean) => {
   switch (sectionName) {
     case 'intro':
       return CssIntro(isAniActive);
+    
     // case 'project':
-    //   return CssProject;
+    //   return CssProject(isAniActive);
+    
     // case 'history':
-    //   return CssHistory;
-    // case 'contact':
-    //   return CssContact;
+    //   return CssHistory(isAniActive);
+    case 'contact':
+      return CssContact(isAniActive);
 
-    default: return false;
+    default:
+      return false;
   }
 };
 

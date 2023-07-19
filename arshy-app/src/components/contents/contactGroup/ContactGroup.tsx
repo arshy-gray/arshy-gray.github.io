@@ -6,7 +6,7 @@ export interface ContactGroupProps {
 }
 
 /**
- * ## [Storybook](http://localhost:6006/?path=/story/components-contents-contactgroup--contact-group)
+ * ## [Storybook](http://arshy-gray.github.io/?path=/story/components-contents-contactgroup--contact-group)
  *
  * ## Props
  *

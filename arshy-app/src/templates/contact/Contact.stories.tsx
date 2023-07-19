@@ -2,33 +2,33 @@ import type { Meta, StoryObj } from '@storybook/react';
 import '../../index.css';
 
 import Wrapper from '../../components/layout/wrapper/Wrapper';
-import Intro from './Intro';
+import Contact from './Contact';
 
 const meta = {
-  title: 'Templates/Intro',
-  component: Intro,
+  title: 'Templates/Contact',
+  component: Contact,
   parameters: {
     layout: 'fullscreen',
   },
   argTypes: {
     isAniActive: { controls: 'boolean' },
   },
-} satisfies Meta<typeof Intro>;
+} satisfies Meta<typeof Contact>;
 
 export default meta;
-type Story = StoryObj<typeof Intro>;
+type Story = StoryObj<typeof Contact>;
 
 const IntroInWrapper: Story = {
   render: ({ isAniActive, ...args }) => {
     return (
       <Wrapper isVisible>
-        <Intro isAniActive={isAniActive} />
+        <Contact isAniActive={isAniActive} />
       </Wrapper>
     );
   },
 };
 
-export const Intro_: Story = {
+export const Contact_: Story = {
   ...IntroInWrapper,
   args: {
     isAniActive: true,
