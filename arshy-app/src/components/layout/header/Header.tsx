@@ -88,7 +88,7 @@ const Header = forwardRef<HTMLElement, HeaderrProps>(
                 <StyledMenuItem
                   key={idx}
                   $isScroll={isScroll}
-                  $isActive={isActive === idx || false}
+                  $isActive={isActive === idx}
                   onClick={() => handleMenuItemClick(idx)}
                 >
                   <a href={item.href}>{item.text}</a>
