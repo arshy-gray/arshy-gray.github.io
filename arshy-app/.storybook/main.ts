@@ -16,7 +16,7 @@ const config: StorybookConfig = {
     <style>
       #storybook-root, .docs-story {transform: scale(1);}
       #storybook-root { height: 100vh;}
-      .docs-story {height: 500px;}
+      .css-jspizm {height: 500px; overflow:auto;}
       .docs-story .innerZoomElementWrapper {position: relative;}
     </style>
   `,

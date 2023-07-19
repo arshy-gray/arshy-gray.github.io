@@ -249,6 +249,43 @@ export const pseudo_init = (
   return pseudo_block;
 };
 
+// image sprite
+export const sprite_wid = (spriteImg : IStyle): any => {
+  return `width: ${spriteImg.width};`
+}
+export const sprite_h = (spriteImg: IStyle): any => {
+  return `height: ${spriteImg.height};`
+}
+export const sprite_size = (spriteImg: IStyle): any => {
+  return `
+  ${sprite_wid(spriteImg)}
+  ${sprite_h(spriteImg)}
+  `;
+}
+export const sprite_position = (spriteImg: IStyle): any => {
+  return `
+  background-position: ${spriteImg.bgPosition};
+  `
+}
+export const sprite_img = (spriteImg: IStyle): any => {
+  return `
+  background-image: url(${img_url}/contact/sprites/${spriteImg.bgImg});
+  background-repeat: no-repeat;
+  `
+}
+export const sprite = (spriteImg: IStyle): any => {
+  return `
+  ${sprite_position(spriteImg)}
+  ${sprite_size(spriteImg)}
+  `;
+}
+export const imgsprite = (spriteImg: IStyle): any => {
+  return `
+  ${sprite_img(spriteImg)}
+  ${sprite(spriteImg)}
+  `;
+}
+
 //== 미디어쿼리
 // 반응형
 /**
