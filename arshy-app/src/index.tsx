@@ -4,9 +4,9 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 // import Splash from './templates/splash/Splash';
 import Wrapper from './components/layout/wrapper/Wrapper';
-// import Section from './components/layout/section/Section';
+import Header from './components/layout/header/Header';
 // import Intro from './templates/intro/Intro';
-import Contact from './templates/contact/Contact';
+// import Contact from './templates/contact/Contact';
 // import ContactGroup from './components/contents/contactGroup/ContactGroup';
 // import { ui } from 'assets/style';
 
@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <Wrapper isVisible>
-      <Contact isAniActive></Contact>
+      <Header></Header>
     </Wrapper>
   </React.StrictMode>,
 );
