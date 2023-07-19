@@ -7,7 +7,6 @@ import Intro from './Intro';
 const meta = {
   title: 'Templates/Intro',
   component: Intro,
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },

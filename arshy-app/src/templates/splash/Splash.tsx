@@ -11,7 +11,7 @@ interface SplashProps {
 }
 
 /**
- * ## [Storybook](http://localhost:6006/?path=/story/templates-splash--progress-0)
+ * ## [Storybook](http://arshy-gray.github.io/?path=/story/templates-splash--progress-0)
  *
  * ## Props
  *

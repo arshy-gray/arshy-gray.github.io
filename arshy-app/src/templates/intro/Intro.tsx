@@ -5,7 +5,7 @@ import ContactGroup from '../../components/contents/contactGroup/ContactGroup';
 export interface IntroProps extends ExportSectionProps {}
 
 /**
- * ## [Storybook](http://localhost:6006/?path=/story/components-layout-section--section)
+ * ## [Storybook](http://arshy-gray.github.io/?path=/story/templates-intro--intro)
  *
  * ## Props
  *
@@ -22,13 +22,6 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>(({ isAniActive, ...rest }, 
       pageName="intro"
       isFullpage
       isAniActive={isAniActive}
-      bgElement={
-        <>
-          <span className="el01"></span>
-          <span className="el02"></span>
-          <span className="el03"></span>
-        </>
-      }
       articleTitle="소개"
       {...rest}
     >

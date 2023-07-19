@@ -9,7 +9,7 @@ export interface WrapperProps {
 }
 
 /**
- * ## [Storybook](http://localhost:6006/?path=/story/components-layout-section--section)
+ * ## [Storybook](http://arshy-gray.github.io/?path=/story/components-layout-section--section)
  *
  * ## Props
  *
