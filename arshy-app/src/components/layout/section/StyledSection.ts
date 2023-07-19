@@ -1,12 +1,29 @@
 import styled, { css } from 'styled-components';
 import { ui } from '../../../assets/style';
 import { rgba } from 'polished';
+import { CssIntro } from '../../../templates/intro/StyledIntro';
 
 interface SyledSectionProps {
+  $pageName: string;
   $isFullpage?: boolean;
   $isAniActive?: boolean;
   $isSectionTitle?: boolean;
 }
+
+const StyleBySection = (sectionName: string, isAniActive?: boolean) => {
+  switch (sectionName) {
+    case 'intro':
+      return CssIntro(isAniActive);
+    // case 'project':
+    //   return CssProject;
+    // case 'history':
+    //   return CssHistory;
+    // case 'contact':
+    //   return CssContact;
+
+    default: return false;
+  }
+};
 
 export const StyledSection = styled.section<SyledSectionProps>`
   position: relative;
@@ -20,10 +37,6 @@ export const StyledSection = styled.section<SyledSectionProps>`
     css`
       height: 100vh;
     `}
-    
-  &#project {
-    min-height: 100vh;
-  }
   // 배경 요소
   .bg_el {
     ${ui.position('absolute', '0', '', '', '0')}
@@ -38,22 +51,22 @@ export const StyledSection = styled.section<SyledSectionProps>`
     }
   }
   // 섹션 공통
-  > .sect_tit,
-  h2 + .sect_desc {
+  .sect_tit,
+  .sect_desc {
     position: relative;
     z-index: 1;
     ${ui.ani_direction_init}
     animation-name: ${ui.toT};
   }
   // 섹션 설명
-  h2 + .sect_desc {
+  .sect_desc {
     margin-top: 10px;
     ${ui.font('', '18px', ui.color.dft.brightest)}
     text-align: center;
     animation-delay: 0.2s;
   }
   // 섹션 타이틀
-  > .sect_tit {
+  .sect_tit {
     ${(props) =>
       props.$isSectionTitle
         ? css`
@@ -70,12 +83,12 @@ export const StyledSection = styled.section<SyledSectionProps>`
     props.$isAniActive &&
     css`
       // 섹션 타이틀
-      > .sect_tit,
-      h2 + .sect_desc {
+      .sect_tit,
+      .sect_desc {
         animation-name: ${ui.fromT};
       }
       // 섹션 설명
-      h2 + .sect_desc {
+      .sect_desc {
         opacity: 0.9;
       }
     `}
@@ -93,4 +106,6 @@ export const StyledSection = styled.section<SyledSectionProps>`
       text-align: center;
     }
   }
+
+  ${(props) => StyleBySection(props.$pageName, props.$isAniActive)}
 `;

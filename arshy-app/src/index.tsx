@@ -5,6 +5,7 @@ import './index.css';
 import Splash from './templates/splash/Splash';
 import Wrapper from './components/layout/wrapper/Wrapper';
 import Section from './components/layout/section/Section';
+import Intro from './templates/intro/Intro';
 import ContactGroup from './components/contents/contactGroup/ContactGroup';
 import { ui } from 'assets/style'
 
@@ -13,23 +14,7 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <Wrapper isVisible>
-      <Section
-        pageName="contact"
-        isFullpage
-        isSectionTitle
-        isAniActive
-        SectionDesc="연락 가능한 핸드폰 및 이메일과 깃허브 주소입니다."
-        bgElement={
-          <>
-            <span className="el01"></span>
-            <span className="el02"></span>
-            <span className="el03"></span>
-          </>
-        }
-        articleTitle="연락처"
-        isFooter
-        children={<ContactGroup />}
-      ></Section>
+      <Intro isAniActive></Intro>
     </Wrapper>
   </React.StrictMode>,
 );

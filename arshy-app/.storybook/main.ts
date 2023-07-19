@@ -14,7 +14,9 @@ const config: StorybookConfig = {
   previewHead: (head) => `
     ${head}
     <style>
-      #storybook-root, .docs-story {transform: scale(1); height: 100vh;}
+      #storybook-root, .docs-story {transform: scale(1);}
+      #storybook-root { height: 100vh;}
+      .docs-story {height: 500px;}
       .docs-story .innerZoomElementWrapper {position: relative;}
     </style>
   `,

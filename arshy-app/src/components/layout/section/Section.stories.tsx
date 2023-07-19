@@ -10,14 +10,14 @@ const meta = {
   parameters: {
     layout: 'fullscreen',
     backgrounds: {
-      default: 'dark'
-    }
+      default: 'dark',
+    },
   },
   argTypes: {
     pageName: { control: 'select', options: ['intro', 'project', 'history', 'contact'] },
-    // isFullpage: { control: 'boolean' },
-    // isAniActive: { control: 'boolean' },
-    // isSectionTitle: { control: 'boolean' },
+    isFullpage: { control: 'boolean' },
+    isAniActive: { control: 'boolean' },
+    isSectionTitle: { control: 'boolean' },
     isFooter: { control: 'boolean' },
   },
 } satisfies Meta<typeof Section>;
@@ -27,14 +27,19 @@ type Story = StoryObj<typeof Section>;
 
 export const Section_: Story = {
   args: {
-    pageName: 'contact',
+    pageName: 'section title',
     isFullpage: true,
     isAniActive: true,
     isSectionTitle: true,
-    SectionDesc: '연락처 정보입니다.',
+    SectionDesc: '섹션 설명을 입력해주세요',
     bgElement: '',
-    articleTitle: '연락처',
+    articleTitle: '한글 타이틀',
     isFooter: true,
-    children: '본문',
+    children: (
+      <>
+        본문입니다 <br />
+        내용을 입력해주세요
+      </>
+    ),
   },
 };

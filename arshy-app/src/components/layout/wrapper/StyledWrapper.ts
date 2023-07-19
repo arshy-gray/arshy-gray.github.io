@@ -46,7 +46,7 @@ export const StyledWrapper = styled.div<WrapperProps>`
 
   ${ui.respond(
     ui.break_points.pc_dft,
-    `
+    css`
     min-width: auto;
     .wrap_cen {
       width: 1000px;
@@ -55,7 +55,7 @@ export const StyledWrapper = styled.div<WrapperProps>`
   )}
   ${ui.respond(
     ui.break_points.tablet,
-    `
+    css`
     min-width: 360px;
     .wrap_cen {
       width: 100%;
@@ -66,7 +66,7 @@ export const StyledWrapper = styled.div<WrapperProps>`
   )}
   ${ui.respond(
     ui.break_points.mobile_high,
-    `
+    css`
     .wrap_cen {
       padding: 0;
     }
