@@ -1,10 +1,13 @@
 import React, { forwardRef } from 'react';
 import { StyledSection } from './StyledSection';
 
-export interface SectionProps {
+export interface ExportSectionProps {
+  isAniActive?: boolean;
+}
+
+interface SectionProps extends ExportSectionProps {
   pageName: string;
   isFullpage?: boolean;
-  isAniActive?: boolean;
   isSectionTitle?: boolean;
   SectionDesc?: React.ReactNode;
   bgElement?: React.ReactNode;
@@ -26,7 +29,7 @@ export interface SectionProps {
  * | isFullpage | boolean | true, false | fullpage 여부 |
  * | isAniActive | boolean | true, false | 애니메이션 활성화 여부 |
  * | isSectionTitle | boolean | true, false | 섹션 타이틀 노출 여부 |
- * | SectionDesc | React.ReactNode | 순수 텍스트 or 줄바꿈시 <br /> 포함 | 섹션 설명 |
+ * | SectionDesc | React.ReactNode | 순수 텍스트 or 줄바꿈시 br태그 포함 | 섹션 설명 |
  * | bgElement | React.ReactNode | - | 배경 요소 마크업 |
  * | * articleTitle | React.ReactNode | - | article 제목 (미노출) |
  * | isFooter | boolean | true, false | footer 포함 여부 |
@@ -52,6 +55,7 @@ const Section = forwardRef<HTMLElement, SectionProps>(
     return (
       <StyledSection
         id={pageName}
+        $pageName={pageName}
         $isFullpage={isFullpage || false}
         $isAniActive={isAniActive || false}
         $isSectionTitle={isSectionTitle || false}
