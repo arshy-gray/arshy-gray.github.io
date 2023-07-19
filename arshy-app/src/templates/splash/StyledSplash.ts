@@ -15,8 +15,8 @@ export const StyledSplash = styled.div<SyledSplashProps>`
   ${ui.position('fixed', '0', '0', '0', '0')};
   color: ${ui.color.dft.brightest};
   text-align: center;
-  background-image: url('assets/images/splash/bg_splash_moon.png'),
-    url('assets/images/splash/bg_splash_cloud.png'), url('assets/images/splash/bg_splash.jpg');
+  background-image: url(${ui.img_url}/splash/bg_splash_moon.png),
+    url(${ui.img_url}/splash/bg_splash_cloud.png), url(${ui.img_url}/splash/bg_splash.jpg);
   background-position: calc(50% - 15px) -50px, center top, center bottom;
   background-size: auto, auto, cover;
   background-repeat: no-repeat;
