@@ -1,7 +1,5 @@
+import { css } from 'styled-components';
 import { IStyle } from './style';
-import { break_points } from './layout';
-import { color } from './colors';
-import { rgba } from 'polished';
 
 //= function
 export const half = (number: number): number => {
@@ -9,22 +7,23 @@ export const half = (number: number): number => {
 };
 
 //= variables
-export const ani_timing: string = `cubic-bezier(0.4, 0, 0.2, 1)`;
+export const ani_timing: string = 'cubic-bezier(0.4, 0, 0.2, 1)';
+export const img_url: string = process.env.PUBLIC_URL + '/assets/images';
 
 //= extend, mixin
 //== parallex
-export const ani_direction_init: string = `
+export const ani_direction_init: any = css`
   position: relative;
   animation: 0.7s ${ani_timing} both;
 `;
 
-export const natural_effect: string = `
+export const natural_effect: any = css`
   transition: 0.3s 0s ${ani_timing};
 `;
 
 //== box
-export const size = (width: string = '', height: string = width): string => {
-  return `
+export const size = (width: string = '', height: string = width): any => {
+  return css`
     width: ${width};
     height: ${height};
   `;
@@ -32,38 +31,42 @@ export const size = (width: string = '', height: string = width): string => {
 
 //== 글꼴
 // font style
-export const font = (font_size?: string, line_height?: string, color?: string): string => {
-  return `
-    ${font_size && `font-size:` + font_size};
-    ${line_height && `line-height:` + line_height};
-    ${color && `color:` + color};
+export const font = (
+  font_size: string = '',
+  line_height: string = '',
+  color: string = '',
+): any => {
+  return css`
+    ${font_size && 'font-size:' + font_size};
+    ${line_height && 'line-height:' + line_height};
+    ${color && 'color:' + color};
   `;
 };
 
 // 높이 고정 문자 수직 중앙 정렬
-export const vt_m = (height: string, line_height: string = height): string => {
-  return `
+export const vt_m = (height: string, line_height: string = height): any => {
+  return css`
     ${height && `height:` + height};
     ${line_height && `line-height:` + line_height};
   `;
 };
 
 // 말줄임처리
-export const ellipsis = (count: number = 1): string => {
-  let ellipsis_st: string = ``;
+export const ellipsis = (count: number = 1): any => {
+  let ellipsis_st: any = ``;
 
   if (count === 1)
-    ellipsis_st = `
+    ellipsis_st = css`
       white-space: nowrap;
     `;
   else
-    ellipsis_st = `
+    ellipsis_st = css`
       display: -webkit-box;
       -webkit-line-clamp: ${count};
       -webkit-box-orient: vertical;
     `;
 
-  return `
+  return css`
     text-overflow: ellipsis;
     overflow: hidden;
     ${ellipsis_st}
@@ -71,7 +74,7 @@ export const ellipsis = (count: number = 1): string => {
 };
 
 //== layout
-export const blind: string = `
+export const blind: any = css`
   position: absolute;
   width: 1px;
   height: 1px;
@@ -83,18 +86,19 @@ export const blind: string = `
   overflow: hidden;
 `;
 
-export const clearfix: string = `
-  &:before, &:after{
+export const clearfix: any = css`
+  &:before,
+  &:after {
     content: '';
     display: table;
   }
-  &:after{
+  &:after {
     clear: both;
   }
 `;
 
-export const imgfix: string = `
- display: inline-block;
+export const imgfix: any = css`
+  display: inline-block;
   img {
     vertical-align: top;
   }
@@ -106,8 +110,8 @@ export const position = (
   right?: string,
   bottom?: string,
   left?: string,
-): string => {
-  return `
+): any => {
+  return css`
     position: ${position};
     ${top && `top:` + top};
     ${right && `right:` + right};
@@ -117,13 +121,13 @@ export const position = (
 };
 
 // absolute 중앙 정렬
-export const absolute_center = (width: string = '', height: string = width): string => {
+export const absolute_center = (width: string = '', height: string = width): any => {
   const wid_num: number = Number(width.slice(0, -2));
   const wid_unit: string = width.slice(-2);
   const h_num: number = Number(height.slice(0, -2));
   const h_unit: string = width.slice(-2);
 
-  return `
+  return css`
     position: absolute;
     width: ${width};
     height: ${height};
@@ -144,21 +148,25 @@ export const absolute_center = (width: string = '', height: string = width): str
  * | vtc_align(string) || direction 맞춤 속성 - row : align-items, comumn : justify-content |
  * | direction (string) | row, column, row-reverse, column-reverse | flex-derection |
  */
-export const flex = (hrzt_align?: string, vtc_align?: string, direction?: string): string => {
-  let align_st: string = ``;
+export const flex = (
+  hrzt_align: string = '',
+  vtc_align: string = '',
+  direction: string = '',
+): any => {
+  let align_st: any = ``;
 
   if (direction === 'column' || direction === 'column-reverse')
-    align_st = `
+    align_st = css`
       align-items: ${hrzt_align};
       justify-content: ${vtc_align};
     `;
   else
-    align_st = `
+    align_st = css`
       align-items: ${vtc_align};
       justify-content: ${hrzt_align};
     `;
 
-  return `
+  return css`
     display: flex;
     flex-direction: ${direction};
     ${align_st}
@@ -174,27 +182,27 @@ export const flex = (hrzt_align?: string, vtc_align?: string, direction?: string
  * | direction (string) | x, y | x: 가로방향, y: 세로방향 |
  * | hide(boolean) || 스크롤바 숨김 여부 |
  */
-export const scroll = (direction: string = 'x', hide: boolean = false): string => {
-  let scroll_st: string = ``;
+export const scroll = (direction: string = 'x', hide: boolean = false): any => {
+  let scroll_st: any = ``;
 
   // 스크롤 방향에 따른 스타일
   if (direction === 'y')
-    scroll_st = `
+    scroll_st = css`
       overflow-x: hidden;
       overflow-y: auto;
     `;
   else
-    scroll_st = `
+    scroll_st = css`
       white-space: nowrap;
       overflow-y: hidden;
       overflow-x: auto;
     `;
 
-  return `
+  return css`
     ${scroll_st}
     ${
       hide &&
-      `&::-webkit-scrollbar {
+      css`&::-webkit-scrollbar {
         display: none;
       }`
     }
@@ -217,22 +225,22 @@ export const pseudo_init = (
   display: string = 'block',
   content: string = '',
   style?: string,
-): string => {
-  let pseudo_block: string = ``;
-  const pseudo_st: string = `
+): any => {
+  let pseudo_block: any = ``;
+  const pseudo_st: any = css`
     content: ${content};
     display: ${display};
     ${style && style}
   `;
 
   if (pseudo === 'both')
-    pseudo_block = `
+    pseudo_block = css`
       &:before, &:after{
         ${pseudo_st}
       }
     `;
   else
-    pseudo_block = `
+    pseudo_block = css`
     &:${pseudo} {
        ${pseudo_st}
     }
@@ -257,8 +265,8 @@ export const pseudo_init = (
  * | mobile_low(string) | 399px |
  * | minimum(string) | 320px |
  */
-export const respond = (width: string, style: string ): string => {
-  return `
+export const respond = (width: string, style: any): any => {
+  return css`
     @media screen and (max-width: ${width}) {
       ${style}
     }
@@ -268,91 +276,25 @@ export const respond = (width: string, style: string ): string => {
 //== bugfix
 // 아이폰x 제스처 공간
 export const safe_area: IStyle = {
-  after: `
+  after: css`
     &:after{
       content: '';
       display: block;
       height: env(safe-area-inset-bottom);
     }
   `,
-  margin: `
+  margin: css`
     margin-bottom: env(safe-area-inset-bottom);
   `,
-  padding: `
+  padding: css`
     padding-bottom: env(safe-area-inset-bottom);
   `,
 };
 
 // 사파리 border-radius overflow 버그 수정
-export const backface: string = `
+export const backface: any = css`
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
-`;
-
-//== global
-// 전체
-export const globalStyle: string = `
-  .hidden {
-    ${blind}
-  }
-  .clearFix {
-    ${clearfix}
-  }
-  .imgFix {
-    ${imgfix}
-  }
-  #skip_nav {
-    @include pos-abs-lt;
-    z-index: 1;
-    a {
-      display: inline-block;
-      padding: 5px 15px;
-      color: ${color.dft.brightest};
-      background: ${rgba(color.dft.darkest, 0.8)};
-      transform: translateY(-32px);
-      &:focus {
-        transform: translateY(0);
-      }
-    }
-  }
-  #wrapper {
-    position: relative;
-    z-index: 0;
-    width: 100%;
-    min-width: 1400px;
-    overflow: hidden;
-    opacity: 0;
-    ${natural_effect}
-    transition-property: opacity;
-    &.on {
-      opacity: 1;
-    }
-  }
-  .wrap_cen {
-    position: relative;
-    margin: 0 auto;
-    ${size('1400px', '100%')}
-    ${clearfix}
-  }
-  ${respond(
-    break_points.pc_dft,
-    `
-    #wrapper {
-      min-width: auto;
-    }
-    .wrap_cen {
-      width: 1000px;
-    }
-  `,
-  )}
-  ${respond(
-    break_points.mobile_high,
-    `
-    .wrap_cen {
-      padding: 0;
-    }
-  `,
-  )}
 `;
