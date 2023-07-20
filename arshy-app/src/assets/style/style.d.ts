@@ -1,9 +1,9 @@
 export interface IStyle {
-  [key: string]: any;
+  [key: string]: string;
 }
 
 export interface ITwoDepthStyle {
   [key: string]: {
-    [key: string]: any;
+    [key: string]: string;
   };
 }

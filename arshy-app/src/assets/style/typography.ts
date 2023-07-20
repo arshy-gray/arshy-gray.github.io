@@ -1,20 +1,19 @@
-import { css } from 'styled-components';
 import { ITwoDepthStyle } from './style';
 import { break_points } from './layout';
 import { respond } from './global';
 
 export const font: ITwoDepthStyle = {
   title: {
-    lg: css`
+    lg: `
       font-size: 50px;
       font-weight: bold;
     `,
-    md: css`
+    md: `
       font-size: 35px;
       font-weight: bold;
       ${respond(break_points.tablet, 'font-size:30px')}
     `,
-    sm: css`
+    sm: `
       font-size: 22px;
       font-weight: bold;
       ${respond(break_points.tablet, 'font-size:18px')}
@@ -22,21 +21,21 @@ export const font: ITwoDepthStyle = {
     `,
   },
   content: {
-    xl: css`
+    xl: `
       font-size: 17px;
       ${respond(break_points.tablet, 'font-size:15px')}
     `,
-    lg: css`
+    lg: `
       font-size: 16px;
     `,
-    md: css`
+    md: `
       font-size: 15px;
     `,
-    dft: css`
+    dft: `
       ${respond(break_points.tablet, 'font-size:12px')}
       ${respond(break_points.mobile_mid, 'font-size:11px')}
     `,
-    sm: css`
+    sm: `
       font-size: 13px;
     `,
   },

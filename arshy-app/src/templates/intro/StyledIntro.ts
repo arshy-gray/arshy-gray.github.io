@@ -100,15 +100,14 @@ export const CssIntro = (isAniActive?: boolean) => css`
   // 반응형
   ${ui.respond(
     ui.break_points.pc_dft,
-    css`
-      // 연락처 그룹
+    `
       background-position: calc(100% - 50px) 40px, center;
       background-size: 100px, cover;
     `,
   )}
   ${ui.respond(
     ui.break_points.mobile_high,
-    css`
+    `
       // 연락처 그룹
       .contact_group {
         margin: 0 14%;
@@ -125,7 +124,7 @@ export const CssIntro = (isAniActive?: boolean) => css`
   )}
   ${ui.respond(
     ui.break_points.mobile_mid,
-    css`
+    `
       // 연락처 그룹
       .intro_ctt {
         width: 100%;
