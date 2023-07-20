@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { ui } from '../../../assets/style';
 import { rgba } from 'polished';
 
-export interface WrapperProps {
+export interface StyledWrapperProps {
   $isVisible?: boolean;
 }
 
@@ -21,7 +21,7 @@ export const StyledSkipNav = styled.nav`
   }
 `;
 
-export const StyledWrapper = styled.div<WrapperProps>`
+export const StyledWrapper = styled.div<StyledWrapperProps>`
   position: relative;
   z-index: 0;
   ${ui.size('100%')}
@@ -46,30 +46,30 @@ export const StyledWrapper = styled.div<WrapperProps>`
 
   ${ui.respond(
     ui.break_points.pc_dft,
-    css`
-    min-width: auto;
-    .wrap_cen {
-      width: 1000px;
-    }
-  `,
+    `
+      min-width: auto;
+      .wrap_cen {
+        width: 1000px;
+      }
+    `,
   )}
   ${ui.respond(
     ui.break_points.tablet,
-    css`
-    min-width: 360px;
-    .wrap_cen {
-      width: 100%;
-      padding: 0 20px;
-      box-sizing: border-box;
-    }
-  `,
+    `
+      min-width: 360px;
+      .wrap_cen {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+      }
+    `,
   )}
   ${ui.respond(
     ui.break_points.mobile_high,
-    css`
-    .wrap_cen {
-      padding: 0;
-    }
-  `,
+    `
+      .wrap_cen {
+        padding: 0;
+      }
+    `,
   )}
 `;

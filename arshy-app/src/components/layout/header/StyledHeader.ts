@@ -1,19 +1,19 @@
 import styled, { css } from 'styled-components';
 import { ui } from '../../../assets/style';
 
-interface CommonProps {
+interface StyledCommonProps {
   $isScroll?: boolean;
 }
 
-export interface HeaderProps extends CommonProps {
+export interface StyledHeaderProps extends StyledCommonProps {
   $isHide?: boolean;
 }
 
-export interface MenuItemProps extends CommonProps {
+export interface StyledMenuItemProps extends StyledCommonProps {
   $isActive?: boolean;
 }
 
-export const StyledMenuItem = styled.li<MenuItemProps>`
+export const StyledMenuItem = styled.li<StyledMenuItemProps>`
   padding: 0 0.3%;
   a {
     display: block;
@@ -44,7 +44,7 @@ export const StyledMenuItem = styled.li<MenuItemProps>`
     `}
 `;
 
-export const StyledHeader = styled.header<HeaderProps>`
+export const StyledHeader = styled.header<StyledHeaderProps>`
   ${ui.position('fixed', '10px', '0', '', '0')}
   padding: 0 15px;
   box-sizing: border-box;

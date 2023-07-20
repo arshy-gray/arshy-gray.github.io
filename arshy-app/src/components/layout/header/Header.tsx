@@ -8,9 +8,9 @@ export interface HeaderrProps {
   isActiveIdx?: number;
 }
 
-interface MenuItem {
+interface MenuItemProps {
   href: string;
-  text: string;
+  menuName: string;
 }
 
 /**
@@ -40,11 +40,11 @@ interface MenuItem {
 
 const Header = forwardRef<HTMLElement, HeaderrProps>(
   ({ isHide, isScrollVal, isActiveIdx, ...rest }, ref) => {
-    const menuItems: MenuItem[] = [
-      { href: '#intro', text: 'INTRO' },
-      { href: '#project', text: 'PROJECT' },
-      { href: '#history', text: 'HISTORY' },
-      { href: '#contact', text: 'CONTACT' },
+    const MenuItems: MenuItemProps[] = [
+      { href: '#intro', menuName: 'INTRO' },
+      { href: '#project', menuName: 'PROJECT' },
+      { href: '#history', menuName: 'HISTORY' },
+      { href: '#contact', menuName: 'CONTACT' },
     ];
 
     const [isScroll, setIsScroll] = useState<boolean>(isScrollVal || false);
@@ -84,14 +84,14 @@ const Header = forwardRef<HTMLElement, HeaderrProps>(
           </div>
           <nav className="gnb_menu">
             <ul>
-              {menuItems.map((item, idx) => (
+              {MenuItems.map((item, idx) => (
                 <StyledMenuItem
                   key={idx}
                   $isScroll={isScroll}
                   $isActive={isActive === idx}
                   onClick={() => handleMenuItemClick(idx)}
                 >
-                  <a href={item.href}>{item.text}</a>
+                  <a href={item.href}>{item.menuName}</a>
                 </StyledMenuItem>
               ))}
             </ul>

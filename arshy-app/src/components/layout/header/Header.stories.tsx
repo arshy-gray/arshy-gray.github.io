@@ -9,9 +9,12 @@ const meta = {
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
+    backgrounds: {
+      default: 'dark',
+    },
   },
   argTypes: {
-    isActiveIdx: { control: 'number'},
+    isActiveIdx: { control: 'number' },
   },
 } satisfies Meta<typeof Header>;
 

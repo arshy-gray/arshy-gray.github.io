@@ -1,4 +1,3 @@
-import { css } from 'styled-components';
 import { IStyle } from './style';
 
 //= function
@@ -12,18 +11,18 @@ export const img_url: string = process.env.PUBLIC_URL + '/assets/images';
 
 //= extend, mixin
 //== parallex
-export const ani_direction_init: any = css`
+export const ani_direction_init: string = `
   position: relative;
   animation: 0.7s ${ani_timing} both;
 `;
 
-export const natural_effect: any = css`
+export const natural_effect: string = `
   transition: 0.3s 0s ${ani_timing};
 `;
 
 //== box
-export const size = (width: string = '', height: string = width): any => {
-  return css`
+export const size = (width: string = '', height: string = width): string => {
+  return `
     width: ${width};
     height: ${height};
   `;
@@ -35,8 +34,8 @@ export const font = (
   font_size: string = '',
   line_height: string = '',
   color: string = '',
-): any => {
-  return css`
+): string => {
+  return `
     ${font_size && 'font-size:' + font_size};
     ${line_height && 'line-height:' + line_height};
     ${color && 'color:' + color};
@@ -44,29 +43,29 @@ export const font = (
 };
 
 // 높이 고정 문자 수직 중앙 정렬
-export const vt_m = (height: string, line_height: string = height): any => {
-  return css`
+export const vt_m = (height: string, line_height: string = height): string => {
+  return `
     ${height && `height:` + height};
     ${line_height && `line-height:` + line_height};
   `;
 };
 
 // 말줄임처리
-export const ellipsis = (count: number = 1): any => {
-  let ellipsis_st: any = ``;
+export const ellipsis = (count: number = 1): string => {
+  let ellipsis_st: string = ``;
 
   if (count === 1)
-    ellipsis_st = css`
+    ellipsis_st = `
       white-space: nowrap;
     `;
   else
-    ellipsis_st = css`
+    ellipsis_st = `
       display: -webkit-box;
       -webkit-line-clamp: ${count};
       -webkit-box-orient: vertical;
     `;
 
-  return css`
+  return `
     text-overflow: ellipsis;
     overflow: hidden;
     ${ellipsis_st}
@@ -74,7 +73,7 @@ export const ellipsis = (count: number = 1): any => {
 };
 
 //== layout
-export const blind: any = css`
+export const blind: string = `
   position: absolute;
   width: 1px;
   height: 1px;
@@ -86,7 +85,7 @@ export const blind: any = css`
   overflow: hidden;
 `;
 
-export const clearfix: any = css`
+export const clearfix: string = `
   &:before,
   &:after {
     content: '';
@@ -97,7 +96,7 @@ export const clearfix: any = css`
   }
 `;
 
-export const imgfix: any = css`
+export const imgfix: string = `
   display: inline-block;
   img {
     vertical-align: top;
@@ -110,8 +109,8 @@ export const position = (
   right?: string,
   bottom?: string,
   left?: string,
-): any => {
-  return css`
+): string => {
+  return `
     position: ${position};
     ${top && `top:` + top};
     ${right && `right:` + right};
@@ -121,13 +120,13 @@ export const position = (
 };
 
 // absolute 중앙 정렬
-export const absolute_center = (width: string = '', height: string = width): any => {
+export const absolute_center = (width: string = '', height: string = width): string => {
   const wid_num: number = Number(width.slice(0, -2));
   const wid_unit: string = width.slice(-2);
   const h_num: number = Number(height.slice(0, -2));
   const h_unit: string = width.slice(-2);
 
-  return css`
+  return `
     position: absolute;
     width: ${width};
     height: ${height};
@@ -152,21 +151,21 @@ export const flex = (
   hrzt_align: string = '',
   vtc_align: string = '',
   direction: string = '',
-): any => {
-  let align_st: any = ``;
+): string => {
+  let align_st: string = ``;
 
   if (direction === 'column' || direction === 'column-reverse')
-    align_st = css`
+    align_st = `
       align-items: ${hrzt_align};
       justify-content: ${vtc_align};
     `;
   else
-    align_st = css`
+    align_st = `
       align-items: ${vtc_align};
       justify-content: ${hrzt_align};
     `;
 
-  return css`
+  return `
     display: flex;
     flex-direction: ${direction};
     ${align_st}
@@ -182,29 +181,31 @@ export const flex = (
  * | direction (string) | x, y | x: 가로방향, y: 세로방향 |
  * | hide(boolean) || 스크롤바 숨김 여부 |
  */
-export const scroll = (direction: string = 'x', hide: boolean = false): any => {
-  let scroll_st: any = ``;
+export const scroll = (direction: string = 'x', hide: boolean = false): string => {
+  let scroll_st: string = ``;
 
   // 스크롤 방향에 따른 스타일
   if (direction === 'y')
-    scroll_st = css`
+    scroll_st = `
       overflow-x: hidden;
       overflow-y: auto;
     `;
   else
-    scroll_st = css`
+    scroll_st = `
       white-space: nowrap;
       overflow-y: hidden;
       overflow-x: auto;
     `;
 
-  return css`
+  return `
     ${scroll_st}
     ${
       hide &&
-      css`&::-webkit-scrollbar {
+      `
+      &::-webkit-scrollbar {
         display: none;
-      }`
+      }
+    `
     }
   `;
 };
@@ -216,75 +217,80 @@ export const scroll = (direction: string = 'x', hide: boolean = false): any => {
  * ---------------------
  * | props | value | description |
  * | :--- | :--- | :--- |
- * | pseudo (string) | before, after, both | both : before, after 둘 다 사용시 |
+ * | pseudo (string) | before, after, both, none | both : before, after 둘 다 사용시, none : 가상 클ㅐ스 없ㅣ pseudo_st 내용만 적용 |
  * | display(string) |||
  * | content(string) |||
  */
 export const pseudo_init = (
   pseudo: string = 'before',
   display: string = 'block',
-  content: string = '',
+  content: string = `''`,
   style?: string,
-): any => {
-  let pseudo_block: any = ``;
-  const pseudo_st: any = css`
+): string => {
+  let pseudo_block: string = ``;
+  const pseudo_st: string = `
     content: ${content};
     display: ${display};
     ${style && style}
   `;
 
   if (pseudo === 'both')
-    pseudo_block = css`
-      &:before, &:after{
+    pseudo_block = `
+      &:before,
+      &:after {
         ${pseudo_st}
       }
     `;
+  else if (pseudo === 'none')
+    pseudo_block = `
+      ${pseudo_st}
+    `;
   else
-    pseudo_block = css`
-    &:${pseudo} {
-       ${pseudo_st}
-    }
-  `;
+    pseudo_block = `
+      &:${pseudo} {
+        ${pseudo_st}
+      }
+    `;
 
   return pseudo_block;
 };
 
 // image sprite
-export const sprite_wid = (spriteImg : IStyle): any => {
-  return `width: ${spriteImg.width};`
-}
-export const sprite_h = (spriteImg: IStyle): any => {
-  return `height: ${spriteImg.height};`
-}
-export const sprite_size = (spriteImg: IStyle): any => {
+export const sprite_wid = (spriteImg: IStyle): string => {
+  return `width: ${spriteImg.width};`;
+};
+export const sprite_h = (spriteImg: IStyle): string => {
+  return `height: ${spriteImg.height};`;
+};
+export const sprite_size = (spriteImg: IStyle): string => {
   return `
   ${sprite_wid(spriteImg)}
   ${sprite_h(spriteImg)}
   `;
-}
-export const sprite_position = (spriteImg: IStyle): any => {
+};
+export const sprite_position = (spriteImg: IStyle): string => {
   return `
   background-position: ${spriteImg.bgPosition};
-  `
-}
-export const sprite_img = (spriteImg: IStyle): any => {
+  `;
+};
+export const sprite_img = (spriteImg: IStyle): string => {
   return `
-  background-image: url(${img_url}/contact/sprites/${spriteImg.bgImg});
+  background-image: url(${img_url}/sprites/${spriteImg.bgImg});
   background-repeat: no-repeat;
-  `
-}
-export const sprite = (spriteImg: IStyle): any => {
+  `;
+};
+export const sprite = (spriteImg: IStyle): string => {
   return `
   ${sprite_position(spriteImg)}
   ${sprite_size(spriteImg)}
   `;
-}
-export const imgsprite = (spriteImg: IStyle): any => {
+};
+export const imgsprite = (spriteImg: IStyle): string => {
   return `
   ${sprite_img(spriteImg)}
   ${sprite(spriteImg)}
   `;
-}
+};
 
 //== 미디어쿼리
 // 반응형
@@ -302,8 +308,8 @@ export const imgsprite = (spriteImg: IStyle): any => {
  * | mobile_low(string) | 399px |
  * | minimum(string) | 320px |
  */
-export const respond = (width: string, style: any): any => {
-  return css`
+export const respond = (width: string, style: string): string => {
+  return `
     @media screen and (max-width: ${width}) {
       ${style}
     }
@@ -313,23 +319,23 @@ export const respond = (width: string, style: any): any => {
 //== bugfix
 // 아이폰x 제스처 공간
 export const safe_area: IStyle = {
-  after: css`
-    &:after{
+  after: `
+    &:after {
       content: '';
       display: block;
       height: env(safe-area-inset-bottom);
     }
   `,
-  margin: css`
+  margin: `
     margin-bottom: env(safe-area-inset-bottom);
   `,
-  padding: css`
+  padding: `
     padding-bottom: env(safe-area-inset-bottom);
   `,
 };
 
 // 사파리 border-radius overflow 버그 수정
-export const backface: any = css`
+export const backface: any = `
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);

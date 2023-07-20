@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 import { ui } from '../../assets/style';
-import * as Sprite from './vendors/SpriteContact';
+import * as Sprite from '../../assets/img-sprite/vendors/SpriteContact';
 
 export const CssContact = (isAniActive?: boolean) => css`
   background-image: url(${ui.img_url}/contact/bg_contact_center.png),
