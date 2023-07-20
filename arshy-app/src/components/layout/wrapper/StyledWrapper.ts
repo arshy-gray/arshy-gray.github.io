@@ -24,7 +24,7 @@ export const StyledSkipNav = styled.nav`
 export const StyledWrapper = styled.div<StyledWrapperProps>`
   position: relative;
   z-index: 0;
-  ${ui.size('100%')}
+  width: 100%;
   min-width: 1400px;
   overflow: hidden;
   ${ui.natural_effect}
