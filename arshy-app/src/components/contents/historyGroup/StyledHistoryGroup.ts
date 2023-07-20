@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { ui } from '../../../assets/style';
-import * as Sprite from '../../../assets/img-sprite/vendors/SpriteHistory';
+import * as SpriteHistory from '../../../assets/img-sprite/vendors/SpriteHistory';
 
 export interface StyledHistoryGroupProps {
   $isAniActiveHistory?: boolean;
@@ -84,15 +84,15 @@ export const StyledHistoryGroup = styled.ul<StyledHistoryGroupProps>`
       `}
     // 학업
     &.history_edu .history_ico {
-      ${ui.imgsprite(Sprite.ico_history_edu)}
+      ${ui.imgsprite(SpriteHistory.ico_history_edu)}
     }
     // 자격증
     &.history_license .history_ico {
-      ${ui.imgsprite(Sprite.ico_history_license)};
+      ${ui.imgsprite(SpriteHistory.ico_history_license)};
     }
     // 근무경력
     &.history_company .history_ico {
-      ${ui.imgsprite(Sprite.ico_history_company)};
+      ${ui.imgsprite(SpriteHistory.ico_history_company)};
     }
     // 리스트 포인트 요소
     .history_point {

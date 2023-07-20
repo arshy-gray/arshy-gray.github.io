@@ -25,9 +25,6 @@ body {
   word-break: keep-all;
   -webkit-animation: bugfix infinite 1s; /* 안드로이드 라디오 checked 안되는 버그 */
 }
-#root{
-  height: 100%;
-}
 body,
 p,
 ul,

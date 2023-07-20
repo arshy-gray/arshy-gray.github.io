@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 import { ui } from '../../assets/style';
-import * as Sprite from '../../assets/img-sprite/vendors/SpriteContact';
+import * as SpriteContact from '../../assets/img-sprite/vendors/SpriteContact';
 
 export const CssContact = (isAniActive?: boolean) => css`
   background-image: url(${ui.img_url}/contact/bg_contact_center.png),
@@ -21,14 +21,14 @@ export const CssContact = (isAniActive?: boolean) => css`
       top: calc(50% - 489px);
       left: calc(50% - 627px);
       animation: ${ui.shake} 3s ease-in-out infinite;
-      ${ui.imgsprite(Sprite.bg_contact_flower_left)};
+      ${ui.imgsprite(SpriteContact.bg_contact_flower_left)};
     }
     // 하단 꽃
     &.el_flower_right {
       top: calc(50% - 12px);
       left: calc(50% + 466px);
       animation: ${ui.shake} 3s ease-in-out 1.5s infinite;
-      ${ui.imgsprite(Sprite.bg_contact_flower_right)};
+      ${ui.imgsprite(SpriteContact.bg_contact_flower_right)};
     }
     // 나비
     &.el_butterfly {
@@ -36,7 +36,7 @@ export const CssContact = (isAniActive?: boolean) => css`
       left: calc(50% + 50px);
       animation: ${ui.nabi} 4s ease-in-out infinite;
       transform-origin: 38px 107px;
-      ${ui.imgsprite(Sprite.bg_contact_butterfly)};
+      ${ui.imgsprite(SpriteContact.bg_contact_butterfly)};
     }
   }
   // 연락처 그룹

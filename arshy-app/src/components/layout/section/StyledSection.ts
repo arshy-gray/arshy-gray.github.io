@@ -2,28 +2,30 @@ import styled, { css } from 'styled-components';
 import { ui } from '../../../assets/style';
 import { rgba } from 'polished';
 import { CssIntro } from '../../../templates/intro/StyledIntro';
-import { CssContact } from '../../../templates/contact//StyledContact';
+import { CssContact } from '../../../templates/contact/StyledContact';
+import { CssHistory, StyledHistoryProps } from '../../../templates/history/StyledHistory';
 
-interface SyledSectionProps {
+interface SyledSectionProps extends StyledHistoryProps {
   $pageName: string;
   $isFullpage?: boolean;
   $isAniActive?: boolean;
   $isSectionTitle?: boolean;
 }
 
-const StyleBySection = (sectionName: string, isAniActive?: boolean) => {
+const StyleBySection = (
+  sectionName: string,
+  isAniActive?: boolean,
+  footPrintLen?: number,
+) => {
   switch (sectionName) {
     case 'intro':
       return CssIntro(isAniActive);
-    
     // case 'project':
     //   return CssProject(isAniActive);
-    
-    // case 'history':
-    //   return CssHistory(isAniActive);
+    case 'history':
+      return CssHistory(isAniActive, footPrintLen);
     case 'contact':
       return CssContact(isAniActive);
-
     default:
       return false;
   }
@@ -111,5 +113,5 @@ export const StyledSection = styled.section<SyledSectionProps>`
     }
   }
 
-  ${(props) => StyleBySection(props.$pageName, props.$isAniActive)}
+  ${(props) => StyleBySection(props.$pageName, props.$isAniActive, props.$footPrintLen)}
 `;
