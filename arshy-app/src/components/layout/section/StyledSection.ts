@@ -3,9 +3,8 @@ import { ui } from '../../../assets/style';
 import { rgba } from 'polished';
 import { CssIntro } from '../../../templates/intro/StyledIntro';
 import { CssContact } from '../../../templates/contact/StyledContact';
-import { CssHistory, StyledHistoryProps } from '../../../templates/history/StyledHistory';
 
-interface SyledSectionProps extends StyledHistoryProps {
+interface SyledSectionProps {
   $pageName: string;
   $isFullpage?: boolean;
   $isAniActive?: boolean;
@@ -15,15 +14,10 @@ interface SyledSectionProps extends StyledHistoryProps {
 const StyleBySection = (
   sectionName: string,
   isAniActive?: boolean,
-  footPrintLen?: number,
 ) => {
   switch (sectionName) {
     case 'intro':
       return CssIntro(isAniActive);
-    // case 'project':
-    //   return CssProject(isAniActive);
-    case 'history':
-      return CssHistory(isAniActive, footPrintLen);
     case 'contact':
       return CssContact(isAniActive);
     default:
@@ -113,5 +107,5 @@ export const StyledSection = styled.section<SyledSectionProps>`
     }
   }
 
-  ${(props) => StyleBySection(props.$pageName, props.$isAniActive, props.$footPrintLen)}
+  ${(props) => StyleBySection(props.$pageName, props.$isAniActive)}
 `;

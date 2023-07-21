@@ -1,9 +1,11 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ui } from '../../assets/style';
 import * as SpriteHistory from '../../assets/img-sprite/vendors/SpriteHistory';
+import Section from '../../components/layout/section/Section';
 
 export interface StyledHistoryProps {
-  $footPrintLen?: number;
+  $isAniActive?: boolean;
+  $footPrintLen: number;
 }
 
 // 섹션 활성화시 상단 발자국 요소 parallex
@@ -23,10 +25,7 @@ const ParallexFootPrintCss = (itemNAme: string, itemLen: number | 5) => {
   return cssRules;
 };
 
-export const CssHistory = (
-  isAniActive?: boolean,
-  footPrintLen?: number,
-) => css`
+export const StyledHistory = styled(Section)<StyledHistoryProps>`
   background-image: url(${ui.img_url}/history/bg_history_left.png),
     url(${ui.img_url}/history/bg_history_right.png), url(${ui.img_url}/history/bg_history_back.png),
     url(${ui.img_url}/history/bg_history_back.png);
@@ -48,14 +47,15 @@ export const CssHistory = (
     }
 
     // 섹션 활성화
-    ${isAniActive &&
-    css`
-      // 배경요소
-      // 사람
-      &.el_person {
-        animation: ${ui.show} 2s ${ui.ani_timing} 8s forwards;
-      }
-    `}
+    ${(props) =>
+      props.$isAniActive &&
+      css`
+        // 배경요소
+        // 사람
+        &.el_person {
+          animation: ${ui.show} 2s ${ui.ani_timing} 8s forwards;
+        }
+      `}
   }
 
   // parallex images
@@ -64,10 +64,11 @@ export const CssHistory = (
       opacity: 0;
       ${ui.imgsprite(SpriteHistory.bg_history_footprint)};
 
-      ${isAniActive &&
-      css`
-        animation: ${ui.show} 0.7s ${ui.ani_timing} forwards;
-      `}
+      ${(props) =>
+        props.$isAniActive &&
+        css`
+          animation: ${ui.show} 0.7s ${ui.ani_timing} forwards;
+        `}
     }
   }
   // 상단 발자국 요소
@@ -99,7 +100,8 @@ export const CssHistory = (
       left: 20px;
       transform: rotate(60deg);
     }
-    ${isAniActive && ParallexFootPrintCss('top', footPrintLen || 5)}
+
+    ${(props) => props.$isAniActive && ParallexFootPrintCss('top', props.$footPrintLen || 5)}
   }
 
   // 하단 발자국 요소
@@ -132,7 +134,7 @@ export const CssHistory = (
     }
 
     // 섹션 활성화
-    ${isAniActive && ParallexFootPrintCss('bottom', footPrintLen || 5)}
+    ${(props) => props.$isAniActive && ParallexFootPrintCss('bottom', props.$footPrintLen || 5)}
   }
   ${ui.respond(
     ui.break_points.tablet,
