@@ -1,9 +1,10 @@
 import React, { forwardRef } from 'react';
-import { ExportSectionProps } from '../../components/layout/section/Section';
 import HistoryGroup from '../../components/contents/historyGroup/HistoryGroup';
 import { StyledHistory } from './StyledHistory';
 
-interface HistoryProps extends ExportSectionProps {}
+interface HistoryProps {
+  isAniActive?: boolean;
+}
 
 /**
  * ## [Storybook](http://localhost:6006/?path=/story/templates-history--history)

@@ -1,11 +1,8 @@
 import React, { forwardRef } from 'react';
 import { StyledSection } from './StyledSection';
 
-export interface ExportSectionProps {
+interface SectionProps {
   isAniActive?: boolean;
-}
-
-interface SectionProps extends ExportSectionProps {
   pageName: string;
   isFullpage?: boolean;
   isSectionTitle?: boolean;
@@ -39,9 +36,9 @@ interface SectionProps extends ExportSectionProps {
 const Section = forwardRef<HTMLElement, SectionProps>(
   (
     {
+      isAniActive,
       pageName,
       isFullpage,
-      isAniActive,
       isSectionTitle,
       SectionDesc,
       bgElement,

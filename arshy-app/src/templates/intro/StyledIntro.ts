@@ -1,8 +1,13 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ui } from '../../assets/style';
 import { rgba } from 'polished';
+import Section from '../../components/layout/section/Section';
 
-export const CssIntro = (isAniActive?: boolean) => css`
+export interface StyledContactProps {
+  $isAniActive?: boolean;
+}
+
+export const StyledIntro = styled(Section)<StyledContactProps>`
   background-repeat: no-repeat;
   background-image: url(${ui.img_url}/intro/bg_intro_moon.png),
     url(${ui.img_url}/intro/bg_intro_back.jpg); // 달, 야경
@@ -82,7 +87,7 @@ export const CssIntro = (isAniActive?: boolean) => css`
     }
   }
   // 섹션 활성화
-  ${isAniActive &&
+  ${(props) => props.isAniActive &&
   css`
     .name img {
       animation-name: ${ui.fromL};

@@ -1,8 +1,10 @@
 import React, { forwardRef } from 'react';
-import Section, { ExportSectionProps } from '../../components/layout/section/Section';
+import { StyledContact } from './StyledContact';
 import ContactGroup from '../../components/contents/contactGroup/ContactGroup';
 
-export interface ContactProps extends ExportSectionProps {}
+export interface ContactProps {
+  isAniActive?: boolean;
+}
 
 /**
  * ## [Storybook](http://arshy-gray.github.io/?path=/story/templates-contact--contact)
@@ -18,7 +20,7 @@ export interface ContactProps extends ExportSectionProps {}
 
 const Intro = forwardRef<HTMLDivElement, ContactProps>(({ isAniActive, ...rest }, ref) => {
   return (
-    <Section
+    <StyledContact
       pageName="contact"
       isFullpage
       isAniActive={isAniActive}
@@ -36,7 +38,7 @@ const Intro = forwardRef<HTMLDivElement, ContactProps>(({ isAniActive, ...rest }
       {...rest}
     >
       <ContactGroup />
-    </Section>
+    </StyledContact>
   );
 });
 

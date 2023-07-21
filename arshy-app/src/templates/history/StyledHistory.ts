@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { ui } from '../../assets/style';
-import * as SpriteHistory from '../../assets/img-sprite/vendors/SpriteHistory';
 import Section from '../../components/layout/section/Section';
+import * as SpriteHistory from '../../assets/img-sprite/vendors/SpriteHistory';
 
 export interface StyledHistoryProps {
   $isAniActive?: boolean;
