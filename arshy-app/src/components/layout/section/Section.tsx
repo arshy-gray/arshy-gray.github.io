@@ -1,12 +1,8 @@
 import React, { forwardRef } from 'react';
 import { StyledSection } from './StyledSection';
-import { ExportHistoryProps } from '../../../templates/history/History'
 
-export interface ExportSectionProps {
+interface SectionProps {
   isAniActive?: boolean;
-}
-
-interface SectionProps extends ExportSectionProps, ExportHistoryProps {
   pageName: string;
   isFullpage?: boolean;
   isSectionTitle?: boolean;
@@ -40,16 +36,15 @@ interface SectionProps extends ExportSectionProps, ExportHistoryProps {
 const Section = forwardRef<HTMLElement, SectionProps>(
   (
     {
+      isAniActive,
       pageName,
       isFullpage,
-      isAniActive,
       isSectionTitle,
       SectionDesc,
       bgElement,
       articleTitle,
       isFooter,
       children,
-      footPrintLen,
       ...rest
     },
     ref,
@@ -61,7 +56,6 @@ const Section = forwardRef<HTMLElement, SectionProps>(
         $isFullpage={isFullpage || false}
         $isAniActive={isAniActive || false}
         $isSectionTitle={isSectionTitle || false}
-        $footPrintLen={footPrintLen || 5}
         ref={ref}
         {...rest}
       >

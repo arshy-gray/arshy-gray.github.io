@@ -1,8 +1,10 @@
 import React, { forwardRef } from 'react';
-import Section, { ExportSectionProps } from '../../components/layout/section/Section';
+import { StyledIntro } from './StyledIntro';
 import ContactGroup from '../../components/contents/contactGroup/ContactGroup';
 
-export interface IntroProps extends ExportSectionProps {}
+export interface IntroProps {
+  isAniActive?: boolean;
+}
 
 /**
  * ## [Storybook](http://arshy-gray.github.io/?path=/story/templates-intro--intro)
@@ -18,7 +20,7 @@ export interface IntroProps extends ExportSectionProps {}
 
 const Intro = forwardRef<HTMLDivElement, IntroProps>(({ isAniActive, ...rest }, ref) => {
   return (
-    <Section
+    <StyledIntro
       pageName="intro"
       isFullpage
       isAniActive={isAniActive}
@@ -26,7 +28,7 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>(({ isAniActive, ...rest }, 
       {...rest}
     >
       <ContactGroup />
-    </Section>
+    </StyledIntro>
   );
 });
 

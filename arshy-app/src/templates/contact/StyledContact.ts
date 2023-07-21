@@ -1,8 +1,13 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ui } from '../../assets/style';
+import Section from '../../components/layout/section/Section';
 import * as SpriteContact from '../../assets/img-sprite/vendors/SpriteContact';
 
-export const CssContact = (isAniActive?: boolean) => css`
+export interface StyledContactProps {
+  $isAniActive?: boolean;
+}
+
+export const StyledContact = styled(Section)<StyledContactProps>`
   background-image: url(${ui.img_url}/contact/bg_contact_center.png),
     url(${ui.img_url}/contact/bg_contact_back2.png), url(${ui.img_url}/contact/bg_contact_back2.png),
     url(${ui.img_url}/contact/bg_contact_back.jpg);
@@ -103,7 +108,7 @@ export const CssContact = (isAniActive?: boolean) => css`
     }
   }
   // 섹션 활성화
-  ${isAniActive &&
+  ${(props) => props.isAniActive &&
   css`
     .name a {
       animation-name: ${ui.fromL};
