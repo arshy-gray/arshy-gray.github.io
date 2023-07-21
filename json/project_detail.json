@@ -173,7 +173,7 @@
     },
     "task_environment": "Gulp, yarn, Git, Jenkins",
     "language": "HTML, CSS(SCSS), JavaScript(jQuery)",
-    "link": "https://mw.wemakeprice.com/product/2125995753",
+    "link": "https://mw.wemakeprice.com/main",
     "linkTitle": "모바일 환경에서 로그인 후 확인 가능, 상품상세 > 상품옵션 선택 > 구매하기 > 주문/결제페이지",
     "work": {
       "scope": [
