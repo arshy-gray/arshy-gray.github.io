@@ -16,7 +16,7 @@ $ gulp server
 ```
 
 ## Release
-### [2023년] - 고도화 진행중
+### [2023년] - React 변환중 // develop-react 브랜치 > arshy-app 폴더 (https://github.com/arshy-gray/arshy-gray.github.io/tree/develop-react/arshy-app)
 1. Gulp 셋팅 및 SCSS 변환
    * 로컬 서버, reload 환경 구축
    * css -> SCSS 변환 및 파일&폴더 구조 변경
