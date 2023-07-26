@@ -19,7 +19,6 @@ interface HistoryProps {
  */
 
 const History = forwardRef<HTMLDivElement, HistoryProps>(({ isAniActive, ...rest }, ref) => {
-  const footPrintLen = 5; // 발자국 요소 개수(모션 dealy에 사용)
   const footPrintEl = (footPrintMax: number) => {
     const elements = [];
     for (let i = 1; i <= footPrintMax; i++) {
@@ -33,13 +32,13 @@ const History = forwardRef<HTMLDivElement, HistoryProps>(({ isAniActive, ...rest
       pageName="history"
       isAniActive={isAniActive}
       $isAniActive={isAniActive}
-      $footPrintLen={footPrintLen}
+      $footPrintLen={footPrintEl(5).length}
       isSectionTitle
       SectionDesc="웹분야 관련 학업 ・ 자격증 ・ 근무 경력입니다."
       bgElement={
         <>
-          <div className="el_foot_print_top">{footPrintEl(footPrintLen)}</div>
-          <div className="el_foot_print_btm">{footPrintEl(footPrintLen)}</div>
+          <div className="el_foot_print_top">{footPrintEl(5)}</div>
+          <div className="el_foot_print_btm">{footPrintEl(5)}</div>
           <span className="el_person"></span>
         </>
       }

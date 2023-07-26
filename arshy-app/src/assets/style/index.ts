@@ -3,6 +3,7 @@ import * as Typography from './typography';
 import * as Keyframes from './keyframes';
 import * as Global from './global';
 import * as Layout from './layout';
+import * as Form from './form';
 
 export const ui = {
   ...Colors,
@@ -10,4 +11,5 @@ export const ui = {
   ...Keyframes,
   ...Global,
   ...Layout,
+  ...Form,
 };

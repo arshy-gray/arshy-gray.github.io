@@ -224,8 +224,8 @@ export const scroll = (direction: string = 'x', hide: boolean = false): string =
 export const pseudo_init = (
   pseudo: string = 'before',
   display: string = 'block',
-  content: string = `''`,
   style?: string,
+  content: string = `''`,
 ): string => {
   let pseudo_block: string = ``;
   const pseudo_st: string = `
