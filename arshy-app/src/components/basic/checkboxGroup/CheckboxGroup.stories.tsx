@@ -13,7 +13,7 @@ const meta = {
     },
   },
   argTypes: {
-    itemType: { control: 'text' },
+    itemType: { ptions: ['default'], control: { type: 'select' } },
     legend: { control: 'text' },
     name: { control: 'text' },
     className: { control: 'text' },
@@ -47,17 +47,16 @@ const chkItems3: ChkItemProps[] = [
 export const CheckboxGroup_: Story = {
   args: {
     itemType: 'default',
-    legend: '운영중인 사이트',
-    name: 'linked',
-    className: 'filter-group st_checked filter-type-linked filter-chk',
+    legend: '운영중인 사이트',    
+    className: 'filter-group filter-type-linked filter-chk',
     isAniActive: true,
   },
   render: ({ ...args }) => {
     return (
       <>
-        <CheckboxGroup {...args} chkItems={chkItems} />
-        <CheckboxGroup {...args} chkItems={chkItems2} />
-        <CheckboxGroup {...args} chkItems={chkItems3} />
+        <CheckboxGroup {...args} name="linked" chkItems={chkItems} />
+        <CheckboxGroup {...args} name="linked2" chkItems={chkItems2} />
+        <CheckboxGroup {...args} name="linked3" chkItems={chkItems3} />
       </>
     );
   },

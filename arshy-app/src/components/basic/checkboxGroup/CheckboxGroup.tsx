@@ -26,12 +26,12 @@ export interface CheckboxProps {
  * ---------------------
  *
  * | props | type | value | description |
- * | :--- | :--- | :--- |
+ * | :--- | :--- | :--- | :--- |
  * | * itemType | string | default | checkbox 종류 |
  * | * legend | string |  | fieldset 설명 |
  * | * name | string |  | label의 name 속성 |
  * | * className | string |  | fieldset 클래스명 |
- * | * children | [string, string | number] |  | checkbox 리스트 [label, value] |
+ * | * children | [string, string or number] |  | checkbox 리스트 [label, value] |
  * | isAniActive | boolean |  | 애니메이션 활성화 여부 |
  * | checkedVal | string[] |  | checked 처리된 input의 value 값 리스트 |
  * | disabledVal | string[] |  | disabled 처리된 input의 value 값 리스트 |
@@ -80,7 +80,7 @@ const CheckboxGroup = forwardRef<HTMLFieldSetElement, CheckboxProps>(
       <StyledChkGruop
         $itemLen={ChkItems.length}
         $isAniActive={isAniActive}
-        className={className}
+        className={[className, 'st_' + itemType].join(' ')}
         ref={ref}
         {...rest}
       >
