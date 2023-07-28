@@ -3,7 +3,7 @@ import { ui } from '../../../assets/style';
 import * as SpriteHistory from '../../../assets/img-sprite/vendors/SpriteHistory';
 
 export interface StyledHistoryGroupProps {
-  $isAniActiveHistory?: boolean;
+  $isAniActive?: boolean;
   $historyItemLen: number;
 }
 
@@ -75,7 +75,7 @@ export const StyledHistoryGroup = styled.ul<StyledHistoryGroupProps>`
     }
     // 섹션 활성화
     ${(props) =>
-      props.$isAniActiveHistory &&
+      props.$isAniActive &&
       css`
         .history_ico {
           animation: ${ui.rotationY} 0.5s ease-in-out forwards;

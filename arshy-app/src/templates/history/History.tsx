@@ -46,7 +46,7 @@ const History = forwardRef<HTMLDivElement, HistoryProps>(({ isAniActive, ...rest
       ref={ref}
       {...rest}
     >
-      <HistoryGroup isAniActiveHistory={isAniActive} />
+      <HistoryGroup isAniActive={isAniActive} />
     </StyledHistory>
   );
 });

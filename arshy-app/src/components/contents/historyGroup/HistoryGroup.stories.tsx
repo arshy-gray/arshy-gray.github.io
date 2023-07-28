@@ -11,7 +11,7 @@ const meta = {
     layout: 'fullscreen',
   },
   argTypes: {
-    isAniActiveHistory: { control: 'boolean' },
+    isAniActive: { control: 'boolean' },
   },
 } satisfies Meta<typeof HistoryGroup>;
 
@@ -20,6 +20,6 @@ type Story = StoryObj<typeof HistoryGroup>;
 
 export const HistoryGroup_: Story = {
   args: {
-    isAniActiveHistory: true,
+    isAniActive: true,
   },
 };
