@@ -13,7 +13,7 @@ const meta = {
     },
   },
   argTypes: {
-    itemType: { ptions: ['default'], control: { type: 'select' } },
+    itemType: { options: ['default'], control: { type: 'select' } },
     legend: { control: 'text' },
     name: { control: 'text' },
     className: { control: 'text' },
