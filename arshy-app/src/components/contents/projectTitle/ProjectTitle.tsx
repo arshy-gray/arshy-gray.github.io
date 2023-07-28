@@ -18,8 +18,8 @@ export interface ProjectTitleProps extends ExportProjectTitleProps {
  *
  * | props | type | value | description |
  * | :--- | :--- | :--- | :--- |
- * | titleType | 'thumbList', 'popup' | - | 타이틀 타입 |
- * | title | string | - | 프로젝트 타이틀 |
+ * | * titleType | 'thumbList', 'popup' | - | 타이틀 타입 |
+ * | * title | string | - | 프로젝트 타이틀 |
  * | summary | string | - | 프로젝트 개요 |
  */
 
