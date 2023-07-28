@@ -10,15 +10,21 @@ import './index.css';
 // import Contact from './templates/contact/Contact';
 // import ContactGroup from './components/contents/contactGroup/ContactGroup';
 // import HistoryGroup from './components/contents/historyGroup/HistoryGroup';
-import CheckboxGroup, { ChkItemProps } from 'components/basic/checkboxGroup/CheckboxGroup';
+import CheckboxGroup, { ChkItemProps } from './components/basic/checkboxGroup/CheckboxGroup';
+import RadioGroup, { RadioItemProps } from './components/basic/radioGroup/RadioGroup';
 // import { ui } from 'assets/style';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
-const chkItems: ChkItemProps[] = [
+const radioItems: ChkItemProps[] = [
   { label: 'one', value: 'one' },
   { label: 'two', value: 'two' },
   { label: 'three', value: 'three' },
+];
+const chkItems: ChkItemProps[] = [
+  { label: 'one1', value: 'one1' },
+  { label: 'two1', value: 'two1' },
+  { label: 'three1', value: 'three1' },
 ];
 
 root.render(
@@ -28,13 +34,21 @@ root.render(
       <Intro isAniActive></Intro>
     </Wrapper> */}
     <div style={{ background: '#01d3ce' }}>
-      <CheckboxGroup
-        itemType="default"
+      <RadioGroup
+        itemType="button"
         legend="운영중인 사이트"
         name="linked"
-        className="filter-group st_checked filter-type-linked filter-chk"
+        className="filter-group filter-type-linked filter-chk"
         isAniActive
-        chkItems={chkItems}
+        radioItems={radioItems}
+      />
+      <RadioGroup
+        itemType="default"
+        legend="운영중인 사이트"
+        name="linked2"
+        className="filter-group filter-type-linked filter-chk"
+        isAniActive
+        radioItems={chkItems}
       />
     </div>
   </React.StrictMode>,

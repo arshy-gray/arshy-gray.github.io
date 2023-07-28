@@ -31,7 +31,7 @@ export const StyledChkGruop = styled.fieldset<StyledChkGroupProps>`
   label {
     ${(props) =>
       css`
-        ${ui.chkComn(props.$isAniActive || false)};
+        ${ui.chkRadioComn(props.$isAniActive || false)};
       `}
 
     display: block;
@@ -46,7 +46,11 @@ export const StyledChkGruop = styled.fieldset<StyledChkGroupProps>`
     }
 
     &[class*='default'] {
-      ${ui.dftChkComn(ui.color.theme.project_sub, ui.color.dft.brightest, ui.color.dft.brightest)}
+      ${ui.dftChkRadioComn(
+        ui.color.theme.project_sub,
+        ui.color.dft.brightest,
+        ui.color.dft.brightest,
+      )}
     }
 
     ${(props) => ParallexChkItemCss(props.$itemLen)}
