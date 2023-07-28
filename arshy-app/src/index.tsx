@@ -10,22 +10,12 @@ import './index.css';
 // import Contact from './templates/contact/Contact';
 // import ContactGroup from './components/contents/contactGroup/ContactGroup';
 // import HistoryGroup from './components/contents/historyGroup/HistoryGroup';
-import CheckboxGroup, { ChkItemProps } from './components/basic/checkboxGroup/CheckboxGroup';
-import RadioGroup, { RadioItemProps } from './components/basic/radioGroup/RadioGroup';
+import ProjectTitle from './components/contents/projectTitle/ProjectTitle';
+// import CheckboxGroup, { ChkItemProps } from './components/basic/checkboxGroup/CheckboxGroup';
+// import RadioGroup, { RadioItemProps } from './components/basic/radioGroup/RadioGroup';
 // import { ui } from 'assets/style';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-
-const radioItems: ChkItemProps[] = [
-  { label: 'one', value: 'one' },
-  { label: 'two', value: 'two' },
-  { label: 'three', value: 'three' },
-];
-const chkItems: ChkItemProps[] = [
-  { label: 'one1', value: 'one1' },
-  { label: 'two1', value: 'two1' },
-  { label: 'three1', value: 'three1' },
-];
 
 root.render(
   <React.StrictMode>
@@ -33,24 +23,18 @@ root.render(
       <Header />
       <Intro isAniActive></Intro>
     </Wrapper> */}
-    <div style={{ background: '#01d3ce' }}>
-      <RadioGroup
-        itemType="button"
-        legend="운영중인 사이트"
-        name="linked"
-        className="filter-group filter-type-linked filter-chk"
-        isAniActive
-        radioItems={radioItems}
+    {/* <div style={{ background: '#01d3ce' }}> */}
+      <ProjectTitle
+        titleType="thumb"
+        title="프로젝트 썸네일 타이틀"
+        summary="프로젝트 썸네일 개요를 입력하세요"
       />
-      <RadioGroup
-        itemType="default"
-        legend="운영중인 사이트"
-        name="linked2"
-        className="filter-group filter-type-linked filter-chk"
-        isAniActive
-        radioItems={chkItems}
+      <ProjectTitle
+        titleType="popup"
+        title="프로젝트 팝업 타이틀"
+        summary="프로젝트 팝업 개요를 입력하세요"
       />
-    </div>
+    {/* </div> */}
   </React.StrictMode>,
 );
 
