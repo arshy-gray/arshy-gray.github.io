@@ -58,7 +58,6 @@ const RadioGroup = forwardRef<HTMLFieldSetElement, RadioboxProps>(
     const [isChecked, setIsChecked] = useState<string>(checkedVal || '');
     const [isDisabled, setIsDisabled] = useState<string[]>(disabledVal || []);
 
-
      const handleItemChecked: React.ChangeEventHandler<HTMLInputElement> = (e) => {
        const { value } = e.target;
        setIsChecked(value);

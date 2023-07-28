@@ -13,7 +13,7 @@ const meta = {
     },
   },
   argTypes: {
-    itemType: { ptions: ['default', 'button'], control: { type: 'select' } },
+    itemType: { options: ['default', 'button'], control: { type: 'select' } },
     legend: { control: 'text' },
     name: { control: 'text' },
     className: { control: 'text' },
@@ -44,19 +44,37 @@ const radioItems3: RadioItemProps[] = [
   { label: 'three3', value: 'three3' },
 ];
 
-export const RadioGroup_: Story = {
+export const Default: Story = {
   args: {
     itemType: 'default',
     legend: '운영중인 사이트',
-    className: 'filter-group st_checked filter-type-linked filter-chk',
+    className: 'filter-group filter-type-linked filter-chk',
     isAniActive: true,
   },
   render: ({ ...args }) => {
     return (
       <>
-        <RadioGruop {...args} itemType="button" name="linked" radioItems={radioItems} />
-        <RadioGruop {...args} itemType="default" name="linked2" radioItems={radioItems2} />
-        <RadioGruop {...args} itemType="default" name="linked3" radioItems={radioItems3} />
+        <RadioGruop {...args} name="linked" radioItems={radioItems} />
+        <RadioGruop {...args} name="linked2" radioItems={radioItems2} />
+        <RadioGruop {...args} name="linked3" radioItems={radioItems3} />
+      </>
+    );
+  },
+};
+
+export const Button: Story = {
+  args: {
+    itemType: 'button',
+    legend: '운영중인 사이트',
+    className: 'filter-group filter-type-linked filter-chk',
+    isAniActive: true,
+  },
+  render: ({ ...args }) => {
+    return (
+      <>
+        <RadioGruop {...args} name="linked" radioItems={radioItems} />
+        <RadioGruop {...args} name="linked2" radioItems={radioItems2} />
+        <RadioGruop {...args} name="linked3" radioItems={radioItems3} />
       </>
     );
   },
