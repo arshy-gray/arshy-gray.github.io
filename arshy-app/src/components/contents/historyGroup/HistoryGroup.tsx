@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import { StyledHistoryGroup } from './StyledHistoryGroup';
 
 export interface HistoryGroupProps {
-  isAniActiveHistory?: boolean;
+  isAniActive?: boolean;
 }
 
 interface HistoyItemsProps {
@@ -22,11 +22,11 @@ interface HistoyItemsProps {
  *
  * | props | value | description |
  * | :--- | :--- | :--- |
- * | isAniActiveHistory (boolen) |  | history 섹션 애니메이션 활성화 여부 |
+ * | isAniActive (boolen) |  | history 섹션 애니메이션 활성화 여부 |
  */
 
 const HistoryGroup = forwardRef<HTMLUListElement, HistoryGroupProps>(
-  ({ isAniActiveHistory, ...rest }, ref) => {
+  ({ isAniActive, ...rest }, ref) => {
     const HistoryItems: HistoyItemsProps[] = [
       {
         type: 'edu',
@@ -77,7 +77,7 @@ const HistoryGroup = forwardRef<HTMLUListElement, HistoryGroupProps>(
     return (
       <StyledHistoryGroup
         className="history_group"
-        $isAniActiveHistory={isAniActiveHistory}
+        $isAniActive={isAniActive}
         $historyItemLen={historyItemLen}
         ref={ref}
         {...rest}
