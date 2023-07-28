@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-// import '../../../index.css';
+import '../../../index.css';
 
 import CheckboxGroup, { ChkItemProps } from './CheckboxGroup';
 const meta = {
