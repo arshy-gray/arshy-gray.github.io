@@ -5,7 +5,7 @@ import { ui } from './index';
 //= form
 export const fieldsetComn = (isAniActive: boolean): any => css`
   flex-wrap: wrap;
-  ~ &:not(:first-of-type) {
+  &:not(:first-of-type) {
     margin-top: 15px;
   }
   // 1차 필터
@@ -13,7 +13,7 @@ export const fieldsetComn = (isAniActive: boolean): any => css`
     ${ui.flex('center', 'center')}
   }
   // 1차 필터 외
-  &[class*='st_checked'] {
+  &[class*='st_default'] {
     ${ui.flex('', 'center')}
     max-width: 1024px;
     margin-left: auto;
@@ -43,7 +43,7 @@ export const fieldsetComn = (isAniActive: boolean): any => css`
   )}
 `;
 
-export const chkComn: any = (isAniActive: boolean): any => css`
+export const chkRadioComn: any = (isAniActive: boolean): any => css`
   margin: 4px 0;
   text-align: center;
   ${ui.ani_direction_init}
@@ -94,8 +94,7 @@ export const chkComn: any = (isAniActive: boolean): any => css`
   )}
 `;
 
-export const dftChkComn = (dftBdColor: string, chkBdColor: string, chkBgColor: string): any => css`
-
+export const dftChkRadioComn = (dftBdColor: string, chkBdColor: string, chkBgColor: string): any => css`
   &:not(:last-of-type) {
     margin-right: 25px;
   }
