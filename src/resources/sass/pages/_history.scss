@@ -111,7 +111,7 @@
   #history.active & {
     @for $idx from 1 through 5 {
       .el0#{$idx} {
-        animation-delay: $idx * 0.5s + 5.5s;
+        animation-delay: $idx * 0.5s + 6s;
       }
     }
   }
@@ -160,7 +160,7 @@
       .hist_ico {
         animation: rotationY 0.5s ease-in-out forwards;
       }
-      @for $idx from 1 through 7 {
+      @for $idx from 1 through 8 {
         &:nth-child(#{$idx}) .hist_ico {
           animation-delay: $idx * 0.5s + 2s;
         }
