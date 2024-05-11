@@ -1,5 +1,89 @@
 [
   {
+    "title": "롯데ON · UI컨벤션 플랫폼",
+    "intro": "롯데ON UI개발 가이드 공유 플랫품",
+    "company": "L-ON",
+    "device": "PC",
+    "business": "INFOMATION",
+    "browser": {
+      "chrome": true
+    },
+    "member": "3명 (UI&FE1 · BE2)",
+    "main_role": "사이트 구축",
+    "part": "UI/UX개발 및 사이트 전반 100%",
+    "period": "2023.11 ~ 2024.01",
+    "images": {
+      "thumb": "img/dft/project/thumb/pfImg031.jpg",
+      "detail": "img/dft/project/details/pf_detailImg031.jpg"
+    },
+    "task_environment": "Git, Jenkins",
+    "language": "HTML · CSS(SCSS) · JavaScript",
+    "work": {
+      "scope": [
+        {
+          "main_tit": ["UI 컨벤션"],
+          "sub_tit": [""],
+          "ol": [
+            [
+              "HTML",
+              "CSS",
+              "SASS",
+              "Javascript(jQuery)",
+              "Vue",
+              "Setting",
+              "Debugging",
+              "웹접근성 검사도구",
+              "성능최적화",
+              "이미지"
+            ]
+          ]
+        },
+        {
+          "main_tit": [" Vue.js 가이드"],
+          "sub_tit": [""],
+          "ol": [["Vue.js 이해", "Vue.js UI Dev", "주요 컴포넌트 기본 구조"]]
+        }
+      ],
+      "task": [
+        {
+          "main_tit": ["개발환경 신규 구축"],
+          "sub_tit": [""],
+          "ol": [
+            [
+              "레이아웃, 콘텐츠 등 구조 분할",
+              "Dom Load 활용한 코드 재사용 및 SPA와 유사한 환경 구축",
+              "콘텐츠 형식(마크다운 -> HTML) 변환 하여 웹게시 가능한 환경 구축 (md-block.js)"
+            ]
+          ],
+          "ul": [
+            [
+              [],
+              ["페이지 이동 없이 마크다운 콘텐츠 호출, 해시링크 값 이동", "실제 인덱스 콘텐츠 호출시 해시링크 제거"],
+              []
+            ]
+          ]
+        },
+        {
+          "main_tit": ["마크다운 콘텐츠 제공 방식 최적화"],
+          "sub_tit": [""],
+          "ol": [["콘텐츠 내 소스 코드 텍스트 테마 적용(prism.js)", "스크롤시 앵커 링크와 LNB 활성화 메뉴 동기화 구현"]]
+        }
+      ],
+      "result": [
+        {
+          "main_tit": [""],
+          "sub_tit": [""],
+          "ol": [
+            [
+              "구조 분할 및 코드 재사용 환경 구축 -> 유지보수 최적화",
+              "콘텐츠 제공 방식 최적화 -> 가독성 및 사용성 최적화"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  {
     "title": "Portfolio",
     "intro": "개인 포트폴리오",
     "company": "TOY",
@@ -12,7 +96,7 @@
     },
     "member": "1명",
     "main_role": "사이트 구축",
-    "part": "UI & front 개발 및 사이트 전반 100%",
+    "part": "UI/FE개발 및 사이트 전반 100%",
     "period": "2017.03 ~ 2023.05",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg018.jpg",
@@ -346,7 +430,8 @@
               "서로 다른 8개 테마의 공통 UI 정립 -> 작업 생산성 향상, 사용성 증가로 인한 코드 간소화",
               "신규 UI의 FE개발 가이드 제공(인기 상품과 비교, 6개월간 최적 상품) -> 원활한 협업으로 생산성 향상",
               "상세 페이지 유입 유저의 구매전환율 상승",
-              "거래액, 광고수익, 수수료 수익을 확보4. 사내 Best Practice 선정(속도와 도전)"
+              "거래액, 광고수익, 수수료 수익을 확보",
+              "사내 Best Practice 선정(속도와 도전)"
             ]
           ]
         }
@@ -439,8 +524,8 @@
       "ie": "11",
       "safari": true
     },
-    "member": "45명 이상 (UI 개발자 2 · FE 개발자 12 · BE 개발자 9 · 디자이너 2 · 기획자 5 · IOS 5 · AOS 3 · QA 7 외)",
-    "main_role": "신규 영역 UI개발 전담(Wstyle T6.",
+    "member": "45명 이상 (UI 2 · FE 개발자 12 · BE 개발자 9 · 디자이너 2 · 기획자 5 · IOS 5 · AOS 3 · QA 7 외)",
+    "main_role": "신규 영역 UI개발 전담(Wstyle TF)",
     "part": "UI개발 100%",
     "period": "2020.09 ~ 2021.08",
     "images": {
@@ -551,9 +636,9 @@
       "ie": "9",
       "safari": true
     },
-    "member": "7명 (UI 개발자 1 · FE & BE 개발자 4 · 디자이너 2)",
-    "main_role": "사이트 전반 UI개발 전담",
-    "part": "UI개발 100%",
+    "member": "7명 (UI/UX 1 · BE 4 · 디자이너 2)",
+    "main_role": "UI/UX개발 전담",
+    "part": "UI/UX개발 100%",
     "period": "2019.07 ~ 2019.10",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg025.jpg",
@@ -614,9 +699,9 @@
       "ie": "9",
       "safari": true
     },
-    "member": "2명 (UI 개발자 1 · 디자이너 1)",
-    "main_role": "사이트 전반 UI개발 전담",
-    "part": "UI개발 100%",
+    "member": "2명 (UI/UX 1 · 디자이너 1)",
+    "main_role": "UI/UX개발 전담",
+    "part": "UI/UX개발 100%",
     "period": "2019.07 ~ 2019.08",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg024.jpg",
@@ -624,7 +709,6 @@
     },
     "task_environment": "Apache",
     "language": "HTML, CSS, Javascript(jQuery)",
-    "link": "http://shinand.com/",
     "work": {
       "scope": [
         {
@@ -677,9 +761,9 @@
       "ie": "9",
       "safari": true
     },
-    "member": "2명 (UI 개발자 1 · 디자이너 1)",
-    "main_role": "사이트 전반 UI개발 전담",
-    "part": "UI개발 100%",
+    "member": "2명 (UI/UX 1 · 디자이너 1)",
+    "main_role": "UI/UX개발 전담",
+    "part": "UI/UX개발 100%",
     "period": "2019.02",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg023.jpg",
@@ -688,7 +772,6 @@
     },
     "task_environment": "Apache",
     "language": "HTML, CSS, Javascript(jQuery)",
-    "link": "http://konvination.co.kr/",
     "work": {
       "scope": [
         {
@@ -707,7 +790,7 @@
     }
   },
   {
-    "title": "배차반장 웹플랫폼",
+    "title": "배차반장 차량관제시스템",
     "intro": "기업화물 주선 운송 ERP",
     "company": "LF",
     "device": "PC",
@@ -717,9 +800,9 @@
       "ie": "9",
       "safari": false
     },
-    "member": "6명 (UI 개발자 1 · FE & BE 개발자 3 · 디자이너 1 · 기획자 1)",
-    "main_role": "사이트 전반 UI개발 전담",
-    "part": "UI개발 100%",
+    "member": "6명 (UI/UX 1 · BE 3 · 디자이너 1 · 기획자 1)",
+    "main_role": "UI/UX개발 전담",
+    "part": "UI/UX개발 100%",
     "period": "2018.09 ~ 2019.05",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg022.jpg",
@@ -727,7 +810,6 @@
     },
     "task_environment": "Git, ASP.net, Apache",
     "language": "HTML, CSS, Javascript(jQuery)",
-    "link": "https://service.배차반장.com/",
     "work": {
       "scope": [
         {
@@ -789,9 +871,9 @@
       "ie": "9",
       "safari": true
     },
-    "member": "3명 (UI 개발자 1 · 디자이너 1 · 기획자 1)",
-    "main_role": "사이트 전반 UI개발 전담",
-    "part": "UI개발 100%",
+    "member": "3명 (UI/UX 1 · 디자이너 1 · 기획자 1)",
+    "main_role": "UI/UX개발 전담",
+    "part": "UI/UX개발 100%",
     "period": "2018.11 ~ 2019.02",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg021.jpg",
@@ -800,7 +882,6 @@
     },
     "task_environment": "Apache",
     "language": "HTML, CSS, Javascript(jQuery)",
-    "link": "https://www.배차반장.com/",
     "work": {
       "scope": [
         {
@@ -829,9 +910,9 @@
       "ie": "9",
       "safari": true
     },
-    "member": "2명 (UI 개발자 1 · 디자이너 1)",
-    "main_role": "사이트 전반 UI개발 전담",
-    "part": "UI개발 100%",
+    "member": "2명 (UI/UX 1 · 디자이너 1)",
+    "main_role": "UI/UX개발 전담",
+    "part": "UI/UX개발 100%",
     "period": "2018.11",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg026.jpg",
@@ -861,9 +942,9 @@
       "ie": "9",
       "safari": true
     },
-    "member": "2명 (UI 개발자 1 · 디자이너 1)",
-    "main_role": "사이트 전반 UI개발 전담",
-    "part": "UI개발 100%",
+    "member": "2명 (UI/UX 1 · 디자이너 1)",
+    "main_role": "UI/UX개발 전담",
+    "part": "UI/UX개발 100%",
     "period": "2017.07 ~ 2017.09",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg020.jpg",
@@ -925,9 +1006,9 @@
       "ie": "9",
       "safari": true
     },
-    "member": "5명 (UI 개발자 1 · 디자이너 1 · FE & BE 개발자 3)",
-    "main_role": "사이트 전반 UI개발 전담",
-    "part": "UI개발 100%",
+    "member": "5명 (UI/UX 1 · 디자이너 1 · BE 3)",
+    "main_role": "UI/UX개발 전담",
+    "part": "UI/UX개발 100%",
     "period": "2017.05 ~ 2018.01",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg019.jpg",
@@ -1006,9 +1087,9 @@
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
-    "main_role": "사이트 전반 디자인 및 UI개발",
-    "part": "Design & UI개발 90%",
+    "member": "2명 (UI/UX & 디자이너 1 · BE 1)",
+    "main_role": "UI/UX개발 및 디자인 전담",
+    "part": "UI/UX개발 & Design 90%",
     "period": "2016.08 ~ 2016.12",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg017.jpg",
@@ -1053,9 +1134,9 @@
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
-    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
-    "part": "Design & UI개발 100%",
+    "member": "2명 (UI/UX & 디자이너 1 · BE 1)",
+    "main_role": "UI/UX개발 및 디자인 전담",
+    "part": "UI/UX개발 & Design 100%",
     "period": "2016.07 ~ 2016.08",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg016.jpg",
@@ -1110,9 +1191,9 @@
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
-    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
-    "part": "Design & UI개발 100%",
+    "member": "2명 (UI/UX & 디자이너 1 · BE 1)",
+    "main_role": "UI/UX개발 및 디자인 전담",
+    "part": "UI/UX개발 & Design 100%",
     "period": "2016.07 ~ 2016.08",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg015.jpg",
@@ -1154,9 +1235,9 @@
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
-    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
-    "part": "Design & UI개발 100%",
+    "member": "2명 (UI/UX & 디자이너 1 · BE 1)",
+    "main_role": "UI/UX개발 및 디자인 전담",
+    "part": "UI/UX개발 & Design 100%",
     "period": "2016.07 ~ 2016.07",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg014.jpg",
@@ -1196,9 +1277,9 @@
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
-    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
-    "part": "Design & UI개발 100%",
+    "member": "2명 (UI/UX & 디자이너 1 · BE 1)",
+    "main_role": "UI/UX개발 및 디자인 전담",
+    "part": "UI/UX개발 & Design 100%",
     "period": "2016.04 ~ 2016.06",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg013.jpg",
@@ -1245,9 +1326,9 @@
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
-    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
-    "part": "Design & UI개발 100%",
+    "member": "2명 (UI/UX & 디자이너 1 · BE 1)",
+    "main_role": "UI/UX개발 및 디자인 전담",
+    "part": "UI/UX개발 & Design 100%",
     "period": "2016.04 ~ 2016.06",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg012.jpg",
@@ -1284,9 +1365,9 @@
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
-    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
-    "part": "Design & UI개발 100%",
+    "member": "2명 (UI/UX & 디자이너 1 · BE 1)",
+    "main_role": "UI/UX개발 및 디자인 전담",
+    "part": "UI/UX개발 & Design 100%",
     "period": "2016.02 ~ 2016.06",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg011.jpg",
@@ -1334,9 +1415,9 @@
       "ie": "8",
       "safari": true
     },
-    "member": "3명 (UI 개발자 & 디자이너 2 · FE & BE 개발자 1)",
-    "main_role": "사이트 전반 UI개발 전담 ",
-    "part": "UI개발 100%",
+    "member": "3명 (UI/UX & 디자이너 2 · BE 1)",
+    "main_role": "UI/UX개발 전담 ",
+    "part": "UI/UX개발 100%",
     "period": "2015.09 ~ 2016.02",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg010.jpg",
@@ -1365,9 +1446,9 @@
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
-    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
-    "part": "Design & UI개발 100%",
+    "member": "2명 (UI/UX & 디자이너 1 · BE 1)",
+    "main_role": "UI/UX개발 및 디자인 전담",
+    "part": "UI/UX개발 & Design 100%",
     "period": "2015.09 ~ 2016.02",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg009.jpg",
@@ -1406,9 +1487,9 @@
       "ie": "8",
       "safari": true
     },
-    "member": "3명 (UI 개발자 & 디자이너 2 · FE & BE 개발자 1)",
-    "main_role": "사이트 전반 UI개발 전담 ",
-    "part": "Design 50%(Sub Pag5., UI개발 100%",
+    "member": "3명 (UI/UX & 디자이너 2 · BE 1)",
+    "main_role": "UI/UX개발 전담 ",
+    "part": "UI/UX개발 100%, Design 50%",
     "period": "2015.09 ~ 2016.02",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg008.jpg",
@@ -1444,9 +1525,9 @@
       "ie": "8",
       "safari": true
     },
-    "member": "3명 (UI 개발자 & 디자이너 2 · FE & BE 개발자 1)",
-    "main_role": "사이트 전반 UI개발 전담 ",
-    "part": "Design 50%(Sub Pag5., UI개발 100%",
+    "member": "3명 (UI/UX & 디자이너 2 · BE 1)",
+    "main_role": "UI/UX개발 전담",
+    "part": "UI/UX개발 100%, Design 50%",
     "period": "2015.09 ~ 2016.02",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg007.jpg",
@@ -1482,9 +1563,9 @@
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
-    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
-    "part": "Design & UI개발 100%",
+    "member": "2명 (UI/UX & 디자이너 1 · BE 1)",
+    "main_role": "UI/UX개발 및 디자인 전담",
+    "part": "UI/UX개발 & Design 100%",
     "period": "2015.09 ~ 2016.02",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg006.jpg",
@@ -1519,9 +1600,9 @@
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
-    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
-    "part": "Design & UI개발 100%",
+    "member": "2명 (UI/UX & 디자이너 1 · BE 1)",
+    "main_role": "UI/UX개발 및 디자인 전담",
+    "part": "UI/UX개발 & Design 100%",
     "period": "2015.09 ~ 2016.02",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg005.jpg",
@@ -1557,9 +1638,9 @@
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
-    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
-    "part": "Design & UI개발 100%",
+    "member": "2명 (UI/UX & 디자이너 1 · BE 1)",
+    "main_role": "UI/UX개발 및 디자인 전담",
+    "part": "UI/UX개발 & Design 100%",
     "period": "2015.09 ~ 2016.02",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg004.jpg",
@@ -1597,9 +1678,9 @@
       "ie": "8",
       "safari": true
     },
-    "member": "3명 (UI 개발자 & 디자이너 2 · FE & BE 개발자 1)",
+    "member": "3명 (UI/UX & 디자이너 2 · BE 1)",
     "main_role": "사이트 전반 UI개발 전담 ",
-    "part": "UI개발 100%",
+    "part": "UI/UX개발 100%",
     "period": "2015.09 ~ 2016.02",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg003.jpg",
@@ -1630,9 +1711,9 @@
       "ie": "8",
       "safari": true
     },
-    "member": "2명 (UI 개발자 & 디자이너 1 · FE & BE 개발자 1)",
-    "main_role": "사이트 전반 디자인 및 UI개발 전담 ",
-    "part": "Design & UI개발 100%",
+    "member": "2명 (UI/UX & 디자이너 1 · BE 1)",
+    "main_role": "UI/UX개발 및 디자인 전담",
+    "part": "UI/UX개발 & Design 100%",
     "period": "2015.08 ~ 2015.12",
     "images": {
       "thumb": "img/dft/project/thumb/pfImg001.jpg",
@@ -1640,7 +1721,6 @@
     },
     "task_environment": "자사 솔루션",
     "language": "HTML, CSS, Javascript(jQuery)",
-    "link": "http://eng.shinan.go.kr/",
     "work": {
       "scope": [
         {
